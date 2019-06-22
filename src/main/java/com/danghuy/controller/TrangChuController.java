@@ -13,9 +13,8 @@ public class TrangChuController {
     }
 
     @RequestMapping("/login")
-    @ResponseBody
     public String login(){
 
-        return "Login";
+        return "login";
     }
 }
