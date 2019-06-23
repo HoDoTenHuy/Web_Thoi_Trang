@@ -9,5 +9,9 @@
         http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="nhanvien" class="com.danghuy.entity.NhanVienEntity"/>
+    <bean name="nhanvien" class="com.danghuy.entity.NhanVienEntity">
+        <property name="tenNhanVien" value="KZ"/>
+        <property name="diaChi" value="Hue"/>
+        <property name="tuoi" value="22"/>
+    </bean>
 </beans>

@@ -10,7 +10,7 @@ public class NhanVienEntity{
     public NhanVienEntity() {
     }
     public void getThongBao(){
-        System.out.println("Hello, This is message of NhanVien!");
+        System.out.println("Hello,My name is " + tenNhanVien);
     }
 
     public String getTenNhanVien() {
