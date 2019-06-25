@@ -2,14 +2,20 @@ package com.danghuy.entity;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-public class NhanVienEntity{
+public class NhanVienEntity {
     String tenNhanVien;
     String diaChi;
     int tuoi;
 
     public NhanVienEntity() {
     }
-    public void getThongBao(){
+    public void Start(){
+        System.out.println("Start!");
+    }
+    public void Destroy(){
+        System.out.println("Destroy!");
+    }
+    public void getThongBao() {
         System.out.println("Hello,My name is " + tenNhanVien);
     }
 

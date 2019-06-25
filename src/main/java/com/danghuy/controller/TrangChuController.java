@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TrangChuController {
     @RequestMapping("/")
-    public String viewTrangChu(){
+    public String viewTrangChu() {
         ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
         nhanVienEntity.getThongBao();
+        ((ClassPathXmlApplicationContext) context).close();
         return "trangchu";
     }
 
     @RequestMapping("/login")
-    public String login(){
+    public String login() {
 
         return "login";
     }
