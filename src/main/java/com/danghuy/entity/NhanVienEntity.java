@@ -1,21 +1,39 @@
 package com.danghuy.entity;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public class NhanVienEntity {
     String tenNhanVien;
     String diaChi;
     int tuoi;
+    GiamDocEntity giamDocEntity;
 
     public NhanVienEntity() {
     }
-    public NhanVienEntity createNhanVien(){
-        NhanVienEntity nhanVienEntity = new NhanVienEntity();
-        nhanVienEntity.setTenNhanVien("HuyKZ");
-        return nhanVienEntity;
+
+    public NhanVienEntity(String tenNhanVien, int tuoi) {
+        this.tenNhanVien = tenNhanVien;
+        this.tuoi = tuoi;
     }
+
+    public NhanVienEntity(String tenNhanVien, String diaChi, int tuoi) {
+        this.tenNhanVien = tenNhanVien;
+        this.diaChi = diaChi;
+        this.tuoi = tuoi;
+    }
+
+    public NhanVienEntity(GiamDocEntity giamDocEntity) {
+        this.giamDocEntity = giamDocEntity;
+    }
+
     public void getThongBao() {
-        System.out.println("Hello,My name is " + tenNhanVien);
+        System.out.println("Result : " + getGiamDocEntity().toString());
+    }
+
+    public GiamDocEntity getGiamDocEntity() {
+        return giamDocEntity;
+    }
+
+    public void setGiamDocEntity(GiamDocEntity giamDocEntity) {
+        this.giamDocEntity = giamDocEntity;
     }
 
     public String getTenNhanVien() {

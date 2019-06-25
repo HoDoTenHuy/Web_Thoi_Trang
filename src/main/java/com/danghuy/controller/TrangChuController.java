@@ -14,6 +14,7 @@ public class TrangChuController {
         ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
         nhanVienEntity.getThongBao();
+
         ((ClassPathXmlApplicationContext) context).close();
         return "trangchu";
     }

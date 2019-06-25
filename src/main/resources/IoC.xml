@@ -9,12 +9,16 @@
         http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity">
-        <!--<property name="tenNhanVien" value="KZ"/>
-        <property name="diaChi" value="Hue"/>
-        <property name="tuoi" value="22"/>-->
-    </bean>
-    <bean id="nhanvien1" factory-bean="nhanvien" factory-method="createNhanVien">
+    <bean id="giamdoc" class="com.danghuy.entity.GiamDocEntity">
+        <constructor-arg name="tenNhanVien" value="Huy"/>
+        <constructor-arg name="tuoi" value="22"/>
+        <constructor-arg name="chucVu" value="Boss"/>
+        <constructor-arg name="diaChi" value="Hue"/>
 
     </bean>
+    <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity">
+        <constructor-arg  ref="giamdoc"/>
+
+    </bean>
+
 </beans>
