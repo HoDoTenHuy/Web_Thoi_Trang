@@ -9,9 +9,12 @@
         http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="nhanvien" class="com.danghuy.entity.NhanVienEntity" init-method="Start" destroy-method="Destroy">
-        <property name="tenNhanVien" value="KZ"/>
+    <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity">
+        <!--<property name="tenNhanVien" value="KZ"/>
         <property name="diaChi" value="Hue"/>
-        <property name="tuoi" value="22"/>
+        <property name="tuoi" value="22"/>-->
+    </bean>
+    <bean id="nhanvien1" factory-bean="nhanvien" factory-method="createNhanVien">
+
     </bean>
 </beans>

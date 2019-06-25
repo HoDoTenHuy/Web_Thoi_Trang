@@ -9,11 +9,10 @@ public class NhanVienEntity {
 
     public NhanVienEntity() {
     }
-    public void Start(){
-        System.out.println("Start!");
-    }
-    public void Destroy(){
-        System.out.println("Destroy!");
+    public NhanVienEntity createNhanVien(){
+        NhanVienEntity nhanVienEntity = new NhanVienEntity();
+        nhanVienEntity.setTenNhanVien("HuyKZ");
+        return nhanVienEntity;
     }
     public void getThongBao() {
         System.out.println("Hello,My name is " + tenNhanVien);
