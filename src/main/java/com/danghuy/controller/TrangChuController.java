@@ -20,8 +20,7 @@ public class TrangChuController {
         ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
 
-        CustomLoader customLoader = new CustomLoader();
-        customLoader.setResourceLoader(context);
+        CustomLoader customLoader = (CustomLoader) context.getBean("customloader");
         Resource resource = customLoader.getResource("classpath:data.txt");
 
         try {

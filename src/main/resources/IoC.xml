@@ -19,6 +19,8 @@
     <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity" autowire="byType">
 
     </bean>
+    <bean id="customloader" class="com.danghuy.controller.CustomLoader" autowire="byType">
 
+    </bean>
 
 </beans>
