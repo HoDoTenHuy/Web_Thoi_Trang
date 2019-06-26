@@ -19,10 +19,11 @@ public class TrangChuController {
     public String viewTrangChu() {
         ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
-        System.out.println(nhanVienEntity.getGiamDocEntity().getTenNhanVien() +
-                " , chuc vu : " + nhanVienEntity.getGiamDocEntity().getChucVu());
 
-        Resource resource = context.getResource("classpath:data.txt");
+        CustomLoader customLoader = new CustomLoader();
+        customLoader.setResourceLoader(context);
+        Resource resource = customLoader.getResource("classpath:data.txt");
+
         try {
             InputStream inputStream = resource.getInputStream();
             InputStreamReader reader = new InputStreamReader(inputStream);
