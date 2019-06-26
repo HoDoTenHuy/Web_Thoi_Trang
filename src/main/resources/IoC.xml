@@ -15,35 +15,9 @@
         <constructor-arg name="chucVu" value="Boss"/>
         <constructor-arg name="diaChi" value="Hue"/>
     </bean>
-    <bean id="giamdoc1" class="com.danghuy.entity.GiamDocEntity">
-        <constructor-arg name="tenNhanVien" value="Huy1"/>
-        <constructor-arg name="tuoi" value="22"/>
-        <constructor-arg name="chucVu" value="Boss1"/>
-        <constructor-arg name="diaChi" value="Hue1"/>
-    </bean>
-    <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity">
-        <constructor-arg  ref="giamdoc"/>
-        <property name="list">
-            <list>
-                <ref bean="giamdoc1"/>
-               <ref bean="giamdoc"/>
-            </list>
-        </property>
-        <property name="map">
-            <map>
-                <entry key="KZ-01" value="Huy"/>
-                <entry key="KZ-02" value-ref="giamdoc"/>
-                <entry key="KZ-03" value-ref="giamdoc1"/>
-            </map>
-        </property>
-        <property name="properties">
-            <props>
-                <prop key="email">danghuyvms@gmail.com</prop>
-                <prop key="user">Huy</prop>
-                <prop key="password">123456</prop>
-            </props>
-        </property>
 
+    <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity" scope="prototype">
+        <constructor-arg  ref="giamdoc"/>
     </bean>
 
 </beans>

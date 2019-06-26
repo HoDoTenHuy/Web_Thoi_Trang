@@ -17,18 +17,10 @@ public class TrangChuController {
     public String viewTrangChu() {
         ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
-        nhanVienEntity.getThongBao();
-        for (GiamDocEntity value : nhanVienEntity.getList()) {
-            System.out.println(value.getTenNhanVien());
-        }
-
-        for (Map.Entry value : nhanVienEntity.getMap().entrySet()) {
-            System.out.println(value.getKey() + " - " + value.getValue());
-        }
-        for (Map.Entry value : nhanVienEntity.getProperties().entrySet()) {
-            System.out.println(value.getKey() + " - " + value.getValue());
-        }
-
+        nhanVienEntity.setTenNhanVien("Huy");
+        System.out.println("Nhan vien 1 : " + nhanVienEntity.getTenNhanVien());
+        NhanVienEntity nhanVienEntity1 = (NhanVienEntity) context.getBean("nhanvien");
+        System.out.println("Nhan vien 2 : " + nhanVienEntity1.getTenNhanVien());
         ((ClassPathXmlApplicationContext) context).close();
         return "trangchu";
     }
