@@ -1,15 +1,17 @@
 package com.danghuy.controller;
 
-import com.danghuy.entity.GiamDocEntity;
 import com.danghuy.entity.NhanVienEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Map;
-import java.util.Properties;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 
 @Controller
 public class TrangChuController {
@@ -19,6 +21,25 @@ public class TrangChuController {
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
         System.out.println(nhanVienEntity.getGiamDocEntity().getTenNhanVien() +
                 " , chuc vu : " + nhanVienEntity.getGiamDocEntity().getChucVu());
+
+        Resource resource = context.getResource("classpath:data.txt");
+        try {
+            InputStream inputStream = resource.getInputStream();
+            InputStreamReader reader = new InputStreamReader(inputStream);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line = "";
+            StringBuilder duLieu = new StringBuilder();
+            while((line = bufferedReader.readLine()) != null){
+                duLieu.append(line + "\n");
+            }
+            bufferedReader.close();
+            reader.close();
+            inputStream.close();
+            System.out.println(duLieu.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         ((ClassPathXmlApplicationContext) context).close();
         return "trangchu";
     }
