@@ -14,10 +14,21 @@
         <constructor-arg name="tuoi" value="22"/>
         <constructor-arg name="chucVu" value="Boss"/>
         <constructor-arg name="diaChi" value="Hue"/>
-
+    </bean>
+    <bean id="giamdoc1" class="com.danghuy.entity.GiamDocEntity">
+        <constructor-arg name="tenNhanVien" value="Huy1"/>
+        <constructor-arg name="tuoi" value="22"/>
+        <constructor-arg name="chucVu" value="Boss1"/>
+        <constructor-arg name="diaChi" value="Hue1"/>
     </bean>
     <bean id="nhanvien" class="com.danghuy.entity.NhanVienEntity">
         <constructor-arg  ref="giamdoc"/>
+        <property name="list">
+            <list>
+                <ref bean="giamdoc1"/>
+               <ref bean="giamdoc"/>
+            </list>
+        </property>
 
     </bean>
 

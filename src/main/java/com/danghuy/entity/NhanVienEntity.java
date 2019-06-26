@@ -1,10 +1,13 @@
 package com.danghuy.entity;
 
+import java.util.List;
+
 public class NhanVienEntity {
     String tenNhanVien;
     String diaChi;
     int tuoi;
     GiamDocEntity giamDocEntity;
+    List<GiamDocEntity> list;
 
     public NhanVienEntity() {
     }
@@ -26,6 +29,14 @@ public class NhanVienEntity {
 
     public void getThongBao() {
         System.out.println("Result : " + getGiamDocEntity().toString());
+    }
+
+    public List<GiamDocEntity> getList() {
+        return list;
+    }
+
+    public void setList(List<GiamDocEntity> list) {
+        this.list = list;
     }
 
     public GiamDocEntity getGiamDocEntity() {

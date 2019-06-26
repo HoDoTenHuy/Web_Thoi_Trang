@@ -1,5 +1,6 @@
 package com.danghuy.controller;
 
+import com.danghuy.entity.GiamDocEntity;
 import com.danghuy.entity.NhanVienEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,6 +15,9 @@ public class TrangChuController {
         ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
         NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
         nhanVienEntity.getThongBao();
+        for(GiamDocEntity value : nhanVienEntity.getList()){
+            System.out.println(value.getTenNhanVien());
+        }
 
         ((ClassPathXmlApplicationContext) context).close();
         return "trangchu";
