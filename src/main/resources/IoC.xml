@@ -36,6 +36,13 @@
                 <entry key="KZ-03" value-ref="giamdoc1"/>
             </map>
         </property>
+        <property name="properties">
+            <props>
+                <prop key="email">danghuyvms@gmail.com</prop>
+                <prop key="user">Huy</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
 
     </bean>
 

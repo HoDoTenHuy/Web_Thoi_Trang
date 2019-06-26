@@ -2,6 +2,7 @@ package com.danghuy.entity;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class NhanVienEntity {
     String tenNhanVien;
@@ -10,6 +11,8 @@ public class NhanVienEntity {
     GiamDocEntity giamDocEntity;
     List<GiamDocEntity> list;
     Map<String, Object> map;
+    Properties properties;
+
     public NhanVienEntity() {
     }
 
@@ -30,6 +33,14 @@ public class NhanVienEntity {
 
     public void getThongBao() {
         System.out.println("Result : " + getGiamDocEntity().toString());
+    }
+
+    public Properties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Properties properties) {
+        this.properties = properties;
     }
 
     public Map<String, Object> getMap() {

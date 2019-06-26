@@ -1,9 +1,9 @@
 package com.danghuy.entity;
 
-public class GiamDocEntity extends NhanVienEntity{
+public class GiamDocEntity extends NhanVienEntity {
     String chucVu;
 
-    public GiamDocEntity(String chucVu, int tuoi, String tenNhanVien, String diaChi){
+    public GiamDocEntity(String chucVu, int tuoi, String tenNhanVien, String diaChi) {
         super(tenNhanVien, diaChi, tuoi);
         this.chucVu = chucVu;
     }
