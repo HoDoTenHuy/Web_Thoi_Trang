@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
+
 @Controller
 public class TrangChuController {
     @RequestMapping("/")
@@ -18,6 +20,10 @@ public class TrangChuController {
         for(GiamDocEntity value : nhanVienEntity.getList()){
             System.out.println(value.getTenNhanVien());
         }
+
+       for(Map.Entry value : nhanVienEntity.getMap().entrySet()){
+           System.out.println(value.getKey() + " - " + value.getValue());
+       }
 
         ((ClassPathXmlApplicationContext) context).close();
         return "trangchu";

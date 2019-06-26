@@ -1,6 +1,7 @@
 package com.danghuy.entity;
 
 import java.util.List;
+import java.util.Map;
 
 public class NhanVienEntity {
     String tenNhanVien;
@@ -8,7 +9,7 @@ public class NhanVienEntity {
     int tuoi;
     GiamDocEntity giamDocEntity;
     List<GiamDocEntity> list;
-
+    Map<String, Object> map;
     public NhanVienEntity() {
     }
 
@@ -29,6 +30,14 @@ public class NhanVienEntity {
 
     public void getThongBao() {
         System.out.println("Result : " + getGiamDocEntity().toString());
+    }
+
+    public Map<String, Object> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, Object> map) {
+        this.map = map;
     }
 
     public List<GiamDocEntity> getList() {

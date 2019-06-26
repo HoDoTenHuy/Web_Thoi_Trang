@@ -29,6 +29,13 @@
                <ref bean="giamdoc"/>
             </list>
         </property>
+        <property name="map">
+            <map>
+                <entry key="KZ-01" value="Huy"/>
+                <entry key="KZ-02" value-ref="giamdoc"/>
+                <entry key="KZ-03" value-ref="giamdoc1"/>
+            </map>
+        </property>
 
     </bean>
 
