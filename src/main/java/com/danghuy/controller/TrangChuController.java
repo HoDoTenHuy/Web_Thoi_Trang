@@ -1,51 +1,25 @@
 package com.danghuy.controller;
 
-import com.danghuy.entity.NhanVienEntity;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TrangChuController {
+
     @RequestMapping("/")
-    public String viewTrangChu() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
-        NhanVienEntity nhanVienEntity = (NhanVienEntity) context.getBean("nhanvien");
-
-        CustomLoader customLoader = (CustomLoader) context.getBean("customloader");
-        Resource resource = customLoader.getResource("classpath:data.txt");
-
-        try {
-            InputStream inputStream = resource.getInputStream();
-            InputStreamReader reader = new InputStreamReader(inputStream);
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            String line = "";
-            StringBuilder duLieu = new StringBuilder();
-            while((line = bufferedReader.readLine()) != null){
-                duLieu.append(line + "\n");
-            }
-            bufferedReader.close();
-            reader.close();
-            inputStream.close();
-            System.out.println(duLieu.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        ((ClassPathXmlApplicationContext) context).close();
-        return "trangchu";
+    public ModelAndView viewTrangChu() {
+        ModelAndView viewTrangChu = new ModelAndView();
+        viewTrangChu.setViewName("trangchu");
+        String username = "danghuyvms@gmail.com";
+        String password = "danghuy998";
+        viewTrangChu.addObject("tenDangNhap", username);
+        viewTrangChu.addObject("matKhau", password);
+        return viewTrangChu;
     }
 
     @RequestMapping("/login")
-    public String login() {
+    public String pageLogin() {
 
         return "login";
     }

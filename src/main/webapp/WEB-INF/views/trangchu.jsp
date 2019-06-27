@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>KKKKK</h3>
+    <h3>${tenDangNhap} - ${matKhau}</h3>
+    <%
+        String username = (String) request.getAttribute("tenDangNhap");
+        String password = (String) request.getAttribute("matKhau");
+    %>
+    <%= username + " - " + password%>
 </body>
 </html>
