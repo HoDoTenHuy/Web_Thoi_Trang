@@ -13,7 +13,9 @@ import java.util.List;
 public class TrangChuController {
 
     @RequestMapping("/")
-    public String viewTrangChu(ModelMap modelMap) {
+    public ModelAndView viewTrangChu(ModelMap modelMap) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("trangchu");
 
         String username = "danghuyvms@gmail.com";
         String password = "danghuy998";
@@ -30,11 +32,12 @@ public class TrangChuController {
         nhanVienList.add(nhanVienEntity1);
 
 
-        modelMap.addAttribute("listNV", nhanVienList);
-        modelMap.addAttribute("nhanVien", nhanVienEntity);
-        modelMap.addAttribute("username", username);
-        modelMap.addAttribute("password", password);
-        return "trangchu";
+        modelAndView.addObject("listNV", nhanVienList);
+        modelAndView.addObject("nhanVien", nhanVienEntity);
+        modelAndView.addObject("username", username);
+        modelAndView.addObject("password", password);
+
+        return modelAndView;
     }
 
     @RequestMapping("/login")

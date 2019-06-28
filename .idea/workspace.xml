@@ -9,8 +9,6 @@
     <list default="true" id="816fe4db-30ac-472e-8778-4af1268dd37c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/NhanVienEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/NhanVienEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="136">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#891#907#0" expanded="true" />
@@ -115,8 +113,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/CustomLoader.java" />
         <option value="$PROJECT_DIR$/src/main/resources/IoC.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/NhanVienEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" />
       </list>
     </option>
   </component>
@@ -252,7 +250,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561710605196" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561710944975" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -451,7 +449,7 @@
       <workItem from="1561570940811" duration="381000" />
       <workItem from="1561622757807" duration="4220000" />
       <workItem from="1561701333061" duration="12000" />
-      <workItem from="1561707396241" duration="2896000" />
+      <workItem from="1561707396241" duration="3162000" />
     </task>
     <task id="LOCAL-00001" summary="Update commit 1">
       <created>1561196522723</created>
@@ -586,11 +584,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561629718068</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Commit 6,&#10;Ví dụ về gửi và nhận 1 List và đối tượng qua cho view">
+      <created>1561710740460</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1561710740460</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38624000" />
+    <option name="totallyTimeSpent" value="38890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -688,7 +693,8 @@
     <MESSAGE value="Updates commit 5,&#10;Ví dụ về load file từ resources sử dụng ResourceLoader trong bean" />
     <MESSAGE value="Updates commit 5,&#10;Ví dụ về load giá trị giữa controller và jsp sử dụng ModelAndView" />
     <MESSAGE value="Updates commit 5,&#10;Ví dụ về load giá trị giữa controller và jsp sử dụng ModelMap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 5,&#10;Ví dụ về load giá trị giữa controller và jsp sử dụng ModelMap" />
+    <MESSAGE value="Commit 6,&#10;Ví dụ về gửi và nhận 1 List và đối tượng qua cho view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 6,&#10;Ví dụ về gửi và nhận 1 List và đối tượng qua cho view" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -751,8 +757,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="136">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#891#907#0" expanded="true" />
