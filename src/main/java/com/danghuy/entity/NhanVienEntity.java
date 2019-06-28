@@ -60,4 +60,11 @@ public class NhanVienEntity {
     public void setTuoi(int tuoi) {
         this.tuoi = tuoi;
     }
+
+    @Override
+    public String toString() {
+        return "Tên Nhân Viên : " + tenNhanVien +
+                ", Địa Chỉ : " + diaChi +
+                ", Tuổi : " + tuoi;
+    }
 }
