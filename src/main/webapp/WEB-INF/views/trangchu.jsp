@@ -13,6 +13,6 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="login?id=222&&tensp=huy">Qua trang Login</a>
+    <a href="login/22/huy">Qua trang Login</a>
 </body>
 </html>

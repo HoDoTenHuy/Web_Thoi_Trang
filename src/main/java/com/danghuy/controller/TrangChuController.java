@@ -3,6 +3,7 @@ package com.danghuy.controller;
 import com.danghuy.entity.NhanVienEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,8 +25,8 @@ public class TrangChuController {
         return modelAndView;
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public String pageLogin(@RequestParam(value = "id") int id, @RequestParam(value = "tensp") String tenSP,
+    @RequestMapping(path = "/login/{id}/{tensp}", method = RequestMethod.GET)
+    public String pageLogin(@PathVariable("id") int id, @PathVariable("tensp") String tenSP,
                             ModelMap modelMap){
         modelMap.addAttribute("id", id);
         modelMap.addAttribute("tensp", tenSP);
