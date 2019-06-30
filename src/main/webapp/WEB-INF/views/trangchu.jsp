@@ -13,6 +13,10 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="login/22/huy">Qua trang Login</a>
+    <a href="login222">Qua trang Login</a>
+    <form action="login" method="post">
+        <input type="text" name="name"><br/>
+        <input type="submit" value="POST">
+    </form>
 </body>
 </html>
