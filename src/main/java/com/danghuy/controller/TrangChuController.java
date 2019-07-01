@@ -7,26 +7,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
+@RequestMapping("/")
 public class TrangChuController {
-
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public ModelAndView viewTrangChu(ModelMap modelMap) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("trangchu");
-        return modelAndView;
+    @GetMapping
+    public String pageDefault(){
+        return "trangchu";
     }
 
-    @RequestMapping(path = "/login{id}", method = RequestMethod.GET)
-    public String pageLogin(@PathVariable(value = "id") int id,
-                            ModelMap modelMap) {
-        modelMap.addAttribute("id", id);
-        return "login";
+    @GetMapping("/{name}")
+    public String nhanThamSo(@PathVariable String name, ModelMap modelMap){
+        modelMap.addAttribute("hoten", name);
+        return "trangchu";
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public String pageLoginPOST(@RequestParam(value = "name") String name,
-                                ModelMap modelMap) {
-        modelMap.addAttribute("name", name);
-        return "login";
-    }
 }
