@@ -10,10 +10,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="resources/styles.css">
     <title>Title</title>
 </head>
 <body>
-    <a href="login">Qua trang Login</a><br/>
+    <a id="theA" href="login">Qua trang Login</a><br/>
     <form action="login" method="post">
         <input type="text" name="tenNhanVien"><br/>
         <input type="text" name="tuoi"><br/>
