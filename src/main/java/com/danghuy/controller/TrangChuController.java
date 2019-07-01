@@ -14,10 +14,10 @@ public class TrangChuController {
         return "trangchu";
     }
 
-    @GetMapping("/{name}")
-    public String nhanThamSo(@PathVariable String name, ModelMap modelMap){
-        modelMap.addAttribute("hoten", name);
-        return "trangchu";
+    @PostMapping
+    public String updatesInforUser(){
+
+        return "chitiet";
     }
 
 }

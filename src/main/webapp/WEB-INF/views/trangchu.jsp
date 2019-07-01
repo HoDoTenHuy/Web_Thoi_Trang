@@ -13,7 +13,12 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="login222">Qua trang Login</a><br/>
-    ${hoten} - ${id}
+    <a href="login">Qua trang Login</a><br/>
+    <form action="login" method="post">
+        <input type="text" name="tenNhanVien"><br/>
+        <input type="text" name="tuoi"><br/>
+        <input type="text" name="diaChi"><br/>
+        <input type="submit">
+    </form>
 </body>
 </html>

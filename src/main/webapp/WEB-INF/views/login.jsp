@@ -12,8 +12,7 @@
 </head>
 <body>
     <h2>This is Page Login</h2>
-    <h1>${id}</h1>
-    <h1>${tensp}</h1>
-    <h2>${name}</h2>
+    <h1>${nv.toString()}</h1>
+
 </body>
 </html>
