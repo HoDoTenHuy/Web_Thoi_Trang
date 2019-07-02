@@ -9,12 +9,20 @@
 <html>
 <head>
     <title>Page Dang Nhap</title>
+    <jsp:include page="header.jsp"/>
 </head>
 <body>
 <form method="post">
-    <input type="text" name="username"><br/>
-    <input type="password" name="password"><br/>
-    <input type="submit">
+   <div class="login-box">
+        <h1>Login</h1>
+        <div class="textbox">
+            <input type="text" placeholder="Username" name="" value="">
+        </div>
+       <div class="textbox">
+           <input type="password" placeholder="Password" name="" value="">
+       </div>
+       <input class="btn" type="button" name="" value="Sign in">
+   </div>
 </form>
 </body>
 </html>

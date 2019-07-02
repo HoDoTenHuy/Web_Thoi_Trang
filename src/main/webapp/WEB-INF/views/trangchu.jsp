@@ -10,16 +10,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="resources/styles.css">
     <title>Title</title>
 </head>
 <body>
-    <a id="theA" href="login">Qua trang Login</a><br/>
+    <a id="theA" href="dangnhap/">Qua trang Dang Nhap</a><br/>
     <form action="login" method="post">
-        <input type="text" name="tenNhanVien"><br/>
-        <input type="text" name="tuoi"><br/>
-        <input type="text" name="diaChi"><br/>
-        <input type="submit">
+        <div class="login-box">
+            <h1>Login</h1>
+            <div class="textbox">
+                <input type="text" placeholder="Username" name="" value="">
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password" name="" value="">
+            </div>
+            <input class="btn" type="button" name="" value="Sign in">
+        </div>
     </form>
 </body>
 </html>
