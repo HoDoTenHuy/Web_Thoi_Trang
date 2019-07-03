@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Title</title>
+    <jsp:include page="header.jsp"/>
 </head>
 <body>
     <a id="theA" href="dangnhap/">Qua trang Dang Nhap</a><br/>
