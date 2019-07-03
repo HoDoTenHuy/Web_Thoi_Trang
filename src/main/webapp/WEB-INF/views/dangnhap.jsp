@@ -31,7 +31,22 @@
                 </div>
             </div>
             <div id="container-login-right">
+                <div id="header-top-right" class="header-login">
+                    <span class="actived">Đăng Nhập</span> / <span>Đăng Ký</span>
+                </div>
 
+                <div>
+                    <form id="container-center-login-right">
+                        <input class="material-text-input input-icon-email" type="text" placeholder="Email"/><br/>
+                        <input class="material-text-input input-icon-password" type="password" placeholder="Password"/><br/>
+                        <input class="material-primary-button" type="submit" value="ĐỒNG Ý"/><br/>
+                    </form>
+                </div>
+
+                <div id="container-social-login">
+                    <img alt="icon_fb" src='<c:url value="../../resources/images/icon-facebook.png"/> '/>
+                    <img alt="icon_gg" src='<c:url value="../../resources/images/icon-google.png" />'/>
+                </div>
             </div>
         </div>
     </div>

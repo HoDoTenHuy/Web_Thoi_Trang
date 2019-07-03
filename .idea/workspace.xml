@@ -7,17 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="816fe4db-30ac-472e-8778-4af1268dd37c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/background-login12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon-oval4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon-email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon-facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon-google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon-password.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/springDispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/springDispatcher-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/background-login.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/icon_fb3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/icon_google.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-59">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="298">
+              <caret line="39" column="85" lean-forward="true" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -59,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="196">
+              <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -152,6 +150,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,14 +248,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562178447456" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562183057644" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MiniShop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -265,18 +263,18 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\images" />
-      <recent name="D:\Web_Thoi_Trang\src\main\resources" />
-      <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF" />
-      <recent name="D:\WebThoiTrang2\src\main" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\styles" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\WEB-INF\views" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp" />
       <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\images" />
+      <recent name="D:\Web_Thoi_Trang\src\main\resources" />
+      <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF" />
+      <recent name="D:\WebThoiTrang2\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -480,7 +478,14 @@
       <workItem from="1562176876030" duration="244000" />
       <workItem from="1562177152365" duration="210000" />
       <workItem from="1562177400510" duration="161000" />
-      <workItem from="1562177591431" duration="787000" />
+      <workItem from="1562177591431" duration="2473000" />
+      <workItem from="1562180101579" duration="41000" />
+      <workItem from="1562180177513" duration="229000" />
+      <workItem from="1562180431849" duration="143000" />
+      <workItem from="1562180603281" duration="225000" />
+      <workItem from="1562180858078" duration="346000" />
+      <workItem from="1562181233701" duration="1850000" />
+      <workItem from="1562183120582" duration="815000" />
     </task>
     <task id="LOCAL-00001" summary="Update commit 1">
       <created>1561196522723</created>
@@ -685,17 +690,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562042032243</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Commit 11,&#10;Làm page đăng nhập phần 1, Làm phần bên trái">
+      <created>1562178488993</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1562178488994</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74575000" />
+    <option name="totallyTimeSpent" value="79910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26308724" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29127517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -705,7 +717,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.34844193" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.34844193" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -734,7 +746,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit 3, end video 5" />
     <MESSAGE value="Updates commit 3, end video 6" />
     <MESSAGE value="Updates commit 3, end video 7" />
     <MESSAGE value="Commit 4, end video 8" />
@@ -759,7 +770,8 @@
     <MESSAGE value="Updates commit 9,&#10;Ví dụ config và import static resources để thêm các file css, js,... vào cho views" />
     <MESSAGE value="Updates commit 9,&#10;Ví dụ chuyển page khi xử lý đăng nhập + fix lỗi đường dẫn local lỗi bửa giờ :v" />
     <MESSAGE value="Commit 10,&#10;Tách file css ra khỏi view và sử dụng header để import các file css,.. vào cho views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 10,&#10;Tách file css ra khỏi view và sử dụng header để import các file css,.. vào cho views" />
+    <MESSAGE value="Commit 11,&#10;Làm page đăng nhập phần 1, Làm phần bên trái" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 11,&#10;Làm page đăng nhập phần 1, Làm phần bên trái" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/data.txt" />
@@ -846,6 +858,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login10.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login11.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/oval.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/icon-fb.png" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -869,15 +882,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="298">
+          <caret line="39" column="85" lean-forward="true" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        <state relative-caret-position="196">
+          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
         </state>
       </provider>
     </entry>

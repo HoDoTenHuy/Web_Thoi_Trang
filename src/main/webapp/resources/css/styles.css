@@ -5,6 +5,7 @@ html,body{
     font-family: Roboto;
     font-size: 14px;
 }
+/*Start css cho page dangn nhap*/
 #body-login{
     background-color: #8fafb2;
 }
@@ -51,3 +52,61 @@ html,body{
 #footer-left{
     margin-bottom: 43px;
 }
+#container-login-right{
+    padding: 0 24px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#header-top-right{
+    font-size: 20px;
+    color: #B7B7B7;
+}
+.actived{
+    color: red;
+}
+#container-social-login{
+    align-self: flex-end;
+    margin-bottom: 16px;
+}
+#container-center-login-right input[type=text]{
+    margin-bottom: 8px;
+}
+#container-center-login-right input[type=submit]{
+    margin-top: 24px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0px 1px 8px 2px #000;
+}
+.material-text-input{
+    height: 38px;
+    border: 0;
+    background-color: #D8D8D8 !important;
+    width: 100%;
+}
+.material-primary-button{
+    height: 38px;
+    border: 0;
+    background-color: #00909C !important;
+    width: 100%;
+}
+.input-icon-email{
+    background: url("../../resources/images/icon-email.png") no-repeat scroll 7px 10px;
+    height: 38px;
+    border: 0;
+    background-color: #D8D8D8 !important;
+    width: 100%;
+    padding-left: 9%;
+    font-size: 14px;
+}
+.input-icon-password{
+    background: url("../../resources/images/icon-password.png") no-repeat scroll 7px 10px;
+    height: 38px;
+    border: 0;
+    background-color: #D8D8D8 !important;
+    width: 100%;
+    padding-left: 9%;
+    font-size: 14px;
+}
+/*End css cua page dang nhap*/
