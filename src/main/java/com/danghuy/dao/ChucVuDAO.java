@@ -15,8 +15,8 @@ public class ChucVuDAO {
 
     public ChucVuEntity getTenChucVu(Integer id){
         Session session = sessionFactory.getCurrentSession().getSession();
-        ChucVuEntity chucVuEntity = (ChucVuEntity)
-                session.createQuery("FROM ChucVuEntity WHERE idChuVu = " + id).uniqueResult();
+        String sql = "from ChucVuEntity where id = " + id;
+        ChucVuEntity chucVuEntity = (ChucVuEntity) session.createQuery(sql).getSingleResult();
         return chucVuEntity;
     }
 }

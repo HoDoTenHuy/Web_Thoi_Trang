@@ -1,11 +1,8 @@
 package com.danghuy.entity;
-
-import org.springframework.stereotype.Repository;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "test_chucvu")
+@Table(name = "chucvu")
 public class ChucVuEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
