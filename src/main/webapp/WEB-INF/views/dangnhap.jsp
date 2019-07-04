@@ -44,8 +44,8 @@
                 </div>
 
                 <div id="container-social-login">
-                    <img alt="icon_fb" src='<c:url value="../../resources/images/icon-facebook.png"/> '/>
-                    <img alt="icon_gg" src='<c:url value="../../resources/images/icon-google.png" />'/>
+                    <img alt="icon_fb" src='<c:url value="../../resources/images/icon_fb21.png"/> '/>
+                    <img alt="icon_gg" src='<c:url value="../../resources/images/icon_google3.png" />'/>
                 </div>
             </div>
         </div>
