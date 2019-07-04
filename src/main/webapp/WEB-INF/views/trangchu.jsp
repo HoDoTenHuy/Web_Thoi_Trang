@@ -15,17 +15,19 @@
 </head>
 <body>
     <a id="theA" href="dangnhap/">Qua trang Dang Nhap</a><br/>
-    <form action="login" method="post">
-        <div class="login-box">
-            <h1>Login</h1>
-            <div class="textbox">
-                <input type="text" placeholder="Username" name="" value="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
             </div>
-            <div class="textbox">
-                <input type="password" placeholder="Password" name="" value="">
+            <div class="col-md-4">
+
             </div>
-            <input class="btn" type="button" name="" value="Sign in">
+            <div class="col-md-4">
+
+            </div>
         </div>
-    </form>
+    </div>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

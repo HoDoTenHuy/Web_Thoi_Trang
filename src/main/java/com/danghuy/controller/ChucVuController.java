@@ -18,8 +18,6 @@ import java.util.List;
 @RequestMapping("/chucvu")
 public class ChucVuController {
     private final ChucVuService chucVuService;
-    @Autowired
-    SessionFactory sessionFactory;
 
     @Autowired
     public ChucVuController(ChucVuService chucVuService){
