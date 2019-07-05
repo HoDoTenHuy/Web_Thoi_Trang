@@ -15,9 +15,9 @@
 </head>
 <body>
     <a id="theA" href="dangnhap/">Qua trang Dang Nhap</a><br/>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
+            <div id="cot1" class="col-md-4" data-text="KZ!">
 
             </div>
             <div class="col-md-4">
