@@ -157,7 +157,23 @@ html, body{
 .event-header button{
     font-size: 22px;
     border: red;
+    color: #034725;
 }
 #event-header-span2{
     font-size: 50px;
+}
+@media (max-width: 575.98px){
+    .navbar-center{
+        margin-left: 0 !important;
+    }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .navbar-center{
+        margin-left: 0 !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199.98px){
+    .navbar-center{
+        margin-left: 12% !important;
+    }
 }
