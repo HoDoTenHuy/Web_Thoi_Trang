@@ -5,7 +5,7 @@ html,body{
     font-family: Roboto;
     font-size: 14px;
 }
-/*Start css cho page dangn nhap*/
+/*Start css cho page dang nhap*/
 #body-login{
     background-color: #8fafb2;
 }
@@ -124,4 +124,40 @@ html,body{
     -o-background-size: cover;
     background-size: cover;
     height: 662px;
+}
+html, body{
+    font-family: Roboto !important;
+}
+.none_nav{
+    background: none !important;
+    border: none !important;
+}
+.navbar-center{
+    margin-left: 27% !important;
+}
+.navbar-nav a{
+    color: white !important;
+}
+.actived > a{
+    color: red !important;
+    font-weight: bold;
+}
+.show > a{
+    color: #000000 !important;
+    font-weight: bold;
+}
+.event-header{
+    text-align: center;
+    margin-top: 216px;
+}
+.event-header > span{
+    color: #f3f3f3;
+    font-weight: bold;
+}
+.event-header button{
+    font-size: 22px;
+    border: red;
+}
+#event-header-span2{
+    font-size: 50px;
 }
