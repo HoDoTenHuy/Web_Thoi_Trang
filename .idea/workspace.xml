@@ -27,8 +27,12 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.js.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/background-footer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/wow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/wow.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
     </list>
@@ -89,26 +93,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4539">
-              <caret line="267" column="33" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1962">
-              <caret line="227" column="56" selection-start-line="227" selection-start-column="56" selection-end-line="227" selection-end-column="56" />
+            <state relative-caret-position="264">
+              <caret line="264" column="74" selection-start-line="264" selection-start-column="74" selection-end-line="264" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="101" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="101" />
+            <state relative-caret-position="102">
+              <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -155,9 +159,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" />
       </list>
     </option>
   </component>
@@ -200,6 +204,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +259,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
@@ -287,14 +292,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562443861881" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562447879717" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MiniShop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -305,19 +309,19 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\images" />
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\js" />
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
-      <recent name="D:\Web_Thoi_Trang\src\main\resources" />
-      <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\styles" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\WEB-INF\views" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp" />
       <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\css" />
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\js" />
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\images" />
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
+      <recent name="D:\Web_Thoi_Trang\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -557,6 +561,8 @@
       <workItem from="1562436428603" duration="6769000" />
       <workItem from="1562443353112" duration="210000" />
       <workItem from="1562443588564" duration="300000" />
+      <workItem from="1562443917696" duration="259000" />
+      <workItem from="1562445062181" duration="2842000" />
     </task>
     <task id="LOCAL-00001" summary="Update commit 1">
       <created>1561196522723</created>
@@ -852,16 +858,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562439077567</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Updates commit 12,&#10;Làm page Trang Chủ phần cuối&#10;Làm phần footer của page Trang Chủ,cơ bản hoàn tất page Trang Chủ chỉ cần load dữ liệu từ DB lên nữa là OK.">
+      <created>1562444160781</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1562444160781</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124712000" />
+    <option name="totallyTimeSpent" value="127813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2590604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26644295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -901,7 +915,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updates commit 6,&#10;Ví dụ về nhận tham số trên trình duyệt với RequestParam" />
     <MESSAGE value="Commit 7,&#10;Ví dụ về nhận tham số trên trình duyệt với PathVariable" />
     <MESSAGE value="Commit 8,&#10;Ví dụ về nhận tham số trên trình duyệt dưới dạng POST" />
     <MESSAGE value="Commit 9,&#10;Ví dụ về nhận tham số trên trình duyệt theo dạng chuẩn thường dùng" />
@@ -926,17 +939,10 @@
     <MESSAGE value="Updates commit 13,&#10;Làm page Trang Chủ phần 3.&#10;Sử dụng responsive cho page Trang Chủ.&#10;Thảm khảo ví dụ ở trang chủ bootstrap để sử dụng responsive" />
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần 3&#10;Làm phần container infor phía cuối img trangchu." />
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần 5&#10;Làm phần hiển thị sản phẩm trong danh mục sản phẩm hot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 12,&#10;Làm page Trang Chủ phần 5&#10;Làm phần hiển thị sản phẩm trong danh mục sản phẩm hot" />
+    <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần cuối&#10;Làm phần footer của page Trang Chủ,cơ bản hoàn tất page Trang Chủ chỉ cần load dữ liệu từ DB lên nữa là OK." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 12,&#10;Làm page Trang Chủ phần cuối&#10;Làm phần footer của page Trang Chủ,cơ bản hoàn tất page Trang Chủ chỉ cần load dữ liệu từ DB lên nữa là OK." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login5.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login6.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login10.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login11.jpg" />
@@ -1193,13 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="93" selection-start-line="3" selection-start-column="93" selection-end-line="3" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-trangchu.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login12.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -1217,27 +1216,40 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/icon-email.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-footer.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/wow.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4539">
-          <caret line="267" column="33" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+        <state relative-caret-position="264">
+          <caret line="264" column="74" selection-start-line="264" selection-start-column="74" selection-end-line="264" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="101" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-footer.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1962">
-          <caret line="227" column="56" selection-start-line="227" selection-start-column="56" selection-end-line="227" selection-end-column="56" />
+        <state relative-caret-position="102">
+          <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
         </state>
       </provider>
     </entry>

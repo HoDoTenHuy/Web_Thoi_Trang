@@ -62,7 +62,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="event-header container">
+        <div class="event-header container wow flipInX" data-wow-duration="0.6s">
             <span>Ngày 17/10 - 23/10/2017</span><br/>
             <span id="event-header-span2">Mua 1 Tặng 1</span><br/>
             <button>Xem Ngay</button>
@@ -70,17 +70,19 @@
     </div>
     <div id="container-infor" class="container-fluid">
         <div class="row">
-            <div class="col-12 col-sm-4 col-md-4 col-xl-4">
+            <div class="col-12 col-sm-4 col-md-4 col-xl-4 wow bounceInLeft" data-wow-duration="1.15s">
                 <img class="img-size" src='<c:url value="../../resources/images/icon-chatluong.png" />'><br/>
                 <span class="text-size">CHẤT LƯỢNG</span><br/>
                 <span>Chúng tôi cam kết sẽ mang lại cho các bạn chất lượng sản phẩm tốt nhất</span>
             </div>
-            <div class="col-12 col-sm-4 col-md-4 col-xl-4">
+            <div class="col-12 col-sm-4 col-md-4 col-xl-4 wow bounceInUp" data-wow-duration="1.15s"
+                 data-wow-delay="0.5s">
                 <img class="img-size" src='<c:url value="../../resources/images/icon_tietkiem.png" />'><br/>
                 <span class="text-size">TIẾT KIỆM CHI PHÍ</span><br/>
                 <span>Cam kết rẻ nhất Việt Nam giúp các bạn tiết kiệm hơn 20% cho từng sản phẩm</span>
             </div>
-            <div class="col-12 col-sm-4 col-md-4 col-xl-4">
+            <div class="col-12 col-sm-4 col-md-4 col-xl-4 wow bounceInRight" data-wow-duration="1.15s"
+                 data-wow-delay="1.65s">
                 <img class="img-size" src='<c:url value="../../resources/images/icon_giaohang.png" />'><br/>
                 <span class="text-size">GIAO HÀNG</span><br/>
                 <span>Cam kết giao hàng tận nơi trong ngày. Để mang sản phẩm đến cho khách hàng nhanh nhất</span>
@@ -88,10 +90,21 @@
         </div>
     </div>
     <div class="title-sanpham container">
-        <span>SẢN PHẨM HOT</span>
+        <div class="wow rollIn"><span>SẢN PHẨM HOT</span></div>
         <div class="row" style="margin-top: 42px">
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
+                    <img class="card-img-top sanpham-size"
+                         src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -101,7 +114,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -111,7 +124,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -121,7 +134,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -131,7 +144,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -141,7 +154,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -151,7 +164,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -161,7 +174,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -171,7 +184,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -181,7 +194,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -191,7 +204,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -201,7 +214,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -211,7 +224,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -221,7 +234,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -231,17 +244,7 @@
                 </div>
             </div>
             <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
+                <div class="sanpham wow pulse">
                     <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
                     <div class="card-body">
                         <h5 class="card-title">Tên Sản Phẩm</h5>
@@ -254,18 +257,18 @@
     </div>
     <div id="footer" class="container-fluid">
         <div class="row">
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-4 col-md-4 wow rotateInUpRight">
                 <p style="text-align: center;"><span class="title-footer">THÔNG TIN SHOP</span></p>
                 <span>YAME là một thương hiệu thời trang đầy uy tín, luôn đảm bảo chất lượng tốt nhất
                  cho khách hàng.</span>
             </div>
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-4 col-md-4 wow zoomIn" data-wow-duration="1s">
                 <p style="text-align: center;"><span class="title-footer">LIÊN HỆ</span></p>
                 <span>Thôn Bình Toàn, Xã Hương Bình, Thị Xã Hương Trà, Tỉnh Thừa Thiên Huế</span>
                 <span>danghuyvms@gmail.com</span><br/>
                 <span>0707279802</span>
             </div>
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-4 col-md-4 wow rotateInUpLeft">
                 <p style="text-align: center;"><span class="title-footer">GÓP Ý</span></p>
                 <input class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
                 <textarea rows="4" cols="50" placeholder="Nội Dung"></textarea>
