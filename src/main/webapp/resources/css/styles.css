@@ -204,3 +204,16 @@ html, body{
         font-weight: bold;
     }
 }
+.title-sanpham{
+    margin-top: 100px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+}
+.sanpham-size{
+    height: 256px;
+    width: 100%;
+}
+.sanpham{
+    /*margin-top: 22px;*/
+}
