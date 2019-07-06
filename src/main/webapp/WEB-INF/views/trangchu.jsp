@@ -89,166 +89,187 @@
     </div>
     <div class="title-sanpham container">
         <span>SẢN PHẨM HOT</span>
+        <div class="row" style="margin-top: 42px">
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                <div class="sanpham">
+                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sản Phẩm</h5>
+                        <p class="card-text">Giá Tiền</p>
+                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="container-fluid">
         <div class="row">
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
+            <div class="col-sm-4 col-md-4">
+                <p style="text-align: center;"><span class="title-footer">THÔNG TIN SHOP</span></p>
+                <span>YAME là một thương hiệu thời trang đầy uy tín, luôn đảm bảo chất lượng tốt nhất
+                 cho khách hàng.</span>
             </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
+            <div class="col-sm-4 col-md-4">
+                <p style="text-align: center;"><span class="title-footer">LIÊN HỆ</span></p>
+                <span>Thôn Bình Toàn, Xã Hương Bình, Thị Xã Hương Trà, Tỉnh Thừa Thiên Huế</span>
+                <span>danghuyvms@gmail.com</span><br/>
+                <span>0707279802</span>
             </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
+            <div class="col-sm-4 col-md-4">
+                <p style="text-align: center;"><span class="title-footer">GÓP Ý</span></p>
+                <input class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
+                <textarea rows="4" cols="50" placeholder="Nội Dung"></textarea>
+                <button class="material-primary-button">Gửi</button>
             </div>
         </div>
     </div>

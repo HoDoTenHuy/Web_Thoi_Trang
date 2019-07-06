@@ -217,3 +217,24 @@ html, body{
 .sanpham{
     /*margin-top: 22px;*/
 }
+#footer{
+    margin-top: 42px;
+    color: white;
+    background-color: black;
+    padding: 38px;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(76, 163, 111, 0.45) ),
+    url(../../resources/images/background-footer.jpg) no-repeat center center;
+}
+#footer textarea{
+    width: 100%;
+    background-color: #D8D8D8;
+    border: 0;
+    margin-bottom: 8px;
+}
+#footer button{
+    font-size: 20px;
+    color: white;
+}
+.title-footer{
+    font-size: 32px;
+}
