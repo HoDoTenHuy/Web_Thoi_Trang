@@ -68,8 +68,24 @@
             <button>Xem Ngay</button>
         </div>
     </div>
-    <div>
-
+    <div id="container-infor" class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-md-4 col-xl-4">
+                <img class="img-size" src='<c:url value="../../resources/images/icon-chatluong.png" />'><br/>
+                <span class="text-size">CHẤT LƯỢNG</span><br/>
+                <span>Chúng tôi cam kết sẽ mang lại cho các bạn chất lượng sản phẩm tốt nhất</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-xl-4">
+                <img class="img-size" src='<c:url value="../../resources/images/icon_tietkiem.png" />'><br/>
+                <span class="text-size">TIẾT KIỆM CHI PHÍ</span><br/>
+                <span>Cam kết rẻ nhất Việt Nam giúp các bạn tiết kiệm hơn 20% cho từng sản phẩm</span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-xl-4">
+                <img class="img-size" src='<c:url value="../../resources/images/icon_giaohang.png" />'><br/>
+                <span class="text-size">GIAO HÀNG</span><br/>
+                <span>Cam kết giao hàng tận nơi trong ngày. Để mang sản phẩm đến cho khách hàng nhanh nhất</span>
+            </div>
+        </div>
     </div>
     <div>
 

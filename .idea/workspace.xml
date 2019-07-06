@@ -27,7 +27,11 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.js.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon-chatluong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon_giaohang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon_tietkiem.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -87,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="40" />
+            <state relative-caret-position="383">
+              <caret line="85" column="106" selection-start-line="85" selection-start-column="106" selection-end-line="85" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -96,7 +100,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
+            <state relative-caret-position="156">
               <caret line="177" column="5" lean-forward="true" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
             </state>
           </provider>
@@ -199,7 +203,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,13 +289,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562354580257" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562404823773" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MiniShop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -303,19 +307,19 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\styles" />
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\Web_Thoi_Trang\src\main\webapp" />
-      <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\images" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\js" />
       <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
       <recent name="D:\Web_Thoi_Trang\src\main\resources" />
       <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources\styles" />
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\resources" />
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\Web_Thoi_Trang\src\main\webapp" />
+      <recent name="D:\WebThoiTrang2\src\main\webapp\WEB-INF\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -545,7 +549,12 @@
       <workItem from="1562354194622" duration="207000" />
       <workItem from="1562354427831" duration="205000" />
       <workItem from="1562354662281" duration="3882000" />
-      <workItem from="1562359574935" duration="1784000" />
+      <workItem from="1562359574935" duration="1900000" />
+      <workItem from="1562384741839" duration="97000" />
+      <workItem from="1562400110720" duration="1711000" />
+      <workItem from="1562402036556" duration="1691000" />
+      <workItem from="1562403761166" duration="105000" />
+      <workItem from="1562403893053" duration="1073000" />
     </task>
     <task id="LOCAL-00001" summary="Update commit 1">
       <created>1561196522723</created>
@@ -820,17 +829,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562358253257</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Updates commit 13,&#10;Làm page Trang Chủ phần 3.&#10;Sử dụng responsive cho page Trang Chủ.&#10;Thảm khảo ví dụ ở trang chủ bootstrap để sử dụng responsive">
+      <created>1562361462342</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1562361462342</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111308000" />
+    <option name="totallyTimeSpent" value="116101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2852349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24563758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -870,7 +886,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updates commit 5,&#10;Ví dụ về load giá trị giữa controller và jsp sử dụng ModelMap" />
     <MESSAGE value="Commit 6,&#10;Ví dụ về gửi và nhận 1 List và đối tượng qua cho view" />
     <MESSAGE value="Commit 6,&#10;Ví dụ về gửi và nhận 1 List và đối tượng qua cho view sử dụng ModelAndView" />
     <MESSAGE value="Updates commit 6,&#10;Ví dụ về nhận tham số trên trình duyệt với RequestParam" />
@@ -895,10 +910,10 @@
     <MESSAGE value="Commit 13,&#10;Làm page Trang Chủ phần 1.&#10;Làm phần header + thanh nav bar của header&#10;NOTE : Không có folder Bootstrap" />
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần 2." />
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần 2.&#10;Xong phần header của Page Trang Chủ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 12,&#10;Làm page Trang Chủ phần 2.&#10;Xong phần header của Page Trang Chủ" />
+    <MESSAGE value="Updates commit 13,&#10;Làm page Trang Chủ phần 3.&#10;Sử dụng responsive cho page Trang Chủ.&#10;Thảm khảo ví dụ ở trang chủ bootstrap để sử dụng responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 13,&#10;Làm page Trang Chủ phần 3.&#10;Sử dụng responsive cho page Trang Chủ.&#10;Thảm khảo ví dụ ở trang chủ bootstrap để sử dụng responsive" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/CustomLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1171,21 +1186,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="125" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-trangchu.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login12.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="40" />
+        <state relative-caret-position="408">
+          <caret line="24" column="125" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="125" />
         </state>
       </provider>
     </entry>
@@ -1196,9 +1204,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/icon-chatluong.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/icon-email.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="85" column="106" selection-start-line="85" selection-start-column="106" selection-end-line="85" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
+        <state relative-caret-position="156">
           <caret line="177" column="5" lean-forward="true" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
         </state>
       </provider>

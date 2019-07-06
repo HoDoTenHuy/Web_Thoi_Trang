@@ -139,7 +139,7 @@ html, body{
     color: white !important;
 }
 .actived > a{
-    color: red !important;
+    color: #ff7449 !important;
     font-weight: bold;
 }
 .show > a{
@@ -175,5 +175,32 @@ html, body{
 @media (min-width: 992px) and (max-width: 1199.98px){
     .navbar-center{
         margin-left: 12% !important;
+    }
+}
+#container-infor{
+    text-align: center;
+    margin-top: 48px;
+}
+#container-infor > span{
+    margin-top: 16px;
+}
+.text-size{
+    font-size: 32px;
+    font-weight: bold;
+}
+.img-size{
+    height: 48px;
+    width: 48px;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .text-size{
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+@media (min-width: 768px) and (max-width: 1026.98px) {
+    .text-size{
+        font-size: 22px;
+        font-weight: bold;
     }
 }
