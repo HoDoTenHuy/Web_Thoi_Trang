@@ -1,5 +1,6 @@
 package com.danghuy.entity;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "chucvu")
@@ -8,6 +9,9 @@ public class ChucVuEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idChucVu;
     private String tenChucVu;
+    @OneToMany(cascade = CascadeType.ALL)
+            @JoinColumn(name = "idChucVu")
+    Set<NhanVienEntity> nhanVienEntities;
 
     public ChucVuEntity(int idChucVu, String tenChucVu) {
         this.idChucVu = idChucVu;
@@ -15,6 +19,14 @@ public class ChucVuEntity {
     }
 
     public ChucVuEntity() {
+    }
+
+    public Set<NhanVienEntity> getNhanVienEntities() {
+        return nhanVienEntities;
+    }
+
+    public void setNhanVienEntities(Set<NhanVienEntity> nhanVienEntities) {
+        this.nhanVienEntities = nhanVienEntities;
     }
 
     public int getIdChucVu() {
