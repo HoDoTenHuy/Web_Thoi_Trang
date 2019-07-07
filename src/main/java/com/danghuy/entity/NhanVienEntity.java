@@ -1,70 +1,49 @@
 package com.danghuy.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "nhanvien")
 public class NhanVienEntity {
-    String tenNhanVien;
-    String diaChi;
-    int tuoi;
-    GiamDocEntity giamDocEntity;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int idNhanVien;
+    String hoTen;
+    /*private String diaChi;
+    private String gioiTinh;
+    private String CMND;
+    private String email;
+    private String tenDangNhap;
+    private String matKhau;*/
 
-    public NhanVienEntity() {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idChucVu")
+    ChucVuEntity chucVuEntity;
+
+    public ChucVuEntity getChucVuEntity() {
+        return chucVuEntity;
     }
 
-    public NhanVienEntity(String tenNhanVien, int tuoi) {
-        this.tenNhanVien = tenNhanVien;
-        this.tuoi = tuoi;
+    public void setChucVuEntity(ChucVuEntity chucVuEntity) {
+        this.chucVuEntity = chucVuEntity;
     }
 
-    public NhanVienEntity(String tenNhanVien, String diaChi, int tuoi) {
-        this.tenNhanVien = tenNhanVien;
-        this.diaChi = diaChi;
-        this.tuoi = tuoi;
+    public int getIdNhanVien() {
+        return idNhanVien;
     }
 
-    public NhanVienEntity(GiamDocEntity giamDocEntity) {
-        this.giamDocEntity = giamDocEntity;
+    public void setIdNhanVien(int idNhanVien) {
+        this.idNhanVien = idNhanVien;
     }
 
-    public void getThongBao() {
-        System.out.println("Result : " + getGiamDocEntity().toString());
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
     }
 
 
-    public GiamDocEntity getGiamDocEntity() {
-        return giamDocEntity;
-    }
 
-    public void setGiamDocEntity(GiamDocEntity giamDocEntity) {
-        this.giamDocEntity = giamDocEntity;
-    }
-
-    public String getTenNhanVien() {
-        return tenNhanVien;
-    }
-
-    public void setTenNhanVien(String tenNhanVien) {
-        this.tenNhanVien = tenNhanVien;
-    }
-
-    public String getDiaChi() {
-        return diaChi;
-    }
-
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
-    }
-
-    public int getTuoi() {
-        return tuoi;
-    }
-
-    public void setTuoi(int tuoi) {
-        this.tuoi = tuoi;
-    }
-
-    @Override
-    public String toString() {
-        return "Tên Nhân Viên : " + tenNhanVien +
-                ", Địa Chỉ : " + diaChi +
-                ", Tuổi : " + tuoi;
-    }
 }
