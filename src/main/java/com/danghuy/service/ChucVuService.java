@@ -1,6 +1,7 @@
 package com.danghuy.service;
 
 import com.danghuy.commons.conveter.EntityToPojo;
+import com.danghuy.commons.conveter.PojoToEntity;
 import com.danghuy.dao.ChucVuDAO;
 import com.danghuy.entity.ChucVuEntity;
 import com.danghuy.pojo.ChucVu;
@@ -15,9 +16,16 @@ public class ChucVuService {
     @Autowired
     EntityToPojo entityToPojo;
 
-    public ChucVu getChucVuByID(Integer id){
+    @Autowired
+    PojoToEntity pojoToEntity;
+
+    public ChucVu getChucVuByID(Integer id) {
         ChucVuEntity chucVuEntity = (ChucVuEntity) chucVuDAO.getTenChucVu(id);
         ChucVu chucVu = entityToPojo.convert(chucVuEntity);
         return chucVu;
+    }
+
+    public void addChucVu(int id, String tenChucVu) {
+        chucVuDAO.addChucVu(id, tenChucVu);
     }
 }

@@ -6,7 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="816fe4db-30ac-472e-8778-4af1268dd37c" name="Default Changelist" comment="Updates commit 12,&#10;Làm page Trang Chủ phần 3&#10;Làm phần container infor phía cuối img trangchu.">
+    <list default="true" id="816fe4db-30ac-472e-8778-4af1268dd37c" name="Default Changelist" comment="Updates commit 12,&#10;Làm page Trang Chủ,&#10;updates hiệu ứng scroll sử dụng WOW">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/PojoToEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/css/bootstrap-grid.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/css/bootstrap-grid.css.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" afterDir="false" />
@@ -27,14 +28,13 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.js.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/wow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/wow.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -91,24 +91,29 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="264" column="74" selection-start-line="264" selection-start-column="74" selection-end-line="264" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+            <state relative-caret-position="491">
+              <caret line="42" column="89" selection-start-line="42" selection-start-column="89" selection-end-line="42" selection-end-column="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#942#943#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -123,8 +128,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -138,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/GiamDocEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/CustomLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/NhanVienEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/styles.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" />
@@ -150,18 +154,20 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/IoC.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/pojo/ChucVu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/PojoToEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" />
       </list>
     </option>
   </component>
@@ -204,7 +210,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,6 +234,68 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="conveter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
@@ -291,6 +358,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -298,7 +366,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562447879717" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562525461552" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MiniShop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -563,6 +631,9 @@
       <workItem from="1562443588564" duration="300000" />
       <workItem from="1562443917696" duration="259000" />
       <workItem from="1562445062181" duration="2842000" />
+      <workItem from="1562447939543" duration="323000" />
+      <workItem from="1562469192673" duration="633000" />
+      <workItem from="1562521786651" duration="3683000" />
     </task>
     <task id="LOCAL-00001" summary="Update commit 1">
       <created>1561196522723</created>
@@ -865,17 +936,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562444160781</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Updates commit 12,&#10;Làm page Trang Chủ,&#10;updates hiệu ứng scroll sử dụng WOW">
+      <created>1562448137197</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1562448137197</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127813000" />
+    <option name="totallyTimeSpent" value="132452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26644295" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22416107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -915,7 +993,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit 7,&#10;Ví dụ về nhận tham số trên trình duyệt với PathVariable" />
     <MESSAGE value="Commit 8,&#10;Ví dụ về nhận tham số trên trình duyệt dưới dạng POST" />
     <MESSAGE value="Commit 9,&#10;Ví dụ về nhận tham số trên trình duyệt theo dạng chuẩn thường dùng" />
     <MESSAGE value="Updates commit 9,&#10;Ví dụ về nhận tham số dạng POST với ModelAttribute" />
@@ -940,11 +1017,10 @@
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần 3&#10;Làm phần container infor phía cuối img trangchu." />
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần 5&#10;Làm phần hiển thị sản phẩm trong danh mục sản phẩm hot" />
     <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ phần cuối&#10;Làm phần footer của page Trang Chủ,cơ bản hoàn tất page Trang Chủ chỉ cần load dữ liệu từ DB lên nữa là OK." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 12,&#10;Làm page Trang Chủ phần cuối&#10;Làm phần footer của page Trang Chủ,cơ bản hoàn tất page Trang Chủ chỉ cần load dữ liệu từ DB lên nữa là OK." />
+    <MESSAGE value="Updates commit 12,&#10;Làm page Trang Chủ,&#10;updates hiệu ứng scroll sử dụng WOW" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 12,&#10;Làm page Trang Chủ,&#10;updates hiệu ứng scroll sử dụng WOW" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login6.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login10.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/background-login11.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/oval.png" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/icon-fb.png" />
@@ -981,13 +1057,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/78373dd5-3647-4c2b-b57f-bad61a2ea792/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://78373dd5-3647-4c2b-b57f-bad61a2ea792/schema/dbminishop/table/nhanvien">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/IoC.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="553">
@@ -995,37 +1064,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://78373dd5-3647-4c2b-b57f-bad61a2ea792/schema/dbminishop/table/chucvu">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://78373dd5-3647-4c2b-b57f-bad61a2ea792/schema/dbminishop/table/test_chucvu">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,30 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/pojo/ChucVu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-          <folding>
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -1138,13 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1159,38 +1170,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery-3.4.1.min.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1229,20 +1208,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
+        <state relative-caret-position="2125">
           <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/animate.css">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="das://78373dd5-3647-4c2b-b57f-bad61a2ea792/schema/dbminishop/table/nhanvien">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="264" column="74" selection-start-line="264" selection-start-column="74" selection-end-line="264" selection-end-column="74" />
+        <state relative-caret-position="434">
+          <caret line="274" column="68" lean-forward="true" selection-start-line="272" selection-start-column="15" selection-end-line="274" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1250,6 +1236,114 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.1.Final/hibernate-core-5.4.1.Final.jar!/org/hibernate/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://78373dd5-3647-4c2b-b57f-bad61a2ea792/schema/dbminishop/table/chucvu">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/pojo/ChucVu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/PojoToEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChucVuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="42" column="89" selection-start-line="42" selection-start-column="89" selection-end-line="42" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chucvu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
         </state>
       </provider>
     </entry>

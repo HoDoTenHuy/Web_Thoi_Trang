@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EntityToPojo {
-    public ChucVu convert(ChucVuEntity chucVuEntity){
+    public ChucVu convert(ChucVuEntity chucVuEntity) {
         ChucVu chucVu = new ChucVu();
         chucVu.setId(chucVuEntity.getIdChucVu());
         chucVu.setTenChucVu(chucVuEntity.getTenChucVu());

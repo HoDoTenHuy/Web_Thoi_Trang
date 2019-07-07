@@ -12,5 +12,10 @@
 </head>
 <body>
     ${tenchucvu}
+    <form action="/chucvu" method="post">
+        <input name="idChucVu" class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
+        <textarea name="tenChucVu" rows="4" cols="50" placeholder="Nội Dung"></textarea>
+        <button class="material-primary-button">Gửi</button>
+    </form>
 </body>
 </html>
