@@ -26,4 +26,18 @@ public class ChucVuDAO {
         ChucVuEntity chucVuEntity = new ChucVuEntity(id, tenChucVu);
         session.save(chucVuEntity);
     }
+
+    public ChucVuEntity updatesChucVuByID(Integer id, String tenChucVuUpdate) {
+        Session session = sessionFactory.getCurrentSession().getSession();
+        ChucVuEntity chucVuEntity = getTenChucVu(id);
+        chucVuEntity.setTenChucVu(tenChucVuUpdate);
+        session.update(chucVuEntity);
+        return chucVuEntity;
+    }
+
+    public void deleteChucVuByID(Integer id){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        ChucVuEntity chucVuEntity = getTenChucVu(id);
+        session.delete(chucVuEntity);
+    }
 }

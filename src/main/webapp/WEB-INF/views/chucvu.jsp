@@ -17,5 +17,6 @@
         <textarea name="tenChucVu" rows="4" cols="50" placeholder="Nội Dung"></textarea>
         <button class="material-primary-button">Gửi</button>
     </form>
+    ${tenchucvuUpdate}
 </body>
 </html>

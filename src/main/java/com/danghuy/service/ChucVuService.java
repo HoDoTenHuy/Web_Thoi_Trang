@@ -28,4 +28,12 @@ public class ChucVuService {
     public void addChucVu(int id, String tenChucVu) {
         chucVuDAO.addChucVu(id, tenChucVu);
     }
+    public ChucVu updatesChucVuByID(Integer id, String tenChucVuUpdate){
+        ChucVuEntity chucVuEntity = chucVuDAO.updatesChucVuByID(id, tenChucVuUpdate);
+        ChucVu chucVu = entityToPojo.convert(chucVuEntity);
+        return chucVu;
+    }
+    public void deleteChucVu(Integer id){
+        chucVuDAO.deleteChucVuByID(id);
+    }
 }

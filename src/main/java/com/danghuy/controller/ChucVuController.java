@@ -21,8 +21,6 @@ import java.util.List;
 public class ChucVuController {
     private final ChucVuService chucVuService;
 
-    @Autowired
-    SessionFactory sessionFactory;
 
     @Autowired
     public ChucVuController(ChucVuService chucVuService) {
@@ -42,6 +40,19 @@ public class ChucVuController {
     @Transactional
     public String addChucVu(@RequestParam String tenChucVu, @RequestParam int idChucVu) {
         chucVuService.addChucVu(idChucVu, tenChucVu);
+        return "chucvu";
+    }
+
+
+    public String updatesChucVu(ModelMap modelMap) {
+        ChucVu chucVu = chucVuService.updatesChucVuByID(9, "HuyKZ");
+        modelMap.addAttribute("tenchucvuUpdate", chucVu.getTenChucVu());
+        return "chucvu";
+    }
+
+
+    public String deleteChucVu(){
+        chucVuService.deleteChucVu(10);
         return "chucvu";
     }
 }
