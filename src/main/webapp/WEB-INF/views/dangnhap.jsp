@@ -35,10 +35,10 @@
                     <span class="actived">Đăng Nhập</span> / <span>Đăng Ký</span>
                 </div>
 
-                <div>
-                    <form id="container-center-login-right">
-                        <input class="material-text-input input-icon-email" type="text" placeholder="Email"/><br/>
-                        <input class="material-text-input input-icon-password" type="password" placeholder="Password"/><br/>
+                <div id="container-center-login-right">
+                    <form action="" method="post">
+                        <input name="username" class="material-text-input input-icon-email" type="text" placeholder="Email"/><br/>
+                        <input name="password" class="material-text-input input-icon-password" type="password" placeholder="Password"/><br/>
                         <input class="material-primary-button" type="submit" value="ĐỒNG Ý"/><br/>
                     </form>
                 </div>

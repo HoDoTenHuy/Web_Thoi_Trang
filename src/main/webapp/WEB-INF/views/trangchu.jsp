@@ -50,13 +50,13 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">ĐĂNG NHẬP</a>
+                        <a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">ĐĂNG KÝ</a>
+                        <a class="nav-link" href="dangnhap/">ĐĂNG KÝ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">
+                        <a class="nav-link" href="#">
                             <img src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
                     </li>
                 </ul>
