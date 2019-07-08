@@ -9,10 +9,7 @@
         http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.danghuy.controller"/>
-    <context:component-scan base-package="com.danghuy.service"/>
-    <context:component-scan base-package="com.danghuy.dao"/>
-    <context:component-scan base-package="com.danghuy.entity"/>
+    <context:component-scan base-package="com.danghuy"/>
     <mvc:annotation-driven enable-matrix-variables="true" />
     <mvc:resources location="/resources/"
                    mapping="/resources/**"></mvc:resources>

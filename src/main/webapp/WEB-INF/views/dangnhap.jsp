@@ -22,11 +22,14 @@
                     <span id="hint-text-logo">Hãy Tạo Nên Phong Cách Của Bạn Cùng MiniShop!</span>
                 </div>
                 <div id="footer-left">
-                    <p class="oval-footer"><img alt="icon_oval" src='<c:url value="../../resources/images/icon-oval4.png" />'>
+                    <p class="icon-oval-footer oval-footer"><img alt="icon_oval" style="margin-bottom: 6px;"
+                             src='<c:url value="../../resources/images/icon-oval4.png" />'>
                         <span>Luôn cập nhật xướng thời trang mới nhất</span></p>
-                    <p class="oval-footer"><img alt="icon_oval" src='<c:url value="../../resources/images/icon-oval4.png" />'>
+                    <p class="icon-oval-footer oval-footer"><img alt="icon_oval" style="margin-bottom: 6px;"
+                             src='<c:url value="../../resources/images/icon-oval4.png" />'>
                          <span>Giảm hơn 50% tất cả các mặt hàng dành cho khách VIP</span></p>
-                    <p class="oval-footer"><img alt="icon_oval" src='<c:url value="../../resources/images/icon-oval4.png" />'>
+                    <p class="icon-oval-footer oval-footer"><img alt="icon_oval" style="margin-bottom: 6px;"
+                             src='<c:url value="../../resources/images/icon-oval4.png" />'>
                         <span>Tận tình tư vấn để tạo nên phong cách thời trang cho bạn</span></p>
                 </div>
             </div>
