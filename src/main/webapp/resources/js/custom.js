@@ -23,4 +23,17 @@ $(document).ready(function () {
             }
         })
     });
+    $("#container-dangky").hide();
+    $("#dangnhap").click(function () {
+        $("#container-dangky").hide();
+        $("#container-dangnhap").show();
+        $("#dangky").removeClass("actived");
+        $("#dangnhap").addClass("actived");
+    });
+    $("#dangky").click(function () {
+        $("#container-dangky").show();
+        $("#container-dangnhap").hide();
+        $("#dangnhap").removeClass("actived");
+        $("#dangky").addClass("actived");
+    });
 })

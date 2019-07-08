@@ -35,18 +35,28 @@
             </div>
             <div id="container-login-right">
                 <div id="header-top-right" class="header-login">
-                    <span class="actived">Đăng Nhập</span> / <span>Đăng Ký</span>
+                    <span class="actived" id="dangnhap">Đăng Nhập</span> / <span id="dangky">Đăng Ký</span>
                 </div>
 
                 <div id="container-center-login-right">
-                    <input id="username" name="username" class="material-text-input input-icon-email"
+                    <div id="container-dangnhap">
+                        <input id="username" name="username" class="material-text-input input-icon-email"
                                type="text" placeholder="Email"/><br/>
-                    <input id="password" name="password" class="material-text-input input-icon-password"
+                        <input id="password" name="password" class="material-text-input input-icon-password"
                                type="password" placeholder="Password"/><br/>
-                    <input id="btndangnhap" class="material-primary-button" type="submit" value="ĐỒNG Ý"/><br/>
+                        <input id="btndangnhap" class="material-primary-button" type="submit" value="ĐĂNG NHẬP"/><br/>
+                    </div>
+                    <div id="container-dangky">
+                        <input id="email" name="email" class="material-text-input input-icon-email"
+                               type="text" placeholder="Email"/><br/>
+                        <input id="matkhau" name="matkhau" class="material-text-input input-icon-password"
+                               type="password" placeholder="Mật Khẩu"/><br/>
+                        <input id="nhaplaimatkhau" name="nhaplaimatkhau" class="material-text-input input-icon-password"
+                               type="password" placeholder="Nhập Lại Mật Khẩu"/><br/>
+                        <input id="btndangky" class="material-primary-button" type="submit" value="ĐĂNG KÝ"/><br/>
+                    </div>
                 </div>
                 <span id="text-checklogin">${kiemtradangnhap}</span>
-                <span>${email}</span>
 
                 <div id="container-social-login">
                     <img alt="icon_fb" src='<c:url value="../../resources/images/icon_fb21.png"/> '/>

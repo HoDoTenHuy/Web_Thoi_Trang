@@ -76,6 +76,12 @@ html,body{
 #container-center-login-right input[type=text]{
     margin-bottom: 8px;
 }
+#nhaplaimatkhau{
+    margin-top: 8px;
+}
+#dangky, #dangnhap{
+    cursor: pointer;
+}
 #container-center-login-right input[type=submit]{
     margin-top: 24px;
     color: white;
@@ -255,4 +261,5 @@ html, body{
     text-align: center;
     border-radius: 48%;
     margin-top: -11px;
+    color: #e9cb30f0;
 }
