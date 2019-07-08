@@ -57,7 +57,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <img src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
+                            <img style="margin-top: -7px;"
+                                 src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
                     </li>
                 </ul>
             </div>

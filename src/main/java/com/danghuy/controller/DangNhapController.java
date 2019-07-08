@@ -4,6 +4,7 @@ import com.danghuy.service.impl.NhanVienServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,12 +28,12 @@ public class DangNhapController {
 
     @PostMapping
     @Transactional
-    public String xuLyDangNhap(@RequestParam String username, @RequestParam String password) {
+    public String xuLyDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap) {
         if (nhanVienServiceImpl.xuLyDangNhap(username, password)) {
             System.out.println("Login success!");
             return "redirect:/";
         } else {
-            System.out.println("Login failed!");
+            modelMap.addAttribute("kiemtradangnhap","Đăng Nhập Thất Bại!");
         }
         return "dangnhap";
     }

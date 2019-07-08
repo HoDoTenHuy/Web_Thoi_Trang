@@ -112,6 +112,12 @@ html,body{
     padding-left: 9%;
     font-size: 14px;
 }
+#text-checklogin{
+    margin-top: -145px;
+    text-align: center;
+    font-size: 25px;
+    color: currentColor;
+}
 /*End css cua page dang nhap*/
 .adtived-background{
     background: yellow !important;
