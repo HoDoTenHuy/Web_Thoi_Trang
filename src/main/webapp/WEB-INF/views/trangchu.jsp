@@ -48,13 +48,18 @@
                         <a class="nav-link disabled" href="#">LIÊN HỆ</a>
                     </li>
                 </ul>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dangnhap/">ĐĂNG KÝ</a>
-                    </li>
+                    <c:choose>
+                        <c:when test="${chuCaiDau != null}">
+                            <span id="logo-email">${chuCaiDau}</span>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="nav-item">
+                                <a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
+                            </li>
+                        </c:otherwise>
+                    </c:choose>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <img style="margin-top: -7px;"

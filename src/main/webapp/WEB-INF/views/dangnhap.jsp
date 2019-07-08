@@ -46,6 +46,7 @@
                     <input id="btndangnhap" class="material-primary-button" type="submit" value="ĐỒNG Ý"/><br/>
                 </div>
                 <span id="text-checklogin">${kiemtradangnhap}</span>
+                <span>${email}</span>
 
                 <div id="container-social-login">
                     <img alt="icon_fb" src='<c:url value="../../resources/images/icon_fb21.png"/> '/>

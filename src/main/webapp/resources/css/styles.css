@@ -247,3 +247,12 @@ html, body{
 .title-footer{
     font-size: 32px;
 }
+#logo-email{
+    font-size: 32px;
+    background: #f6f5f3;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 48%;
+    margin-top: -11px;
+}

@@ -4,17 +4,25 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/")
 public class TrangChuController {
-    @Autowired
-    SessionFactory sessionFactory;
 
     @GetMapping
     @Transactional
-    public String pageDefault() {
+    public String pageDefault(ModelMap modelMap, HttpSession httpSession){
+        if(httpSession.getAttribute("email") != null){
+            String email = (String) httpSession.getAttribute("email");
+            String chuCaiDau = email.substring(0 , 1).toUpperCase();
+            modelMap.addAttribute("chuCaiDau", chuCaiDau);
+
+        }
+
         return "trangchu";
     }
 
