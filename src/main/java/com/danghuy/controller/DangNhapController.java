@@ -9,18 +9,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("dangnhap/")
-public class DangNhapController{
+public class DangNhapController {
 
     @GetMapping
-    public String pageDefault(){
+    public String pageDefault() {
 
         return "dangnhap";
     }
+
     @PostMapping
-    public String xuLyDangNhap(@RequestParam String username, @RequestParam String password){
-        if(username.equals("danghuy998") && password.equals("123456")){
+    public String xuLyDangNhap(@RequestParam String username, @RequestParam String password) {
+        if (username.equals("danghuy998") && password.equals("123456")) {
             return "redirect:/";
-        }else
-        return "dangnhap";
+        } else
+            return "dangnhap";
     }
 }
