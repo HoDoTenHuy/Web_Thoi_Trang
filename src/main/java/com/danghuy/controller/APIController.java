@@ -6,29 +6,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("dangnhap/")
-public class DangNhapController {
+@RequestMapping("api/")
+public class APIController {
     private final NhanVienServiceImpl nhanVienServiceImpl;
 
     @Autowired
-    public DangNhapController(NhanVienServiceImpl nhanVienServiceImpl) {
+    public APIController(NhanVienServiceImpl nhanVienServiceImpl) {
         this.nhanVienServiceImpl = nhanVienServiceImpl;
     }
 
-    @GetMapping
-    public String pageDefault() {
-
-        return "dangnhap";
-    }
-
-    @PostMapping
+    @GetMapping("kiemtradangnhap")
+    @ResponseBody
     @Transactional
-    public String xuLyDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap) {
-        return "trangchu";
+    public String kiemTraDangNhap(@RequestParam String username, @RequestParam String password){
+        boolean kiemTra = nhanVienServiceImpl.xuLyDangNhap(username, password);
+
+        return kiemTra+"";
     }
 }

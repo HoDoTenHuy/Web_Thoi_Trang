@@ -39,11 +39,11 @@
                 </div>
 
                 <div id="container-center-login-right">
-                    <form action="" method="post">
-                        <input name="username" class="material-text-input input-icon-email" type="text" placeholder="Email"/><br/>
-                        <input name="password" class="material-text-input input-icon-password" type="password" placeholder="Password"/><br/>
-                        <input class="material-primary-button" type="submit" value="ĐỒNG Ý"/><br/>
-                    </form>
+                    <input id="username" name="username" class="material-text-input input-icon-email"
+                               type="text" placeholder="Email"/><br/>
+                    <input id="password" name="password" class="material-text-input input-icon-password"
+                               type="password" placeholder="Password"/><br/>
+                    <input id="btndangnhap" class="material-primary-button" type="submit" value="ĐỒNG Ý"/><br/>
                 </div>
                 <span id="text-checklogin">${kiemtradangnhap}</span>
 
