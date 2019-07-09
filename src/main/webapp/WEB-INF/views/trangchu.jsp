@@ -62,7 +62,7 @@
                     </c:choose>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <img style="margin-top: -7px;"
+                            <img id="icon-shopping-cart"
                                  src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
                     </li>
                 </ul>
