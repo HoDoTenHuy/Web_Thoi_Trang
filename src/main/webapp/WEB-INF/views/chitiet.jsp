@@ -80,8 +80,8 @@
                              src='<c:url value="../../resources/images/sanpham/ao_ho_nguc.jpg" />'>
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <h3>Áo Hở Ngực</h3>
-                        <h4>200.000 VNĐ</h4>
+                        <h3>${chiTietSanPham.tenSanPham}</h3>
+                        <h4>${chiTietSanPham.giaTien}</h4>
                         <table style="width:100%">
                             <tr>
                                 <th>Màu</th>
@@ -90,24 +90,25 @@
                                 <th></th>
                             </tr>
                             <tr>
-                                <td>Màu Xanh Dương</td>
+                                <td>${chiTietSanPham.chiTietSanPhamEntities}</td>
                                 <td>22</td>
                                 <td>Thêm vào giỏ hàng</td>
                                 <td>Mua ngay</td>
                             </tr>
+                            <c:forEach var = "sanpham" items="${chiTietSanPham.chiTietSanPhamEntities}">
+                                <tr>
+                                    <td>${sanpham.mauSanPhamEntity.tenMau}</td>
+                                    <td>${sanpham.soLuong}</td>
+                                    <td>Thêm vào giỏ hàng</td>
+                                    <td>Mua ngay</td>
+                                </tr>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>
             </div>
             <div class="col-sm-2 col-md-2">
-                <span>
-                    Nhìn những cô gái tự tin diện váy dài dạo phố đi chơi,
-                    hẳn bạn sẽ nghĩ đó phải là những cô nàng cao ráo hoặc thật mảnh mai.<br/>
-                    Nếu bạn thử một lần khoác lên mình item này, suy nghĩ đó của bạn sẽ biến mất.
-                    Bạn sẽ thấy rằngváy dài thực ra không hề kén dáng. Dù bạn chỉ cao ngoài 1m50 chút xíu,
-                    bạn vẫn có thể vô tư diện item này. Không thể nói rằng bạn sẽ đẹp như các model trên tạp chí
-                    nhưng chắc chắn bạn sẽ tạm thời quên đi chiều cao vốn không phải lợi thế của mình.
-                </span>
+                <span>${chiTietSanPham.moTa}</span>
             </div>
         </div>
     </div>

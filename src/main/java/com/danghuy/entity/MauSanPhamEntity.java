@@ -25,4 +25,9 @@ public class MauSanPhamEntity {
     public void setTenMau(String tenMau) {
         this.tenMau = tenMau;
     }
+
+    @Override
+    public String toString() {
+        return "tenMau :" + tenMau;
+    }
 }

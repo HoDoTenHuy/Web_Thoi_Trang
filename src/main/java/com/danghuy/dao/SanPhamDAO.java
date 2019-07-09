@@ -17,11 +17,17 @@ public class SanPhamDAO {
 
     public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi){
         Session session = sessionFactory.getCurrentSession().getSession();
-        String hql = "FROM SanPhamEntity";
+        String hql = "from SanPhamEntity";
         Query query = session.createQuery(hql);
         query.setFirstResult(spDau);
         query.setMaxResults(20);
         List<SanPhamEntity> sanPhamEntities = ((org.hibernate.query.Query) query).list();
         return sanPhamEntities;
+    }
+    public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        String hql = "from SanPhamEntity where idSanPham = '"+ idSanPham +"'";
+        SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).getSingleResult();
+        return sanPhamEntity;
     }
 }

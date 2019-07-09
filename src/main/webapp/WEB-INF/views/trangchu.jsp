@@ -100,7 +100,7 @@
         <div class="row" style="margin-top: 42px">
             <c:forEach var = "sanpham" items="${sanPhamList}">
                 <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                    <a href="chitiet?masanpham=${sanpham.idSanPham}">
+                    <a href="chitiet/${sanpham.idSanPham}">
                         <div class="sanpham wow pulse">
                             <img class="card-img-top sanpham-size"
                                  src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'alt="hinh">

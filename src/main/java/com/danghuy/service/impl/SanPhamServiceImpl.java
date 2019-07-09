@@ -16,4 +16,8 @@ public class SanPhamServiceImpl implements SanPhamService {
     public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi){
         return sanPhamDAO.laySanPhamLimit(spDau, spCuoi);
     }
+
+    public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham) {
+        return sanPhamDAO.layDanhSachSanPhamTheoID(idSanPham);
+    }
 }
