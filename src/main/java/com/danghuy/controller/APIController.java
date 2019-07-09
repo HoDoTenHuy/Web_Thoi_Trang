@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("api/")
-@SessionAttributes("email")
+@SessionAttributes("user")
 public class APIController {
     private final NhanVienServiceImpl nhanVienServiceImpl;
 
@@ -23,7 +23,7 @@ public class APIController {
     @Transactional
     public String kiemTraDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap){
         boolean kiemTra = nhanVienServiceImpl.xuLyDangNhap(username, password);
-        modelMap.addAttribute("email", username);
+        modelMap.addAttribute("user", username);
         return kiemTra+"";
     }
 }

@@ -47,13 +47,15 @@
                         <input id="btndangnhap" class="material-primary-button" type="submit" value="ĐĂNG NHẬP"/><br/>
                     </div>
                     <div id="container-dangky">
-                        <input id="email" name="email" class="material-text-input input-icon-email"
-                               type="text" placeholder="Email"/><br/>
-                        <input id="matkhau" name="matkhau" class="material-text-input input-icon-password"
-                               type="password" placeholder="Mật Khẩu"/><br/>
-                        <input id="nhaplaimatkhau" name="nhaplaimatkhau" class="material-text-input input-icon-password"
-                               type="password" placeholder="Nhập Lại Mật Khẩu"/><br/>
-                        <input id="btndangky" class="material-primary-button" type="submit" value="ĐĂNG KÝ"/><br/>
+                        <form action="" method="post">
+                            <input id="email" name="email" class="material-text-input input-icon-email"
+                                   type="text" placeholder="Email"/><br/>
+                            <input id="matkhau" name="matKhau" class="material-text-input input-icon-password"
+                                   type="password" placeholder="Mật Khẩu"/><br/>
+                            <input id="nhaplaimatkhau" name="nhapLaiMatKhau" class="material-text-input input-icon-password"
+                                   type="password" placeholder="Nhập Lại Mật Khẩu"/><br/>
+                            <input id="btndangky" class="material-primary-button" type="submit" value="ĐĂNG KÝ"/><br/>
+                        </form>
                     </div>
                 </div>
                 <span id="text-checklogin">${kiemtradangnhap}</span>

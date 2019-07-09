@@ -16,8 +16,8 @@ public class TrangChuController {
     @GetMapping
     @Transactional
     public String pageDefault(ModelMap modelMap, HttpSession httpSession){
-        if(httpSession.getAttribute("email") != null){
-            String email = (String) httpSession.getAttribute("email");
+        if(httpSession.getAttribute("user") != null){
+            String email = (String) httpSession.getAttribute("user");
             String chuCaiDau = email.substring(0 , 1).toUpperCase();
             modelMap.addAttribute("chuCaiDau", chuCaiDau);
 

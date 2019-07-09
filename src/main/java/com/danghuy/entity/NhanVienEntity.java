@@ -24,6 +24,20 @@ public class NhanVienEntity {
     @JoinColumn(name = "idChucVu")
     ChucVuEntity chucVuEntity;
 
+    public NhanVienEntity(String email, String matKhau) {
+        this.email = email;
+        this.matKhau = matKhau;
+    }
+
+    public NhanVienEntity() {
+    }
+
+    public NhanVienEntity(String email, String matKhau, ChucVuEntity chucVuEntity) {
+        this.email = email;
+        this.matKhau = matKhau;
+        this.chucVuEntity = chucVuEntity;
+    }
+
     public ChucVuEntity getChucVuEntity() {
         return chucVuEntity;
     }

@@ -8,6 +8,7 @@ $(document).ready(function () {
     $("#btndangnhap").click(function () {
         var email = $("#username").val();
         var matkhau = $("#password").val();
+
         $.ajax({
             url : "/api/kiemtradangnhap",
             type : "GET",

@@ -276,4 +276,5 @@ html, body{
     border-radius: 48%;
     margin-top: -11px;
     color: #e9cb30f0;
+    cursor: pointer;
 }

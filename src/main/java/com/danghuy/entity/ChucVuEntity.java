@@ -14,6 +14,7 @@ public class ChucVuEntity {
     public ChucVuEntity() {
     }
 
+
     public int getIdChucVu() {
         return idChucVu;
     }

@@ -15,6 +15,11 @@ public class NhanVien {
     public NhanVien() {
     }
 
+    public NhanVien(String email, String matKhau) {
+        this.email = email;
+        this.matKhau = matKhau;
+    }
+
     public NhanVien(int idNhanVien, String hoTen, String diaChi, String gioiTinh, String CMND, String email,
                     String tenDangNhap, String matKhau) {
         this.idNhanVien = idNhanVien;
