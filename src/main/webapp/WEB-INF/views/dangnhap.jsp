@@ -59,7 +59,6 @@
                     </div>
                 </div>
                 <span id="text-checklogin">${kiemtradangnhap}</span>
-
                 <div id="container-social-login">
                     <img alt="icon_fb" src='<c:url value="../../resources/images/icon_fb21.png"/> '/>
                     <img alt="icon_gg" src='<c:url value="../../resources/images/icon_google3.png" />'/>

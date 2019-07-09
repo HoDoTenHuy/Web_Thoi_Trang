@@ -98,167 +98,19 @@
     <div class="title-sanpham container">
         <div class="wow rollIn"><span>SẢN PHẨM HOT</span></div>
         <div class="row" style="margin-top: 42px">
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size"
-                         src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+            <c:forEach var = "sanpham" items="${sanPhamList}">
+                <div class="card col-md-3 col-sm-6" style="width: 44rem;">
+                    <div class="sanpham wow pulse">
+                        <img class="card-img-top sanpham-size"
+                             src='<c:url value="/resources/images/${sanpham.hinhSanPham}"/>'alt="hinh">
+                        <div class="card-body">
+                            <h5 class="card-title">${sanpham.tenSanPham}</h5>
+                            <p class="card-text">${sanpham.giaTien} VNĐ</p>
+                            <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                <div class="sanpham wow pulse">
-                    <img class="card-img-top sanpham-size" src='<c:url value="/resources/images/san_pham.jpg"/>'alt="hinh">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên Sản Phẩm</h5>
-                        <p class="card-text">Giá Tiền</p>
-                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
     <div id="footer" class="container-fluid">

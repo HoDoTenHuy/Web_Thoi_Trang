@@ -1,5 +1,7 @@
 package com.danghuy.controller;
 
+import com.danghuy.entity.SanPhamEntity;
+import com.danghuy.service.SanPhamService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,10 +10,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class TrangChuController {
+    @Autowired
+    SanPhamService sanPhamService;
 
     @GetMapping
     @Transactional
@@ -22,7 +27,8 @@ public class TrangChuController {
             modelMap.addAttribute("chuCaiDau", chuCaiDau);
 
         }
-
+        List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0, 20);
+        modelMap.addAttribute("sanPhamList", sanPhamEntities);
         return "trangchu";
     }
 
