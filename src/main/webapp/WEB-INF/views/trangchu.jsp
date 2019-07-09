@@ -17,7 +17,7 @@
 <body>
     <div id="header" class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light none-nav">
-            <a class="navbar-brand" href="#"><img src='<c:url value="../../resources/images/logo-yame-shop.png"/>'></a>
+            <a class="navbar-brand" href="/"><img src='<c:url value="../../resources/images/logo-yame-shop.png"/>'></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -100,15 +100,17 @@
         <div class="row" style="margin-top: 42px">
             <c:forEach var = "sanpham" items="${sanPhamList}">
                 <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                    <div class="sanpham wow pulse">
-                        <img class="card-img-top sanpham-size"
-                             src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'alt="hinh">
-                        <div class="card-body">
-                            <h5 class="card-title">${sanpham.tenSanPham}</h5>
-                            <p class="card-text">${sanpham.giaTien} VNĐ</p>
-                            <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    <a href="chitiet?masanpham=${sanpham.idSanPham}">
+                        <div class="sanpham wow pulse">
+                            <img class="card-img-top sanpham-size"
+                                 src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'alt="hinh">
+                            <div class="card-body">
+                                <h5 class="card-title">${sanpham.tenSanPham}</h5>
+                                <p class="card-text">${sanpham.giaTien} VNĐ</p>
+                                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </c:forEach>
         </div>
