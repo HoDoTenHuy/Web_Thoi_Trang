@@ -77,28 +77,24 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-4">
                         <img alt="" style="max-width: 100%;"
-                             src='<c:url value="../../resources/images/sanpham/ao_ho_nguc.jpg" />'>
+                             src='<c:url value="../../resources/images/sanpham/${chiTietSanPham.hinhSanPham}" />'>
                     </div>
                     <div class="col-sm-8 col-md-8">
                         <h3>${chiTietSanPham.tenSanPham}</h3>
                         <h4>${chiTietSanPham.giaTien}</h4>
-                        <table style="width:100%">
+                        <table style="width:100%;">
                             <tr>
                                 <th>Màu</th>
                                 <th>Số Lượng</th>
+                                <th>Size</th>
                                 <th></th>
                                 <th></th>
-                            </tr>
-                            <tr>
-                                <td>${chiTietSanPham.chiTietSanPhamEntities}</td>
-                                <td>22</td>
-                                <td>Thêm vào giỏ hàng</td>
-                                <td>Mua ngay</td>
                             </tr>
                             <c:forEach var = "sanpham" items="${chiTietSanPham.chiTietSanPhamEntities}">
                                 <tr>
                                     <td>${sanpham.mauSanPhamEntity.tenMau}</td>
                                     <td>${sanpham.soLuong}</td>
+                                    <td>${sanpham.sizeSanPhamEntity.size}</td>
                                     <td>Thêm vào giỏ hàng</td>
                                     <td>Mua ngay</td>
                                 </tr>
