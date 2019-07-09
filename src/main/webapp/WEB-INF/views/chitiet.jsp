@@ -64,7 +64,7 @@
         </nav>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 20px;">
             <div class="col-sm-2 col-md-2">
                 <h3>Danh Mục Sản Phẩm</h3>
                 <ul>
@@ -95,8 +95,14 @@
                                     <td>${sanpham.mauSanPhamEntity.tenMau}</td>
                                     <td>${sanpham.soLuong}</td>
                                     <td>${sanpham.sizeSanPhamEntity.size}</td>
-                                    <td>Thêm vào giỏ hàng</td>
-                                    <td>Mua ngay</td>
+                                    <td><a href="">
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            <span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ Hàng
+                                        </button>
+                                    </a> </td>
+                                    <td><a href="#" class="btn btn-info btn-lg" style="font-size: 0.75rem;">
+                                        <span class="glyphicon glyphicon-plus-sign"></span>Thanh Toán
+                                    </a></td>
                                 </tr>
                             </c:forEach>
                         </table>
