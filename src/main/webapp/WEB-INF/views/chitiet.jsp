@@ -1,12 +1,6 @@
 <%@ page import="com.danghuy.entity.NhanVienEntity" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %><%--
-  Created by IntelliJ IDEA.
-  User: OS
-  Date: 6/22/2019
-  Time: 3:32 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -15,12 +9,12 @@
     <jsp:include page="header.jsp"/>
 </head>
 <body>
-    <div id="header" class="container-fluid">
+    <div id="header-chitiet" class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light none-nav">
             <a class="navbar-brand" href="#"><img src='<c:url value="../../resources/images/logo-yame-shop.png"/>'></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -31,7 +25,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
-                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             SẢN PHẨM
                         </a>
                         <div class="dropdown-menu">
@@ -63,56 +57,61 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <img id="icon-shopping-cart"
-                                 src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
+                             src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="event-header container wow flipInX" data-wow-duration="0.6s">
-            <span>Ngày 17/10 - 23/10/2017</span><br/>
-            <span id="event-header-span2">Mua 1 Tặng 1</span><br/>
-            <button>Xem Ngay</button>
-        </div>
     </div>
-    <div id="container-infor" class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-4 col-md-4 col-xl-4 wow bounceInLeft" data-wow-duration="1.15s">
-                <img class="img-size" src='<c:url value="../../resources/images/icon-chatluong.png" />'><br/>
-                <span class="text-size">CHẤT LƯỢNG</span><br/>
-                <span>Chúng tôi cam kết sẽ mang lại cho các bạn chất lượng sản phẩm tốt nhất</span>
+            <div class="col-sm-2 col-md-2">
+                <h3>Danh Mục Sản Phẩm</h3>
+                <ul>
+                    <li>Áo sơ mi</li>
+                    <li>Quần nam</li>
+                    <li>Quần nữ</li>
+                </ul>
             </div>
-            <div class="col-12 col-sm-4 col-md-4 col-xl-4 wow bounceInUp" data-wow-duration="1.15s"
-                 data-wow-delay="0.5s">
-                <img class="img-size" src='<c:url value="../../resources/images/icon_tietkiem.png" />'><br/>
-                <span class="text-size">TIẾT KIỆM CHI PHÍ</span><br/>
-                <span>Cam kết rẻ nhất Việt Nam giúp các bạn tiết kiệm hơn 20% cho từng sản phẩm</span>
-            </div>
-            <div class="col-12 col-sm-4 col-md-4 col-xl-4 wow bounceInRight" data-wow-duration="1.15s"
-                 data-wow-delay="1.65s">
-                <img class="img-size" src='<c:url value="../../resources/images/icon_giaohang.png" />'><br/>
-                <span class="text-size">GIAO HÀNG</span><br/>
-                <span>Cam kết giao hàng tận nơi trong ngày. Để mang sản phẩm đến cho khách hàng nhanh nhất</span>
-            </div>
-        </div>
-    </div>
-    <div class="title-sanpham container">
-        <div class="wow rollIn"><span>SẢN PHẨM HOT</span></div>
-        <div class="row" style="margin-top: 42px">
-            <c:forEach var = "sanpham" items="${sanPhamList}">
-                <div class="card col-md-3 col-sm-6" style="width: 44rem;">
-                    <div class="sanpham wow pulse">
-                        <img class="card-img-top sanpham-size"
-                             src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'alt="hinh">
-                        <div class="card-body">
-                            <h5 class="card-title">${sanpham.tenSanPham}</h5>
-                            <p class="card-text">${sanpham.giaTien} VNĐ</p>
-                            <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                        </div>
+            <div class="col-sm-8 col-md-8">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <img alt="" style="max-width: 100%;"
+                             src='<c:url value="../../resources/images/sanpham/ao_ho_nguc.jpg" />'>
+                    </div>
+                    <div class="col-sm-8 col-md-8">
+                        <h3>Áo Hở Ngực</h3>
+                        <h4>200.000 VNĐ</h4>
+                        <table style="width:100%">
+                            <tr>
+                                <th>Màu</th>
+                                <th>Số Lượng</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Màu Xanh Dương</td>
+                                <td>22</td>
+                                <td>Thêm vào giỏ hàng</td>
+                                <td>Mua ngay</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-            </c:forEach>
+            </div>
+            <div class="col-sm-2 col-md-2">
+                <span>
+                    Nhìn những cô gái tự tin diện váy dài dạo phố đi chơi,
+                    hẳn bạn sẽ nghĩ đó phải là những cô nàng cao ráo hoặc thật mảnh mai.<br/>
+                    Nếu bạn thử một lần khoác lên mình item này, suy nghĩ đó của bạn sẽ biến mất.
+                    Bạn sẽ thấy rằngváy dài thực ra không hề kén dáng. Dù bạn chỉ cao ngoài 1m50 chút xíu,
+                    bạn vẫn có thể vô tư diện item này. Không thể nói rằng bạn sẽ đẹp như các model trên tạp chí
+                    nhưng chắc chắn bạn sẽ tạm thời quên đi chiều cao vốn không phải lợi thế của mình.
+                </span>
+            </div>
         </div>
     </div>
+
     <div id="footer" class="container-fluid">
         <div class="row">
             <div class="col-sm-4 col-md-4 wow rotateInUpRight">
@@ -137,3 +136,4 @@
 </body>
 <jsp:include page="footer.jsp"/>
 </html>
+

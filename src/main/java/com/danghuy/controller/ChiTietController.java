@@ -9,16 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/chitiet")
 public class ChiTietController {
     @GetMapping
     public String pageDefault(){
-        return "login";
+        return "chitiet";
     }
 
-    @PostMapping
-    public String showInforUser(@ModelAttribute NhanVienEntity nhanVien, ModelMap modelMap){
-        modelMap.addAttribute("nv", nhanVien);
-        return "login";
-    }
 }
