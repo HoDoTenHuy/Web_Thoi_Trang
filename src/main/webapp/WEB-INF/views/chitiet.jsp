@@ -77,26 +77,29 @@
                              src='<c:url value="../../resources/images/sanpham/${chiTietSanPham.hinhSanPham}" />'>
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <h2>${chiTietSanPham.tenSanPham}</h2>
-                        <h4 style="color: red">${chiTietSanPham.giaTien} VNĐ</h4>
+                        <h2 id="tensp">${chiTietSanPham.tenSanPham}</h2>
+                        <h4 id="giatien" data-value="${chiTietSanPham.giaTien}"
+                            style="color: red">${chiTietSanPham.giaTien} VNĐ</h4>
                         <table style="width:100%;">
                             <tr>
                                 <th>Màu</th>
-                                <th>Số Lượng</th>
                                 <th>Size</th>
+                                <th>Số Lượng</th>
                                 <th></th>
                                 <th></th>
                             </tr>
                             <c:forEach var = "sanpham" items="${chiTietSanPham.chiTietSanPhamEntities}">
                                 <tr>
-                                    <td>${sanpham.mauSanPhamEntity.tenMau}</td>
-                                    <td>${sanpham.soLuong}</td>
-                                    <td>${sanpham.sizeSanPhamEntity.size}</td>
-                                    <td><a href="">
-                                        <button type="button" class="btn btn-default btn-sm">
+                                    <td class="mau" data-mamau="${sanpham.mauSanPhamEntity.idMau}">
+                                            ${sanpham.mauSanPhamEntity.tenMau}</td>
+                                    <td class="size" data-masize="${sanpham.sizeSanPhamEntity.idSize}">
+                                            ${sanpham.sizeSanPhamEntity.size}</td>
+                                    <td class="soluong" data-soluong="sanpham.soLuong">${sanpham.soLuong}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-sm btn-giohang">
                                             <span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ Hàng
                                         </button>
-                                    </a> </td>
+                                    </td>
                                     <td><a href="#" class="btn btn-info btn-lg" style="font-size: 0.75rem;">
                                         <span class="glyphicon glyphicon-plus-sign"></span>Thanh Toán
                                     </a></td>
