@@ -89,15 +89,16 @@
                         <td>${sanpham.tenSP}</td>
                         <td>${sanpham.tenMau}</td>
                         <td>${sanpham.tenSize}</td>
-                        <td><input type="number" value="${sanpham.soLuong}"/></td>
-                        <td>${sanpham.giaTien * sanpham.soLuong}00 VNĐ</td>
+                        <td><input class="soluong-giohang" type="number"  min="1"
+                                   value="${sanpham.soLuong}"/></td>
+                        <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
                         <td class="btn btn-default btn-sm btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Remove
                         </td>
                     </tr>
                 </c:forEach>
             </table>
-            <h4>Tổng tiền : </h4>
+            <h4 ->Tổng tiền : <span id="tongtien"></span></h4>
         </div>
         <div class="col-md-6 col-sm-12">
             <h3>Thông Tin Người Mua / Nhận Hàng :</h3>

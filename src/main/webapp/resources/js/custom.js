@@ -72,4 +72,28 @@ $(document).ready(function () {
             })
         })
     });
-})
+
+    gantongtiengiohang();
+    function gantongtiengiohang(isEventChange){
+        var tongtiensp = 0;
+        $(".giatien").each(function () {
+            var giatien = $(this).text();
+            var format = parseInt(giatien);
+            tongtiensp = tongtiensp + parseFloat(format);
+            if(!isEventChange){
+                $(this).html(format + ".000 VNĐ");
+            }
+            var formattongtien = parseInt(tongtiensp).toFixed(3).replace(/(\d)(?=(\d{3})+\.)/g,
+                "$1.").toString();
+            $("#tongtien").html(formattongtien + " VNĐ");
+        });
+    }
+    $(".soluong-giohang").change(function () {
+        var soluong = $(this).val();
+        var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
+        var tongtien = soluong * parseInt(giatien);
+        var format = tongtien;
+        $(this).closest("tr").find(".giatien").html(format + ".000 VNĐ");
+        gantongtiengiohang(true);
+    });
+});
