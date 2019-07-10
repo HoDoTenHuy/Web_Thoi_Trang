@@ -1,6 +1,3 @@
-<%@ page import="com.danghuy.entity.NhanVienEntity" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -66,11 +63,11 @@
     <div class="container">
         <div class="row" style="margin-top: 20px;">
             <div class="col-sm-2 col-md-2">
-                <h3>Danh Mục Sản Phẩm</h3>
-                <ul>
-                    <li>Áo sơ mi</li>
-                    <li>Quần nam</li>
-                    <li>Quần nữ</li>
+                <h3 style="margin: 0;">Danh Mục Sản Phẩm</h3>
+                <ul class="my-menu">
+                    <c:forEach var = "danhMuc" items="${listDanhMuc}">
+                        <li><a href="#">${danhMuc.tenDanhMuc}</a></li>
+                    </c:forEach>
                 </ul>
             </div>
             <div class="col-sm-8 col-md-8">
@@ -80,8 +77,8 @@
                              src='<c:url value="../../resources/images/sanpham/${chiTietSanPham.hinhSanPham}" />'>
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <h3>${chiTietSanPham.tenSanPham}</h3>
-                        <h4>${chiTietSanPham.giaTien}</h4>
+                        <h2>${chiTietSanPham.tenSanPham}</h2>
+                        <h4 style="color: red">${chiTietSanPham.giaTien} VNĐ</h4>
                         <table style="width:100%;">
                             <tr>
                                 <th>Màu</th>
@@ -110,7 +107,8 @@
                 </div>
             </div>
             <div class="col-sm-2 col-md-2">
-                <span>${chiTietSanPham.moTa}</span>
+                <h3>Mô Tả</h3>
+                <span style="font-size: 16px;">${chiTietSanPham.moTa}</span>
             </div>
         </div>
     </div>
