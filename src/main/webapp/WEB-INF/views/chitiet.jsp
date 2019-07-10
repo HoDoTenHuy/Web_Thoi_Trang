@@ -52,7 +52,7 @@
                         </c:otherwise>
                     </c:choose>
                     <li id="giohang" class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="../giohang/">
                             <img id="icon-shopping-cart"
                              src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'>
                             <c:if test = "${sosanpham == null}">
@@ -111,7 +111,7 @@
                                             <span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ Hàng
                                         </button>
                                     </td>
-                                    <td><a href="#" class="btn btn-info btn-lg" style="font-size: 0.75rem;">
+                                    <td><a href="../giohang/" class="btn btn-info btn-lg" style="font-size: 0.75rem;">
                                         <span class="glyphicon glyphicon-plus-sign"></span>Thanh Toán
                                     </a></td>
                                 </tr>

@@ -61,7 +61,7 @@
                         </c:otherwise>
                     </c:choose>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="giohang/">
                             <img id="icon-shopping-cart"
                                  src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'>
                                 <c:if test = "${sosanpham == null}">
