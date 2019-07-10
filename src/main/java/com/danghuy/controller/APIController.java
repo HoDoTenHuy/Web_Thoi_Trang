@@ -59,6 +59,17 @@ public class APIController {
 
     }
 
+    @GetMapping("laysoluonggiohang")
+    @ResponseBody
+    public String laySoLuongGioHang(HttpSession httpSession){
+        if(httpSession.getAttribute("cart") != null){
+            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
+            int soSanPham = gioHangs.size();
+            return soSanPham + "";
+        }
+        return "";
+    }
+
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
         List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
         for (int i = 0; i < list.size(); i++) {

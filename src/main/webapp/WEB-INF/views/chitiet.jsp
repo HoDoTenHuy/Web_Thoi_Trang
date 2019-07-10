@@ -8,7 +8,7 @@
 <body>
     <div id="header-chitiet" class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light none-nav">
-            <a class="navbar-brand" href="#"><img src='<c:url value="../../resources/images/logo-yame-shop.png"/>'></a>
+            <a class="navbar-brand" href="/"><img src='<c:url value="../../resources/images/logo-yame-shop.png"/>'></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto navbar-center">
                     <li class="nav-item actived">
-                        <a class="nav-link" href="#">TRANG CHỦ</a>
+                        <a class="nav-link" href="/">TRANG CHỦ</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
@@ -51,10 +51,21 @@
                             </li>
                         </c:otherwise>
                     </c:choose>
-                    <li class="nav-item">
+                    <li id="giohang" class="nav-item">
                         <a class="nav-link" href="#">
                             <img id="icon-shopping-cart"
-                             src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
+                             src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'>
+                            <c:if test = "${sosanpham == null}">
+                                <div>
+                                    <span>${sosanpham}</span>
+                                </div>
+                            </c:if>
+                            <c:if test = "${sosanpham != null}">
+                                <div class="circle-giohang">
+                                    <span>${sosanpham}</span>
+                                </div>
+                            </c:if>
+                        </a>
                     </li>
                 </ul>
             </div>

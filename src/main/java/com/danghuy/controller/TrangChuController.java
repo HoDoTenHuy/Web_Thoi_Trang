@@ -1,5 +1,6 @@
 package com.danghuy.controller;
 
+import com.danghuy.entity.GioHang;
 import com.danghuy.entity.SanPhamEntity;
 import com.danghuy.service.SanPhamService;
 import org.hibernate.SessionFactory;
@@ -29,6 +30,12 @@ public class TrangChuController {
         }
         List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0, 20);
         modelMap.addAttribute("sanPhamList", sanPhamEntities);
+
+        if(httpSession.getAttribute("cart") != null){
+            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
+            int soSanPham = gioHangs.size();
+            modelMap.addAttribute("sosanpham", soSanPham);
+        }
         return "trangchu";
     }
 

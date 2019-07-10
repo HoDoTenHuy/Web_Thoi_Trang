@@ -61,6 +61,15 @@ $(document).ready(function () {
             },
             success : function (value) {
             }
+        }).done(function () {
+            $.ajax({
+                url : "/api/laysoluonggiohang",
+                type : "GET",
+                success : function (value) {
+                    $("#giohang").find("div").addClass("circle-giohang");
+                    $("#giohang").find("div").html("<span>" + value + "</span>");
+                }
+            })
         })
     });
 })

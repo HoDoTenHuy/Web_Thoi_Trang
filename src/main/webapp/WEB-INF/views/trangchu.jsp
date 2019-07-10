@@ -63,7 +63,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <img id="icon-shopping-cart"
-                                 src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'></a>
+                                 src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'>
+                                <c:if test = "${sosanpham == null}">
+                                    <div>
+                                        <span>${sosanpham}</span>
+                                    </div>
+                                </c:if>
+                                <c:if test = "${sosanpham != null}">
+                                    <div class="circle-giohang">
+                                        <span>${sosanpham}</span>
+                                    </div>
+                                </c:if>
+                        </a>
                     </li>
                 </ul>
             </div>
