@@ -23,24 +23,49 @@ public class APIController {
         this.nhanVienServiceImpl = nhanVienServiceImpl;
     }
 
-    List<GioHang> gioHangs = new ArrayList<GioHang>();
 
     @GetMapping("kiemtradangnhap")
     @ResponseBody
     @Transactional
-    public String kiemTraDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap){
+    public String kiemTraDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap) {
         boolean kiemTra = nhanVienServiceImpl.xuLyDangNhap(username, password);
         modelMap.addAttribute("user", username);
-        return kiemTra+"";
+        return kiemTra + "";
     }
 
     @GetMapping("themgiohang")
-    public void themGioHang(@RequestParam GioHang gioHang,
-                            ModelMap modelMap, HttpSession httpSession){
-        gioHangs.add(gioHang);
-        httpSession.setAttribute("cart", gioHangs);
-        List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
-        System.out.println(gioHangs.size() + " - " + list.size());
+    @ResponseBody
+    public void themGioHang(@RequestParam int maSP, @RequestParam int maMau,
+                            @RequestParam int maSize, @RequestParam int soLuong, @RequestParam String tenSP,
+                            @RequestParam String giaTien, @RequestParam String tenMau, @RequestParam String tenSize,
+                            ModelMap modelMap, HttpSession httpSession) {
+        if (httpSession.getAttribute("cart") == null) {
+            List<GioHang> gioHangs = new ArrayList<GioHang>();
+            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, tenSP, giaTien, tenMau, tenSize);
+            gioHangs.add(gioHang);
+            httpSession.setAttribute("cart", gioHangs);
+        } else {
+            List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
+            int viTri = kiemTraSanPhamGioHang(maSP, maSize, maMau, httpSession);
+            if (viTri == -1) {
 
+                GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, tenSP, giaTien, tenMau, tenSize);
+                list.add(gioHang);
+            } else {
+                int soLuongMoi = list.get(viTri).getSoLuong() + 1;
+                list.get(viTri).setSoLuong(soLuongMoi);
+            }
+        }
+
+    }
+
+    private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
+        List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getMaSP() == maSP && list.get(i).getMaMau() == maMau && list.get(i).getMaSize() == maSize) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

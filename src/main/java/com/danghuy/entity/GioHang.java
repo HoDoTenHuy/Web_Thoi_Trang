@@ -5,7 +5,6 @@ public class GioHang {
     int maMau;
     int maSize;
     int soLuong;
-    int maChiTietSP;
     String tenSP;
     String giaTien;
     String tenMau;
@@ -26,25 +25,8 @@ public class GioHang {
 
     }
 
-    public GioHang(int maSP, int maMau, int maSize, int soLuong, int maChiTietSP, String tenSP, String giaTien, String tenMau, String tenSize) {
-        this.maSP = maSP;
-        this.maMau = maMau;
-        this.maSize = maSize;
-        this.soLuong = soLuong;
-        this.maChiTietSP = maChiTietSP;
-        this.tenSP = tenSP;
-        this.giaTien = giaTien;
-        this.tenMau = tenMau;
-        this.tenSize = tenSize;
-    }
 
-    public int getMaChiTietSP() {
-        return maChiTietSP;
-    }
 
-    public void setMaChiTietSP(int maChiTietSP) {
-        this.maChiTietSP = maChiTietSP;
-    }
 
     public int getMaSP() {
         return maSP;

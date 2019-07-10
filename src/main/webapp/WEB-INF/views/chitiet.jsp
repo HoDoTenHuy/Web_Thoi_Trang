@@ -77,7 +77,7 @@
                              src='<c:url value="../../resources/images/sanpham/${chiTietSanPham.hinhSanPham}" />'>
                     </div>
                     <div class="col-sm-8 col-md-8">
-                        <h2 id="tensp">${chiTietSanPham.tenSanPham}</h2>
+                        <h2 id="tensp" data-masp="${chiTietSanPham.idSanPham}">${chiTietSanPham.tenSanPham}</h2>
                         <h4 id="giatien" data-value="${chiTietSanPham.giaTien}"
                             style="color: red">${chiTietSanPham.giaTien} VNĐ</h4>
                         <table style="width:100%;">
@@ -94,7 +94,7 @@
                                             ${sanpham.mauSanPhamEntity.tenMau}</td>
                                     <td class="size" data-masize="${sanpham.sizeSanPhamEntity.idSize}">
                                             ${sanpham.sizeSanPhamEntity.size}</td>
-                                    <td class="soluong" data-soluong="sanpham.soLuong">${sanpham.soLuong}</td>
+                                    <td class="soluong" data-soluong="${sanpham.soLuong}">${sanpham.soLuong}</td>
                                     <td>
                                         <button type="button" class="btn btn-default btn-sm btn-giohang">
                                             <span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ Hàng

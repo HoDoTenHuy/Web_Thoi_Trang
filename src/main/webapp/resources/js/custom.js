@@ -43,21 +43,24 @@ $(document).ready(function () {
         var tenSize = $(this).closest("tr").find(".size").text();
         var maSize = $(this).closest("tr").find(".size").attr("data-masize");
         var tensp = $("#tensp").text();
+        var masp = $("#tensp").attr("data-masp");
         var giatien = $("#giatien").attr("data-value");
-        alert(tensp + giatien + maMau + tenMau + maSize + tenSize);
-        /*$.ajax({
+        var soluong = $(this).closest("tr").find(".soluong").attr("data-soluong");
+        $.ajax({
             url : "/api/themgiohang",
             type : "GET",
             data :{
-                username : email,
-                password : matkhau
+                maSP : masp,
+                maMau : maMau,
+                maSize : maSize,
+                soLuong : soluong,
+                tenSP : tensp,
+                giaTien : giatien,
+                tenMau : tenMau,
+                tenSize : tenSize
             },
             success : function (value) {
-                if(value == "true"){
-                    window.location.href = "/";
-                }else
-                    $("#text-checklogin").text("Đăng Nhập Thất Bại!");
             }
-        })*/
+        })
     });
 })
