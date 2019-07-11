@@ -86,9 +86,9 @@
                 </tr>
                 <c:forEach var = "sanpham" items="${listGioHang}">
                     <tr>
-                        <td>${sanpham.tenSP}</td>
-                        <td>${sanpham.tenMau}</td>
-                        <td>${sanpham.tenSize}</td>
+                        <td class="tensp" data-masp="${sanpham.maSP}">${sanpham.tenSP}</td>
+                        <td class="mau" data-mamau="${sanpham.maMau}">${sanpham.tenMau}</td>
+                        <td class="size" data-masize="${sanpham.maSize}">${sanpham.tenSize}</td>
                         <td><input class="soluong-giohang" type="number"  min="1"
                                    value="${sanpham.soLuong}"/></td>
                         <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>

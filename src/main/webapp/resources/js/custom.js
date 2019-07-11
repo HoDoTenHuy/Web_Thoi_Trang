@@ -77,13 +77,17 @@ $(document).ready(function () {
     function gantongtiengiohang(isEventChange){
         var tongtiensp = 0;
         $(".giatien").each(function () {
-            var giatien = $(this).text();
-            var format = parseInt(giatien);
-            tongtiensp = tongtiensp + parseFloat(format);
-            if(!isEventChange){
-                $(this).html(format + ".000 VNĐ");
+            var giatien =  $(this).text();
+            var soluong = $(this).closest("tr").find(".soluong-giohang").val();
+            if(soluong > 1){
+                giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
             }
-            var formattongtien = parseInt(tongtiensp).toFixed(3).replace(/(\d)(?=(\d{3})+\.)/g,
+            var tongtien = parseInt(giatien) * soluong;
+            if(!isEventChange){
+                $(this).html(tongtien + ".000 VNĐ");
+            }
+            tongtiensp = tongtiensp + tongtien;
+            var formattongtien = tongtiensp.toFixed(3).replace(/(\d)(?=(\d{3})+\.)/g,
                 "$1.").toString();
             $("#tongtien").html(formattongtien + " VNĐ");
         });
@@ -92,8 +96,24 @@ $(document).ready(function () {
         var soluong = $(this).val();
         var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
         var tongtien = soluong * parseInt(giatien);
-        var format = tongtien;
-        $(this).closest("tr").find(".giatien").html(format + ".000 VNĐ");
+        var maMau = $(this).closest("tr").find(".mau").attr("data-mamau");
+        var maSize = $(this).closest("tr").find(".size").attr("data-masize");
+        var masp = $(this).closest("tr").find(".tensp").attr("data-masp");
+
+        $(this).closest("tr").find(".giatien").html(tongtien + ".000 VNĐ");
         gantongtiengiohang(true);
+
+        $.ajax({
+            url : "/api/capnhatgiohang",
+            type : "GET",
+            data :{
+                maSP : masp,
+                maMau : maMau,
+                maSize : maSize,
+                soLuong : soluong
+            },
+            success : function (value) {
+            }
+        })
     });
 });
