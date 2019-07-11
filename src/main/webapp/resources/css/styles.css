@@ -205,6 +205,12 @@ html, body{
     #logo-email{
         margin-top: 0px !important;
     }
+    .dropdown-menu.show{
+        padding-left: 70px !important;
+    }
+    .dropdown-toggle{
+        padding-left: 0px !important;
+    }
 }
 #container-infor{
     text-align: center;
@@ -278,11 +284,17 @@ html, body{
     color: #e9cb30f0;
     cursor: pointer;
 }
+.dropdown-menu{
+    background-color: #a3969600 !important;
+    border: none !important;
+    top: 70% !important;
+    left: 21px !important;
+}
 /*end css trang chu*/
 /*start css chi tiet*/
 #header-chitiet{
-    background: #526e58;
-    box-shadow: 0px 3px #141915;
+    background: #8dac94;
+    box-shadow: 0px 2px #575757;
 }
 table {
     border-collapse: collapse;
@@ -317,4 +329,18 @@ ul{
     background: red;
     margin-top: -36px;
     margin-left: 28px;
+}
+.navbar-chitiet a{
+    color: black !important;
+}
+.dropdown-chitiet{
+    background-color: #8dac94 !important;
+    border: none !important;
+    top: 81% !important;
+    left: 63px !important;
+}
+@media (max-width: 991.98px){
+    .dropdown-chitiet{
+        text-align: left !important;
+    }
 }

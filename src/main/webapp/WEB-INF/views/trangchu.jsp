@@ -25,21 +25,18 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto navbar-center">
+                <ul class="navbar-nav nav mr-auto navbar-center">
                     <li class="nav-item actived">
                         <a class="nav-link" href="#">TRANG CHỦ</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"
-                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SẢN PHẨM
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SẢN PHẨM
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <c:forEach var = "danhMuc" items="${listDanhMuc}">
+                                <li><a href="danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a></li><br/>
+                            </c:forEach>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">DỊCH VỤ</a>

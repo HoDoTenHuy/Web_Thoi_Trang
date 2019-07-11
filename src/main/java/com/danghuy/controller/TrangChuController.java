@@ -1,8 +1,10 @@
 package com.danghuy.controller;
 
+import com.danghuy.entity.DanhMucSanPhamEntity;
 import com.danghuy.entity.GioHang;
 import com.danghuy.entity.SanPhamEntity;
 import com.danghuy.service.SanPhamService;
+import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,9 @@ import java.util.List;
 public class TrangChuController {
     @Autowired
     SanPhamService sanPhamService;
+
+    @Autowired
+    DanhMucSanPhamServiceImpl danhMucSanPhamService;
 
     @GetMapping
     @Transactional
@@ -36,6 +41,8 @@ public class TrangChuController {
             int soSanPham = gioHangs.size();
             modelMap.addAttribute("sosanpham", soSanPham);
         }
+        List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
+        modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
         return "trangchu";
     }
 

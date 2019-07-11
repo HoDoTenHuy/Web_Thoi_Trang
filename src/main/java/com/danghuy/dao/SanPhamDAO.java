@@ -30,4 +30,11 @@ public class SanPhamDAO {
         SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).getSingleResult();
         return sanPhamEntity;
     }
+
+    public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        String hql = "from SanPhamEntity where idDanhMuc = '"+ maDanhMuc +"'";
+        List<SanPhamEntity> sanPhamEntities = session.createQuery(hql).list();
+        return sanPhamEntities;
+    }
 }
