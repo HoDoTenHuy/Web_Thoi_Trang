@@ -38,10 +38,10 @@ public class APIController {
     public void themGioHang(@RequestParam int maSP, @RequestParam int maMau,
                             @RequestParam int maSize, @RequestParam int soLuong, @RequestParam String tenSP,
                             @RequestParam String giaTien, @RequestParam String tenMau, @RequestParam String tenSize,
-                            ModelMap modelMap, HttpSession httpSession) {
+                            @RequestParam int maChiTiet, ModelMap modelMap, HttpSession httpSession) {
         if (httpSession.getAttribute("cart") == null) {
             List<GioHang> gioHangs = new ArrayList<GioHang>();
-            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, tenSP, giaTien, tenMau, tenSize);
+            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1,  maChiTiet, tenSP, giaTien, tenMau, tenSize);
             gioHangs.add(gioHang);
             httpSession.setAttribute("cart", gioHangs);
         } else {
@@ -49,7 +49,8 @@ public class APIController {
             int viTri = kiemTraSanPhamGioHang(maSP, maSize, maMau, httpSession);
             if (viTri == -1) {
 
-                GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, tenSP, giaTien, tenMau, tenSize);
+                GioHang gioHang = new GioHang(maSP, maMau, maSize, 1,
+                        maChiTiet, tenSP, giaTien, tenMau, tenSize);
                 list.add(gioHang);
             } else {
                 int soLuongMoi = list.get(viTri).getSoLuong() + 1;

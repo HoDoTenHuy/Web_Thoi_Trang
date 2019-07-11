@@ -57,6 +57,7 @@ $(document).ready(function () {
         $("#dangky").addClass("actived");
     });
     $(".btn-giohang").click(function (){
+        var machitiet = $(this).attr("data-machitiet");
         var tenMau = $(this).closest("tr").find(".mau").text();
         var maMau = $(this).closest("tr").find(".mau").attr("data-mamau");
         var tenSize = $(this).closest("tr").find(".size").text();
@@ -76,7 +77,8 @@ $(document).ready(function () {
                 tenSP : tensp,
                 giaTien : giatien,
                 tenMau : tenMau,
-                tenSize : tenSize
+                tenSize : tenSize,
+                maChiTiet : machitiet
             },
             success : function (value) {
             }

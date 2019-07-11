@@ -85,7 +85,7 @@
                     <th>Giá Tiền</th>
                 </tr>
                 <c:forEach var = "sanpham" items="${listGioHang}">
-                    <tr>
+                    <tr data-machitiet="${sanpham.maChiTiet}">
                         <td class="tensp" data-masp="${sanpham.maSP}">${sanpham.tenSP}</td>
                         <td class="mau" data-mamau="${sanpham.maMau}">${sanpham.tenMau}</td>
                         <td class="size" data-masize="${sanpham.maSize}">${sanpham.tenSize}</td>
@@ -104,26 +104,30 @@
             <h3>Thông Tin Người Mua / Nhận Hàng :</h3>
             <form action="" method="post">
                 <div class="form-group">
-                    <label for="ten">Tên người mua / nhận hàng : </label>
-                    <input type="text" class="form-control" id="ten">
+                    <label for="tenKhachHang">Tên người mua / nhận hàng : </label>
+                    <input type="text" class="form-control" id="tenKhachHang" name="tenKhachHang">
                 </div>
                 <div class="form-group">
-                    <label for="sdt">Số điện thoại : </label>
-                    <input type="password" class="form-control" id="sdt">
+                    <label for="soDienThoai">Số điện thoại : </label>
+                    <input type="number" class="form-control" id="soDienThoai" name="soDienThoai">
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio" checked>Nhận hàng tại nhà/công ty/bưu điện</label>
+                    <label><input type="radio" name="hinhThucGiaoHang" checked
+                                  value="Nhận hàng tại nhà/công ty/bưu điện">
+                        Nhận hàng tại nhà/công ty/bưu điện</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">Nhận hàng tại cửa hàng YaMe gần nhất</label>
+                    <label><input type="radio" name="hinhThucGiaoHang"
+                                  value="Nhận hàng tại cửa hàng YaMe gần nhất">
+                        Nhận hàng tại cửa hàng YaMe gần nhất</label>
                 </div>
                 <div class="form-group">
-                    <label for="diachi">Địa chỉ nhận hàng : </label>
-                    <input type="text" class="form-control" id="diachi">
+                    <label for="diaChiGiaoHang">Địa chỉ nhận hàng : </label>
+                    <input type="text" class="form-control" id="diaChiGiaoHang" name="diaChiGiaoHang">
                 </div>
                 <div class="form-group">
-                    <label for="ghichu">Ghi chú : </label>
-                    <textarea class="form-control" rows="5" id="ghichu"></textarea>
+                    <label for="ghiChu">Ghi chú : </label>
+                    <textarea class="form-control" rows="5" id="ghiChu" name="ghiChu"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Đặt hàng</button>
             </form>

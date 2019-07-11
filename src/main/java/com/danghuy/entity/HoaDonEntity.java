@@ -22,6 +22,25 @@ public class HoaDonEntity {
     @JoinColumn(name = "idHoaDon")
     Set<ChiTietHoaDonEntity> chiTietHoaDonEntities;
 
+    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, boolean tinhTrang,
+                        String ngayLap, String hinhThucGiaoHang, String ghiChu) {
+        this.tenKhachHang = tenKhachHang;
+        this.soDienThoai = soDienThoai;
+        this.diaChiGiaoHang = diaChiGiaoHang;
+        this.tinhTrang = tinhTrang;
+        this.ngayLap = ngayLap;
+        this.hinhThucGiaoHang = hinhThucGiaoHang;
+        this.ghiChu = ghiChu;
+    }
+
+    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, String hinhThucGiaoHang, String ghiChu) {
+        this.tenKhachHang = tenKhachHang;
+        this.soDienThoai = soDienThoai;
+        this.diaChiGiaoHang = diaChiGiaoHang;
+        this.hinhThucGiaoHang = hinhThucGiaoHang;
+        this.ghiChu = ghiChu;
+    }
+
     public Set<ChiTietHoaDonEntity> getChiTietHoaDonEntities() {
         return chiTietHoaDonEntities;
     }

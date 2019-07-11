@@ -107,7 +107,8 @@
                                             ${sanpham.sizeSanPhamEntity.size}</td>
                                     <td class="soluong" data-soluong="${sanpham.soLuong}">${sanpham.soLuong}</td>
                                     <td>
-                                        <button type="button" class="btn btn-default btn-sm btn-giohang">
+                                        <button data-machitiet="${sanpham.idChiTietSanPham}" type="button"
+                                                class="btn btn-default btn-sm btn-giohang">
                                             <span class="fa fa-shopping-cart"></span>Thêm Vào Giỏ Hàng
                                         </button>
                                     </td>
