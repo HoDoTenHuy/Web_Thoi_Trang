@@ -70,6 +70,17 @@ public class APIController {
         return "";
     }
 
+    @GetMapping("xoagiohang")
+    @ResponseBody
+    public void xoaGioHang(HttpSession httpSession, @RequestParam int maSP, @RequestParam int maMau,
+                               @RequestParam int maSize){
+        if(httpSession.getAttribute("cart") != null){
+            List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
+            int viTri = kiemTraSanPhamGioHang(maSP, maSize, maMau, httpSession);
+            list.remove(viTri);
+        }
+    }
+
     @GetMapping("capnhatgiohang")
     @ResponseBody
     public void capNhatGioHang(HttpSession httpSession, @RequestParam int maSP, @RequestParam int maMau,

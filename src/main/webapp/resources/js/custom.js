@@ -5,6 +5,25 @@ $(document).ready(function () {
         var text = $(this).attr("data-text");
         alert(text);
     });
+    $(".xoa-giohang").click(function () {
+        var maMau = $(this).closest("tr").find(".mau").attr("data-mamau");
+        var maSize = $(this).closest("tr").find(".size").attr("data-masize");
+        var masp = $(this).closest("tr").find(".tensp").attr("data-masp");
+        var self = $(this);
+        $.ajax({
+            url : "/api/xoagiohang",
+            type : "GET",
+            data :{
+                maSP : masp,
+                maMau : maMau,
+                maSize : maSize
+            },
+            success : function (value) {
+                self.closest("tr").remove();
+                gantongtiengiohang(true);
+            }
+        })
+    });
     $("#btndangnhap").click(function () {
         var email = $("#username").val();
         var matkhau = $("#password").val();

@@ -29,7 +29,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/GioHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/GioHang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" afterDir="false" />
     </list>
@@ -151,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+            <state relative-caret-position="270">
+              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="93" column="37" lean-forward="true" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+            <state relative-caret-position="201">
+              <caret line="91" column="81" lean-forward="true" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -193,8 +192,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="82" column="83" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
+            <state relative-caret-position="-391">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -264,9 +263,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/GioHang.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" />
       </list>
     </option>
@@ -297,7 +296,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1136" />
+    <option name="x" value="1135" />
     <option name="y" value="160" />
     <option name="width" value="820" />
     <option name="height" value="970" />
@@ -458,7 +457,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562844596923" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562844670721" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MiniShop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -754,14 +753,8 @@
       <workItem from="1562771908499" duration="5668000" />
       <workItem from="1562780707902" duration="4749000" />
       <workItem from="1562787131729" duration="18060000" />
-      <workItem from="1562840955119" duration="2580000" />
-    </task>
-    <task id="LOCAL-00022" summary="Updates commit 6,&#10;Ví dụ về nhận tham số trên trình duyệt với RequestParam">
-      <created>1561714031143</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1561714031144</updated>
+      <workItem from="1562840955119" duration="2872000" />
+      <workItem from="1562859706772" duration="1668000" />
     </task>
     <task id="LOCAL-00023" summary="Commit 7,&#10;Ví dụ về nhận tham số trên trình duyệt với PathVariable">
       <created>1561789475999</created>
@@ -1099,17 +1092,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562801724406</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Updates commit 22,&#10;Thay đổi số lượng sản phẩm ở page giỏ hàng, cập nhật giá tiền và tổng tiền mỗi khi sản phẩm thay đổi dùng jquery, fix lỗi hiển thị ở lần commit trước">
+      <created>1562844810804</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1562844810805</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226252000" />
+    <option name="totallyTimeSpent" value="228212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23020135" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23355705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1149,7 +1149,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updates commit 14,&#10;Ví dụ về sửa xóa object từ view và DB" />
     <MESSAGE value="Commit 15,&#10;Ví dụ về OneToOne trong hibernate" />
     <MESSAGE value="Updates commit 15,&#10;Ví dụ về ManyToOne trong hibernate" />
     <MESSAGE value="Commit 16,&#10;Hiện thực hóa các bảng từ database ra các class sử dụng hibernate" />
@@ -1174,7 +1173,8 @@
     <MESSAGE value="Commit 21,&#10;Load số lượng sản phẩn lên cho giở hàng dùng Ajax lồng Ajax, show lên view chi tiết và trang chủ" />
     <MESSAGE value="Commit 22,&#10;Tạo page Giỏ Hàng" />
     <MESSAGE value="Commit 22,&#10;Thay đổi số lượng sản phẩm ở page giỏ hàng, cập nhật giá tiền và tổng tiền mỗi khi sản phẩm thay đổi dùng jquery" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 22,&#10;Thay đổi số lượng sản phẩm ở page giỏ hàng, cập nhật giá tiền và tổng tiền mỗi khi sản phẩm thay đổi dùng jquery" />
+    <MESSAGE value="Updates commit 22,&#10;Thay đổi số lượng sản phẩm ở page giỏ hàng, cập nhật giá tiền và tổng tiền mỗi khi sản phẩm thay đổi dùng jquery, fix lỗi hiển thị ở lần commit trước" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 22,&#10;Thay đổi số lượng sản phẩm ở page giỏ hàng, cập nhật giá tiền và tổng tiền mỗi khi sản phẩm thay đổi dùng jquery, fix lỗi hiển thị ở lần commit trước" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/DanhMucSanPhamEntity.java">
@@ -1601,16 +1601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/GioHang.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1628,17 +1618,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="93" column="37" lean-forward="true" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+        <state relative-caret-position="201">
+          <caret line="91" column="81" lean-forward="true" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="82" column="83" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
+        <state relative-caret-position="-391">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
         </state>
       </provider>
     </entry>
