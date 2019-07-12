@@ -12,10 +12,10 @@ public class HoaDonDAO {
     @Autowired
     SessionFactory sessionFactory;
 
-    public int themHoaDon(HoaDonEntity hoaDonEntity){
+    public int themHoaDon(HoaDonEntity hoaDonEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();
         Integer id = (Integer) session.save(hoaDonEntity);
-        if(id > 0){
+        if (id > 0) {
             return id;
         }
         return 0;

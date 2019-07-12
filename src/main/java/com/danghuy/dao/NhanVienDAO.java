@@ -27,26 +27,28 @@ public class NhanVienDAO {
         }
         return false;
     }
-    public boolean dangKy(NhanVienEntity nhanVienEntity){
+
+    public boolean dangKy(NhanVienEntity nhanVienEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();
         Integer maNhanVien = (Integer) session.save(nhanVienEntity);
-        if(maNhanVien > 0){
+        if (maNhanVien > 0) {
             return true;
-        }else
+        } else
             return false;
     }
-    public  boolean checkEmailIsValid(String email){
+
+    public boolean checkEmailIsValid(String email) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "FROM NhanVienEntity";
         try {
             List<NhanVienEntity> User = (List<NhanVienEntity>) session.createQuery(hql).list();
-            for(NhanVienEntity value : User){
-                if(value.getEmail().equals(email)){
+            for (NhanVienEntity value : User) {
+                if (value.getEmail().equals(email)) {
                     return true;
-                }else
+                } else
                     return false;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
         return false;

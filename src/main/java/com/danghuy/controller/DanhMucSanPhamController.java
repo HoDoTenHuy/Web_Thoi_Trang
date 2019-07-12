@@ -25,14 +25,14 @@ public class DanhMucSanPhamController {
 
     @GetMapping("{idDanhMuc}")
     @Transactional
-    public String pageDefault(ModelMap modelMap, @PathVariable int idDanhMuc){
+    public String pageDefault(ModelMap modelMap, @PathVariable int idDanhMuc) {
 
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 
         List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamTheoMaDanhMuc(idDanhMuc);
         modelMap.addAttribute("listSanPham", sanPhamEntities);
-        String tenDanhMuc = danhMucSanPhamEntities.get(idDanhMuc).getTenDanhMuc().toUpperCase();
+        String tenDanhMuc = danhMucSanPhamEntities.get(idDanhMuc - 1).getTenDanhMuc().toUpperCase();
         modelMap.addAttribute("tenDanhMuc", tenDanhMuc);
         return "sanpham";
     }

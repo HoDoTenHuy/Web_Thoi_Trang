@@ -20,17 +20,15 @@
                 <li class="nav-item actived">
                     <a class="nav-link" href="/">TRANG CHỦ</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        SẢN PHẨM
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                <li class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SẢN PHẨM
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-chitiet">
+                        <c:forEach var = "danhMuc" items="${listDanhMuc}">
+                            <li><a href="../../../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a>
+                            </li><br/>
+                        </c:forEach>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">DỊCH VỤ</a>
@@ -47,12 +45,12 @@
                     </c:when>
                     <c:otherwise>
                         <li class="nav-item">
-                            <a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
+                            <a class="nav-link" href="../dangnhap/">ĐĂNG NHẬP</a>
                         </li>
                     </c:otherwise>
                 </c:choose>
                 <li id="giohang" class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="">
                         <img id="icon-shopping-cart"
                              src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'>
                         <c:if test = "${sosanpham == null}">

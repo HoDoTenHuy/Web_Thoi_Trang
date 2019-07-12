@@ -18,6 +18,6 @@ public class ChiTietHoaDonDAO {
         if (id.getIdChiTietSanPham() > 0) {
             return true;
         }
-            return false;
+        return false;
     }
 }

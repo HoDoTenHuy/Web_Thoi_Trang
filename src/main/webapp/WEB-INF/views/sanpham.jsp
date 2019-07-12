@@ -25,7 +25,7 @@
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-chitiet">
                         <c:forEach var = "danhMuc" items="${listDanhMuc}">
-                            <li><a href="./../../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a>
+                            <li><a href="../../../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a>
                             </li><br/>
                         </c:forEach>
                     </ul>
@@ -45,7 +45,7 @@
                     </c:when>
                     <c:otherwise>
                         <li class="nav-item">
-                            <a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
+                            <a class="nav-link" href="../../../dangnhap/">ĐĂNG NHẬP</a>
                         </li>
                     </c:otherwise>
                 </c:choose>
@@ -75,7 +75,7 @@
             <h3 style="margin: 0;">Danh Mục Sản Phẩm</h3>
             <ul class="my-menu">
                 <c:forEach var = "danhMuc" items="${listDanhMuc}">
-                    <li><a href=./../../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a></li>
+                    <li><a href="./../../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a></li>
                 </c:forEach>
             </ul>
         </div>

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 @Component
 public class CheckEmail {
     public boolean kiemTraEmail(String email) {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                 "A-Z]{2,7}$";

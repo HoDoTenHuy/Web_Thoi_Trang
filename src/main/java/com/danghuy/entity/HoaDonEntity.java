@@ -33,7 +33,8 @@ public class HoaDonEntity {
         this.ghiChu = ghiChu;
     }
 
-    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, String hinhThucGiaoHang, String ghiChu) {
+    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang,
+                        String hinhThucGiaoHang, String ghiChu) {
         this.tenKhachHang = tenKhachHang;
         this.soDienThoai = soDienThoai;
         this.diaChiGiaoHang = diaChiGiaoHang;

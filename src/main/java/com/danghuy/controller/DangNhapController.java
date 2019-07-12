@@ -18,6 +18,7 @@ public class DangNhapController {
     public DangNhapController(NhanVienServiceImpl nhanVienServiceImpl) {
         this.nhanVienServiceImpl = nhanVienServiceImpl;
     }
+
     @Autowired
     CheckEmail checkEmail;
 
@@ -31,23 +32,21 @@ public class DangNhapController {
     @Transactional
     public String dangKy(@RequestParam String email, @RequestParam String matKhau, @RequestParam String nhapLaiMatKhau
             , ModelMap modelMap) {
-        if(nhanVienServiceImpl.checkEmailIsValid(email)){
+        if (nhanVienServiceImpl.checkEmailIsValid(email)) {
             modelMap.addAttribute("kiemtradangnhap", "Email Đã Tồn Tại!");
-        }else{
-            if(checkEmail.kiemTraEmail(email) && matKhau.equalsIgnoreCase(nhapLaiMatKhau)){
+        } else {
+            if (checkEmail.kiemTraEmail(email) && matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
                 NhanVien nhanVien = new NhanVien(email, matKhau);
-                if(nhanVienServiceImpl.dangKy(nhanVien)){
+                if (nhanVienServiceImpl.dangKy(nhanVien)) {
                     modelMap.addAttribute("kiemtradangnhap", "Đăng Ký Thành Công!");
-                }else{
+                } else {
                     modelMap.addAttribute("kiemtradangnhap", "Đăng Ký Thất Bại!");
                 }
-            }
-            else if(checkEmail.kiemTraEmail(email) == false){
+            } else if (checkEmail.kiemTraEmail(email) == false) {
                 modelMap.addAttribute("kiemtradangnhap", "Vui Lòng Nhập Đúng Email!");
-            }
-            else if(matKhau.equalsIgnoreCase(nhapLaiMatKhau)){
+            } else if (matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
                 modelMap.addAttribute("kiemtradangnhap", "Mật Khẩu Khác Nhau!");
-            }else
+            } else
                 modelMap.addAttribute("kiemtradangnhap", "Đăng Ký Thất Bại!");
         }
         return "dangnhap";

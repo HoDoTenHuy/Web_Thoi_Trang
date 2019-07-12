@@ -31,7 +31,7 @@ public class ChiTietController {
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 
-        if(httpSession.getAttribute("cart") != null){
+        if (httpSession.getAttribute("cart") != null) {
             List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
             int soSanPham = gioHangs.size();
             modelMap.addAttribute("sosanpham", soSanPham);

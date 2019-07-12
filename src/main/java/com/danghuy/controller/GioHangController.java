@@ -1,10 +1,8 @@
 package com.danghuy.controller;
 
-import com.danghuy.entity.ChiTietHoaDonEntity;
-import com.danghuy.entity.ChiTietHoaDonIDEntity;
-import com.danghuy.entity.GioHang;
-import com.danghuy.entity.HoaDonEntity;
+import com.danghuy.entity.*;
 import com.danghuy.service.impl.ChiTietHoaDonServiceImpl;
+import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
 import com.danghuy.service.impl.HoaDonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,32 +28,38 @@ public class GioHangController {
     @Autowired
     ChiTietHoaDonServiceImpl chiTietHoaDonService;
 
+    @Autowired
+    DanhMucSanPhamServiceImpl danhMucSanPhamService;
+
     @GetMapping
-    public String pageDefault(HttpSession httpSession, ModelMap modelMap){
-        if(httpSession.getAttribute("cart") != null){
+    @Transactional
+    public String pageDefault(HttpSession httpSession, ModelMap modelMap) {
+        if (httpSession.getAttribute("cart") != null) {
             List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
             int soSanPham = gioHangs.size();
             modelMap.addAttribute("listGioHang", gioHangs);
             modelMap.addAttribute("sosanpham", soSanPham);
+            List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
+            modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
         }
         return "giohang";
     }
 
     @PostMapping
     @Transactional
-    public String pageHoaDon(@RequestParam String tenKhachHang,@RequestParam String soDienThoai,
-                             @RequestParam String diaChiGiaoHang,@RequestParam String hinhThucGiaoHang,
-                             @RequestParam String ghiChu, HttpSession httpSession, ModelMap modelMap){
-        if(httpSession.getAttribute("cart") != null){
+    public String pageHoaDon(@RequestParam String tenKhachHang, @RequestParam String soDienThoai,
+                             @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
+                             @RequestParam String ghiChu, HttpSession httpSession, ModelMap modelMap) {
+        if (httpSession.getAttribute("cart") != null) {
 
             List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
 
             HoaDonEntity hoaDonEntity = new HoaDonEntity(tenKhachHang, soDienThoai, diaChiGiaoHang,
                     hinhThucGiaoHang, ghiChu);
             int idHoaDon = hoaDonService.themHoaDon(hoaDonEntity);
-            if(idHoaDon > 0){
+            if (idHoaDon > 0) {
                 Set<ChiTietHoaDonEntity> chiTietHoaDonEntityList = new HashSet<ChiTietHoaDonEntity>();
-                for(GioHang gioHang : gioHangs){
+                for (GioHang gioHang : gioHangs) {
                     ChiTietHoaDonIDEntity chiTietHoaDonIDEntity = new ChiTietHoaDonIDEntity();
                     chiTietHoaDonIDEntity.setIdChiTietSanPham(gioHang.getMaChiTiet());
                     chiTietHoaDonIDEntity.setIdHoaDon(hoaDonEntity.getIdHoaDon());
@@ -68,7 +72,7 @@ public class GioHangController {
                     chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
                 }
                 System.out.println("Success!");
-            }else{
+            } else {
                 System.out.println("Failed!");
             }
         }

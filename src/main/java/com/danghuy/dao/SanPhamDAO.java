@@ -15,7 +15,7 @@ public class SanPhamDAO {
     @Autowired
     SessionFactory sessionFactory;
 
-    public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi){
+    public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from SanPhamEntity";
         Query query = session.createQuery(hql);
@@ -24,16 +24,17 @@ public class SanPhamDAO {
         List<SanPhamEntity> sanPhamEntities = ((org.hibernate.query.Query) query).list();
         return sanPhamEntities;
     }
-    public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham){
+
+    public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham) {
         Session session = sessionFactory.getCurrentSession().getSession();
-        String hql = "from SanPhamEntity where idSanPham = '"+ idSanPham +"'";
+        String hql = "from SanPhamEntity where idSanPham = '" + idSanPham + "'";
         SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).getSingleResult();
         return sanPhamEntity;
     }
 
-    public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc){
+    public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc) {
         Session session = sessionFactory.getCurrentSession().getSession();
-        String hql = "from SanPhamEntity where idDanhMuc = '"+ maDanhMuc +"'";
+        String hql = "from SanPhamEntity where idDanhMuc = '" + maDanhMuc + "'";
         List<SanPhamEntity> sanPhamEntities = session.createQuery(hql).list();
         return sanPhamEntities;
     }

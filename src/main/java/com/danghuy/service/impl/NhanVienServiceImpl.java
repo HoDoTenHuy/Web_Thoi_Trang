@@ -26,21 +26,21 @@ public class NhanVienServiceImpl implements NhanVienService {
         if (nhanVienDAO.xuLyDangNhap(username, password)) {
             return true;
         } else
-        return false;
+            return false;
     }
 
     public boolean dangKy(NhanVien nhanVien) {
         NhanVienEntity nhanVienEntity = pojoToEntity.convertNhanVien(nhanVien);
-       if(nhanVienDAO.dangKy(nhanVienEntity)){
-           return true;
-       }else
-           return false;
+        if (nhanVienDAO.dangKy(nhanVienEntity)) {
+            return true;
+        } else
+            return false;
     }
 
     public boolean checkEmailIsValid(String email) {
-        if(nhanVienDAO.checkEmailIsValid(email)){
+        if (nhanVienDAO.checkEmailIsValid(email)) {
             return true;
-        }else
-        return false;
+        } else
+            return false;
     }
 }

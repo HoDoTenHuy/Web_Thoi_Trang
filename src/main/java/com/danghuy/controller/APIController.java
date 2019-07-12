@@ -41,7 +41,7 @@ public class APIController {
                             @RequestParam int maChiTiet, ModelMap modelMap, HttpSession httpSession) {
         if (httpSession.getAttribute("cart") == null) {
             List<GioHang> gioHangs = new ArrayList<GioHang>();
-            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1,  maChiTiet, tenSP, giaTien, tenMau, tenSize);
+            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, maChiTiet, tenSP, giaTien, tenMau, tenSize);
             gioHangs.add(gioHang);
             httpSession.setAttribute("cart", gioHangs);
         } else {
@@ -62,8 +62,8 @@ public class APIController {
 
     @GetMapping("laysoluonggiohang")
     @ResponseBody
-    public String laySoLuongGioHang(HttpSession httpSession){
-        if(httpSession.getAttribute("cart") != null){
+    public String laySoLuongGioHang(HttpSession httpSession) {
+        if (httpSession.getAttribute("cart") != null) {
             List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
             int soSanPham = gioHangs.size();
             return soSanPham + "";
@@ -74,8 +74,8 @@ public class APIController {
     @GetMapping("xoagiohang")
     @ResponseBody
     public void xoaGioHang(HttpSession httpSession, @RequestParam int maSP, @RequestParam int maMau,
-                               @RequestParam int maSize){
-        if(httpSession.getAttribute("cart") != null){
+                           @RequestParam int maSize) {
+        if (httpSession.getAttribute("cart") != null) {
             List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
             int viTri = kiemTraSanPhamGioHang(maSP, maSize, maMau, httpSession);
             list.remove(viTri);
@@ -85,8 +85,8 @@ public class APIController {
     @GetMapping("capnhatgiohang")
     @ResponseBody
     public void capNhatGioHang(HttpSession httpSession, @RequestParam int maSP, @RequestParam int maMau,
-                               @RequestParam int maSize, @RequestParam int soLuong){
-        if(httpSession.getAttribute("cart") != null){
+                               @RequestParam int maSize, @RequestParam int soLuong) {
+        if (httpSession.getAttribute("cart") != null) {
             List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
             int viTri = kiemTraSanPhamGioHang(maSP, maSize, maMau, httpSession);
             list.get(viTri).setSoLuong(soLuong);

@@ -13,7 +13,7 @@ public class SanPhamServiceImpl implements SanPhamService {
     @Autowired
     SanPhamDAO sanPhamDAO;
 
-    public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi){
+    public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi) {
         return sanPhamDAO.laySanPhamLimit(spDau, spCuoi);
     }
 

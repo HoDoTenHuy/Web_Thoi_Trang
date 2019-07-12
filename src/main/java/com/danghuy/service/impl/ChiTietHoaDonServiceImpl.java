@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class ChiTietHoaDonServiceImpl implements ChiTietHoaDonService {
     @Autowired
     ChiTietHoaDonDAO chiTietHoaDonDAO;
+
     public boolean themChiTietHoaDon(ChiTietHoaDonEntity chiTietHoaDonEntity) {
         return chiTietHoaDonDAO.themChiTietHoaDon(chiTietHoaDonEntity);
     }

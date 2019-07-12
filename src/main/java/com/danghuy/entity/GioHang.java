@@ -11,7 +11,8 @@ public class GioHang {
     String tenMau;
     String tenSize;
 
-    public GioHang(int maSP, int maMau, int maSize, int soLuong, String tenSP, String giaTien, String tenMau, String tenSize) {
+    public GioHang(int maSP, int maMau, int maSize, int soLuong, String tenSP, String giaTien,
+                   String tenMau, String tenSize) {
         this.maSP = maSP;
         this.maMau = maMau;
         this.maSize = maSize;
@@ -22,7 +23,8 @@ public class GioHang {
         this.tenSize = tenSize;
     }
 
-    public GioHang(int maSP, int maMau, int maSize, int soLuong, int maChiTiet, String tenSP, String giaTien, String tenMau, String tenSize) {
+    public GioHang(int maSP, int maMau, int maSize, int soLuong, int maChiTiet, String tenSP,
+                   String giaTien, String tenMau, String tenSize) {
         this.maSP = maSP;
         this.maMau = maMau;
         this.maSize = maSize;
