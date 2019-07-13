@@ -24,4 +24,9 @@ public class SanPhamServiceImpl implements SanPhamService {
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc) {
         return sanPhamDAO.laySanPhamTheoMaDanhMuc(maDanhMuc);
     }
+
+    public List<SanPhamEntity> layALLSanPham() {
+
+        return sanPhamDAO.layALLSanPham();
+    }
 }

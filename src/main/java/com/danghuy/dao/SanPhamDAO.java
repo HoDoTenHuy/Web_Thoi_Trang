@@ -38,4 +38,11 @@ public class SanPhamDAO {
         List<SanPhamEntity> sanPhamEntities = session.createQuery(hql).list();
         return sanPhamEntities;
     }
+
+    public List<SanPhamEntity> layALLSanPham() {
+        Session session = sessionFactory.getCurrentSession().getSession();
+        String hql = "from SanPhamEntity";
+        List<SanPhamEntity> sanPhamEntities = session.createQuery(hql).list();
+        return sanPhamEntities;
+    }
 }
