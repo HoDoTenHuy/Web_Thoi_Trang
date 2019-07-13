@@ -137,4 +137,22 @@ $(document).ready(function () {
             }
         })
     });
+    $("body").on("click", ".paging-item", function () {
+        var sotrang = $(this).text();
+        var spbatdau = (sotrang - 1)*5; /*limit hiển thi số sp trong 1 trnga là 5*/
+        $(".paging-item").removeClass("active");
+        $(this).addClass("active");
+        $.ajax({
+            url : "/api/laysanphamlimit",
+            type : "GET",
+            data :{
+                spBatDau : spbatdau,
+            },
+            success : function (value) {
+                var tbodysanpham =  $("#table-sanpham").find("tbody");
+                tbodysanpham.empty();
+                tbodysanpham.append(value);
+            }
+        })
+    });
 });

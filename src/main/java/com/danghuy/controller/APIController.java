@@ -1,7 +1,9 @@
 package com.danghuy.controller;
 
 import com.danghuy.entity.GioHang;
+import com.danghuy.entity.SanPhamEntity;
 import com.danghuy.service.impl.NhanVienServiceImpl;
+import com.danghuy.service.impl.SanPhamServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,11 +19,15 @@ import java.util.List;
 @SessionAttributes("user, cart")
 public class APIController {
     private final NhanVienServiceImpl nhanVienServiceImpl;
+    private final SanPhamServiceImpl sanPhamService;
 
     @Autowired
-    public APIController(NhanVienServiceImpl nhanVienServiceImpl) {
+    public APIController(NhanVienServiceImpl nhanVienServiceImpl, SanPhamServiceImpl sanPhamService) {
         this.nhanVienServiceImpl = nhanVienServiceImpl;
+        this.sanPhamService = sanPhamService;
     }
+
+
 
 
     @GetMapping("kiemtradangnhap")
@@ -91,6 +97,26 @@ public class APIController {
             int viTri = kiemTraSanPhamGioHang(maSP, maSize, maMau, httpSession);
             list.get(viTri).setSoLuong(soLuong);
         }
+    }
+    @GetMapping(path = "laysanphamlimit", produces = "text/html; charset=UTF-8")
+    @ResponseBody
+    public String laySanPhamLimit(@RequestParam int spBatDau){
+        String html = "";
+        List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(spBatDau, 5);
+        for(SanPhamEntity sp : sanPhamEntities){
+            html += "<tr>";
+            html += " <td>\n" +
+                    "      <div>\n" +
+                    "           <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\"\">\n" +
+                    "      </div>\n" +
+                    " </td>";
+            html += " <td class=\"tensp\" data-masp=\" "+ sp.getIdSanPham() +"\">"+ sp.getTenSanPham() +"</td>\n" +
+                    " <td class=\"giatien\" data-giatien=\""+ sp.getGiaTien() +"\">"+ sp.getGiaTien() +"</td>\n" +
+                    " <td class=\"giatie\" data-masize=\""+ sp.getGianhCho() +"\">"+ sp.getGianhCho() +"</td>";
+
+            html += "</tr>";
+        }
+        return html;
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {

@@ -318,7 +318,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="page-wrapper" class="container-fluid">
             <div class="row">
                 <h3>Sản Phẩm</h3>
-                <table class="table">
+                <table id="table-sanpham" class="table">
                     <thead>
                         <tr>
                             <th>
@@ -348,10 +348,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <c:forEach var="index" begin="1" end="${tongPage}">
                         <c:choose>
                             <c:when test = "${index == 1}">
-                                <li class="active"><a href="#">${index}</a></li>
+                                <li class="paging-item active"><a href="#">${index}</a></li>
                             </c:when>
                             <c:otherwise>
-                                <li><a href="#">${index}</a></li>
+                                <li class="paging-item"><a href="#">${index}</a></li>
                             </c:otherwise>
                         </c:choose>
                     </c:forEach>
@@ -374,5 +374,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src='<c:url value="/resources/js/scripts.js"/> '></script>
 <!-- Bootstrap Core JavaScript -->
 <script src='<c:url value="/resources/js/bootstrap.min.js"/> '></script>
+<script src='<c:url value="/resources/js/custom.js"/> '></script>
 </body>
 </html>

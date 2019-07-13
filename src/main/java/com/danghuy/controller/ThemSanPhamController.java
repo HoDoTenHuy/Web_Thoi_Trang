@@ -20,10 +20,10 @@ public class ThemSanPhamController {
     @GetMapping
     @Transactional
     public String pageDefault(ModelMap modelMap){
-        List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0 , 5);
+        List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0, 5);
         List<SanPhamEntity> allSanPham = sanPhamService.layALLSanPham();
-        int tongSoPage = allSanPham.size()/5;
-        modelMap.addAttribute("tongPage", tongSoPage);
+        double tongSoPage = (double) allSanPham.size()/5;
+        modelMap.addAttribute("tongPage", (int) Math.ceil(tongSoPage));
         modelMap.addAttribute("allSanPham", allSanPham);
         modelMap.addAttribute("listSanPham", sanPhamEntities);
         return "themsanpham";

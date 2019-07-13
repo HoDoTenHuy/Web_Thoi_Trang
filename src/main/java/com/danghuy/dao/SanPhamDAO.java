@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -15,12 +16,13 @@ public class SanPhamDAO {
     @Autowired
     SessionFactory sessionFactory;
 
+    @Transactional
     public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from SanPhamEntity";
         Query query = session.createQuery(hql);
         query.setFirstResult(spDau);
-        query.setMaxResults(20);
+        query.setMaxResults(spCuoi);
         List<SanPhamEntity> sanPhamEntities = ((org.hibernate.query.Query) query).list();
         return sanPhamEntities;
     }
