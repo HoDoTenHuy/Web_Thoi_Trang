@@ -318,13 +318,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="page-wrapper" class="container-fluid">
             <div class="row">
                 <h3>Sản Phẩm</h3>
-                <div>
-                    <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 57.26px;
+                <div class="col-md-5 col-sm-12">
+                    <div style="padding-bottom: 17px;">
+                        <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 57.26px;
                     padding: 7.5px 12px;">Thêm</button>
-                    <button id="xoa-sanpham" type="button" class="btn btn-danger">Xóa</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="tensp">Tên Sản Phẩm : </label>
+                        <input class="form-control" name="tensp" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1">Danh Mục : </label>
+                        <select class="form-control" id="sel1">
+                            <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
+                                <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="giasp">Giá Tiền : </label>
+                        <input class="form-control" name="giasp" id="giasp" placeholder="Nhập vào giá sản phẩm!"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="hinhanh">Hình Ảnh : </label>
+                        <input type="file" name="hinhanh" id="hinhanh" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label>Giành Cho : </label>
+                        <input type="radio" name="gianhcho" value="Nam">Nam
+                        <input type="radio" name="gianhcho" value="Nữ"/>Nữ<br/>
+                    </div>
+                    <div class="form-group">
+                        <label for="motasp">Mô Tả : </label>
+                        <textarea row="5" class="form-control" name="motasp" id="motasp"
+                                  placeholder="Nhập mô tả cho sản phẩm!"></textarea>
+                    </div>
                 </div>
-                <table id="table-sanpham" class="table">
-                    <thead>
+                <div class="col-md-7 col-sm-12">
+
+                    <div>
+                        <button id="xoa-sanpham" type="button" class="btn btn-danger">Xóa</button>
+                    </div>
+                    <table id="table-sanpham" class="table">
+                        <thead>
                         <tr>
                             <th>
                                 <input id="check-all-sanpham" type="checkbox" />
@@ -333,34 +369,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <th>Giá Tiền</th>
                             <th>Giành Cho</th>
                         </tr>
-                    </thead>
-                    <tbody style="border-bottom: 0.5px outset;">
-                    <c:forEach var = "sanpham" items="${listSanPham}">
-                        <tr>
-                            <td>
-                                <div>
-                                    <input class="checkbox-sanpham" type="checkbox" value="${sanpham.idSanPham}">
-                                </div>
-                            </td>
-                            <td class="tensp" data-masp="${sanpham.idSanPham}">${sanpham.tenSanPham}</td>
-                            <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
-                            <td class="giatie" data-masize="${sanpham.gianhCho}">${sanpham.gianhCho}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-                <ul class="pagination pagination-sm">
-                    <c:forEach var="index" begin="1" end="${tongPage}">
-                        <c:choose>
-                            <c:when test = "${index == 1}">
-                                <li class="paging-item active"><a href="#">${index}</a></li>
-                            </c:when>
-                            <c:otherwise>
-                                <li class="paging-item"><a href="#">${index}</a></li>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-                </ul>
+                        </thead>
+                        <tbody style="border-bottom: 0.5px outset;">
+                        <c:forEach var = "sanpham" items="${listSanPham}">
+                            <tr>
+                                <td>
+                                    <div>
+                                        <input class="checkbox-sanpham" type="checkbox" value="${sanpham.idSanPham}">
+                                    </div>
+                                </td>
+                                <td class="tensp" data-masp="${sanpham.idSanPham}">${sanpham.tenSanPham}</td>
+                                <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
+                                <td class="giatie" data-masize="${sanpham.gianhCho}">${sanpham.gianhCho}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <ul class="pagination pagination-sm">
+                        <c:forEach var="index" begin="1" end="${tongPage}">
+                            <c:choose>
+                                <c:when test = "${index == 1}">
+                                    <li class="paging-item active"><a href="#">${index}</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="paging-item"><a href="#">${index}</a></li>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                    </ul>
+                </div>
             </div>
         </div>
         <!--body wrapper end-->
