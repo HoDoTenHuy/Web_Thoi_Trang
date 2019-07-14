@@ -329,7 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="form-group">
                         <label for="sel1">Danh Mục : </label>
-                        <select class="form-control" id="sel1">
+                        <select name="danhmucsanpham" class="form-control" id="sel1">
                             <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
                                 <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
                             </c:forEach>

@@ -9,9 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Controller
@@ -27,8 +33,8 @@ public class APIController {
         this.sanPhamService = sanPhamService;
     }
 
-
-
+    @Autowired
+    ServletContext context;
 
     @GetMapping("kiemtradangnhap")
     @ResponseBody
@@ -123,6 +129,21 @@ public class APIController {
     @ResponseBody
     public void xoaSanPhamTheoID(@RequestParam int maSanPham){
         sanPhamService.xoaSanPhamTheoID(maSanPham);
+    }
+
+    @PostMapping("uploadfile")
+    @ResponseBody
+    public void uploadFile(MultipartHttpServletRequest request){
+        String pathSaveFile = context.getRealPath("/resources/images/sanpham/");
+        Iterator<String> listNames = request.getFileNames();
+        MultipartFile multipartFile = request.getFile(listNames.next());
+        File fileSave = new File(pathSaveFile + multipartFile.getOriginalFilename());
+        try {
+            multipartFile.transferTo(fileSave);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(pathSaveFile);
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
