@@ -20,6 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/bootstrap.min.css"/> '/>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/style.css"/> '/>
+    <%--<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/styles.css"/> '/>--%>
     <!-- Graph CSS -->
     <link rel="stylesheet" href='<c:url value="/resources/css/font-awesome.css"/> '/>
     <!-- jQuery -->
@@ -319,10 +320,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="row">
                 <h3>Sản Phẩm</h3>
                 <div class="col-md-5 col-sm-12">
-                    <div style="padding-bottom: 17px;">
-                        <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 57.26px;
-                    padding: 7.5px 12px;">Thêm</button>
-                    </div>
                     <div class="form-group">
                         <label for="tensp">Tên Sản Phẩm : </label>
                         <input class="form-control" name="tensp" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
@@ -352,6 +349,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <label for="motasp">Mô Tả : </label>
                         <textarea row="5" class="form-control" name="motasp" id="motasp"
                                   placeholder="Nhập mô tả cho sản phẩm!"></textarea>
+                    </div>
+                    <div id="container-chitiet-sanpham">
+                        <div class="chitiet-sanpham">
+                            <span>Chi Tiết : </span>
+                            <select name="chitietmau" class="form-control">
+                                <c:forEach var = "valuemau" items="${listMau}">
+                                    <option value="${valuemau.idMau}">${valuemau.tenMau}</option>
+                                </c:forEach>
+                            </select>
+
+                            <select name="danhmucsize" class="form-control">
+                                <c:forEach var = "valuesize" items="${listSize}">
+                                    <option value="${valuesize.idSize}">${valuesize.size}</option>
+                                </c:forEach>
+                            </select>
+
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="soluong" id="soluong"
+                                       min="1" placeholder="Số lượng : "/>
+                            </div>
+                            <button class="btn btn-default btn-chitiet"
+                                    style="float: right;color: darkred;">Thêm chi tiết</button>
+                        </div>
+                    </div>
+                    <div id="chitiet-sanpham" class="chitiet-sanpham">
+                        <span>Chi Tiết : </span>
+                        <select name="chitietmau" class="form-control">
+                            <c:forEach var = "valuemau" items="${listMau}">
+                                <option value="${valuemau.idMau}">${valuemau.tenMau}</option>
+                            </c:forEach>
+                        </select>
+
+                        <select name="danhmucsize" class="form-control">
+                            <c:forEach var = "valuesize" items="${listSize}">
+                                <option value="${valuesize.idSize}">${valuesize.size}</option>
+                            </c:forEach>
+                        </select>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="soluong" id="soluong"
+                                   min="1" placeholder="Số lượng : "/>
+                        </div>
+                        <button class="btn btn-default btn-chitiet"
+                                style="float: right;color: darkred;">Thêm chi tiết</button>
+                    </div>
+                    <div style="padding-bottom: 17px;">
+                        <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 130px;
+                    padding: 7.5px 12px;">Thêm</button>
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12">

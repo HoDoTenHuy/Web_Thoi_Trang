@@ -192,4 +192,10 @@ $(document).ready(function () {
             }
         })
     });
+    $("body").on("click", ".btn-chitiet", function () {
+        $(this).remove();
+       var chitiet_clone = $("#chitiet-sanpham").clone();
+       chitiet_clone.removeAttr("id");
+       $("#container-chitiet-sanpham").append(chitiet_clone);
+    });
 });

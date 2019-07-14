@@ -7580,3 +7580,7 @@ textarea.form-control1.control2 {
     width: 100%;
 }
 }
+/*start page them san pham*/
+#chitiet-sanpham{
+	display: none;
+}

@@ -344,3 +344,8 @@ ul{
         text-align: left !important;
     }
 }
+/*end chi tiet*/
+/*start page them san pham*/
+#chitiet-sanpham{
+    display: none;
+}
