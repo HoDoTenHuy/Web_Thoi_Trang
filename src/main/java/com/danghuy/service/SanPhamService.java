@@ -12,4 +12,6 @@ public interface SanPhamService {
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc);
 
     public List<SanPhamEntity> layALLSanPham();
+
+    public void xoaSanPhamTheoID(int maSanPham);
 }

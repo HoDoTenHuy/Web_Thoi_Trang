@@ -47,4 +47,11 @@ public class SanPhamDAO {
         List<SanPhamEntity> sanPhamEntities = session.createQuery(hql).list();
         return sanPhamEntities;
     }
+    @Transactional
+    public void xoaSanPhamTheoID(int maSanPham){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        SanPhamEntity sanPhamEntity = new SanPhamEntity();
+        sanPhamEntity.setIdSanPham(maSanPham);
+        session.delete(sanPhamEntity);
+    }
 }

@@ -155,4 +155,24 @@ $(document).ready(function () {
             }
         })
     });
+    $("#check-all-sanpham").change(function () {
+        var checkboxes = $(this).closest('table').find('.checkbox-sanpham');
+        checkboxes.prop('checked', $(this).is(':checked'));
+    });
+    $("#xoa-sanpham").click(function () {
+        $("#table-sanpham > tbody input:checked").each(function () {
+           var masanpham = $(this).val();
+           var hangcanxoa = $(this);
+            $.ajax({
+                url : "/api/xoasanpham",
+                type : "GET",
+                data :{
+                    maSanPham : masanpham,
+                },
+                success : function (value) {
+                    hangcanxoa.closest("tr").remove();
+                }
+            })
+        });
+    });
 });

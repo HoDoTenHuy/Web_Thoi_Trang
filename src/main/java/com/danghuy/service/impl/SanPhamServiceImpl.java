@@ -29,4 +29,8 @@ public class SanPhamServiceImpl implements SanPhamService {
 
         return sanPhamDAO.layALLSanPham();
     }
+
+    public void xoaSanPhamTheoID(int maSanPham) {
+        sanPhamDAO.xoaSanPhamTheoID(maSanPham);
+    }
 }

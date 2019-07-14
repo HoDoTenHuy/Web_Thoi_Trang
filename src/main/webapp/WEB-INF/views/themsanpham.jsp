@@ -318,23 +318,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="page-wrapper" class="container-fluid">
             <div class="row">
                 <h3>Sản Phẩm</h3>
+                <div>
+                    <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 57.26px;
+                    padding: 7.5px 12px;">Thêm</button>
+                    <button id="xoa-sanpham" type="button" class="btn btn-danger">Xóa</button>
+                </div>
                 <table id="table-sanpham" class="table">
                     <thead>
                         <tr>
                             <th>
-                                <input type="checkbox" />
+                                <input id="check-all-sanpham" type="checkbox" />
                             </th>
                             <th>Tên Sản Phẩm</th>
                             <th>Giá Tiền</th>
                             <th>Giành Cho</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="border-bottom: 0.5px outset;">
                     <c:forEach var = "sanpham" items="${listSanPham}">
                         <tr>
                             <td>
                                 <div>
-                                    <input class="checkbox-sanpham" type="checkbox" value="">
+                                    <input class="checkbox-sanpham" type="checkbox" value="${sanpham.idSanPham}">
                                 </div>
                             </td>
                             <td class="tensp" data-masp="${sanpham.idSanPham}">${sanpham.tenSanPham}</td>

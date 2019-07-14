@@ -106,9 +106,9 @@ public class APIController {
         for(SanPhamEntity sp : sanPhamEntities){
             html += "<tr>";
             html += " <td>\n" +
-                    "      <div>\n" +
-                    "           <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\"\">\n" +
-                    "      </div>\n" +
+                    "    <div>\n" +
+                    "       <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\""+ sp.getIdSanPham() +"\">\n" +
+                    "    </div>\n" +
                     " </td>";
             html += " <td class=\"tensp\" data-masp=\" "+ sp.getIdSanPham() +"\">"+ sp.getTenSanPham() +"</td>\n" +
                     " <td class=\"giatien\" data-giatien=\""+ sp.getGiaTien() +"\">"+ sp.getGiaTien() +"</td>\n" +
@@ -117,6 +117,12 @@ public class APIController {
             html += "</tr>";
         }
         return html;
+    }
+
+    @GetMapping("xoasanpham")
+    @ResponseBody
+    public void xoaSanPhamTheoID(@RequestParam int maSanPham){
+        sanPhamService.xoaSanPhamTheoID(maSanPham);
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
