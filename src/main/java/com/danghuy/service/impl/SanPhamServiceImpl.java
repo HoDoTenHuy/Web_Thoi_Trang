@@ -33,4 +33,8 @@ public class SanPhamServiceImpl implements SanPhamService {
     public void xoaSanPhamTheoID(int maSanPham) {
         sanPhamDAO.xoaSanPhamTheoID(maSanPham);
     }
+
+    public boolean themSanPham(SanPhamEntity sanPhamEntity) {
+        return sanPhamDAO.themSanPham(sanPhamEntity);
+    }
 }

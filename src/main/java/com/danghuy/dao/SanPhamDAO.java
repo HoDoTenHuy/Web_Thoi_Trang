@@ -54,4 +54,13 @@ public class SanPhamDAO {
         sanPhamEntity.setIdSanPham(maSanPham);
         session.delete(sanPhamEntity);
     }
+    @Transactional
+    public boolean themSanPham(SanPhamEntity sanPhamEntity){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        Integer id = (Integer) session.save(sanPhamEntity);
+        if(id > 0){
+            return true;
+        }
+        return false;
+    }
 }

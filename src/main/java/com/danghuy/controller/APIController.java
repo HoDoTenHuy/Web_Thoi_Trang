@@ -1,9 +1,10 @@
 package com.danghuy.controller;
 
-import com.danghuy.entity.GioHang;
-import com.danghuy.entity.SanPhamEntity;
+import com.danghuy.entity.*;
 import com.danghuy.service.impl.NhanVienServiceImpl;
 import com.danghuy.service.impl.SanPhamServiceImpl;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,9 +17,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("api/")
@@ -149,7 +148,53 @@ public class APIController {
     @PostMapping("themsanpham")
     @ResponseBody
     public void themSanPham(@RequestParam String dataJson){
-        System.out.println(dataJson);
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonObject;
+        try {
+            SanPhamEntity sanPham = new SanPhamEntity();
+            jsonObject = objectMapper.readTree(dataJson);
+
+            DanhMucSanPhamEntity danhMucSanPham = new DanhMucSanPhamEntity();
+            danhMucSanPham.setIdDanhMuc(jsonObject.get("danhMucSanPhamEntity").asInt());
+
+            Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
+            JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
+            for(JsonNode value : jsonChiTiet){
+                ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
+
+                MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
+                mauSanPhamEntity.setIdMau(value.get("idmau").asInt());
+
+                SizeSanPhamEntity sizeSanPhamEntity = new SizeSanPhamEntity();
+                sizeSanPhamEntity.setIdSize(value.get("idsize").asInt());
+
+                chiTietSanPhamEntity.setMauSanPhamEntity(mauSanPhamEntity);
+                chiTietSanPhamEntity.setSizeSanPhamEntity(sizeSanPhamEntity);
+                chiTietSanPhamEntity.setSoLuong(value.get("soluong").asInt());
+
+                chiTietSanPhamEntities.add(chiTietSanPhamEntity);
+            }
+            String tenSanPham = jsonObject.get("tenSanPham").asText();
+            String moTa = jsonObject.get("moTa").asText();
+            String hinhSanPham = jsonObject.get("hinhSanPham").asText();
+            String gianhCho = jsonObject.get("gianhCho").asText();
+            String giaTien = jsonObject.get("giaTien").asText();
+
+            sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
+            sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
+            sanPham.setTenSanPham(tenSanPham);
+            sanPham.setGiaTien(giaTien);
+            sanPham.setMoTa(moTa);
+            sanPham.setHinhSanPham(hinhSanPham);
+            sanPham.setGianhCho(gianhCho);
+
+            sanPhamService.themSanPham(sanPham);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {

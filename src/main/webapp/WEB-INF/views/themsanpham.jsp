@@ -323,11 +323,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <form id="form-sanpham">
                         <div class="form-group">
                             <label for="tensp">Tên Sản Phẩm : </label>
-                            <input class="form-control" name="tensp" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
+                            <input class="form-control" name="tenSanPham" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
                         </div>
                         <div class="form-group">
                             <label for="sel1">Danh Mục : </label>
-                            <select name="danhmucsanpham" class="form-control" id="sel1">
+                            <select name="danhMucSanPhamEntity" class="form-control" id="sel1">
                                 <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
                                     <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
                                 </c:forEach>
@@ -335,20 +335,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="form-group">
                             <label for="giasp">Giá Tiền : </label>
-                            <input class="form-control" name="giasp" id="giasp" placeholder="Nhập vào giá sản phẩm!"/>
+                            <input class="form-control" name="giaTien" id="giasp" placeholder="Nhập vào giá sản phẩm!"/>
                         </div>
                         <div class="form-group">
                             <label for="hinhanh">Hình Ảnh : </label>
-                            <input type="file" name="hinhanh" id="hinhanh" multiple>
+                            <input type="file" name="hinhSanPham" id="hinhanh" multiple>
                         </div>
                         <div class="form-group">
                             <label>Giành Cho : </label>
-                            <input type="radio" name="gianhcho" value="Nam">Nam
-                            <input type="radio" name="gianhcho" value="Nữ"/>Nữ<br/>
+                            <input type="radio" name="gianhCho" value="Nam">Nam
+                            <input type="radio" name="gianhCho" value="Nữ"/>Nữ<br/>
                         </div>
                         <div class="form-group">
                             <label for="motasp">Mô Tả : </label>
-                            <textarea row="5" class="form-control" name="motasp" id="motasp"
+                            <textarea row="5" class="form-control" name="moTa" id="motasp"
                                       placeholder="Nhập mô tả cho sản phẩm!"></textarea>
                         </div>
                     </form>

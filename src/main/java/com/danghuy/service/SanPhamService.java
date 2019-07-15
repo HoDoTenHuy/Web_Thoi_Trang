@@ -14,4 +14,6 @@ public interface SanPhamService {
     public List<SanPhamEntity> layALLSanPham();
 
     public void xoaSanPhamTheoID(int maSanPham);
+
+    public boolean themSanPham(SanPhamEntity sanPhamEntity);
 }

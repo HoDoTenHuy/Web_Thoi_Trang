@@ -13,11 +13,11 @@ public class ChiTietSanPhamEntity {
     @JoinColumn(name = "idSanPham")
     SanPhamEntity sanPhamEntity;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idSize")
     SizeSanPhamEntity sizeSanPhamEntity;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idMau")
     MauSanPhamEntity mauSanPhamEntity;
 

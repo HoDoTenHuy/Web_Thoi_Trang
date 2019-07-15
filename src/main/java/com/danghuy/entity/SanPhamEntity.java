@@ -16,7 +16,7 @@ public class SanPhamEntity {
     private String hinhSanPham;
     private String gianhCho;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idDanhMuc")
     DanhMucSanPhamEntity danhMucSanPhamEntity;
 
