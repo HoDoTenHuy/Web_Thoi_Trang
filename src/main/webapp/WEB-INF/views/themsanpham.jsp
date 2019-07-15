@@ -320,58 +320,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="row">
                 <h3>Sản Phẩm</h3>
                 <div class="col-md-5 col-sm-12">
-                    <div class="form-group">
-                        <label for="tensp">Tên Sản Phẩm : </label>
-                        <input class="form-control" name="tensp" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="sel1">Danh Mục : </label>
-                        <select name="danhmucsanpham" class="form-control" id="sel1">
-                            <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
-                                <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="giasp">Giá Tiền : </label>
-                        <input class="form-control" name="giasp" id="giasp" placeholder="Nhập vào giá sản phẩm!"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="hinhanh">Hình Ảnh : </label>
-                        <input type="file" name="hinhanh" id="hinhanh" multiple>
-                    </div>
-                    <div class="form-group">
-                        <label>Giành Cho : </label>
-                        <input type="radio" name="gianhcho" value="Nam">Nam
-                        <input type="radio" name="gianhcho" value="Nữ"/>Nữ<br/>
-                    </div>
-                    <div class="form-group">
-                        <label for="motasp">Mô Tả : </label>
-                        <textarea row="5" class="form-control" name="motasp" id="motasp"
-                                  placeholder="Nhập mô tả cho sản phẩm!"></textarea>
-                    </div>
-                    <div id="container-chitiet-sanpham">
-                        <div class="chitiet-sanpham">
-                            <span>Chi Tiết : </span>
-                            <select name="chitietmau" class="form-control">
-                                <c:forEach var = "valuemau" items="${listMau}">
-                                    <option value="${valuemau.idMau}">${valuemau.tenMau}</option>
-                                </c:forEach>
-                            </select>
-
-                            <select name="danhmucsize" class="form-control">
-                                <c:forEach var = "valuesize" items="${listSize}">
-                                    <option value="${valuesize.idSize}">${valuesize.size}</option>
-                                </c:forEach>
-                            </select>
-
-                            <div class="form-group">
-                                <input type="number" class="form-control" name="soluong" id="soluong"
-                                       min="1" placeholder="Số lượng : "/>
-                            </div>
-                            <button class="btn btn-default btn-chitiet"
-                                    style="float: right;color: darkred;">Thêm chi tiết</button>
+                    <form id="form-sanpham">
+                        <div class="form-group">
+                            <label for="tensp">Tên Sản Phẩm : </label>
+                            <input class="form-control" name="tensp" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
                         </div>
+                        <div class="form-group">
+                            <label for="sel1">Danh Mục : </label>
+                            <select name="danhmucsanpham" class="form-control" id="sel1">
+                                <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
+                                    <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="giasp">Giá Tiền : </label>
+                            <input class="form-control" name="giasp" id="giasp" placeholder="Nhập vào giá sản phẩm!"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="hinhanh">Hình Ảnh : </label>
+                            <input type="file" name="hinhanh" id="hinhanh" multiple>
+                        </div>
+                        <div class="form-group">
+                            <label>Giành Cho : </label>
+                            <input type="radio" name="gianhcho" value="Nam">Nam
+                            <input type="radio" name="gianhcho" value="Nữ"/>Nữ<br/>
+                        </div>
+                        <div class="form-group">
+                            <label for="motasp">Mô Tả : </label>
+                            <textarea row="5" class="form-control" name="motasp" id="motasp"
+                                      placeholder="Nhập mô tả cho sản phẩm!"></textarea>
+                        </div>
+                    </form>
+                    <div id="container-chitiet-sanpham">
+                                <div class="chitiet-sanpham">
+                                    <span>Chi Tiết : </span>
+                                    <select name="chitietmau" class="form-control">
+                                        <c:forEach var = "valuemau" items="${listMau}">
+                                            <option id="idmausp" value="${valuemau.idMau}">${valuemau.tenMau}</option>
+                                        </c:forEach>
+                                    </select>
+
+                                    <select name="danhmucsize" class="form-control">
+                                        <c:forEach var = "valuesize" items="${listSize}">
+                                            <option id="idsize" value="${valuesize.idSize}">${valuesize.size}</option>
+                                        </c:forEach>
+                                    </select>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" name="soluong" id="soluong"
+                                               min="1" value="1" placeholder="Số lượng : "/>
+                                    </div>
+                                    <button class="btn btn-default btn-chitiet"
+                                            style="float: right;color: darkred;">Thêm chi tiết</button>
+                                </div>
                     </div>
                     <div id="chitiet-sanpham" class="chitiet-sanpham">
                         <span>Chi Tiết : </span>
@@ -388,8 +389,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </select>
 
                         <div class="form-group">
-                            <input type="number" class="form-control" name="soluong" id="soluong"
-                                   min="1" placeholder="Số lượng : "/>
+                            <input type="number" class="form-control" name="soluong"
+                                   min="1" value="1" placeholder="Số lượng : "/>
                         </div>
                         <button class="btn btn-default btn-chitiet"
                                 style="float: right;color: darkred;">Thêm chi tiết</button>

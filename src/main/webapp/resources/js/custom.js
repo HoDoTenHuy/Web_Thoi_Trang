@@ -198,4 +198,40 @@ $(document).ready(function () {
        chitiet_clone.removeAttr("id");
        $("#container-chitiet-sanpham").append(chitiet_clone);
     });
+    $("#them-sanpham").click(function (event) {
+        event.preventDefault(); /*Ngăn chặn reload page*/
+        var form_data_sanpham = $("#form-sanpham").serializeArray();
+        json = {};
+        $.each(form_data_sanpham, function(i, field){
+            json[field.name] = field.value;
+        });
+
+        /*console.log(array_chitiet);*/
+        object_chitiet = {};
+        array_chitiet = [];
+        $("#container-chitiet-sanpham > .chitiet-sanpham").each(function () {
+            var idmau = $(this).find('select[name="chitietmau"]').val();
+            var idsize = $(this).find('select[name="danhmucsize"]').val();
+            var soluong = $(this).find('input[name="soluong"]').val();
+            object_chitiet["idmau"] = idmau;
+            object_chitiet["idsize"] = idsize;
+            object_chitiet["soluong"] = soluong;
+
+            array_chitiet.push(object_chitiet);
+            object_chitiet = {};
+        });
+
+        json["chitietsanpham"] = array_chitiet;
+
+        $.ajax({
+            url : "/api/themsanpham",
+            type : "POST",
+            data :{
+                dataJson : JSON.stringify(json)
+            } ,
+            success : function (value) {
+
+            }
+        })
+    });
 });

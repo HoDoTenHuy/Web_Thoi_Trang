@@ -146,6 +146,12 @@ public class APIController {
         System.out.println(pathSaveFile);
     }
 
+    @PostMapping("themsanpham")
+    @ResponseBody
+    public void themSanPham(@RequestParam String dataJson){
+        System.out.println(dataJson);
+    }
+
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
         List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
         for (int i = 0; i < list.size(); i++) {
