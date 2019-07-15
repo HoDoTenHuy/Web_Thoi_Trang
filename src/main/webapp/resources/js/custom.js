@@ -237,4 +237,17 @@ $(document).ready(function () {
             }
         })
     });
+    $("body").on("click", ".capnhat-sanpham", function () {
+        var maSanPham = $(this).attr("data-id");
+        $.ajax({
+            url : "/api/laydanhsachsanphamtheoid",
+            type : "POST",
+            data :{
+                idSanPham : maSanPham
+            } ,
+            success : function (value) {
+
+            }
+        })
+    });
 });

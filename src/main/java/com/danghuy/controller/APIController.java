@@ -1,6 +1,7 @@
 package com.danghuy.controller;
 
 import com.danghuy.entity.*;
+import com.danghuy.pojo.SanPham;
 import com.danghuy.service.impl.NhanVienServiceImpl;
 import com.danghuy.service.impl.SanPhamServiceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -24,13 +25,14 @@ import java.util.*;
 @SessionAttributes("user, cart")
 public class APIController {
     private final NhanVienServiceImpl nhanVienServiceImpl;
-    private final SanPhamServiceImpl sanPhamService;
 
     @Autowired
     public APIController(NhanVienServiceImpl nhanVienServiceImpl, SanPhamServiceImpl sanPhamService) {
         this.nhanVienServiceImpl = nhanVienServiceImpl;
-        this.sanPhamService = sanPhamService;
     }
+
+    @Autowired
+    SanPhamServiceImpl sanPhamService;
 
     @Autowired
     ServletContext context;
@@ -118,7 +120,11 @@ public class APIController {
             html += " <td class=\"tensp\" data-masp=\" "+ sp.getIdSanPham() +"\">"+ sp.getTenSanPham() +"</td>\n" +
                     " <td class=\"giatien\" data-giatien=\""+ sp.getGiaTien() +"\">"+ sp.getGiaTien() +"</td>\n" +
                     " <td class=\"giatie\" data-masize=\""+ sp.getGianhCho() +"\">"+ sp.getGianhCho() +"</td>";
-
+            html += "<td class=\"capnhat-sanpham\" style=\"padding-top: 8px !important;\"\n" +
+                    "                                    data-id=\"" + sp.getIdSanPham() + "\">\n" +
+                    "                                    <button type=\"button\"\n" +
+                    "                                                class=\"btn btn-secondary\">Cập Nhật</button>\n" +
+                    "                                </td>";
             html += "</tr>";
         }
         return html;
@@ -145,7 +151,7 @@ public class APIController {
         System.out.println(pathSaveFile);
     }
 
-    @PostMapping("themsanpham")
+    @PostMapping(path = "themsanpham", produces = "application/json")
     @ResponseBody
     public void themSanPham(@RequestParam String dataJson){
         ObjectMapper objectMapper = new ObjectMapper();
@@ -195,6 +201,38 @@ public class APIController {
             e.printStackTrace();
         }
 
+    }
+    @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.POST)
+    @ResponseBody
+    public SanPham layDanhSachSanPhamTheoID(@RequestParam int idSanPham){
+        System.out.println(idSanPham);
+        SanPham sanPham =  sanPhamService.layDanhSachSanPhamTheoIDConvertPojo(idSanPham);
+        DanhMucSanPhamEntity danhMucSanPhamEntity = new DanhMucSanPhamEntity();
+        danhMucSanPhamEntity.setIdDanhMuc(sanPham.getDanhMucSanPham().getIdDanhMuc());
+        danhMucSanPhamEntity.setTenDanhMuc(sanPham.getDanhMucSanPham().getTenDanhMuc());
+        Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
+        for(ChiTietSanPhamEntity value : sanPham.getChiTietSanPhams()){
+            ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
+
+            chiTietSanPhamEntity.setIdChiTietSanPham(value.getIdChiTietSanPham());
+
+            MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
+            mauSanPhamEntity.setIdMau(value.getMauSanPhamEntity().getIdMau());
+            mauSanPhamEntity.setTenMau(value.getMauSanPhamEntity().getTenMau());
+
+            chiTietSanPhamEntity.setMauSanPhamEntity(mauSanPhamEntity);
+
+            SizeSanPhamEntity sizeSanPhamEntity = new SizeSanPhamEntity();
+            sizeSanPhamEntity.setIdSize(value.getSizeSanPhamEntity().getIdSize());
+            sizeSanPhamEntity.setSize(value.getSizeSanPhamEntity().getSize());
+
+            chiTietSanPhamEntity.setSoLuong(value.getSoLuong());
+            chiTietSanPhamEntity.setSizeSanPhamEntity(sizeSanPhamEntity);
+            chiTietSanPhamEntities.add(chiTietSanPhamEntity);
+        }
+        sanPham.setDanhMucSanPham(danhMucSanPhamEntity);
+        sanPham.setChiTietSanPhams(chiTietSanPhamEntities);
+        return sanPham;
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {

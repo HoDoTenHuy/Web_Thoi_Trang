@@ -4,6 +4,8 @@ import com.danghuy.entity.SanPhamEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +13,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Repository
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class SanPhamDAO {
 
     @Autowired
@@ -29,7 +32,7 @@ public class SanPhamDAO {
 
     public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham) {
         Session session = sessionFactory.getCurrentSession().getSession();
-        String hql = "from SanPhamEntity where idSanPham = '" + idSanPham + "'";
+        String hql = "from SanPhamEntity where idSanPham = " + idSanPham;
         SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).getSingleResult();
         return sanPhamEntity;
     }

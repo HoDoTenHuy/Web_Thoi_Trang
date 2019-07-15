@@ -414,6 +414,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <th>Tên Sản Phẩm</th>
                             <th>Giá Tiền</th>
                             <th>Giành Cho</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody style="border-bottom: 0.5px outset;">
@@ -427,6 +428,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <td class="tensp" data-masp="${sanpham.idSanPham}">${sanpham.tenSanPham}</td>
                                 <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
                                 <td class="giatie" data-masize="${sanpham.gianhCho}">${sanpham.gianhCho}</td>
+                                <td class="capnhat-sanpham" style="padding-top: 8px !important;"
+                                    data-id="${sanpham.idSanPham}">
+                                    <button type="button"
+                                                class="btn btn-secondary">Cập Nhật</button>
+                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>
