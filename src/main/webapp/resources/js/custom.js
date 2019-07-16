@@ -241,12 +241,12 @@ $(document).ready(function () {
         var maSanPham = $(this).attr("data-id");
         $.ajax({
             url : "/api/laydanhsachsanphamtheoid",
-            type : "POST",
+            type : "GET",
             data :{
                 idSanPham : maSanPham
             } ,
             success : function (value) {
-
+                console.log(value);
             }
         })
     });

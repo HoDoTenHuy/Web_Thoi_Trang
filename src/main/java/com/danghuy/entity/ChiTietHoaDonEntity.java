@@ -1,10 +1,11 @@
 package com.danghuy.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "chitiethoadon")
-public class ChiTietHoaDonEntity {
+public class ChiTietHoaDonEntity implements Serializable {
 
     @EmbeddedId
     ChiTietHoaDonIDEntity chiTietHoaDonIDEntity;

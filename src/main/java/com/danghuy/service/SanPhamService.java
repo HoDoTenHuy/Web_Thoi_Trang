@@ -10,7 +10,7 @@ public interface SanPhamService {
 
     public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham);
 
-    public SanPham layDanhSachSanPhamTheoIDConvertPojo(int idSanPham);
+    /*public SanPham layDanhSachSanPhamTheoIDConvertPojo(int idSanPham);*/
 
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc);
 

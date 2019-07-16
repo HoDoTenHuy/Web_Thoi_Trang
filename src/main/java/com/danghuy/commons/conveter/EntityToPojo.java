@@ -33,13 +33,13 @@ public class EntityToPojo {
         SanPham sanPham = new SanPham();
         sanPham.setIdSanPham(sanPhamEntity.getIdSanPham());
         sanPham.setTenSanPham(sanPhamEntity.getTenSanPham());
-        sanPham.setChiTietSanPhams(sanPhamEntity.getChiTietSanPhamEntities());
-        sanPham.setDanhMucSanPham(sanPhamEntity.getDanhMucSanPhamEntity());
+        //sanPham.setChiTietSanPhams(sanPhamEntity.getChiTietSanPhamEntities());
+        //sanPham.setDanhMucSanPham(sanPhamEntity.getDanhMucSanPhamEntity());
         sanPham.setGianhCho(sanPhamEntity.getGianhCho());
         sanPham.setGiaTien(sanPhamEntity.getGiaTien());
         sanPham.setHinhSanPham(sanPhamEntity.getHinhSanPham());
         sanPham.setMoTa(sanPhamEntity.getMoTa());
-        sanPham.setKhuyenMaiEntities(sanPhamEntity.getKhuyenMaiEntities());
+        //sanPham.setKhuyenMaiEntities(sanPhamEntity.getKhuyenMaiEntities());
         return sanPham;
     }
 }

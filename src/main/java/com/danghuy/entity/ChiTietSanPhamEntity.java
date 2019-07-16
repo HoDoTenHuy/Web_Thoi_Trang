@@ -1,15 +1,16 @@
 package com.danghuy.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "chitietsanpham")
-public class ChiTietSanPhamEntity {
+public class ChiTietSanPhamEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idChiTietSanPham;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "idSanPham")
     SanPhamEntity sanPhamEntity;
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.persistence.Table;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -202,16 +203,25 @@ public class APIController {
         }
 
     }
-    @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.POST)
+    @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.GET)
     @ResponseBody
+    @Transactional
     public SanPham layDanhSachSanPhamTheoID(@RequestParam int idSanPham){
-        System.out.println(idSanPham);
-        SanPham sanPham =  sanPhamService.layDanhSachSanPhamTheoIDConvertPojo(idSanPham);
+        SanPham sanPham = new SanPham();
+        SanPhamEntity sanPhamEntity =  sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
+        sanPham.setTenSanPham(sanPhamEntity.getTenSanPham());
+        sanPham.setIdSanPham(sanPhamEntity.getIdSanPham());
+        sanPham.setMoTa(sanPhamEntity.getMoTa());
+        sanPham.setGiaTien(sanPhamEntity.getGiaTien());
+        sanPham.setGianhCho(sanPhamEntity.getGianhCho());
+        sanPham.setHinhSanPham(sanPhamEntity.getHinhSanPham());
+
         DanhMucSanPhamEntity danhMucSanPhamEntity = new DanhMucSanPhamEntity();
-        danhMucSanPhamEntity.setIdDanhMuc(sanPham.getDanhMucSanPham().getIdDanhMuc());
-        danhMucSanPhamEntity.setTenDanhMuc(sanPham.getDanhMucSanPham().getTenDanhMuc());
+        danhMucSanPhamEntity.setIdDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getIdDanhMuc());
+        danhMucSanPhamEntity.setTenDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getTenDanhMuc());
+
         Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
-        for(ChiTietSanPhamEntity value : sanPham.getChiTietSanPhams()){
+        for(ChiTietSanPhamEntity value : sanPhamEntity.getChiTietSanPhamEntities()){
             ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
             chiTietSanPhamEntity.setIdChiTietSanPham(value.getIdChiTietSanPham());
@@ -232,6 +242,7 @@ public class APIController {
         }
         sanPham.setDanhMucSanPham(danhMucSanPhamEntity);
         sanPham.setChiTietSanPhams(chiTietSanPhamEntities);
+        System.out.println(sanPham.getTenSanPham());
         return sanPham;
     }
 

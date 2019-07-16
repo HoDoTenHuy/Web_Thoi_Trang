@@ -15,8 +15,6 @@ public class SanPhamServiceImpl implements SanPhamService {
     @Autowired
     SanPhamDAO sanPhamDAO;
 
-    @Autowired
-    EntityToPojo entityToPojo;
 
     public List<SanPhamEntity> laySanPhamLimit(int spDau, int spCuoi) {
         return sanPhamDAO.laySanPhamLimit(spDau, spCuoi);
@@ -26,11 +24,11 @@ public class SanPhamServiceImpl implements SanPhamService {
         return sanPhamDAO.layDanhSachSanPhamTheoID(idSanPham);
     }
 
-    public SanPham layDanhSachSanPhamTheoIDConvertPojo(int idSanPham) {
+    /*public SanPham layDanhSachSanPhamTheoIDConvertPojo(int idSanPham) {
         SanPhamEntity sanPhamEntity = sanPhamDAO.layDanhSachSanPhamTheoID(idSanPham);
         SanPham sanPham = entityToPojo.convertSanPham(sanPhamEntity);
         return sanPham;
-    }
+    }*/
 
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc) {
         return sanPhamDAO.laySanPhamTheoMaDanhMuc(maDanhMuc);

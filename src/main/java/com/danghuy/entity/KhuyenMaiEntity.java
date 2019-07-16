@@ -1,11 +1,12 @@
 package com.danghuy.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "khuyenmai")
-public class KhuyenMaiEntity {
+public class KhuyenMaiEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idKhuyenMai;
@@ -16,7 +17,7 @@ public class KhuyenMaiEntity {
     private String hinhKhuyenMai;
     private int giamGia;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany()
     @JoinTable(name = "chitietkhuyenmai",
             joinColumns = {@JoinColumn(name = "idKhuyenMai", referencedColumnName = "idKhuyenMai")},
             inverseJoinColumns = {@JoinColumn(name = "idSanPham", referencedColumnName = "idSanPham")}

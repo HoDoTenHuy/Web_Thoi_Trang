@@ -1,11 +1,12 @@
 package com.danghuy.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "hoadon")
-public class HoaDonEntity {
+public class HoaDonEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idHoaDon;
