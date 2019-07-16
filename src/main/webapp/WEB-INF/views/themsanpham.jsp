@@ -326,8 +326,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <input class="form-control" name="tenSanPham" id="tensp" placeholder="Nhập vào tên sản phẩm!"/>
                         </div>
                         <div class="form-group">
-                            <label for="sel1">Danh Mục : </label>
-                            <select name="danhMucSanPhamEntity" class="form-control" id="sel1">
+                            <label for="danhmucsanpham">Danh Mục : </label>
+                            <select name="danhMucSanPhamEntity" class="form-control" id="danhmucsanpham">
                                 <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
                                     <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
                                 </c:forEach>
@@ -343,8 +343,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="form-group">
                             <label>Giành Cho : </label>
-                            <input type="radio" name="gianhCho" value="Nam">Nam
-                            <input type="radio" name="gianhCho" value="Nữ"/>Nữ<br/>
+                            <input type="radio" id="checked-nam" name="gianhCho" value="Nam">Nam
+                            <input type="radio" id="checked-nu" name="gianhCho" value="Nữ"/>Nữ<br/>
                         </div>
                         <div class="form-group">
                             <label for="motasp">Mô Tả : </label>
@@ -355,19 +355,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div id="container-chitiet-sanpham">
                                 <div class="chitiet-sanpham">
                                     <span>Chi Tiết : </span>
-                                    <select name="chitietmau" class="form-control">
+                                    <select id="mamau-sanpham"  name="chitietmau" class="form-control">
                                         <c:forEach var = "valuemau" items="${listMau}">
                                             <option id="idmausp" value="${valuemau.idMau}">${valuemau.tenMau}</option>
                                         </c:forEach>
                                     </select>
 
-                                    <select name="danhmucsize" class="form-control">
+                                    <select id="masize-sanpham" name="danhmucsize" class="form-control">
                                         <c:forEach var = "valuesize" items="${listSize}">
                                             <option id="idsize" value="${valuesize.idSize}">${valuesize.size}</option>
                                         </c:forEach>
                                     </select>
                                     <div class="form-group">
-                                        <input type="number" class="form-control" name="soluong" id="soluong"
+                                        <input id="soluong-sanpham" type="number" class="form-control" name="soluong" id="soluong"
                                                min="1" value="1" placeholder="Số lượng : "/>
                                     </div>
                                     <button class="btn btn-default btn-chitiet"
@@ -376,20 +376,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div id="chitiet-sanpham" class="chitiet-sanpham">
                         <span>Chi Tiết : </span>
-                        <select name="chitietmau" class="form-control">
+                        <select id="mamau-sanpham" name="chitietmau" class="form-control">
                             <c:forEach var = "valuemau" items="${listMau}">
                                 <option value="${valuemau.idMau}">${valuemau.tenMau}</option>
                             </c:forEach>
                         </select>
 
-                        <select name="danhmucsize" class="form-control">
+                        <select id="masize-sanpham" name="danhmucsize" class="form-control">
                             <c:forEach var = "valuesize" items="${listSize}">
                                 <option value="${valuesize.idSize}">${valuesize.size}</option>
                             </c:forEach>
                         </select>
 
                         <div class="form-group">
-                            <input type="number" class="form-control" name="soluong"
+                            <input id="soluong-sanpham" type="number" class="form-control" name="soluong"
                                    min="1" value="1" placeholder="Số lượng : "/>
                         </div>
                         <button class="btn btn-default btn-chitiet"

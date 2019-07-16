@@ -247,6 +247,25 @@ $(document).ready(function () {
             } ,
             success : function (value) {
                 console.log(value);
+                $("#tensp").val(value.tenSanPham);
+                $("#giasp").val(value.giaTien);
+                $("#motasp").val(value.moTa);
+                if(value.gianhCho === "Nam"){
+                    $("#checked-nam").prop("checked", true);
+                }else{
+                    $("#checked-nu").prop("checked", true);
+                }
+                $("#danhmucsanpham").val(value.danhMucSanPham.idDanhMuc);
+
+                $("#container-chitiet-sanpham").empty();
+                for(i=0; i < value.chiTietSanPhams.length; i++){
+                    var chitiet_clone = $("#chitiet-sanpham").clone().removeAttr("id");
+                    chitiet_clone.find("#mamau-sanpham").val(value.chiTietSanPhams[i].mauSanPhamEntity.idMau);
+                    chitiet_clone.find("#masize-sanpham").val(value.chiTietSanPhams[i].sizeSanPhamEntity.idSize);
+                    chitiet_clone.find("#soluong-sanpham").val(value.chiTietSanPhams[i].soLuong);
+
+                    $("#container-chitiet-sanpham").append(chitiet_clone);
+                }
             }
         })
     });
