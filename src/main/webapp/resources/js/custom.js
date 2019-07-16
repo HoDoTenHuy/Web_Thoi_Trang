@@ -256,14 +256,15 @@ $(document).ready(function () {
                     $("#checked-nu").prop("checked", true);
                 }
                 $("#danhmucsanpham").val(value.danhMucSanPham.idDanhMuc);
-
                 $("#container-chitiet-sanpham").empty();
                 for(i=0; i < value.chiTietSanPhams.length; i++){
                     var chitiet_clone = $("#chitiet-sanpham").clone().removeAttr("id");
                     chitiet_clone.find("#mamau-sanpham").val(value.chiTietSanPhams[i].mauSanPhamEntity.idMau);
                     chitiet_clone.find("#masize-sanpham").val(value.chiTietSanPhams[i].sizeSanPhamEntity.idSize);
                     chitiet_clone.find("#soluong-sanpham").val(value.chiTietSanPhams[i].soLuong);
-
+                    if(i < value.chiTietSanPhams.length-1){
+                        chitiet_clone.find(".btn-chitiet").hide();
+                    }
                     $("#container-chitiet-sanpham").append(chitiet_clone);
                 }
             }
