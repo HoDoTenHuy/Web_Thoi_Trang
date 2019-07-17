@@ -38,19 +38,15 @@ public class GioHangController {
     @GetMapping
     @Transactional
     public String pageDefault(HttpSession httpSession, ModelMap modelMap) {
-        if (httpSession.getAttribute("user") != null) {
-            String email = (String) httpSession.getAttribute("user");
-            String chuCaiDau = email.substring(0, 1).toUpperCase();
-            modelMap.addAttribute("chuCaiDau", chuCaiDau);
-        }
+        String chuCaiDau = saveSession.loginUser(httpSession);
+        modelMap.addAttribute("chuCaiDau", chuCaiDau);
 
-        if (httpSession.getAttribute("cart") != null) {
-            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
-            int soSanPham = gioHangs.size();
-            modelMap.addAttribute("listGioHang", gioHangs);
+        int soSanPham = saveSession.shoppingCart(httpSession);
+        modelMap.addAttribute("sosanpham", soSanPham);
 
-            modelMap.addAttribute("sosanpham", soSanPham);
-        }
+        List<GioHang> gioHangs = saveSession.gioHangList(httpSession);
+        modelMap.addAttribute("listGioHang", gioHangs);
+
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
         return "giohang";

@@ -32,18 +32,11 @@ public class DanhMucSanPhamController {
     @GetMapping("{idDanhMuc}")
     @Transactional
     public String pageDefault(ModelMap modelMap, @PathVariable int idDanhMuc, HttpSession httpSession) {
-        if (httpSession.getAttribute("user") != null) {
-            String email = (String) httpSession.getAttribute("user");
-            String chuCaiDau = email.substring(0, 1).toUpperCase();
-            modelMap.addAttribute("chuCaiDau", chuCaiDau);
-        }
+        String chuCaiDau = saveSession.loginUser(httpSession);
+        modelMap.addAttribute("chuCaiDau", chuCaiDau);
 
-        if (httpSession.getAttribute("cart") != null) {
-            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
-            int soSanPham = gioHangs.size();
-            modelMap.addAttribute("sosanpham", soSanPham);
-
-        }
+        int soSanPham = saveSession.shoppingCart(httpSession);
+        modelMap.addAttribute("sosanpham", soSanPham);
 
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);

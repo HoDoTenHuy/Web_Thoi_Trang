@@ -53,12 +53,12 @@
                     <a class="nav-link" href="../giohang/">
                         <img id="icon-shopping-cart"
                              src='<c:url value="../../resources/images/icon_shopping_cart.png"/>'>
-                        <c:if test = "${sosanpham == null}">
+                        <c:if test = "${sosanpham == 0}">
                             <div>
-                                <span>${sosanpham}</span>
+                                <span></span>
                             </div>
                         </c:if>
-                        <c:if test = "${sosanpham != null}">
+                        <c:if test = "${sosanpham > 0}">
                             <div class="circle-giohang">
                                 <span>${sosanpham}</span>
                             </div>
