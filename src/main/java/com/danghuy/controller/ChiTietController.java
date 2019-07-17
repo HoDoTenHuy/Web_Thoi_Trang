@@ -1,5 +1,6 @@
 package com.danghuy.controller;
 
+import com.danghuy.commons.SaveSession;
 import com.danghuy.entity.*;
 import com.danghuy.service.SanPhamService;
 import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
@@ -22,20 +23,31 @@ public class ChiTietController {
     @Autowired
     DanhMucSanPhamServiceImpl danhMucSanPhamService;
 
+    @Autowired
+    SaveSession saveSession;
+
     @GetMapping("/{idSanPham}")
     @Transactional
     public String pageDefault(@PathVariable int idSanPham, ModelMap modelMap, HttpSession httpSession) {
+        if (httpSession.getAttribute("user") != null) {
+            String email = (String) httpSession.getAttribute("user");
+            String chuCaiDau = email.substring(0, 1).toUpperCase();
+            modelMap.addAttribute("chuCaiDau", chuCaiDau);
+        }
+
+        if (httpSession.getAttribute("cart") != null) {
+            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
+            int soSanPham = gioHangs.size();
+            modelMap.addAttribute("sosanpham", soSanPham);
+
+        }
+
         SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
         modelMap.addAttribute("chiTietSanPham", sanPhamEntity);
 
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 
-        if (httpSession.getAttribute("cart") != null) {
-            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
-            int soSanPham = gioHangs.size();
-            modelMap.addAttribute("sosanpham", soSanPham);
-        }
         return "chitiet";
     }
 

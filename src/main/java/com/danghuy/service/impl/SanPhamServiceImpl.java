@@ -46,4 +46,8 @@ public class SanPhamServiceImpl implements SanPhamService {
     public boolean themSanPham(SanPhamEntity sanPhamEntity) {
         return sanPhamDAO.themSanPham(sanPhamEntity);
     }
+
+    public void updateSanPham(SanPhamEntity sanPhamEntity) {
+        sanPhamDAO.updateSanPham(sanPhamEntity);
+    }
 }

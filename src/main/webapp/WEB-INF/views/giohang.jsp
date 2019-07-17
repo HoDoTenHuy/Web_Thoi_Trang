@@ -16,7 +16,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto navbar-center">
+            <ul class="navbar-nav nav mr-auto navbar-center">
                 <li class="nav-item actived">
                     <a class="nav-link" href="/">TRANG CHỦ</a>
                 </li>
@@ -25,8 +25,7 @@
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-chitiet">
                         <c:forEach var = "danhMuc" items="${listDanhMuc}">
-                            <li><a href="../../../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a>
-                            </li><br/>
+                            <li><a href="../danhmucsanpham/${danhMuc.idDanhMuc}">${danhMuc.tenDanhMuc}</a></li><br/>
                         </c:forEach>
                     </ul>
                 </li>

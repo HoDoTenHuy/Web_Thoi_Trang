@@ -66,4 +66,9 @@ public class SanPhamDAO {
         }
         return false;
     }
+    @Transactional
+    public void updateSanPham(SanPhamEntity sanPhamEntity){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        session.update(sanPhamEntity);
+    }
 }

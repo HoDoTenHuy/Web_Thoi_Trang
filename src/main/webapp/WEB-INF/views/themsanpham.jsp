@@ -397,7 +397,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div style="padding-bottom: 17px;">
                         <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 130px;
-                    padding: 7.5px 12px;">Thêm</button>
+                    padding: 7.5px 12px;margin-bottom: 8px; color: #042203;">Thêm</button><br/>
+                        <button id="update-sanpham" type="button" class="btn btn-success hidden"
+                                style="height: 34px;width: 130px;margin-bottom: 8px;color: #042203;
+                    padding: 7.5px 12px;">Updates Sản Phẩm</button><br/>
+                        <button id="btn-thoat" type="button" class="btn btn-success hidden" style="height: 34px;width: 130px;
+                    padding: 7.5px 12px;color: #042203;">Thoát</button>
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12">

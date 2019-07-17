@@ -27,7 +27,6 @@ $(document).ready(function () {
     $("#btndangnhap").click(function () {
         var email = $("#username").val();
         var matkhau = $("#password").val();
-
         $.ajax({
             url : "/api/kiemtradangnhap",
             type : "GET",
@@ -177,6 +176,7 @@ $(document).ready(function () {
     });
     var files = [];
     var tenhinh = "";
+    var maSanPham;
     $("#hinhanh").change(function (event) {
         files = event.target.files;
         tenhinh = files[0].name;
@@ -200,6 +200,7 @@ $(document).ready(function () {
        chitiet_clone.removeAttr("id");
        $("#container-chitiet-sanpham").append(chitiet_clone);
     });
+
     $("#them-sanpham").click(function (event) {
         event.preventDefault(); /*Ngăn chặn reload page*/
         var form_data_sanpham = $("#form-sanpham").serializeArray();
@@ -237,8 +238,55 @@ $(document).ready(function () {
             }
         })
     });
+    $("#update-sanpham").click(function (event) {
+        event.preventDefault(); /*Ngăn chặn reload page*/
+        var form_data_sanpham = $("#form-sanpham").serializeArray();
+        json = {};
+        $.each(form_data_sanpham, function(i, field){
+            json[field.name] = field.value;
+        });
+
+        /*console.log(array_chitiet);*/
+        object_chitiet = {};
+        array_chitiet = [];
+        $("#container-chitiet-sanpham > .chitiet-sanpham").each(function () {
+            var idmau = $(this).find('select[name="chitietmau"]').val();
+            var idsize = $(this).find('select[name="danhmucsize"]').val();
+            var soluong = $(this).find('input[name="soluong"]').val();
+            object_chitiet["idmau"] = idmau;
+            object_chitiet["idsize"] = idsize;
+            object_chitiet["soluong"] = soluong;
+
+            array_chitiet.push(object_chitiet);
+            object_chitiet = {};
+        });
+        json["maSanPham"] = maSanPham;
+        json["chitietsanpham"] = array_chitiet;
+        json["hinhSanPham"] = tenhinh;
+
+        $.ajax({
+            url : "/api/capnhatsanpham",
+            type : "POST",
+            data :{
+                dataJson : JSON.stringify(json)
+            } ,
+            success : function (value) {
+            }
+        })
+    });
+
+    $("#btn-thoat").click(function () {
+        $("#them-sanpham").removeClass("hidden");
+        $("#update-sanpham").addClass("hidden");
+        $("#btn-thoat").addClass("hidden");
+        window.location.href = "/themsanpham";
+    });
+
     $("body").on("click", ".capnhat-sanpham", function () {
-        var maSanPham = $(this).attr("data-id");
+        $("#update-sanpham").removeClass("hidden");
+        $("#btn-thoat").removeClass("hidden");
+        $("#them-sanpham").addClass("hidden");
+        maSanPham = $(this).attr("data-id");
         $.ajax({
             url : "/api/laydanhsachsanphamtheoid",
             type : "GET",

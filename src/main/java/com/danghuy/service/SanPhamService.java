@@ -19,4 +19,6 @@ public interface SanPhamService {
     public void xoaSanPhamTheoID(int maSanPham);
 
     public boolean themSanPham(SanPhamEntity sanPhamEntity);
+
+    public void updateSanPham(SanPhamEntity sanPhamEntity);
 }

@@ -23,7 +23,7 @@ import java.util.*;
 
 @Controller
 @RequestMapping("api/")
-@SessionAttributes("user, cart")
+@SessionAttributes({"user", "cart"})
 public class APIController {
     private final NhanVienServiceImpl nhanVienServiceImpl;
 
@@ -201,8 +201,61 @@ public class APIController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
+    @PostMapping(path = "capnhatsanpham", produces = "application/json")
+    @ResponseBody
+    public void updateSanPham(@RequestParam String dataJson){
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonObject;
+        try {
+            SanPhamEntity sanPham = new SanPhamEntity();
+            jsonObject = objectMapper.readTree(dataJson);
+
+            DanhMucSanPhamEntity danhMucSanPham = new DanhMucSanPhamEntity();
+            danhMucSanPham.setIdDanhMuc(jsonObject.get("danhMucSanPhamEntity").asInt());
+
+            Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
+            JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
+            for(JsonNode value : jsonChiTiet){
+                ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
+
+                MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
+                mauSanPhamEntity.setIdMau(value.get("idmau").asInt());
+
+                SizeSanPhamEntity sizeSanPhamEntity = new SizeSanPhamEntity();
+                sizeSanPhamEntity.setIdSize(value.get("idsize").asInt());
+
+                chiTietSanPhamEntity.setMauSanPhamEntity(mauSanPhamEntity);
+                chiTietSanPhamEntity.setSizeSanPhamEntity(sizeSanPhamEntity);
+                chiTietSanPhamEntity.setSoLuong(value.get("soluong").asInt());
+
+                chiTietSanPhamEntities.add(chiTietSanPhamEntity);
+            }
+            String tenSanPham = jsonObject.get("tenSanPham").asText();
+            String moTa = jsonObject.get("moTa").asText();
+            String hinhSanPham = jsonObject.get("hinhSanPham").asText();
+            String gianhCho = jsonObject.get("gianhCho").asText();
+            String giaTien = jsonObject.get("giaTien").asText();
+            int maSanPham = jsonObject.get("maSanPham").asInt();
+
+            sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
+            sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
+            sanPham.setTenSanPham(tenSanPham);
+            sanPham.setGiaTien(giaTien);
+            sanPham.setMoTa(moTa);
+            sanPham.setHinhSanPham(hinhSanPham);
+            sanPham.setGianhCho(gianhCho);
+            sanPham.setIdSanPham(maSanPham);
+
+            sanPhamService.updateSanPham(sanPham);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.GET)
     @ResponseBody
     @Transactional

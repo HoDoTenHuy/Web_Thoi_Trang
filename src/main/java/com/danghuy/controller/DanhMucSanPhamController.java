@@ -1,6 +1,8 @@
 package com.danghuy.controller;
 
+import com.danghuy.commons.SaveSession;
 import com.danghuy.entity.DanhMucSanPhamEntity;
+import com.danghuy.entity.GioHang;
 import com.danghuy.entity.SanPhamEntity;
 import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
 import com.danghuy.service.impl.SanPhamServiceImpl;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -23,9 +26,24 @@ public class DanhMucSanPhamController {
     @Autowired
     SanPhamServiceImpl sanPhamService;
 
+    @Autowired
+    SaveSession saveSession;
+
     @GetMapping("{idDanhMuc}")
     @Transactional
-    public String pageDefault(ModelMap modelMap, @PathVariable int idDanhMuc) {
+    public String pageDefault(ModelMap modelMap, @PathVariable int idDanhMuc, HttpSession httpSession) {
+        if (httpSession.getAttribute("user") != null) {
+            String email = (String) httpSession.getAttribute("user");
+            String chuCaiDau = email.substring(0, 1).toUpperCase();
+            modelMap.addAttribute("chuCaiDau", chuCaiDau);
+        }
+
+        if (httpSession.getAttribute("cart") != null) {
+            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
+            int soSanPham = gioHangs.size();
+            modelMap.addAttribute("sosanpham", soSanPham);
+
+        }
 
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
