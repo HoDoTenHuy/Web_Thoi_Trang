@@ -99,7 +99,7 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <h3>Thông Tin Người Mua / Nhận Hàng :</h3>
-            <form action="" method="post">
+            <form method="post" id="form-thanhtoan">
                 <div class="form-group">
                     <label for="tenKhachHang">Tên người mua / nhận hàng : </label>
                     <input type="text" class="form-control" id="tenKhachHang" name="tenKhachHang">
@@ -126,6 +126,7 @@
                     <label for="ghiChu">Ghi chú : </label>
                     <textarea class="form-control" rows="5" id="ghiChu" name="ghiChu"></textarea>
                 </div>
+                <span id="check-thanhtoan"></span>
                 <button type="submit" class="btn btn-primary btn-block">Đặt hàng</button>
             </form>
         </div>

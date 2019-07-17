@@ -4,6 +4,7 @@
 <script src='<c:url value="/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js"/> '></script>
 <script src='<c:url value="/resources/js/custom.js"/> '></script>
 <script src='<c:url value="/resources/js/wow.min.js"/> '></script>
+<script src='<c:url value="https://unpkg.com/sweetalert/dist/sweetalert.min.js"/>'></script>
 <script>
     new WOW().init();
 </script>

@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav mr-auto navbar-center">
                     <li class="nav-item actived">
-                        <a class="nav-link" href="#">TRANG CHỦ</a>
+                        <a class="nav-link" href="/">TRANG CHỦ</a>
                     </li>
                     <li class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">SẢN PHẨM

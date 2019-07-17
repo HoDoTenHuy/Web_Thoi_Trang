@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#cot1").click(function () {
         alert("Hahhaa");
@@ -36,12 +37,15 @@ $(document).ready(function () {
             },
             success : function (value) {
                 if(value == "true"){
-                    window.location.href = "/";
+                    swal("Login Success!", "You clicked the button!", "success");
+                    /*window.location.href = "/";*/
+                    setTimeout(function(){ window.location = "/"; }, 1350);
                 }else
                     $("#text-checklogin").text("Đăng Nhập Thất Bại!");
             }
         })
     });
+
     $("#container-dangky").hide();
     $("#dangnhap").click(function () {
         $("#container-dangky").hide();
@@ -318,4 +322,21 @@ $(document).ready(function () {
             }
         })
     });
+    $("#form-thanhtoan").submit(function (e) {
+       var form = this;
+       e.preventDefault();
+        var idSanPham = $(this).closest(".row").find(".tensp").attr("data-masp");
+        var tenSanPham = $(this).closest(".row").find("#tenKhachHang").val();
+        var diaChi = $(this).closest(".row").find("#diaChiGiaoHang").val();
+        var soDienThoai = $(this).closest(".row").find("#soDienThoai").val();
+        if(idSanPham != null && tenSanPham != "" && diaChi != "" && soDienThoai != ""){
+            swal("Đặt Hàng Thành Công!", "Bạn sẽ sớm nhận được hàng!", "success");
+        }else{
+            swal("Đặt Hàng Thất Bại!", "Bạn hãy điền đúng và đủ các thông tin!", "error");
+        }
+        setTimeout(function () {
+            form.submit();
+        }, 1300);
+    });
+
 });

@@ -64,7 +64,7 @@ public class GioHangController {
             HoaDonEntity hoaDonEntity = new HoaDonEntity(tenKhachHang, soDienThoai, diaChiGiaoHang,
                     hinhThucGiaoHang, ghiChu);
             int idHoaDon = hoaDonService.themHoaDon(hoaDonEntity);
-            if (idHoaDon > 0) {
+            if (idHoaDon > 0 && tenKhachHang != "" && diaChiGiaoHang != "" && soDienThoai != "") {
                 Set<ChiTietHoaDonEntity> chiTietHoaDonEntityList = new HashSet<ChiTietHoaDonEntity>();
                 for (GioHang gioHang : gioHangs) {
                     ChiTietHoaDonIDEntity chiTietHoaDonIDEntity = new ChiTietHoaDonIDEntity();
@@ -79,6 +79,7 @@ public class GioHangController {
                     chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
                 }
                 System.out.println("Success!");
+                httpSession.removeAttribute("cart");
             } else {
                 System.out.println("Failed!");
             }
