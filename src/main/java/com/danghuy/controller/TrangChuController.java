@@ -33,11 +33,10 @@ public class TrangChuController {
     @GetMapping
     @Transactional
     public String pageDefault(ModelMap modelMap, HttpSession httpSession) {
-        String chuCaiDau = saveSession.loginUser(httpSession);
-        modelMap.addAttribute("chuCaiDau", chuCaiDau);
+        saveSession.loginUser(httpSession, modelMap);
 
-        int soSanPham = saveSession.shoppingCart(httpSession);
-        modelMap.addAttribute("sosanpham", soSanPham);
+        saveSession.shoppingCart(httpSession, modelMap);
+
 
         List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0, 20);
         modelMap.addAttribute("sanPhamList", sanPhamEntities);

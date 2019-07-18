@@ -32,11 +32,9 @@ public class DanhMucSanPhamController {
     @GetMapping("{idDanhMuc}")
     @Transactional
     public String pageDefault(ModelMap modelMap, @PathVariable int idDanhMuc, HttpSession httpSession) {
-        String chuCaiDau = saveSession.loginUser(httpSession);
-        modelMap.addAttribute("chuCaiDau", chuCaiDau);
+        saveSession.loginUser(httpSession, modelMap);
 
-        int soSanPham = saveSession.shoppingCart(httpSession);
-        modelMap.addAttribute("sosanpham", soSanPham);
+        saveSession.shoppingCart(httpSession, modelMap);
 
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);

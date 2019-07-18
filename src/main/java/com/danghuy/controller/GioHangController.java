@@ -41,11 +41,9 @@ public class GioHangController {
     @GetMapping
     @Transactional
     public String pageDefault(HttpSession httpSession, ModelMap modelMap) {
-        String chuCaiDau = saveSession.loginUser(httpSession);
-        modelMap.addAttribute("chuCaiDau", chuCaiDau);
+        saveSession.loginUser(httpSession, modelMap);
 
-        int soSanPham = saveSession.shoppingCart(httpSession);
-        modelMap.addAttribute("sosanpham", soSanPham);
+        saveSession.shoppingCart(httpSession, modelMap);
 
         List<GioHang> gioHangs = saveSession.gioHangList(httpSession);
         modelMap.addAttribute("listGioHang", gioHangs);

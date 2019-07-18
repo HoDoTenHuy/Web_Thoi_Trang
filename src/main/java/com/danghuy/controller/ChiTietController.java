@@ -29,11 +29,9 @@ public class ChiTietController {
     @GetMapping("/{idSanPham}")
     @Transactional
     public String pageDefault(@PathVariable int idSanPham, ModelMap modelMap, HttpSession httpSession) {
-        String chuCaiDau = saveSession.loginUser(httpSession);
-        modelMap.addAttribute("chuCaiDau", chuCaiDau);
+        saveSession.loginUser(httpSession, modelMap);
 
-        int soSanPham = saveSession.shoppingCart(httpSession);
-        modelMap.addAttribute("sosanpham", soSanPham);
+        saveSession.shoppingCart(httpSession, modelMap);
 
         SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
         modelMap.addAttribute("chiTietSanPham", sanPhamEntity);
