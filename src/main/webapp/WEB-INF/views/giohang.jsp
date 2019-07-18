@@ -99,7 +99,7 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <h3>Thông Tin Người Mua / Nhận Hàng :</h3>
-            <form method="post" id="form-thanhtoan">
+            <form id="form-thanhtoan">
                 <div class="form-group">
                     <label for="tenKhachHang">Tên người mua / nhận hàng : </label>
                     <input type="text" class="form-control" id="tenKhachHang" name="tenKhachHang">

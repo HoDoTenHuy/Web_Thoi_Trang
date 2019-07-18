@@ -35,6 +35,9 @@ public class GioHangController {
     @Autowired
     SaveSession saveSession;
 
+    @Autowired
+    APIController apiController;
+
     @GetMapping
     @Transactional
     public String pageDefault(HttpSession httpSession, ModelMap modelMap) {
@@ -52,38 +55,4 @@ public class GioHangController {
         return "giohang";
     }
 
-    @PostMapping
-    @Transactional
-    public String pageHoaDon(@RequestParam String tenKhachHang, @RequestParam String soDienThoai,
-                             @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
-                             @RequestParam String ghiChu, HttpSession httpSession, ModelMap modelMap) {
-        if (httpSession.getAttribute("cart") != null) {
-
-            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
-
-            HoaDonEntity hoaDonEntity = new HoaDonEntity(tenKhachHang, soDienThoai, diaChiGiaoHang,
-                    hinhThucGiaoHang, ghiChu);
-            int idHoaDon = hoaDonService.themHoaDon(hoaDonEntity);
-            if (idHoaDon > 0 && tenKhachHang != "" && diaChiGiaoHang != "" && soDienThoai != "") {
-                Set<ChiTietHoaDonEntity> chiTietHoaDonEntityList = new HashSet<ChiTietHoaDonEntity>();
-                for (GioHang gioHang : gioHangs) {
-                    ChiTietHoaDonIDEntity chiTietHoaDonIDEntity = new ChiTietHoaDonIDEntity();
-                    chiTietHoaDonIDEntity.setIdChiTietSanPham(gioHang.getMaChiTiet());
-                    chiTietHoaDonIDEntity.setIdHoaDon(hoaDonEntity.getIdHoaDon());
-
-                    ChiTietHoaDonEntity chiTietHoaDonEntity = new ChiTietHoaDonEntity();
-                    chiTietHoaDonEntity.setChiTietHoaDonIDEntity(chiTietHoaDonIDEntity);
-                    chiTietHoaDonEntity.setGiaTien(gioHang.getGiaTien().toString());
-                    chiTietHoaDonEntity.setSoLuong(gioHang.getSoLuong());
-
-                    chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
-                }
-                System.out.println("Success!");
-                httpSession.removeAttribute("cart");
-            } else {
-                System.out.println("Failed!");
-            }
-        }
-        return "giohang";
-    }
 }

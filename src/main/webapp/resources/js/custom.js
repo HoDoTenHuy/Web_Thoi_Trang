@@ -322,21 +322,36 @@ $(document).ready(function () {
             }
         })
     });
-    $("#form-thanhtoan").submit(function (e) {
-       var form = this;
-       e.preventDefault();
+    $("#form-thanhtoan").on("submit",function (e) {
+        e.preventDefault();
         var idSanPham = $(this).closest(".row").find(".tensp").attr("data-masp");
         var tenSanPham = $(this).closest(".row").find("#tenKhachHang").val();
         var diaChi = $(this).closest(".row").find("#diaChiGiaoHang").val();
         var soDienThoai = $(this).closest(".row").find("#soDienThoai").val();
-        if(idSanPham != null && tenSanPham != "" && diaChi != "" && soDienThoai != ""){
-            swal("Đặt Hàng Thành Công!", "Bạn sẽ sớm nhận được hàng!", "success");
-        }else{
-            swal("Đặt Hàng Thất Bại!", "Bạn hãy điền đúng và đủ các thông tin!", "error");
-        }
-        setTimeout(function () {
-            form.submit();
-        }, 1300);
+        var tenKhachHang = $(this).closest(".row").find("#tenKhachHang").val();
+        var hinhThucGiaoHang = $(this).closest(".row").find('input[name="hinhThucGiaoHang"]:checked').val();
+        var ghiChu = $(this).closest(".row").find("#ghiChu").val();
+        $.ajax({
+            url : "/api/dathang",
+            type : "POST",
+            data :{
+                    tenKhachHang : tenKhachHang,
+                    soDienThoai : soDienThoai,
+                    diaChiGiaoHang : diaChi,
+                    hinhThucGiaoHang : hinhThucGiaoHang,
+                    ghiChu : ghiChu
+            } ,
+            success : function (value) {
+                if(value === "true"){
+                    swal("Đặt Hàng Thành Công!", "Bạn sẽ sớm nhận được hàng!", "success");
+                }else{
+                    swal("Đặt Hàng Thất Bại!", "Bạn hãy điền đúng và đủ các thông tin!", "error");
+                }
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1300);
+            }
+        })
     });
 
 });

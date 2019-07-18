@@ -2,6 +2,8 @@ package com.danghuy.controller;
 
 import com.danghuy.entity.*;
 import com.danghuy.pojo.SanPham;
+import com.danghuy.service.impl.ChiTietHoaDonServiceImpl;
+import com.danghuy.service.impl.HoaDonServiceImpl;
 import com.danghuy.service.impl.NhanVienServiceImpl;
 import com.danghuy.service.impl.SanPhamServiceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -37,6 +39,12 @@ public class APIController {
 
     @Autowired
     ServletContext context;
+
+    @Autowired
+    HoaDonServiceImpl hoaDonService;
+
+    @Autowired
+    ChiTietHoaDonServiceImpl chiTietHoaDonService;
 
     @GetMapping("kiemtradangnhap")
     @ResponseBody
@@ -297,6 +305,46 @@ public class APIController {
         sanPham.setChiTietSanPhams(chiTietSanPhamEntities);
         System.out.println(sanPham.getTenSanPham());
         return sanPham;
+    }
+
+    @PostMapping("dathang")
+    @Transactional
+    @ResponseBody
+    public String datHang(@RequestParam String tenKhachHang, @RequestParam String soDienThoai,
+                           @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
+                           @RequestParam String ghiChu, HttpSession httpSession){
+        String kiemTra="";
+        if (httpSession.getAttribute("cart") != null) {
+
+            List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
+
+            HoaDonEntity hoaDonEntity = new HoaDonEntity(tenKhachHang, soDienThoai, diaChiGiaoHang,
+                    hinhThucGiaoHang, ghiChu);
+            int idHoaDon = hoaDonService.themHoaDon(hoaDonEntity);
+            if (idHoaDon > 0 && tenKhachHang != "" && diaChiGiaoHang != "" && soDienThoai != "") {
+                Set<ChiTietHoaDonEntity> chiTietHoaDonEntityList = new HashSet<ChiTietHoaDonEntity>();
+                for (GioHang gioHang : gioHangs) {
+                    ChiTietHoaDonIDEntity chiTietHoaDonIDEntity = new ChiTietHoaDonIDEntity();
+                    chiTietHoaDonIDEntity.setIdChiTietSanPham(gioHang.getMaChiTiet());
+                    chiTietHoaDonIDEntity.setIdHoaDon(hoaDonEntity.getIdHoaDon());
+
+                    ChiTietHoaDonEntity chiTietHoaDonEntity = new ChiTietHoaDonEntity();
+                    chiTietHoaDonEntity.setChiTietHoaDonIDEntity(chiTietHoaDonIDEntity);
+                    chiTietHoaDonEntity.setGiaTien(gioHang.getGiaTien().toString());
+                    chiTietHoaDonEntity.setSoLuong(gioHang.getSoLuong());
+
+                    chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
+                }
+                gioHangs.clear();
+                kiemTra = true+"";
+                return kiemTra;
+            } else {
+                kiemTra = false+"";
+                return kiemTra;
+            }
+        }
+        kiemTra = false+"";
+        return kiemTra;
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
