@@ -93,7 +93,6 @@
                                     <div class="card-body">
                                         <h5 class="card-title">${sanpham.tenSanPham}</h5>
                                         <p class="card-text">${sanpham.giaTien} VNĐ</p>
-                                        <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
                                     </div>
                                 </div>
                             </a>

@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h1><a href="index.html">Easy <span>Admin</span></a></h1>
         </div>
         <div class="logo-icon text-center">
-            <a href="index.html"><i class="lnr lnr-home"></i> </a>
+            <a href="../dashboard"><i class="lnr lnr-home"></i> </a>
         </div>
 
         <!--logo and iconic logo end-->
@@ -396,6 +396,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 style="float: right;color: darkred;">Thêm chi tiết</button>
                     </div>
                     <div style="padding-bottom: 17px;">
+                        <span id="text-result-btn" style="color: blue"></span>
                         <button id="them-sanpham" type="button" class="btn btn-success" style="height: 34px;width: 130px;
                     padding: 7.5px 12px;margin-bottom: 8px; color: #042203;">Thêm</button><br/>
                         <button id="update-sanpham" type="button" class="btn btn-success hidden"

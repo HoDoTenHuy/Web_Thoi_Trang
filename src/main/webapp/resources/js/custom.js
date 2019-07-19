@@ -238,7 +238,13 @@ $(document).ready(function () {
                 dataJson : JSON.stringify(json)
             } ,
             success : function (value) {
-
+                if(value = "true"){
+                    $("#text-result-btn").text("Thêm Sản Phẩm Thành Công!");
+                    $("#them-sanpham").hide();
+                    $("#btn-thoat").removeClass("hidden");
+                }else{
+                    $("#text-result-btn").text("Thêm Sản Phẩm Thất Bại!");
+                }
             }
         })
     });
@@ -275,6 +281,13 @@ $(document).ready(function () {
                 dataJson : JSON.stringify(json)
             } ,
             success : function (value) {
+                if(value = "true"){
+                    $("#text-result-btn").text("Updates Thành Công!");
+                    $("#update-sanpham").hide();
+                    $("#btn-thoat").removeClass("hidden");
+                }else{
+                    $("#text-result-btn").text("Updates Thất Bại!");
+                }
             }
         })
     });

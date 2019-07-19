@@ -162,7 +162,7 @@ public class APIController {
 
     @PostMapping(path = "themsanpham", produces = "application/json")
     @ResponseBody
-    public void themSanPham(@RequestParam String dataJson){
+    public String themSanPham(@RequestParam String dataJson){
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonObject;
         try {
@@ -205,15 +205,16 @@ public class APIController {
 
             sanPhamService.themSanPham(sanPham);
 
-
+            return "true";
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return "false";
     }
 
     @PostMapping(path = "capnhatsanpham", produces = "application/json")
     @ResponseBody
-    public void updateSanPham(@RequestParam String dataJson){
+    public String updateSanPham(@RequestParam String dataJson){
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonObject;
         try {
@@ -246,6 +247,7 @@ public class APIController {
             String gianhCho = jsonObject.get("gianhCho").asText();
             String giaTien = jsonObject.get("giaTien").asText();
             int maSanPham = jsonObject.get("maSanPham").asInt();
+            String hinhAnh = jsonObject.get("hinhSanPham").asText();
 
             sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
             sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
@@ -255,13 +257,17 @@ public class APIController {
             sanPham.setHinhSanPham(hinhSanPham);
             sanPham.setGianhCho(gianhCho);
             sanPham.setIdSanPham(maSanPham);
+            if(hinhAnh != ""){
+                sanPham.setHinhSanPham(hinhAnh);
+            }
 
             sanPhamService.updateSanPham(sanPham);
 
-
+            return "true";
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return "false";
     }
 
     @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.GET)
