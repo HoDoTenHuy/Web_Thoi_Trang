@@ -1,5 +1,6 @@
 package com.danghuy.controller;
 
+import com.danghuy.commons.RandomSanPhamShowTrangChu;
 import com.danghuy.commons.SaveSession;
 import com.danghuy.entity.DanhMucSanPhamEntity;
 import com.danghuy.entity.GioHang;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Random;
+import java.util.Vector;
 
 @Controller
 @RequestMapping("/")
@@ -30,6 +33,9 @@ public class TrangChuController {
     @Autowired
     SaveSession saveSession;
 
+    @Autowired
+    RandomSanPhamShowTrangChu randomSanPhamShowTrangChu;
+
     @GetMapping
     @Transactional
     public String pageDefault(ModelMap modelMap, HttpSession httpSession) {
@@ -37,12 +43,13 @@ public class TrangChuController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
-
-        List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0, 20);
+        List<SanPhamEntity> sanPhamEntities = sanPhamService.getSanPhamShow();
         modelMap.addAttribute("sanPhamList", sanPhamEntities);
 
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
+
+
         return "trangchu";
     }
 

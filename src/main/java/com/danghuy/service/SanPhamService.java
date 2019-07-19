@@ -21,4 +21,6 @@ public interface SanPhamService {
     public boolean themSanPham(SanPhamEntity sanPhamEntity);
 
     public void updateSanPham(SanPhamEntity sanPhamEntity);
+
+    public List<SanPhamEntity> getSanPhamShow();
 }

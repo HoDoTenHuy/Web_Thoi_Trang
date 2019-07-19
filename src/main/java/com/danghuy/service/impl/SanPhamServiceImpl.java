@@ -50,4 +50,8 @@ public class SanPhamServiceImpl implements SanPhamService {
     public void updateSanPham(SanPhamEntity sanPhamEntity) {
         sanPhamDAO.updateSanPham(sanPhamEntity);
     }
+
+    public List<SanPhamEntity> getSanPhamShow() {
+        return sanPhamDAO.getSanPhamShow();
+    }
 }
