@@ -36,29 +36,37 @@ $(document).ready(function () {
                 password : matkhau
             },
             success : function (value) {
-                if(value == "true"){
+                /*if(value == "true"){
                     swal("Login Success!", "You clicked the button!", "success");
-                    /*window.location.href = "/";*/
+                    /!*window.location.href = "/";*!/
                     setTimeout(function(){ window.location = "/"; }, 1350);
                 }else
-                    $("#text-checklogin").text("Đăng Nhập Thất Bại!");
+                    $("#text-checklogin").text("Đăng Nhập Thất Bại!");*/
+            }
+        })
+    });
+    $("#btndangky").click(function () {
+        var email = $("#email").val();
+        var matkhau = $("#matkhau").val();
+        var nhaplaimatkhau = $("#nhaplaimatkhau").val();
+        $.ajax({
+            url : "/api/kiemtradangky",
+            type : "GET",
+            data :{
+                email : email,
+                matKhau : "{noop}"+matkhau,
+                nhapLaiMatKhau : "{noop}"+nhaplaimatkhau
+            },
+            success : function (value) {
+                if(value == "true"){
+                    window.location.href = "/login";
+                }else{
+                    $("#text-checklogin").text(value);
+                }
             }
         })
     });
 
-    $("#container-dangky").hide();
-    $("#dangnhap").click(function () {
-        $("#container-dangky").hide();
-        $("#container-dangnhap").show();
-        $("#dangky").removeClass("actived");
-        $("#dangnhap").addClass("actived");
-    });
-    $("#dangky").click(function () {
-        $("#container-dangky").show();
-        $("#container-dangnhap").hide();
-        $("#dangnhap").removeClass("actived");
-        $("#dangky").addClass("actived");
-    });
     $(".btn-giohang").click(function (){
         var machitiet = $(this).attr("data-machitiet");
         var tenMau = $(this).closest("tr").find(".mau").text();

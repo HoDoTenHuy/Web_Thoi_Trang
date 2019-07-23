@@ -1,6 +1,8 @@
 package com.danghuy.controller;
 
+import com.danghuy.commons.CheckEmail;
 import com.danghuy.entity.*;
+import com.danghuy.pojo.NhanVien;
 import com.danghuy.pojo.SanPham;
 import com.danghuy.service.impl.ChiTietHoaDonServiceImpl;
 import com.danghuy.service.impl.HoaDonServiceImpl;
@@ -46,6 +48,9 @@ public class APIController {
     @Autowired
     ChiTietHoaDonServiceImpl chiTietHoaDonService;
 
+    @Autowired
+    CheckEmail checkEmail;
+
     @GetMapping("kiemtradangnhap")
     @ResponseBody
     @Transactional
@@ -53,6 +58,31 @@ public class APIController {
         boolean kiemTra = nhanVienServiceImpl.xuLyDangNhap(username, password);
         modelMap.addAttribute("user", username);
         return kiemTra + "";
+    }
+
+    @GetMapping(path = "kiemtradangky", produces = "text/html; charset=UTF-8")
+    @ResponseBody
+    @Transactional
+    public String kiemTraDangKy(@RequestParam String email, @RequestParam String matKhau,
+                                @RequestParam String nhapLaiMatKhau, ModelMap modelMap) {
+        if (nhanVienServiceImpl.checkEmailIsValid(email)) {
+            return "Email Đã Tồn Tại!";
+        } else {
+            if (checkEmail.kiemTraEmail(email) && matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
+
+                NhanVien nhanVien = new NhanVien(email, matKhau);
+                if (nhanVienServiceImpl.dangKy(nhanVien)) {
+                    return  "true";
+                } else {
+                    return "Đăng Ký Thất Bại!";
+                }
+            } else if (checkEmail.kiemTraEmail(email) == false) {
+                return "Vui Lòng Nhập Đúng Email!";
+            } else if (matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
+                return "Mật Khẩu Khác Nhau!";
+            } else
+                return "Đăng Ký Thất Bại!";
+        }
     }
 
     @GetMapping("themgiohang")

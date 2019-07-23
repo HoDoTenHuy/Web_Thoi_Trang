@@ -349,3 +349,10 @@ ul{
 #chitiet-sanpham{
     display: none;
 }
+/*page dang ky*/
+.register-icon-email{
+    margin-bottom: 9px;
+}
+#btndangky{
+    margin-top: 9px;
+}

@@ -53,7 +53,7 @@
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item">
-                                <a class="nav-link" href="dangnhap/">ĐĂNG NHẬP</a>
+                                <a class="nav-link" href="/login">ĐĂNG NHẬP</a>
                             </li>
                         </c:otherwise>
                     </c:choose>

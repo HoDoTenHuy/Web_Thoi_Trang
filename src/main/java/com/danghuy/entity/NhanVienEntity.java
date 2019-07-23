@@ -1,6 +1,7 @@
 package com.danghuy.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "nhanvien")
@@ -13,6 +14,7 @@ public class NhanVienEntity {
     private String gioiTinh;
     private String CMND;
     private String email;
+    private  int enabled;
 
     @Column(name = "tendangnhap")
     private String tenDangNhap;
@@ -20,30 +22,41 @@ public class NhanVienEntity {
     @Column(name = "matkhau")
     private String matKhau;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idChucVu")
-    ChucVuEntity chucVuEntity;
+   @ManyToMany(fetch = FetchType.EAGER)
+   @JoinTable(name = "users_roles",
+           joinColumns = { @JoinColumn(name = "user", nullable = false) },
+           inverseJoinColumns = { @JoinColumn(name = "role", nullable = false) })
+   private List<ChucVuEntity> chucVuEntities;
 
     public NhanVienEntity(String email, String matKhau) {
         this.email = email;
         this.matKhau = matKhau;
     }
 
+    public NhanVienEntity(String email, int enabled, String matKhau, List<ChucVuEntity> chucVuEntities) {
+        this.email = email;
+        this.enabled = enabled;
+        this.matKhau = matKhau;
+        this.chucVuEntities = chucVuEntities;
+    }
+
     public NhanVienEntity() {
     }
 
-    public NhanVienEntity(String email, String matKhau, ChucVuEntity chucVuEntity) {
-        this.email = email;
-        this.matKhau = matKhau;
-        this.chucVuEntity = chucVuEntity;
+    public List<ChucVuEntity> getChucVuEntities() {
+        return chucVuEntities;
     }
 
-    public ChucVuEntity getChucVuEntity() {
-        return chucVuEntity;
+    public void setChucVuEntities(List<ChucVuEntity> chucVuEntities) {
+        this.chucVuEntities = chucVuEntities;
     }
 
-    public void setChucVuEntity(ChucVuEntity chucVuEntity) {
-        this.chucVuEntity = chucVuEntity;
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
     public int getIdNhanVien() {

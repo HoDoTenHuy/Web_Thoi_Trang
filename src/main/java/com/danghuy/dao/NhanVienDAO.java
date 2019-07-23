@@ -2,6 +2,7 @@ package com.danghuy.dao;
 
 import com.danghuy.entity.ChucVuEntity;
 import com.danghuy.entity.NhanVienEntity;
+import com.danghuy.service.impl.ChucVuServiceImpl;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -16,6 +18,9 @@ import java.util.List;
 public class NhanVienDAO {
     @Autowired
     SessionFactory sessionFactory;
+
+    @Autowired
+    ChucVuServiceImpl chucVuService;
 
     public boolean xuLyDangNhap(String username, String password) {
         Session session = sessionFactory.getCurrentSession().getSession();
@@ -31,8 +36,13 @@ public class NhanVienDAO {
         return false;
     }
 
+
     public boolean dangKy(NhanVienEntity nhanVienEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();
+        List<ChucVuEntity> chucVuEntities = new ArrayList<ChucVuEntity>();
+        chucVuEntities.add(chucVuService.chucVuEntities().get(0));
+        nhanVienEntity.setEnabled(1);
+        nhanVienEntity.setChucVuEntities(chucVuEntities);
         Integer maNhanVien = (Integer) session.save(nhanVienEntity);
         if (maNhanVien > 0) {
             return true;

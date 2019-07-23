@@ -27,6 +27,7 @@ public class EntityToPojo {
         nhanVien.setHoTen(nhanVienEntity.getHoTen());
         nhanVien.setMatKhau(nhanVienEntity.getMatKhau());
         nhanVien.setTenDangNhap(nhanVienEntity.getTenDangNhap());
+        nhanVien.setEnabled(nhanVienEntity.getEnabled());
         return nhanVien;
     }
     public SanPham convertSanPham(SanPhamEntity sanPhamEntity){
