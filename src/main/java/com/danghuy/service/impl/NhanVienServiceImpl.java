@@ -43,4 +43,8 @@ public class NhanVienServiceImpl implements NhanVienService {
         } else
             return false;
     }
+
+    public NhanVienEntity getUserByEmailLogin(String email) {
+        return nhanVienDAO.getUserByEmailLogin(email);
+    }
 }

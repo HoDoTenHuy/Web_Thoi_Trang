@@ -57,6 +57,7 @@ public class APIController {
     public String kiemTraDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap) {
         boolean kiemTra = nhanVienServiceImpl.xuLyDangNhap(username, password);
         modelMap.addAttribute("user", username);
+
         return kiemTra + "";
     }
 

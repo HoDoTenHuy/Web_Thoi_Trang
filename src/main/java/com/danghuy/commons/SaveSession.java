@@ -1,7 +1,9 @@
 package com.danghuy.commons;
 
 import com.danghuy.entity.GioHang;
+import com.danghuy.entity.NhanVienEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -14,6 +16,7 @@ public class SaveSession {
         String chuCaiDau;
         if (httpSession.getAttribute("user") != null) {
             String email = (String) httpSession.getAttribute("user");
+            modelMap.addAttribute("email", email);
             chuCaiDau = email.substring(0, 1).toUpperCase();
         }else {
             chuCaiDau = null;
@@ -31,6 +34,7 @@ public class SaveSession {
         }
         modelMap.addAttribute("sosanpham", soSanPham);
     }
+
     public List<GioHang> gioHangList(HttpSession httpSession){
         List<GioHang> gioHangs = null;
         if (httpSession.getAttribute("cart") != null) {

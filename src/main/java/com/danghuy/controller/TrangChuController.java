@@ -4,9 +4,11 @@ import com.danghuy.commons.RandomSanPhamShowTrangChu;
 import com.danghuy.commons.SaveSession;
 import com.danghuy.entity.DanhMucSanPhamEntity;
 import com.danghuy.entity.GioHang;
+import com.danghuy.entity.NhanVienEntity;
 import com.danghuy.entity.SanPhamEntity;
 import com.danghuy.service.SanPhamService;
 import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
+import com.danghuy.service.impl.NhanVienServiceImpl;
 import com.danghuy.service.impl.SanPhamServiceImpl;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,9 @@ public class TrangChuController {
     @Autowired
     RandomSanPhamShowTrangChu randomSanPhamShowTrangChu;
 
+    @Autowired
+    NhanVienServiceImpl nhanVienService;
+
     @GetMapping
     @Transactional
     public String pageDefault(ModelMap modelMap, HttpSession httpSession) {
@@ -43,6 +48,11 @@ public class TrangChuController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
+        if (httpSession.getAttribute("user") != null) {
+            String email = (String) httpSession.getAttribute("user");
+            NhanVienEntity nhanVienEntity = nhanVienService.getUserByEmailLogin(email);
+            modelMap.addAttribute("chucvu", nhanVienEntity.getChucVuEntities());
+        }
         List<SanPhamEntity> sanPhamEntities = sanPhamService.getSanPhamShow();
         modelMap.addAttribute("sanPhamList", sanPhamEntities);
 

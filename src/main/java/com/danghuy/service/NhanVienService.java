@@ -9,4 +9,6 @@ public interface NhanVienService {
     public boolean dangKy(NhanVien nhanVien);
 
     public boolean checkEmailIsValid(String email);
+
+    public NhanVienEntity getUserByEmailLogin(String email);
 }

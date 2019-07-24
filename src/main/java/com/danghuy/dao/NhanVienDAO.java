@@ -2,6 +2,7 @@ package com.danghuy.dao;
 
 import com.danghuy.entity.ChucVuEntity;
 import com.danghuy.entity.NhanVienEntity;
+import com.danghuy.pojo.NhanVien;
 import com.danghuy.service.impl.ChucVuServiceImpl;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +39,15 @@ public class NhanVienDAO {
         return false;
     }
 
+    @Transactional
+    public NhanVienEntity getUserByEmailLogin(String email){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        String hql = "from NhanVienEntity where email = :email";
+        Query query = session.createQuery(hql);
+        query.setParameter("email", email);
+        NhanVienEntity nhanVienEntity = (NhanVienEntity) query.getSingleResult();
+        return nhanVienEntity;
+    }
 
     public boolean dangKy(NhanVienEntity nhanVienEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();

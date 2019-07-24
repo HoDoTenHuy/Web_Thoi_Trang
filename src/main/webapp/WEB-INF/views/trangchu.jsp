@@ -49,7 +49,28 @@
                 <ul class="nav navbar-nav navbar-right">
                     <c:choose>
                         <c:when test="${chuCaiDau != null}">
-                            <span id="logo-email">${chuCaiDau}</span>
+                            <div class="btn-group dropleft">
+                                <span id="logo-email" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">${chuCaiDau}</span>
+                                <div class="dropdown-menu" style="margin-left: auto;background: white !important;
+                                                                                width: max-content;">
+                                    <a class="dropdown-item">${email}</a>
+                                    <c:choose>
+                                        <c:when test = "${chucvu eq '[2]'}">
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/themsanpham">Thêm Sản Phẩm</a>
+                                        </c:when>
+                                        <c:when test = "${chucvu eq '[3]'}">
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/dashboard">Quản Lý</a>
+                                        </c:when>
+                                    </c:choose>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
+                                    <div class="dropdown-divider"></div>
+                                    <button class="btn btn-danger dropdown-item">Đăng Xuất</button>
+                                </div>
+                            </div>
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item">
