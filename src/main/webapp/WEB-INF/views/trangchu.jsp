@@ -68,7 +68,10 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
                                     <div class="dropdown-divider"></div>
-                                    <button class="btn btn-danger dropdown-item">Đăng Xuất</button>
+                                    <form action="/j_spring_security_logout" style="margin-left: 23px;" method="POST">
+                                        <input type="submit" value="Logout"/>
+                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    </form>
                                 </div>
                             </div>
                         </c:when>

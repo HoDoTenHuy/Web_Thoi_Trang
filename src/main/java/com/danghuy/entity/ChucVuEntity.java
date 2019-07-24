@@ -12,6 +12,7 @@ public class ChucVuEntity {
     private String name;
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "chucVuEntities")
     private List<NhanVienEntity> nhanVienEntities;
+
     public ChucVuEntity() {
     }
 
@@ -49,6 +50,6 @@ public class ChucVuEntity {
 
     @Override
     public String toString() {
-        return idChucVu+"";
+        return idChucVu + "";
     }
 }

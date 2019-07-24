@@ -73,7 +73,7 @@ public class APIController {
 
                 NhanVien nhanVien = new NhanVien(email, matKhau);
                 if (nhanVienServiceImpl.dangKy(nhanVien)) {
-                    return  "true";
+                    return "true";
                 } else {
                     return "Đăng Ký Thất Bại!";
                 }
@@ -145,21 +145,22 @@ public class APIController {
             list.get(viTri).setSoLuong(soLuong);
         }
     }
+
     @GetMapping(path = "laysanphamlimit", produces = "text/html; charset=UTF-8")
     @ResponseBody
-    public String laySanPhamLimit(@RequestParam int spBatDau){
+    public String laySanPhamLimit(@RequestParam int spBatDau) {
         String html = "";
         List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(spBatDau, 5);
-        for(SanPhamEntity sp : sanPhamEntities){
+        for (SanPhamEntity sp : sanPhamEntities) {
             html += "<tr>";
             html += " <td>\n" +
                     "    <div>\n" +
-                    "       <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\""+ sp.getIdSanPham() +"\">\n" +
+                    "       <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\"" + sp.getIdSanPham() + "\">\n" +
                     "    </div>\n" +
                     " </td>";
-            html += " <td class=\"tensp\" data-masp=\" "+ sp.getIdSanPham() +"\">"+ sp.getTenSanPham() +"</td>\n" +
-                    " <td class=\"giatien\" data-giatien=\""+ sp.getGiaTien() +"\">"+ sp.getGiaTien() +"</td>\n" +
-                    " <td class=\"giatie\" data-masize=\""+ sp.getGianhCho() +"\">"+ sp.getGianhCho() +"</td>";
+            html += " <td class=\"tensp\" data-masp=\" " + sp.getIdSanPham() + "\">" + sp.getTenSanPham() + "</td>\n" +
+                    " <td class=\"giatien\" data-giatien=\"" + sp.getGiaTien() + "\">" + sp.getGiaTien() + "</td>\n" +
+                    " <td class=\"giatie\" data-masize=\"" + sp.getGianhCho() + "\">" + sp.getGianhCho() + "</td>";
             html += "<td class=\"capnhat-sanpham\" style=\"padding-top: 8px !important;\"\n" +
                     "                                    data-id=\"" + sp.getIdSanPham() + "\">\n" +
                     "                                    <button type=\"button\"\n" +
@@ -172,13 +173,13 @@ public class APIController {
 
     @GetMapping("xoasanpham")
     @ResponseBody
-    public void xoaSanPhamTheoID(@RequestParam int maSanPham){
+    public void xoaSanPhamTheoID(@RequestParam int maSanPham) {
         sanPhamService.xoaSanPhamTheoID(maSanPham);
     }
 
     @PostMapping("uploadfile")
     @ResponseBody
-    public void uploadFile(MultipartHttpServletRequest request){
+    public void uploadFile(MultipartHttpServletRequest request) {
         String pathSaveFile = context.getRealPath("/resources/images/sanpham/");
         Iterator<String> listNames = request.getFileNames();
         MultipartFile multipartFile = request.getFile(listNames.next());
@@ -193,7 +194,7 @@ public class APIController {
 
     @PostMapping(path = "themsanpham", produces = "application/json")
     @ResponseBody
-    public String themSanPham(@RequestParam String dataJson){
+    public String themSanPham(@RequestParam String dataJson) {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonObject;
         try {
@@ -205,7 +206,7 @@ public class APIController {
 
             Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
             JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
-            for(JsonNode value : jsonChiTiet){
+            for (JsonNode value : jsonChiTiet) {
                 ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
                 MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
@@ -245,7 +246,7 @@ public class APIController {
 
     @PostMapping(path = "capnhatsanpham", produces = "application/json")
     @ResponseBody
-    public String updateSanPham(@RequestParam String dataJson){
+    public String updateSanPham(@RequestParam String dataJson) {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonObject;
         try {
@@ -257,7 +258,7 @@ public class APIController {
 
             Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
             JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
-            for(JsonNode value : jsonChiTiet){
+            for (JsonNode value : jsonChiTiet) {
                 ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
                 MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
@@ -288,7 +289,7 @@ public class APIController {
             sanPham.setHinhSanPham(hinhSanPham);
             sanPham.setGianhCho(gianhCho);
             sanPham.setIdSanPham(maSanPham);
-            if(hinhAnh != ""){
+            if (hinhAnh != "") {
                 sanPham.setHinhSanPham(hinhAnh);
             }
 
@@ -301,12 +302,12 @@ public class APIController {
         return "false";
     }
 
-    @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.GET)
+    @RequestMapping(value = "laydanhsachsanphamtheoid", produces = "application/json", method = RequestMethod.GET)
     @ResponseBody
     @Transactional
-    public SanPham layDanhSachSanPhamTheoID(@RequestParam int idSanPham){
+    public SanPham layDanhSachSanPhamTheoID(@RequestParam int idSanPham) {
         SanPham sanPham = new SanPham();
-        SanPhamEntity sanPhamEntity =  sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
+        SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
         sanPham.setTenSanPham(sanPhamEntity.getTenSanPham());
         sanPham.setIdSanPham(sanPhamEntity.getIdSanPham());
         sanPham.setMoTa(sanPhamEntity.getMoTa());
@@ -319,7 +320,7 @@ public class APIController {
         danhMucSanPhamEntity.setTenDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getTenDanhMuc());
 
         Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
-        for(ChiTietSanPhamEntity value : sanPhamEntity.getChiTietSanPhamEntities()){
+        for (ChiTietSanPhamEntity value : sanPhamEntity.getChiTietSanPhamEntities()) {
             ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
             chiTietSanPhamEntity.setIdChiTietSanPham(value.getIdChiTietSanPham());
@@ -348,9 +349,9 @@ public class APIController {
     @Transactional
     @ResponseBody
     public String datHang(@RequestParam String tenKhachHang, @RequestParam String soDienThoai,
-                           @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
-                           @RequestParam String ghiChu, HttpSession httpSession){
-        String kiemTra="";
+                          @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
+                          @RequestParam String ghiChu, HttpSession httpSession) {
+        String kiemTra = "";
         if (httpSession.getAttribute("cart") != null) {
 
             List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
@@ -373,14 +374,14 @@ public class APIController {
                     chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
                 }
                 gioHangs.clear();
-                kiemTra = true+"";
+                kiemTra = true + "";
                 return kiemTra;
             } else {
-                kiemTra = false+"";
+                kiemTra = false + "";
                 return kiemTra;
             }
         }
-        kiemTra = false+"";
+        kiemTra = false + "";
         return kiemTra;
     }
 

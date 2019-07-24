@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/dashboard")
 public class DashBorardController {
     @GetMapping
-    public String pageDefault(){
+    public String pageDefault() {
 
         return "dashboard";
     }

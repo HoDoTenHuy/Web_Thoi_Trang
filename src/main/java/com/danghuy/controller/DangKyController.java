@@ -26,31 +26,4 @@ public class DangKyController {
     public String pageDefault() {
         return "register";
     }
-
-   /* @PostMapping
-    @Transactional
-    public String dangKy(@RequestParam String email, @RequestParam String matKhau, @RequestParam String nhapLaiMatKhau
-            , ModelMap modelMap) {
-        *//*if (nhanVienServiceImpl.checkEmailIsValid(email)) {
-            modelMap.addAttribute("kiemtradangnhap", "Email Đã Tồn Tại!");
-        } else {
-            if (checkEmail.kiemTraEmail(email) && matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
-
-                NhanVien nhanVien = new NhanVien(email, matKhau);
-                if (nhanVienServiceImpl.dangKy(nhanVien)) {
-                    modelMap.addAttribute("kiemtradangnhap", "Đăng Ký Thành Công!");
-                } else {
-                    modelMap.addAttribute("kiemtradangnhap", "Đăng Ký Thất Bại!");
-                }
-            } else if (checkEmail.kiemTraEmail(email) == false) {
-                modelMap.addAttribute("kiemtradangnhap", "Vui Lòng Nhập Đúng Email!");
-            } else if (matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
-                modelMap.addAttribute("kiemtradangnhap", "Mật Khẩu Khác Nhau!");
-            } else
-                modelMap.addAttribute("kiemtradangnhap", "Đăng Ký Thất Bại!");
-        }*//*
-        return "register";
-    }
-*/
-
 }

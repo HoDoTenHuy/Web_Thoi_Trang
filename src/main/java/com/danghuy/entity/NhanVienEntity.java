@@ -14,7 +14,7 @@ public class NhanVienEntity {
     private String gioiTinh;
     private String CMND;
     private String email;
-    private  int enabled;
+    private int enabled;
 
     @Column(name = "tendangnhap")
     private String tenDangNhap;
@@ -22,11 +22,11 @@ public class NhanVienEntity {
     @Column(name = "matkhau")
     private String matKhau;
 
-   @ManyToMany(fetch = FetchType.EAGER)
-   @JoinTable(name = "users_roles",
-           joinColumns = { @JoinColumn(name = "user", nullable = false) },
-           inverseJoinColumns = { @JoinColumn(name = "role", nullable = false) })
-   private List<ChucVuEntity> chucVuEntities;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles",
+            joinColumns = {@JoinColumn(name = "user", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "role", nullable = false)})
+    private List<ChucVuEntity> chucVuEntities;
 
     public NhanVienEntity(String email, String matKhau) {
         this.email = email;

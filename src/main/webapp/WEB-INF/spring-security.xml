@@ -20,7 +20,7 @@
             password-parameter="password"
         />
         <logout logout-url="/j_spring_security_logout"
-                logout-success-url="/logout"
+                logout-success-url="/"
                 delete-cookies="JSESSIONID"/>
     </http>
     <authentication-manager>

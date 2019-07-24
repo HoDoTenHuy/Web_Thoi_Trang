@@ -48,11 +48,8 @@ public class TrangChuController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
-        if (httpSession.getAttribute("user") != null) {
-            String email = (String) httpSession.getAttribute("user");
-            NhanVienEntity nhanVienEntity = nhanVienService.getUserByEmailLogin(email);
-            modelMap.addAttribute("chucvu", nhanVienEntity.getChucVuEntities());
-        }
+        saveSession.chucVu(httpSession, modelMap);
+
         List<SanPhamEntity> sanPhamEntities = sanPhamService.getSanPhamShow();
         modelMap.addAttribute("sanPhamList", sanPhamEntities);
 

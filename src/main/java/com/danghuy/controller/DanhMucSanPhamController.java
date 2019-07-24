@@ -36,6 +36,8 @@ public class DanhMucSanPhamController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
+        saveSession.chucVu(httpSession, modelMap);
+
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 

@@ -45,6 +45,8 @@ public class GioHangController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
+        saveSession.chucVu(httpSession, modelMap);
+
         List<GioHang> gioHangs = saveSession.gioHangList(httpSession);
         modelMap.addAttribute("listGioHang", gioHangs);
 

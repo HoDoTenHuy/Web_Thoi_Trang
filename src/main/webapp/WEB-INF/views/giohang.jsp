@@ -40,7 +40,31 @@
             <ul class="nav navbar-nav navbar-right">
                 <c:choose>
                     <c:when test="${chuCaiDau != null}">
-                        <span id="logo-email">${chuCaiDau}</span>
+                        <div class="btn-group dropleft">
+                                <span id="logo-email" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">${chuCaiDau}</span>
+                            <div class="dropdown-menu" style="margin-left: auto;background: #14556a99 !important;
+                                                                                width: max-content;">
+                                <a class="dropdown-item">${email}</a>
+                                <c:choose>
+                                    <c:when test = "${chucvu eq '[2]'}">
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/themsanpham">Thêm Sản Phẩm</a>
+                                    </c:when>
+                                    <c:when test = "${chucvu eq '[3]'}">
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/dashboard">Quản Lý</a>
+                                    </c:when>
+                                </c:choose>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
+                                <div class="dropdown-divider"></div>
+                                <form action="/j_spring_security_logout" style="margin-left: 23px;" method="POST">
+                                    <input type="submit" value="Logout"/>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
+                            </div>
+                        </div>
                     </c:when>
                     <c:otherwise>
                         <li class="nav-item">

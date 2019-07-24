@@ -22,18 +22,22 @@ public class DangNhapController {
         }
         return "login";
     }
+
     @RequestMapping("/admin")
     public String admin() {
         return "themsanpham";
     }
+
     @RequestMapping("/manager")
     public String manager() {
         return "dashboard";
     }
+
     @RequestMapping("/user")
     public String user() {
         return "trangchu";
     }
+
     @RequestMapping("/logout")
     public String logout(final Model model) {
         model.addAttribute("message", "Logged out!");

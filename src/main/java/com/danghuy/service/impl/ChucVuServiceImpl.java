@@ -12,6 +12,7 @@ import java.util.List;
 public class ChucVuServiceImpl implements ChucVuService {
     @Autowired
     ChucVuDAO chucVuDAO;
+
     public List<ChucVuEntity> chucVuEntities() {
         return chucVuDAO.chucVuEntities();
     }

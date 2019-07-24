@@ -40,7 +40,7 @@ public class NhanVienDAO {
     }
 
     @Transactional
-    public NhanVienEntity getUserByEmailLogin(String email){
+    public NhanVienEntity getUserByEmailLogin(String email) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from NhanVienEntity where email = :email";
         Query query = session.createQuery(hql);

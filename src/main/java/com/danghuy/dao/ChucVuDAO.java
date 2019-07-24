@@ -15,7 +15,7 @@ public class ChucVuDAO {
     SessionFactory sessionFactory;
 
     @Transactional
-    public List<ChucVuEntity> chucVuEntities(){
+    public List<ChucVuEntity> chucVuEntities() {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from ChucVuEntity";
         List<ChucVuEntity> chucVuEntityList = session.createQuery(hql).list();

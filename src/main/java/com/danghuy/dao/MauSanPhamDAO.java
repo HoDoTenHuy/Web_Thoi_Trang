@@ -16,7 +16,7 @@ public class MauSanPhamDAO {
     @Autowired
     SessionFactory sessionFactory;
 
-    public List<MauSanPhamEntity> layDanhSachMau(){
+    public List<MauSanPhamEntity> layDanhSachMau() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<MauSanPhamEntity> mauSanPhamEntities = session.createQuery("from MauSanPhamEntity").list();
         return mauSanPhamEntities;

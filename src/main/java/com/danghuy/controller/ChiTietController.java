@@ -33,6 +33,8 @@ public class ChiTietController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
+        saveSession.chucVu(httpSession, modelMap);
+
         SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
         modelMap.addAttribute("chiTietSanPham", sanPhamEntity);
 

@@ -30,7 +30,8 @@ public class EntityToPojo {
         nhanVien.setEnabled(nhanVienEntity.getEnabled());
         return nhanVien;
     }
-    public SanPham convertSanPham(SanPhamEntity sanPhamEntity){
+
+    public SanPham convertSanPham(SanPhamEntity sanPhamEntity) {
         SanPham sanPham = new SanPham();
         sanPham.setIdSanPham(sanPhamEntity.getIdSanPham());
         sanPham.setTenSanPham(sanPhamEntity.getTenSanPham());

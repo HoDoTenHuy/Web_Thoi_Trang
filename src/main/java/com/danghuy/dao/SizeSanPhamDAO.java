@@ -16,9 +16,9 @@ public class SizeSanPhamDAO {
     @Autowired
     SessionFactory sessionFactory;
 
-    public List<SizeSanPhamEntity> layDanhSachSize(){
+    public List<SizeSanPhamEntity> layDanhSachSize() {
         Session session = sessionFactory.getCurrentSession().getSession();
-        String  hql = "from SizeSanPhamEntity";
+        String hql = "from SizeSanPhamEntity";
         List<SizeSanPhamEntity> sizeSanPhamEntities = session.createQuery(hql).list();
         return sizeSanPhamEntities;
     }

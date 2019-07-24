@@ -34,10 +34,10 @@ public class ThemSanPhamController {
 
     @GetMapping
     @Transactional
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(0, 5);
         List<SanPhamEntity> allSanPham = sanPhamService.layALLSanPham();
-        double tongSoPage = (double) allSanPham.size()/5;
+        double tongSoPage = (double) allSanPham.size() / 5;
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         List<MauSanPhamEntity> mauSanPhamEntities = mauSanPhamService.layDanhSachMau();
         List<SizeSanPhamEntity> sizeSanPhamEntities = sizeSanPhamService.layDanhSachSize();
