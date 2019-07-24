@@ -47,6 +47,8 @@ public class GioHangController {
 
         saveSession.chucVu(httpSession, modelMap);
 
+        saveSession.loginGG(httpSession, modelMap);
+
         List<GioHang> gioHangs = saveSession.gioHangList(httpSession);
         modelMap.addAttribute("listGioHang", gioHangs);
 

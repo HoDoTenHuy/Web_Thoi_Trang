@@ -35,6 +35,8 @@ public class ChiTietController {
 
         saveSession.chucVu(httpSession, modelMap);
 
+        saveSession.loginGG(httpSession, modelMap);
+
         SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
         modelMap.addAttribute("chiTietSanPham", sanPhamEntity);
 

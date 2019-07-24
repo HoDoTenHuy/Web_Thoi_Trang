@@ -2,6 +2,7 @@ package com.danghuy.commons;
 
 import com.danghuy.entity.GioHang;
 import com.danghuy.entity.NhanVienEntity;
+import com.danghuy.pojo.GooglePojo;
 import com.danghuy.service.NhanVienService;
 import com.danghuy.service.impl.NhanVienServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,15 @@ public class SaveSession {
         }
     }
 
+    public void loginGG(HttpSession httpSession, ModelMap modelMap) {
+        if (httpSession.getAttribute("google") != null) {
+            GooglePojo googlePojo = (GooglePojo) httpSession.getAttribute("google");
+            String email = googlePojo.getEmail();
+            String chuCaiDau = email.substring(0, 1).toUpperCase();
+            modelMap.addAttribute("chu", chuCaiDau);
+            modelMap.addAttribute("google", googlePojo);
+        }
+    }
     public List<GioHang> gioHangList(HttpSession httpSession) {
         List<GioHang> gioHangs = null;
         if (httpSession.getAttribute("cart") != null) {

@@ -6,6 +6,7 @@ import com.danghuy.entity.DanhMucSanPhamEntity;
 import com.danghuy.entity.GioHang;
 import com.danghuy.entity.NhanVienEntity;
 import com.danghuy.entity.SanPhamEntity;
+import com.danghuy.pojo.GooglePojo;
 import com.danghuy.service.SanPhamService;
 import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
 import com.danghuy.service.impl.NhanVienServiceImpl;
@@ -49,6 +50,8 @@ public class TrangChuController {
         saveSession.shoppingCart(httpSession, modelMap);
 
         saveSession.chucVu(httpSession, modelMap);
+
+        saveSession.loginGG(httpSession, modelMap);
 
         List<SanPhamEntity> sanPhamEntities = sanPhamService.getSanPhamShow();
         modelMap.addAttribute("sanPhamList", sanPhamEntities);

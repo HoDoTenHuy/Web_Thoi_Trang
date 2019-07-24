@@ -189,10 +189,9 @@ public class APIController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(pathSaveFile);
     }
 
-    @PostMapping(path = "themsanpham", produces = "application/json")
+    @GetMapping(path = "themsanpham", produces = "application/json")
     @ResponseBody
     public String themSanPham(@RequestParam String dataJson) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -341,7 +340,6 @@ public class APIController {
         }
         sanPham.setDanhMucSanPham(danhMucSanPhamEntity);
         sanPham.setChiTietSanPhams(chiTietSanPhamEntities);
-        System.out.println(sanPham.getTenSanPham());
         return sanPham;
     }
 

@@ -36,12 +36,6 @@ $(document).ready(function () {
                 password : matkhau
             },
             success : function (value) {
-                /*if(value == "true"){
-                    swal("Login Success!", "You clicked the button!", "success");
-                    /!*window.location.href = "/";*!/
-                    setTimeout(function(){ window.location = "/"; }, 1350);
-                }else
-                    $("#text-checklogin").text("Đăng Nhập Thất Bại!");*/
             }
         })
     });
@@ -241,7 +235,7 @@ $(document).ready(function () {
 
         $.ajax({
             url : "/api/themsanpham",
-            type : "POST",
+            type : "GET",
             data :{
                 dataJson : JSON.stringify(json)
             } ,
@@ -336,9 +330,12 @@ $(document).ready(function () {
                     chitiet_clone.find("#masize-sanpham").val(value.chiTietSanPhams[i].sizeSanPhamEntity.idSize);
                     chitiet_clone.find("#soluong-sanpham").val(value.chiTietSanPhams[i].soLuong);
                     if(i < value.chiTietSanPhams.length-1){
-                        chitiet_clone.find(".btn-chitiet").hide();
+                        chitiet_clone.find(".btn-chitiet").remove();
                     }
                     $("#container-chitiet-sanpham").append(chitiet_clone);
+                }
+                if(soLuongChiTiet === 0){
+                    $(".btn-chitiet").show();
                 }
             }
         })

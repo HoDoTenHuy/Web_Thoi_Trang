@@ -7,34 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="816fe4db-30ac-472e-8778-4af1268dd37c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/pojo/GooglePojo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/utils/GoogleUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/RandomSanPhamShowTrangChu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/RandomSanPhamShowTrangChu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/SaveSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/SaveSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangKyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangKyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangNhapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangNhapController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DanhMucSanPhamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DanhMucSanPhamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DashBorardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DashBorardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ThemSanPhamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ThemSanPhamController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/MauSanPhamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/MauSanPhamDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/NhanVienDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/NhanVienDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/SizeSanPhamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/dao/SizeSanPhamDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/ChucVuEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/NhanVienEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/entity/NhanVienEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/ChucVuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/ChucVuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/MauSanPhamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/MauSanPhamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SanPhamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SanPhamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SizeSanPhamServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SizeSanPhamServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sanpham.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sanpham.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -89,105 +78,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/NhanVienServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#1341#1342#0" expanded="true" />
-                <element signature="e#1402#1403#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SanPhamServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SizeSanPhamServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/pojo/NhanVien.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/pojo/SanPham.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/ChiTietHoaDonServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/ChucVuServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/DanhMucSanPhamServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/HoaDonServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/MauSanPhamServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -221,9 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/entity/UserEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/security.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/LoginController.java" />
@@ -239,27 +127,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dangnhap.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/NhanVienService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/NhanVienServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DanhMucSanPhamController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sanpham.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/SaveSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/RandomSanPhamShowTrangChu.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/conveter/EntityToPojo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangKyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangNhapController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DashBorardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ThemSanPhamController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/dao/ChucVuDAO.java" />
@@ -272,6 +147,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/MauSanPhamServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SanPhamServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SizeSanPhamServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/custom.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/pojo/GooglePojo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/utils/GoogleUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangNhapController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/commons/SaveSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/DanhMucSanPhamController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sanpham.jsp" />
       </list>
     </option>
   </component>
@@ -354,7 +245,66 @@
               <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="danghuy" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Web_Thoi_Trang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Web_Thoi_Trang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -366,7 +316,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563990265327" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563999432142" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-security2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -717,14 +667,7 @@
       <workItem from="1563860552655" duration="9841000" />
       <workItem from="1563901557858" duration="4278000" />
       <workItem from="1563908089126" duration="3326000" />
-      <workItem from="1563987901727" duration="2657000" />
-    </task>
-    <task id="LOCAL-00047" summary="Commit 15,&#10;Ví dụ về OneToOne trong hibernate">
-      <created>1562532451844</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1562532451844</updated>
+      <workItem from="1563987901727" duration="10415000" />
     </task>
     <task id="LOCAL-00048" summary="Updates commit 15,&#10;Ví dụ về ManyToOne trong hibernate">
       <created>1562534253253</created>
@@ -1062,11 +1005,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563962134460</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Updates commit 30,&#10;fix lại phần login, fix lại format cho project">
+      <created>1563990617750</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1563990617751</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418498000" />
+    <option name="totallyTimeSpent" value="426256000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1080,7 +1030,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34295303" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1090,7 +1040,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.6926346" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.63172805" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1156,7 +1106,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updates commit 22,&#10;Thay đổi số lượng sản phẩm ở page giỏ hàng, cập nhật giá tiền và tổng tiền mỗi khi sản phẩm thay đổi dùng jquery, fix lỗi hiển thị ở lần commit trước" />
     <MESSAGE value="Commit 23,&#10;Xóa 1 or vài sản phẩm trong giỏ hàng" />
     <MESSAGE value="Commit 23,&#10;Thêm đơn hàng người dùng" />
     <MESSAGE value="Commit 24,&#10;Load sản phẩm theo danh mục lên cho page sản phẩm" />
@@ -1181,72 +1130,14 @@
     <MESSAGE value="Updates commit 28,&#10;Updates và fix lõi bên page admin" />
     <MESSAGE value="Updates commit 28,&#10;Updates và fix lõi bên page trang chu, random show san pham" />
     <MESSAGE value="Commit 30,&#10;fix lại phần login và tạo đường dẫn tới các page admin or manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 30,&#10;fix lại phần login và tạo đường dẫn tới các page admin or manager" />
+    <MESSAGE value="Updates commit 30,&#10;fix lại phần login, fix lại format cho project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates commit 30,&#10;fix lại phần login, fix lại format cho project" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/GioHang.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/HoaDonEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/MauSanPhamEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/SizeSanPhamEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/KhuyenMaiEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/entity/SanPhamEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/ChucVuService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4998">
-          <caret line="294" column="16" selection-start-line="294" selection-start-column="16" selection-end-line="294" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/NhanVienService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1254,74 +1145,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="62" column="77" lean-forward="true" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="103" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="61" column="99" selection-start-line="61" selection-start-column="99" selection-end-line="61" selection-end-column="99" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sanpham.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="62" column="99" selection-start-line="62" selection-start-column="99" selection-end-line="62" selection-end-column="99" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="63" column="59" lean-forward="true" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/commons/RandomSanPhamShowTrangChu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/commons/SaveSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1346,23 +1173,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangKyController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1377,23 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangNhapController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/DanhMucSanPhamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/DashBorardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1401,24 +1194,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ThemSanPhamController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -1516,6 +1295,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/springDispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/IoC.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SanPhamServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/pojo/NhanVien.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1579,17 +1386,202 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SanPhamServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/service/impl/SizeSanPhamServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/themsanpham.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="394" column="59" lean-forward="true" selection-start-line="394" selection-start-column="59" selection-end-line="394" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2146">
+          <caret line="347" column="47" lean-forward="true" selection-start-line="347" selection-start-column="47" selection-end-line="347" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="54" column="87" selection-start-line="54" selection-start-column="87" selection-end-line="54" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/pojo/GooglePojo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-586">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+            <element signature="e#1468#1469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/APIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="29" column="19" selection-start-line="29" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/utils/GoogleUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="44" column="77" selection-start-line="44" selection-start-column="77" selection-end-line="44" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2551#2569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/DangNhapController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="71" column="50" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1662#1663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/commons/SaveSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/TrangChuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/ChiTietController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/DanhMucSanPhamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danghuy/controller/GioHangController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/trangchu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/chitiet.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/giohang.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sanpham.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
