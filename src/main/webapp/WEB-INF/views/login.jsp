@@ -51,11 +51,14 @@
                     </form>
             </div>
             <span id="text-checklogin">${message}</span>
-            <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/login-google&response_type=code
-    &client_id=865186781951-lauqbvfaqo76pf0gtbop0sa2pao56tc6.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
             <div id="container-social-login">
-                <img alt="icon_fb" src='<c:url value="../../resources/images/icon_fb21.png"/> '/>
-                <img alt="icon_gg" src='<c:url value="../../resources/images/icon_google3.png" />'/>
+                <a href="https://www.facebook.com/dialog/oauth?client_id=2404639003098594&redirect_uri=https://localhost:8080/login-facebook">
+                    <img alt="icon_fb" src='<c:url value="../../resources/images/icon_fb21.png"/> '/>
+                </a>
+                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/login-google&response_type=code
+                    &client_id=865186781951-lauqbvfaqo76pf0gtbop0sa2pao56tc6.apps.googleusercontent.com&approval_prompt=force">
+                        <img alt="icon_gg" src='<c:url value="../../resources/images/icon_google3.png" />'/></a>
+
             </div>
         </div>
     </div>

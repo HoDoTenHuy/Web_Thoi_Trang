@@ -78,10 +78,27 @@
                         <c:when test="${chu != null}">
                             <div class="btn-group dropleft">
                                 <img id="logo-email" data-toggle="dropdown" aria-haspopup="true"
-                                      aria-expanded="false" src='<c:url value="${google.picture}"/>'/>
+                                    aria-expanded="false" src='<c:url value="${google.picture}"/>'/>
+                            <div class="dropdown-menu" style="margin-left: auto;background: white !important;
+                                                                                width: max-content;">
+                                <a class="dropdown-item">${google.email}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
+                                <div class="dropdown-divider"></div>
+                                    <form action="/j_spring_security_logout" style="margin-left: 23px;" method="POST">
+                                        <input type="submit" value="Logout"/>
+                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </c:when>
+                        <c:when test="${chuDau != null}">
+                            <div class="btn-group dropleft">
+                                <img id="logo-email" data-toggle="dropdown" aria-haspopup="true"
+                                     aria-expanded="false" src='<c:url value="${facebook.picture}"/>'/>
                                 <div class="dropdown-menu" style="margin-left: auto;background: white !important;
                                                                                 width: max-content;">
-                                    <a class="dropdown-item">${google.email}</a>
+                                    <a class="dropdown-item">${facebook.email}</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
                                     <div class="dropdown-divider"></div>

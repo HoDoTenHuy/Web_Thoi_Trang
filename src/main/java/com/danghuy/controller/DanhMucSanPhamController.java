@@ -40,6 +40,8 @@ public class DanhMucSanPhamController {
 
         saveSession.loginGG(httpSession, modelMap);
 
+        saveSession.loginFB(httpSession, modelMap);
+
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 

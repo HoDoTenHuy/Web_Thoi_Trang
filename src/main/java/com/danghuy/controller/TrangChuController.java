@@ -53,6 +53,8 @@ public class TrangChuController {
 
         saveSession.loginGG(httpSession, modelMap);
 
+        saveSession.loginFB(httpSession, modelMap);
+
         List<SanPhamEntity> sanPhamEntities = sanPhamService.getSanPhamShow();
         modelMap.addAttribute("sanPhamList", sanPhamEntities);
 

@@ -60,6 +60,16 @@ public class SaveSession {
             modelMap.addAttribute("google", googlePojo);
         }
     }
+
+    public void loginFB(HttpSession httpSession, ModelMap modelMap) {
+        if (httpSession.getAttribute("facebook") != null) {
+            GooglePojo googlePojo = (GooglePojo) httpSession.getAttribute("facebook");
+            String email = googlePojo.getEmail();
+            String chuCaiDau = email.substring(0, 1).toUpperCase();
+            modelMap.addAttribute("chuDau", chuCaiDau);
+            modelMap.addAttribute("facebook", googlePojo);
+        }
+    }
     public List<GioHang> gioHangList(HttpSession httpSession) {
         List<GioHang> gioHangs = null;
         if (httpSession.getAttribute("cart") != null) {

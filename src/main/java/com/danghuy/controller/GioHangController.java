@@ -49,6 +49,8 @@ public class GioHangController {
 
         saveSession.loginGG(httpSession, modelMap);
 
+        saveSession.loginFB(httpSession, modelMap);
+
         List<GioHang> gioHangs = saveSession.gioHangList(httpSession);
         modelMap.addAttribute("listGioHang", gioHangs);
 

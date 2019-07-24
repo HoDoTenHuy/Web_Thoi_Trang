@@ -25,14 +25,13 @@ public class GoogleUtils {
     public static String GOOGLE_LINK_GET_USER_INFO = "https://www.googleapis.com/oauth2/v1/userinfo?access_token=";
     public static String GOOGLE_GRANT_TYPE = "authorization_code";
 
-    public String getToken(final String code) throws ClientProtocolException, IOException{
+    public String getToken(final String code) throws ClientProtocolException, IOException {
         String response = Request.Post(GOOGLE_LINK_GET_TOKEN)
                 .bodyForm(Form.form().add("client_id", GOOGLE_CLIENT_ID)
-                    .add("client_secret", GOOGLE_CLIENT_SECRET)
+                        .add("client_secret", GOOGLE_CLIENT_SECRET)
                         .add("redirect_uri", GOOGLE_REDIRECT_URI).add("code", code)
-                        .add("grant_type",GOOGLE_GRANT_TYPE).build())
+                        .add("grant_type", GOOGLE_GRANT_TYPE).build())
                 .execute().returnContent().asString();
-
         ObjectMapper mapper = new ObjectMapper();
         JsonNode node = mapper.readTree(response).get("access_token");
         return node.textValue();
