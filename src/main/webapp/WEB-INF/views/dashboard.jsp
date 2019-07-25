@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <h1><a href="index.html">Easy <span>Admin</span></a></h1>
+            <h1><a href="index.html">Manager <span>Shop</span></a></h1>
         </div>
         <div class="logo-icon text-center">
             <a href="index.html"><i class="lnr lnr-home"></i> </a>
@@ -62,16 +62,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <!--sidebar nav start-->
             <ul class="nav nav-pills nav-stacked custom-nav">
-                <li class="active"><a href=""><i class="lnr lnr-power-switch"></i><span>Dashboard</span>
+                <li class="active"><a href="/"><i class="lnr lnr-power-switch"></i><span>Trang Chủ</span>
                 </a></li>
+                <li><a href="/updatenhanvien"><i class="lnr lnr-user"></i> <span>Quản Lý Nhân Viên</span></a></li>
                 <li class="menu-list">
-                    <a href="../themsanpham"><i class="lnr lnr-store"></i>
+                    <a><i class="lnr lnr-store"></i>
                         <span>Sản Phẩm</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="../themsanpham">Thêm Sản Phẩm</a> </li>
+                        <li><a href="../themsanpham">Thêm - Sửa - Xóa</a> </li>
                     </ul>
                 </li>
-                <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
                 <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>
                 <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
                     <ul class="sub-menu-list">

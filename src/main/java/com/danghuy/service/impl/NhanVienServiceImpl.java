@@ -10,6 +10,8 @@ import com.danghuy.service.NhanVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class NhanVienServiceImpl implements NhanVienService {
     @Autowired
@@ -46,5 +48,20 @@ public class NhanVienServiceImpl implements NhanVienService {
 
     public NhanVienEntity getUserByEmailLogin(String email) {
         return nhanVienDAO.getUserByEmailLogin(email);
+    }
+
+    @Override
+    public List<NhanVienEntity> getAllNhanVien() {
+        return nhanVienDAO.getAllNhanVien();
+    }
+
+    @Override
+    public NhanVienEntity getUserByID(int id) {
+        return nhanVienDAO.getUserByID(id);
+    }
+
+    @Override
+    public void updateNhanVien(NhanVienEntity nhanVienEntity) {
+        nhanVienDAO.updateNhanVien(nhanVienEntity);
     }
 }

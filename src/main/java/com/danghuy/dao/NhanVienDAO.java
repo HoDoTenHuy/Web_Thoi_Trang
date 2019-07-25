@@ -49,6 +49,27 @@ public class NhanVienDAO {
         return nhanVienEntity;
     }
 
+    @Transactional
+    public NhanVienEntity getUserByID(int id) {
+        Session session = sessionFactory.getCurrentSession().getSession();
+        NhanVienEntity nhanVienEntity =
+          (NhanVienEntity) session.createQuery("from NhanVienEntity where idNhanVien = " + id).getSingleResult();
+        return nhanVienEntity;
+    }
+
+    @Transactional
+    public List<NhanVienEntity> getAllNhanVien(){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        List<NhanVienEntity> nhanVienEntityList = session.createQuery("from NhanVienEntity").list();
+        return nhanVienEntityList;
+    }
+
+    @Transactional
+    public void updateNhanVien(NhanVienEntity nhanVienEntity){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        session.update(nhanVienEntity);
+    }
+
     public boolean dangKy(NhanVienEntity nhanVienEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<ChucVuEntity> chucVuEntities = new ArrayList<ChucVuEntity>();

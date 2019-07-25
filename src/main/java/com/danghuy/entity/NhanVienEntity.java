@@ -1,5 +1,7 @@
 package com.danghuy.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class NhanVienEntity {
     @JoinTable(name = "users_roles",
             joinColumns = {@JoinColumn(name = "user", nullable = false)},
             inverseJoinColumns = {@JoinColumn(name = "role", nullable = false)})
+    @JsonIgnore
     private List<ChucVuEntity> chucVuEntities;
 
     public NhanVienEntity(String email, String matKhau) {

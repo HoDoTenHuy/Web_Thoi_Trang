@@ -183,6 +183,7 @@ $(document).ready(function () {
     var files = [];
     var tenhinh = "";
     var maSanPham;
+    var maNhanVien;
     $("#hinhanh").change(function (event) {
         files = event.target.files;
         tenhinh = files[0].name;
@@ -340,6 +341,54 @@ $(document).ready(function () {
             }
         })
     });
+    $("body").on("click", ".capnhat-nhanvien", function () {
+        $("#form-nhanvien").removeClass("hidden");
+        maNhanVien = $(this).attr("data-btn-manv");
+        $.ajax({
+            url : "/api/laynhanvientheoid",
+            type : "GET",
+            data :{
+                idNhanVien : maNhanVien
+            } ,
+            success : function (value) {
+                console.log(value);
+                $("#tennv").val(value.hoTen);
+                $("#email-nv").val(value.email);
+                $("#username").val(value.tenDangNhap);
+                $("#diachi-nv").val(value.diaChi);
+
+                if(value.chucVuEntities[0].name === "ROLE_MANAGER"){
+                    $("#checked-manager").prop("checked", true);
+                }else if(value.chucVuEntities[0].name === "ROLE_ADMIN"){
+                    $("#checked-admin").prop("checked", true);
+                }else{
+                    $("#checked-user").prop("checked", true);
+                }
+            }
+        })
+    });
+    $("#btn-capnhat-nv").click(function (event) {
+        event.preventDefault(); /*Ngăn chặn reload page*/
+        var form_data_nhanvien = $("#form-nhanvien").serializeArray();
+        json = {};
+        $.each(form_data_nhanvien, function(i, field){
+            json[field.name] = field.value;
+        });
+        json["idNhanVien"] = maNhanVien;
+        console.log(json);
+        $.ajax({
+            url : "/api/capnhatnhanvien",
+            type : "GET",
+            data :{
+                dataJson : JSON.stringify(json)
+            } ,
+            success : function (value) {
+                if(value = "true"){
+                    window.location.reload();
+                }
+            }
+        })
+    });
     $("#form-thanhtoan").on("submit",function (e) {
         e.preventDefault();
         var idSanPham = $(this).closest(".row").find(".tensp").attr("data-masp");
@@ -371,5 +420,6 @@ $(document).ready(function () {
             }
         })
     });
+    $("")
 
 });

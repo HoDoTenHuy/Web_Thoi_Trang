@@ -343,6 +343,63 @@ public class APIController {
         return sanPham;
     }
 
+    @GetMapping(path = "laynhanvientheoid", produces = "application/json")
+    @ResponseBody
+    @Transactional
+    public NhanVien layNhanVienTheoID(@RequestParam int idNhanVien) {
+        NhanVienEntity nhanVienEntity = nhanVienServiceImpl.getUserByID(idNhanVien);
+        NhanVien nhanVien = new NhanVien();
+        nhanVien.setIdNhanVien(nhanVienEntity.getIdNhanVien());
+        nhanVien.setHoTen(nhanVienEntity.getHoTen());
+        nhanVien.setEmail(nhanVienEntity.getEmail());
+        nhanVien.setEnabled(nhanVienEntity.getEnabled());
+        nhanVien.setMatKhau(nhanVienEntity.getMatKhau());
+        nhanVien.setTenDangNhap(nhanVienEntity.getTenDangNhap());
+        nhanVien.setGioiTinh(nhanVienEntity.getGioiTinh());
+        nhanVien.setDiaChi(nhanVienEntity.getDiaChi());
+        nhanVien.setCMND(nhanVienEntity.getCMND());
+        nhanVien.setChucVuEntities(nhanVienEntity.getChucVuEntities());
+        return nhanVien;
+    }
+
+    @GetMapping(path = "capnhatnhanvien", produces = "application/json")
+    @ResponseBody
+    public String updateNhanVien(@RequestParam String dataJson) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        NhanVienEntity nhanVienEntity = new NhanVienEntity();
+        JsonNode jsonObject;
+        try {
+            nhanVienEntity = new NhanVienEntity();
+            jsonObject = objectMapper.readTree(dataJson);
+
+            List<ChucVuEntity> chucVuEntityList = new ArrayList<ChucVuEntity>();
+            ChucVuEntity chucVuEntity = new ChucVuEntity();
+            chucVuEntity.setIdChucVu(jsonObject.get("chucVu").asInt());
+            chucVuEntityList.add(chucVuEntity);
+
+            String hoTen = jsonObject.get("tenNhanVien").asText();
+            String username = jsonObject.get("username").asText();
+            String email = jsonObject.get("email-nv").asText();
+            String diaChi = jsonObject.get("diachi-nv").asText();
+            int idNhanVien = jsonObject.get("idNhanVien").asInt();
+
+            nhanVienEntity.setIdNhanVien(idNhanVien);
+            nhanVienEntity.setEmail(email);
+            nhanVienEntity.setChucVuEntities(chucVuEntityList);
+            nhanVienEntity.setHoTen(hoTen);
+            nhanVienEntity.setTenDangNhap(username);
+            nhanVienEntity.setDiaChi(diaChi);
+
+            nhanVienServiceImpl.updateNhanVien(nhanVienEntity);
+
+            return "true";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(nhanVienEntity.getEmail());
+        return "false";
+    }
+
     @PostMapping("dathang")
     @Transactional
     @ResponseBody

@@ -1,5 +1,7 @@
 package com.danghuy.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +12,11 @@ public class ChucVuEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idChucVu;
     private String name;
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "chucVuEntities")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles",
+            joinColumns = {@JoinColumn(name = "role", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "user", nullable = false)})
+    @JsonIgnore
     private List<NhanVienEntity> nhanVienEntities;
 
     public ChucVuEntity() {
