@@ -23,4 +23,5 @@ public interface SanPhamService {
     public void updateSanPham(SanPhamEntity sanPhamEntity);
 
     public List<SanPhamEntity> getSanPhamShow();
+
 }

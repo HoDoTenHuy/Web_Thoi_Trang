@@ -243,7 +243,7 @@ public class APIController {
         return "false";
     }
 
-    @PostMapping(path = "capnhatsanpham", produces = "application/json")
+    @GetMapping(path = "capnhatsanpham", produces = "application/json")
     @ResponseBody
     public String updateSanPham(@RequestParam String dataJson) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -254,6 +254,11 @@ public class APIController {
 
             DanhMucSanPhamEntity danhMucSanPham = new DanhMucSanPhamEntity();
             danhMucSanPham.setIdDanhMuc(jsonObject.get("danhMucSanPhamEntity").asInt());
+
+            Set<KhuyenMaiEntity> khuyenMaiEntities = new HashSet<KhuyenMaiEntity>();
+            KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
+            khuyenMaiEntity.setIdKhuyenMai(jsonObject.get("khuyenMaiEntities").asInt());
+            khuyenMaiEntities.add(khuyenMaiEntity);
 
             Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
             JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
@@ -282,14 +287,19 @@ public class APIController {
 
             sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
             sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
+            sanPham.setKhuyenMaiEntities(khuyenMaiEntities);
             sanPham.setTenSanPham(tenSanPham);
             sanPham.setGiaTien(giaTien);
             sanPham.setMoTa(moTa);
             sanPham.setHinhSanPham(hinhSanPham);
             sanPham.setGianhCho(gianhCho);
             sanPham.setIdSanPham(maSanPham);
+
+            SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(maSanPham);
             if (hinhAnh != "") {
                 sanPham.setHinhSanPham(hinhAnh);
+            }else{
+                sanPham.setHinhSanPham(sanPhamEntity.getHinhSanPham());
             }
 
             sanPhamService.updateSanPham(sanPham);
@@ -318,6 +328,18 @@ public class APIController {
         danhMucSanPhamEntity.setIdDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getIdDanhMuc());
         danhMucSanPhamEntity.setTenDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getTenDanhMuc());
 
+        Set<KhuyenMaiEntity> khuyenMaiEntities = new HashSet<KhuyenMaiEntity>();
+        for(KhuyenMaiEntity value : sanPhamEntity.getKhuyenMaiEntities()){
+            KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
+            khuyenMaiEntity.setIdKhuyenMai(value.getIdKhuyenMai());
+            khuyenMaiEntity.setGiamGia(value.getGiamGia());
+            khuyenMaiEntity.setTenKhuyenMai(value.getTenKhuyenMai());
+            khuyenMaiEntity.setThoiGianBatDau(value.getThoiGianBatDau());
+            khuyenMaiEntity.setThoiGianKetThuc(value.getThoiGianKetThuc());
+
+            khuyenMaiEntities.add(khuyenMaiEntity);
+        }
+
         Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
         for (ChiTietSanPhamEntity value : sanPhamEntity.getChiTietSanPhamEntities()) {
             ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
@@ -340,6 +362,7 @@ public class APIController {
         }
         sanPham.setDanhMucSanPham(danhMucSanPhamEntity);
         sanPham.setChiTietSanPhams(chiTietSanPhamEntities);
+        sanPham.setKhuyenMaiEntities(khuyenMaiEntities);
         return sanPham;
     }
 
@@ -389,6 +412,10 @@ public class APIController {
             nhanVienEntity.setHoTen(hoTen);
             nhanVienEntity.setTenDangNhap(username);
             nhanVienEntity.setDiaChi(diaChi);
+            nhanVienEntity.setEnabled(1);
+
+            NhanVienEntity nhanVien = nhanVienServiceImpl.getUserByEmailLogin(email);
+            nhanVienEntity.setMatKhau(nhanVien.getMatKhau());
 
             nhanVienServiceImpl.updateNhanVien(nhanVienEntity);
 
@@ -396,9 +423,9 @@ public class APIController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(nhanVienEntity.getEmail());
         return "false";
     }
+
 
     @PostMapping("dathang")
     @Transactional

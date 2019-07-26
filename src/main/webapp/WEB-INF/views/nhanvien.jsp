@@ -376,19 +376,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h3>Nhân Viên</h3>
                         <div class="form-group">
                             <label for="tennv">Tên Nhân Viên : </label>
-                            <input class="form-control" name="tenNhanVien" id="tennv" placeholder="Nhập vào tên sản phẩm!"/>
+                            <input class="form-control" name="tenNhanVien" id="tennv"/>
                         </div>
                         <div class="form-group">
                             <label for="email-nv">Email : </label>
-                            <input class="form-control" name="email-nv" id="email-nv" placeholder="Nhập vào giá sản phẩm!"/>
+                            <input class="form-control" name="email-nv" id="email-nv"/>
                         </div>
                         <div class="form-group">
                             <label for="username">Username : </label>
-                            <input class="form-control" name="username" id="username" placeholder="Nhập vào giá sản phẩm!"/>
+                            <input class="form-control" name="username" id="username"/>
                         </div>
                         <div class="form-group">
                             <label for="diachi-nv">Địa Chỉ : </label>
-                            <input class="form-control" name="diachi-nv" id="diachi-nv" placeholder="Nhập vào giá sản phẩm!"/>
+                            <input class="form-control" name="diachi-nv" id="diachi-nv"/>
                         </div>
                         <div class="form-group">
                             <label>Chức Vụ : </label>

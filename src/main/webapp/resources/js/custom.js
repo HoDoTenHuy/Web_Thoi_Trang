@@ -184,6 +184,7 @@ $(document).ready(function () {
     var tenhinh = "";
     var maSanPham;
     var maNhanVien;
+    var idSanPham;
     $("#hinhanh").change(function (event) {
         files = event.target.files;
         tenhinh = files[0].name;
@@ -258,7 +259,6 @@ $(document).ready(function () {
         $.each(form_data_sanpham, function(i, field){
             json[field.name] = field.value;
         });
-
         /*console.log(array_chitiet);*/
         object_chitiet = {};
         array_chitiet = [];
@@ -276,10 +276,10 @@ $(document).ready(function () {
         json["maSanPham"] = maSanPham;
         json["chitietsanpham"] = array_chitiet;
         json["hinhSanPham"] = tenhinh;
-
+        console.log(json);
         $.ajax({
             url : "/api/capnhatsanpham",
-            type : "POST",
+            type : "GET",
             data :{
                 dataJson : JSON.stringify(json)
             } ,
@@ -351,7 +351,6 @@ $(document).ready(function () {
                 idNhanVien : maNhanVien
             } ,
             success : function (value) {
-                console.log(value);
                 $("#tennv").val(value.hoTen);
                 $("#email-nv").val(value.email);
                 $("#username").val(value.tenDangNhap);

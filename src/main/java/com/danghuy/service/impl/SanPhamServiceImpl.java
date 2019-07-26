@@ -49,4 +49,5 @@ public class SanPhamServiceImpl implements SanPhamService {
     public List<SanPhamEntity> getSanPhamShow() {
         return sanPhamDAO.getSanPhamShow();
     }
+
 }

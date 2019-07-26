@@ -1,6 +1,6 @@
 package com.danghuy.dao;
 
-import com.danghuy.entity.ChucVuEntity;
+import com.danghuy.entity.KhuyenMaiEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +13,14 @@ import java.util.List;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class ChucVuDAO {
+public class KhuyenMaiDAO {
     @Autowired
     SessionFactory sessionFactory;
 
     @Transactional
-    public List<ChucVuEntity> chucVuEntities() {
+    public List<KhuyenMaiEntity> getAllKhuyenMai(){
         Session session = sessionFactory.getCurrentSession().getSession();
-        String hql = "from ChucVuEntity";
-        List<ChucVuEntity> chucVuEntityList = session.createQuery(hql).list();
-        return chucVuEntityList;
+        List<KhuyenMaiEntity> khuyenMaiEntityList = session.createQuery("from KhuyenMaiEntity").list();
+        return khuyenMaiEntityList;
     }
 }

@@ -1,5 +1,7 @@
 package com.danghuy.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -17,11 +19,12 @@ public class KhuyenMaiEntity implements Serializable {
     private String hinhKhuyenMai;
     private int giamGia;
 
-    @ManyToMany()
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "chitietkhuyenmai",
             joinColumns = {@JoinColumn(name = "idKhuyenMai", referencedColumnName = "idKhuyenMai")},
             inverseJoinColumns = {@JoinColumn(name = "idSanPham", referencedColumnName = "idSanPham")}
     )
+    @JsonIgnore
     Set<SanPhamEntity> sanPhamEntities;
 
     public Set<SanPhamEntity> getSanPhamEntities() {

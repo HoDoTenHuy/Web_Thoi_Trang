@@ -333,6 +333,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </c:forEach>
                             </select>
                         </div>
+                        <div class="form-group" id="chitiet-khuyenmai">
+                            <label for="danhmuckhuyenmai">Khuyến Mãi : </label>
+                            <select name="khuyenMaiEntities" class="form-control" id="danhmuckhuyenmai">
+                                <c:forEach var = "khuyenmai" items="${khuyenMaiList}">
+                                    <option value="${khuyenmai.idKhuyenMai}">
+                                            ${khuyenmai.tenKhuyenMai} - giảm giá : ${khuyenmai.giamGia}%</option>
+                                </c:forEach>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="giasp">Giá Tiền : </label>
                             <input class="form-control" name="giaTien" id="giasp" placeholder="Nhập vào giá sản phẩm!"/>
