@@ -142,17 +142,29 @@
                 <div class="wow rollIn"><span style="color: red">${tenDanhMuc}</span></div>
                 <div class="row" style="margin-top: 22px">
                     <c:forEach var = "sanpham" items="${listSanPham}">
-                        <div class="card col-md-4 col-sm-6" style="width: 44rem;">
-                            <a href="../../../chitiet/${sanpham.idSanPham}">
-                                <div class="sanpham wow pulse">
-                                    <img class="card-img-top sanpham-size"
-                                         src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'
-                                         alt="hinh">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${sanpham.tenSanPham}</h5>
-                                        <p class="card-text">${sanpham.giaTien} VNĐ</p>
-                                    </div>
-                                </div>
+                        <div class="col-md-4 col-sm-6">
+                            <a href="/chitiet/${sanpham.idSanPham}">
+                                <figure class="card card-product">
+                                    <div class="img-wrap"><img class="card-img-top sanpham-size"
+                                      src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'alt="hinh"></div>
+                                    <figcaption class="info-wrap">
+                                        <h4 class="title">${sanpham.tenSanPham}</h4>
+                                        <h4 class="desc">${sanpham.giaTien}VNĐ</h4>
+                                    </figcaption>
+                                    <div class="bottom-wrap">
+                                        <a href="/chitiet/${sanpham.idSanPham}" class="btn btn-sm btn-primary float-right">Xem Ngay</a>
+                                        <div class="price-wrap h5">
+                                            <c:forEach var = "khuyemai" items="${sanpham.khuyenMaiEntities}">
+                                            <span class="price-new" style="color:red;">
+                                                <c:set var = "gia" value = "${khuyemai.giamGia}"/>
+                                                <c:if test="${gia > 0}">
+                                                    Giảm Giá : ${gia}%
+                                                </c:if>
+                                            </span>
+                                            </c:forEach>
+                                        </div> <!-- price-wrap.// -->
+                                    </div> <!-- bottom-wrap.// -->
+                                </figure>
                             </a>
                         </div>
                     </c:forEach>

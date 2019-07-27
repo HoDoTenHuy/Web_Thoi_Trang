@@ -203,6 +203,11 @@ public class APIController {
             DanhMucSanPhamEntity danhMucSanPham = new DanhMucSanPhamEntity();
             danhMucSanPham.setIdDanhMuc(jsonObject.get("danhMucSanPhamEntity").asInt());
 
+            Set<KhuyenMaiEntity> khuyenMaiEntities = new HashSet<KhuyenMaiEntity>();
+            KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
+            khuyenMaiEntity.setIdKhuyenMai(5);
+            khuyenMaiEntities.add(khuyenMaiEntity);
+
             Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
             JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
             for (JsonNode value : jsonChiTiet) {
@@ -226,6 +231,7 @@ public class APIController {
             String gianhCho = jsonObject.get("gianhCho").asText();
             String giaTien = jsonObject.get("giaTien").asText();
 
+            sanPham.setKhuyenMaiEntities(khuyenMaiEntities);
             sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
             sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
             sanPham.setTenSanPham(tenSanPham);
