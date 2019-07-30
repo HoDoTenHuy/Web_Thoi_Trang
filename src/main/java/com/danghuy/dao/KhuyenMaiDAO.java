@@ -23,4 +23,10 @@ public class KhuyenMaiDAO {
         List<KhuyenMaiEntity> khuyenMaiEntityList = session.createQuery("from KhuyenMaiEntity").list();
         return khuyenMaiEntityList;
     }
+    @Transactional
+    public KhuyenMaiEntity getKhuyenMaiByID(int idKhuyenMai){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        KhuyenMaiEntity khuyenMaiEntity = (KhuyenMaiEntity) session.createQuery("from KhuyenMaiEntity where idKhuyenMai = " + idKhuyenMai);
+        return khuyenMaiEntity;
+    }
 }

@@ -4,10 +4,7 @@ import com.danghuy.commons.CheckEmail;
 import com.danghuy.entity.*;
 import com.danghuy.pojo.NhanVien;
 import com.danghuy.pojo.SanPham;
-import com.danghuy.service.impl.ChiTietHoaDonServiceImpl;
-import com.danghuy.service.impl.HoaDonServiceImpl;
-import com.danghuy.service.impl.NhanVienServiceImpl;
-import com.danghuy.service.impl.SanPhamServiceImpl;
+import com.danghuy.service.impl.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +20,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.*;
 
 @Controller
@@ -50,6 +49,9 @@ public class APIController {
 
     @Autowired
     CheckEmail checkEmail;
+
+    @Autowired
+    KhuyenMaiServiceImpl khuyenMaiService;
 
     @GetMapping("kiemtradangnhap")
     @ResponseBody
@@ -91,10 +93,11 @@ public class APIController {
     public void themGioHang(@RequestParam int maSP, @RequestParam int maMau,
                             @RequestParam int maSize, @RequestParam int soLuong, @RequestParam String tenSP,
                             @RequestParam String giaTien, @RequestParam String tenMau, @RequestParam String tenSize,
-                            @RequestParam int maChiTiet, ModelMap modelMap, HttpSession httpSession) {
+                            @RequestParam int maChiTiet, @RequestParam int khuyenMai
+            , ModelMap modelMap, HttpSession httpSession) {
         if (httpSession.getAttribute("cart") == null) {
             List<GioHang> gioHangs = new ArrayList<GioHang>();
-            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, maChiTiet, tenSP, giaTien, tenMau, tenSize);
+            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, maChiTiet, tenSP, giaTien, tenMau, tenSize, khuyenMai);
             gioHangs.add(gioHang);
             httpSession.setAttribute("cart", gioHangs);
         } else {
@@ -103,7 +106,7 @@ public class APIController {
             if (viTri == -1) {
 
                 GioHang gioHang = new GioHang(maSP, maMau, maSize, 1,
-                        maChiTiet, tenSP, giaTien, tenMau, tenSize);
+                        maChiTiet, tenSP, giaTien, tenMau, tenSize, khuyenMai);
                 list.add(gioHang);
             } else {
                 int soLuongMoi = list.get(viTri).getSoLuong() + 1;
@@ -137,7 +140,7 @@ public class APIController {
 
     @GetMapping("capnhatgiohang")
     @ResponseBody
-    public void capNhatGioHang(HttpSession httpSession, @RequestParam int maSP, @RequestParam int maMau,
+    public void capNhatGioHang(HttpSession httpSession, ModelMap modelMap, @RequestParam int maSP, @RequestParam int maMau,
                                @RequestParam int maSize, @RequestParam int soLuong) {
         if (httpSession.getAttribute("cart") != null) {
             List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
@@ -302,12 +305,14 @@ public class APIController {
             sanPham.setIdSanPham(maSanPham);
 
             SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(maSanPham);
-            if (hinhAnh != "") {
-                sanPham.setHinhSanPham(hinhAnh);
-            }else{
+            System.out.println(sanPhamEntity.getHinhSanPham());
+            if (hinhAnh.equals("")) {
+                System.out.println(hinhAnh + " ---- ");
                 sanPham.setHinhSanPham(sanPhamEntity.getHinhSanPham());
+            }else if(!hinhAnh.equals(sanPhamEntity.getHinhSanPham())){
+                System.out.println("asasaasa");
+                sanPham.setHinhSanPham(hinhAnh);
             }
-
             sanPhamService.updateSanPham(sanPham);
 
             return "true";

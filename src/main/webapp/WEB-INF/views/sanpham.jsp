@@ -149,7 +149,7 @@
                                       src='<c:url value="/resources/images/sanpham/${sanpham.hinhSanPham}"/>'alt="hinh"></div>
                                     <figcaption class="info-wrap">
                                         <h4 class="title">${sanpham.tenSanPham}</h4>
-                                        <h4 class="desc">${sanpham.giaTien}VNĐ</h4>
+                                        <h4 class="desc">${sanpham.giaTien} VNĐ</h4>
                                     </figcaption>
                                     <div class="bottom-wrap">
                                         <a href="/chitiet/${sanpham.idSanPham}" class="btn btn-sm btn-primary float-right">Xem Ngay</a>

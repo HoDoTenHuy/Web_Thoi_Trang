@@ -71,6 +71,7 @@ $(document).ready(function () {
         var masp = $("#tensp").attr("data-masp");
         var giatien = $("#giatien").attr("data-value");
         var soluong = $(this).closest("tr").find(".soluong").attr("data-soluong");
+        var giamGia = $("#giatien").attr("data-khuyenmai");
         $.ajax({
             url : "/api/themgiohang",
             type : "GET",
@@ -83,7 +84,8 @@ $(document).ready(function () {
                 giaTien : giatien,
                 tenMau : tenMau,
                 tenSize : tenSize,
-                maChiTiet : machitiet
+                maChiTiet : machitiet,
+                khuyenMai : giamGia
             },
             success : function (value) {
             }
@@ -105,9 +107,13 @@ $(document).ready(function () {
         $(".giatien").each(function () {
             var giatien =  $(this).text();
             var soluong = $(this).closest("tr").find(".soluong-giohang").val();
+            var giamgia = $(this).attr("data-giamgia");
+            giatien = giatien - parseInt(giatien) * parseInt(giamgia) / 100;
             if(soluong > 1){
                 giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
+                giatien = giatien - parseInt(giatien) * parseInt(giamgia) / 100;
             }
+
             var tongtien = parseInt(giatien) * soluong;
             if(!isEventChange){
                 $(this).html(tongtien + ".000 VNĐ");
@@ -121,6 +127,8 @@ $(document).ready(function () {
     $(".soluong-giohang").change(function () {
         var soluong = $(this).val();
         var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
+        var giamgia = $(this).closest("tr").find(".giatien").attr("data-giamgia");
+        giatien = giatien - parseInt(giatien) * parseInt(giamgia) / 100;
         var tongtien = soluong * parseInt(giatien);
         var maMau = $(this).closest("tr").find(".mau").attr("data-mamau");
         var maSize = $(this).closest("tr").find(".size").attr("data-masize");

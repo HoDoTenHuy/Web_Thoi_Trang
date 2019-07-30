@@ -145,8 +145,17 @@
                     </div>
                     <div class="col-sm-8 col-md-8">
                         <h2 id="tensp" data-masp="${chiTietSanPham.idSanPham}">${chiTietSanPham.tenSanPham}</h2>
-                        <h4 id="giatien" data-value="${chiTietSanPham.giaTien}"
-                            style="color: red">${chiTietSanPham.giaTien} VNĐ</h4>
+                        <h4 id="giatien" data-value="${chiTietSanPham.giaTien}" data-khuyenmai="${giamgia}"
+                            style="color: red">
+                                <c:set var = "giamgia" value = "${giamgia}"/>
+                                <c:if test = "${giamgia > 0}">
+                                    <del style="color:black;">${chiTietSanPham.giaTien} đ</del>
+                                    <p>${giaKhuyenMai}</p>
+                                </c:if>
+                                <c:if test = "${giamgia == 0}">
+                                    <p>${chiTietSanPham.giaTien} đ</p>
+                                </c:if>
+                            </>
                         <table style="width:100%;">
                             <tr>
                                 <th>Màu</th>

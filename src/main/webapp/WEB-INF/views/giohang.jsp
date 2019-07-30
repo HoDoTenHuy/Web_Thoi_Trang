@@ -146,7 +146,8 @@
                         <td class="size" data-masize="${sanpham.maSize}">${sanpham.tenSize}</td>
                         <td><input class="soluong-giohang" type="number"  min="1"
                                    value="${sanpham.soLuong}"/></td>
-                        <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
+                        <td class="giatien" data-giamgia = "${sanpham.khuyenMai}"
+                            data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
                         <td class="xoa-giohang btn btn-default btn-sm btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Remove
                         </td>

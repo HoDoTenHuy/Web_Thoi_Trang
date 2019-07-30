@@ -16,4 +16,9 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     public List<KhuyenMaiEntity> getAllKhuyenMai() {
         return khuyenMaiDAO.getAllKhuyenMai();
     }
+
+    @Override
+    public KhuyenMaiEntity getKhuyenMaiByID(int idKhuyenMai) {
+        return khuyenMaiDAO.getKhuyenMaiByID(idKhuyenMai);
+    }
 }
