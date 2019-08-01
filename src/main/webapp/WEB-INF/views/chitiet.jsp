@@ -150,10 +150,10 @@
                                 <c:set var = "giamgia" value = "${giamgia}"/>
                                 <c:if test = "${giamgia > 0}">
                                     <del style="color:black;">${chiTietSanPham.giaTien} đ</del>
-                                    <p>${giaKhuyenMai}</p>
+                                    <p id="giakhuyenmai">${giaKhuyenMai}</p>
                                 </c:if>
                                 <c:if test = "${giamgia == 0}">
-                                    <p>${chiTietSanPham.giaTien} đ</p>
+                                    <p id="giakhuyenmai">${chiTietSanPham.giaTien} đ</p>
                                 </c:if>
                             </>
                         <table style="width:100%;">

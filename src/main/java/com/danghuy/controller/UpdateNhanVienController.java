@@ -19,7 +19,10 @@ public class UpdateNhanVienController {
     @GetMapping
     public String defaultPgaeNV(ModelMap modelMap){
         List<NhanVienEntity> nhanVienList = nhanVienService.getAllNhanVien();
-        modelMap.addAttribute("listNhanVien", nhanVienList);
+        List<NhanVienEntity> nhanVienEntities = nhanVienService.getNhanVienLimit(0, 5);
+        modelMap.addAttribute("listNhanVien", nhanVienEntities);
+        double soPgaeNV = (double) nhanVienList.size() / 5;
+        modelMap.addAttribute("tongPage", (int) Math.ceil(soPgaeNV));
         return "nhanvien";
     }
 }

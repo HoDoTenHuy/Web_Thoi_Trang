@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.persistence.Table;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -52,6 +51,18 @@ public class APIController {
 
     @Autowired
     KhuyenMaiServiceImpl khuyenMaiService;
+
+    @Autowired
+    NhanVienServiceImpl nhanVienService;
+
+    @Autowired
+    SizeSanPhamServiceImpl sizeSanPhamService;
+
+    @Autowired
+    MauSanPhamServiceImpl mauSanPhamService;
+
+    @Autowired
+    DanhMucSanPhamServiceImpl danhMucSanPhamService;
 
     @GetMapping("kiemtradangnhap")
     @ResponseBody
@@ -174,6 +185,41 @@ public class APIController {
         return html;
     }
 
+    @GetMapping(path = "laynhanvienlimit", produces = "text/html; charset=UTF8")
+    @ResponseBody
+    public String layNhanVienLimit(@RequestParam int nvBatDau){
+        String html = "";
+        List<NhanVienEntity> nhanVienEntities = nhanVienService.getNhanVienLimit(nvBatDau, 5);
+        for(NhanVienEntity nhanVien : nhanVienEntities){
+            html += "<tr>\n" +
+                    "     <td class=\"idnhanvien\" data-manv=\"\">" + nhanVien.getIdNhanVien() +"</td>\n" +
+                    "     <td class=\"tennhanvien\" data-tennv=\"\">" + nhanVien.getHoTen() + "</td>\n" +
+                    "     <td class=\"email-nv\" data-email=\"\">" + nhanVien.getEmail() + "</td>\n" +
+                    "     <td class=\"username-nv\" data-username=\"\">" + nhanVien.getTenDangNhap() + "</td>\n" +
+                    "     <td class=\"chucvu-nv\" data-chucvu=\"" + nhanVien.getChucVuEntities() + "\">\n";
+            String manager = "[3]";
+            String admin = "[2]";
+            String user = "[1]";
+            if(nhanVien.getChucVuEntities().toString().equals(manager)){
+                html += "<p>Manager<p>";
+            }
+            if(nhanVien.getChucVuEntities().toString().equals(admin)){
+                html += "<p>Admin<p>";
+            }
+            if(nhanVien.getChucVuEntities().toString().equals(user)){
+                html += "<p>User<p>";
+            }
+            html += "</td>";
+            html += "<td class=\"diachi-nv\" data-diachi=\"\">" + nhanVien.getDiaChi() + "</td>\n";
+            html += "<td class=\"capnhat-nhanvien\" style=\"padding-top: 8px !important;\"\n" +
+                    "        data-btn-manv=\"${nhanvien.idNhanVien}\">\n" +
+                    "            <button type=\"button\" class=\"btn btn-secondary\">Cập Nhật</button>\n" +
+                    "</td>";
+            html += "</tr>";
+        }
+        return html;
+    }
+
     @GetMapping("xoasanpham")
     @ResponseBody
     public void xoaSanPhamTheoID(@RequestParam int maSanPham) {
@@ -192,6 +238,26 @@ public class APIController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @GetMapping(path = "themsizesanpham")
+    @ResponseBody
+    public String themSizeSanPham(@RequestParam String tenSize){
+        sizeSanPhamService.saveSizeSanPham(tenSize);
+        return "";
+    }
+
+    @GetMapping(path = "themmausanpham")
+    @ResponseBody
+    public String themMauSanPham(@RequestParam String tenMau){
+        mauSanPhamService.saveMauSanPham(tenMau);
+        return "";
+    }
+    @GetMapping(path = "themdanhmucsanpham")
+    @ResponseBody
+    public String themDanhMucSanPham(@RequestParam String tenDanhMuc){
+        danhMucSanPhamService.saveDanhMucSanPham(tenDanhMuc);
+        return "";
     }
 
     @GetMapping(path = "themsanpham", produces = "application/json")
@@ -438,12 +504,13 @@ public class APIController {
     }
 
 
-    @PostMapping("dathang")
+    @GetMapping("dathang")
     @Transactional
     @ResponseBody
     public String datHang(@RequestParam String tenKhachHang, @RequestParam String soDienThoai,
                           @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
-                          @RequestParam String ghiChu, HttpSession httpSession) {
+                          @RequestParam String ghiChu,
+                          HttpSession httpSession) {
         String kiemTra = "";
         if (httpSession.getAttribute("cart") != null) {
 
@@ -461,9 +528,22 @@ public class APIController {
 
                     ChiTietHoaDonEntity chiTietHoaDonEntity = new ChiTietHoaDonEntity();
                     chiTietHoaDonEntity.setChiTietHoaDonIDEntity(chiTietHoaDonIDEntity);
-                    chiTietHoaDonEntity.setGiaTien(gioHang.getGiaTien().toString());
                     chiTietHoaDonEntity.setSoLuong(gioHang.getSoLuong());
-
+                    String giaCu = gioHang.getGiaTien();
+                    int giamGia = gioHang.getKhuyenMai();
+                    CharSequence s1 = ".";
+                    CharSequence s2 = "";
+                    String gia = giaCu.replace(s1, s2);
+                    int giaTien = Integer.parseInt(gia);
+                    int giaKhuyenMai = giaTien - giaTien*giamGia/100;
+                    Locale locale = new Locale("vi", "VN");
+                    Currency currency = Currency.getInstance("VND");
+                    DecimalFormatSymbols df = DecimalFormatSymbols.getInstance(locale);
+                    df.setCurrency(currency);
+                    NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
+                    numberFormat.setCurrency(currency);
+                    String formatKhuyenMai = numberFormat.format(giaKhuyenMai);
+                    chiTietHoaDonEntity.setGiaTien(formatKhuyenMai);
                     chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
                 }
                 gioHangs.clear();
@@ -476,6 +556,13 @@ public class APIController {
         }
         kiemTra = false + "";
         return kiemTra;
+    }
+    @GetMapping("duyetdon")
+    @Transactional
+    @ResponseBody
+    public String duyetDonHang(@RequestParam int idHoaDon, @RequestParam int tinhTrang){
+        hoaDonService.duyetDonHang(idHoaDon);
+        return "true";
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {

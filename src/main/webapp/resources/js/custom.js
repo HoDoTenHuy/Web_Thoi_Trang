@@ -168,6 +168,24 @@ $(document).ready(function () {
             }
         })
     });
+    $("body").on("click", ".paging-item", function () {
+        var sotrang = $(this).text();
+        var nvbatdau = (sotrang - 1)*5; /*limit hiển thi số sp trong 1 trnga là 5*/
+        $(".paging-item").removeClass("active");
+        $(this).addClass("active");
+        $.ajax({
+            url : "/api/laynhanvienlimit",
+            type : "GET",
+            data :{
+                nvBatDau : nvbatdau,
+            },
+            success : function (value) {
+                var tbodynhanvien =  $("#table-nhanvien").find("tbody");
+                tbodynhanvien.empty();
+                tbodynhanvien.append(value);
+            }
+        })
+    });
     $("#check-all-sanpham").change(function () {
         var checkboxes = $(this).closest('table').find('.checkbox-sanpham');
         checkboxes.prop('checked', $(this).is(':checked'));
@@ -215,6 +233,45 @@ $(document).ready(function () {
        var chitiet_clone = $("#chitiet-sanpham").clone();
        chitiet_clone.removeAttr("id");
        $("#container-chitiet-sanpham").append(chitiet_clone);
+    });
+    $("#them-size").click(function(){
+        var tensize = $("#tensize").val();
+        $.ajax({
+            url : "/api/themsizesanpham",
+            type : "GET",
+            data :{
+                tenSize : tensize
+            } ,
+            success : function (value) {
+                window.location.reload();
+            }
+        })
+    });
+    $("#them-mau").click(function(){
+        var tenmau = $("#tenmau").val();
+        $.ajax({
+            url : "/api/themmausanpham",
+            type : "GET",
+            data :{
+                tenMau : tenmau
+            } ,
+            success : function (value) {
+                window.location.reload();
+            }
+        })
+    });
+    $("#them-danhmuc").click(function(){
+        var tendanhmuc = $("#tendanhmuc").val();
+        $.ajax({
+            url : "/api/themdanhmucsanpham",
+            type : "GET",
+            data :{
+                tenDanhMuc : tendanhmuc
+            } ,
+            success : function (value) {
+                window.location.reload();
+            }
+        })
     });
 
     $("#them-sanpham").click(function (event) {
@@ -382,7 +439,6 @@ $(document).ready(function () {
             json[field.name] = field.value;
         });
         json["idNhanVien"] = maNhanVien;
-        console.log(json);
         $.ajax({
             url : "/api/capnhatnhanvien",
             type : "GET",
@@ -400,6 +456,10 @@ $(document).ready(function () {
         e.preventDefault();
         var idSanPham = $(this).closest(".row").find(".tensp").attr("data-masp");
         var tenSanPham = $(this).closest(".row").find("#tenKhachHang").val();
+        var giaTien = $(this).closest(".row").find(".giatien").attr("data-giatien");
+        var giamgia = $(this).closest(".row").find(".giatien").attr("data-giamgia");
+        var tongTien = $(this).closest(".row").find("#tongtien").val();
+        var soLuong = $(this).closest(".row").find('input[class="soluong-giohang"]').val();
         var diaChi = $(this).closest(".row").find("#diaChiGiaoHang").val();
         var soDienThoai = $(this).closest(".row").find("#soDienThoai").val();
         var tenKhachHang = $(this).closest(".row").find("#tenKhachHang").val();
@@ -407,7 +467,7 @@ $(document).ready(function () {
         var ghiChu = $(this).closest(".row").find("#ghiChu").val();
         $.ajax({
             url : "/api/dathang",
-            type : "POST",
+            type : "GET",
             data :{
                     tenKhachHang : tenKhachHang,
                     soDienThoai : soDienThoai,
@@ -427,6 +487,22 @@ $(document).ready(function () {
             }
         })
     });
-    $("")
-
+    $(".btn-duyetdon").click(function () {
+        var tinhTrang = $(this).closest("tr").find(".tinhtrang").attr("data-tinhtrang");
+        var idhoadon = $(this).closest("tr").find(".idhoadon").text();
+        alert(idhoadon);
+        $.ajax({
+            url : "/api/duyetdon",
+            type : "GET",
+            data :{
+                idHoaDon : idhoadon,
+                tinhTrang : tinhTrang
+            } ,
+            success : function (value) {
+                if(value === "true"){
+                    $("#hoadon").remove();
+                }
+            }
+        })
+    });
 });

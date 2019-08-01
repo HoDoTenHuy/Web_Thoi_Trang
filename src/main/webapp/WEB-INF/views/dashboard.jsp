@@ -70,6 +70,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Sản Phẩm</span></a>
                     <ul class="sub-menu-list">
                         <li><a href="../themsanpham">Thêm - Sửa - Xóa</a> </li>
+                        <li><a href="../themsize">Thêm Loại Size</a> </li>
+                        <li><a href="../themmau">Thêm Màu</a> </li>
+                        <li><a href="../themdanhmuc">Thêm Danh Mục</a> </li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href="#"><i class="lnr lnr-book"></i> <span>Đơn Hàng</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../duyetdonhang">Quản Lý Đơn Hàng</a> </li>
                     </ul>
                 </li>
                 <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>
@@ -77,11 +85,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sub-menu-list">
                         <li><a href="inbox.html">Inbox</a> </li>
                         <li><a href="compose-mail.html">Compose Mail</a></li>
-                    </ul>
-                </li>
-                <li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>
-                    <ul class="sub-menu-list">
-                        <li><a href="charts.html">Basic Charts</a> </li>
                     </ul>
                 </li>
                 <li><a href="codes.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>

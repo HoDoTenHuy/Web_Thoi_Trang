@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -22,5 +25,27 @@ public class HoaDonDAO {
             return id;
         }
         return 0;
+    }
+
+    @Transactional
+    public List<HoaDonEntity> layAllHoaDon(){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        List<HoaDonEntity> hoaDonEntities = (List<HoaDonEntity>) session.createQuery("from HoaDonEntity").list();
+        return hoaDonEntities;
+    }
+
+    @Transactional
+    public HoaDonEntity layHoaDonTheoID(int id){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        HoaDonEntity hoaDon = (HoaDonEntity) session.createQuery("from HoaDonEntity where idHoaDon = " + id).uniqueResult();
+        return hoaDon;
+    }
+
+    @Transactional
+    public void duyetDonHang(int idHoaDon){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        HoaDonEntity hoaDonEntity = layHoaDonTheoID(idHoaDon);
+        hoaDonEntity.setTinhTrang(1);
+        session.update(hoaDonEntity);
     }
 }

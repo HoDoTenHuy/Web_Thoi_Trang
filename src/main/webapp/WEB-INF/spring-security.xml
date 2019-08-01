@@ -8,6 +8,10 @@
 
     <http auto-config="true">
         <intercept-url pattern="/themsanpham" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')"/>
+        <intercept-url pattern="/themdanhmuc" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')"/>
+        <intercept-url pattern="/themmau" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')"/>
+        <intercept-url pattern="/themsize" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')"/>
+        <intercept-url pattern="/duyetdonhang" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')"/>
         <intercept-url pattern="/user" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER') or hasRole('ROLE_MANAGER')"/>
         <intercept-url pattern="/dashboard" access="hasRole('ROLE_MANAGER')"/>
         <intercept-url pattern="/updatenhanvien" access="hasRole('ROLE_MANAGER')"/>

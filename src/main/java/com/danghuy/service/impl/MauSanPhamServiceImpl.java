@@ -16,4 +16,9 @@ public class MauSanPhamServiceImpl implements MauSanPhamService {
     public List<MauSanPhamEntity> layDanhSachMau() {
         return mauSanPhamDAO.layDanhSachMau();
     }
+
+    @Override
+    public void saveMauSanPham(String tenMau) {
+        mauSanPhamDAO.saveMauSanPham(tenMau);
+    }
 }

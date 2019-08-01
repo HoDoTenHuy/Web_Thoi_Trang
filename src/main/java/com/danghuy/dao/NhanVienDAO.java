@@ -2,6 +2,7 @@ package com.danghuy.dao;
 
 import com.danghuy.entity.ChucVuEntity;
 import com.danghuy.entity.NhanVienEntity;
+import com.danghuy.entity.SanPhamEntity;
 import com.danghuy.pojo.NhanVien;
 import com.danghuy.service.impl.ChucVuServiceImpl;
 import org.hibernate.Session;
@@ -81,6 +82,16 @@ public class NhanVienDAO {
             return true;
         } else
             return false;
+    }
+    @Transactional
+    public List<NhanVienEntity> getNhanVienLimit(int nvDau, int nvCuoi){
+        Session session = sessionFactory.getCurrentSession().getSession();
+        String hql = "from NhanVienEntity";
+        Query query = session.createQuery(hql);
+        query.setFirstResult(nvDau);
+        query.setMaxResults(nvCuoi);
+        List<NhanVienEntity> nhanVienEntities = ((org.hibernate.query.Query) query).list();
+        return nhanVienEntities;
     }
 
     public boolean checkEmailIsValid(String email) {

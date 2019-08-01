@@ -64,4 +64,9 @@ public class NhanVienServiceImpl implements NhanVienService {
     public void updateNhanVien(NhanVienEntity nhanVienEntity) {
         nhanVienDAO.updateNhanVien(nhanVienEntity);
     }
+
+    @Override
+    public List<NhanVienEntity> getNhanVienLimit(int nvDau, int nvCuoi) {
+        return nhanVienDAO.getNhanVienLimit(nvDau, nvCuoi);
+    }
 }

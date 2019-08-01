@@ -322,86 +322,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //header-ends -->
         <div id="page-wrapper" class="container-fluid">
             <div class="row">
-                <h3>Nhân Viên - User</h3>
                 <div class="col-md-12 col-sm-12">
-                    <table id="table-nhanvien" class="table">
+                    <h3>Đơn Hàng</h3>
+                    <table id="table-mau" class="table">
                         <thead>
                         <tr>
-                            <th>ID Nhân Viên</th>
-                            <th>Tên Nhân Viên</th>
-                            <th>Email</th>
-                            <th>Username</th>
-                            <th>Chức Vụ</th>
-                            <th>Địa Chỉ</th>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Thông Tin Sản Phẩm</th>
+                            <th>Địa Chỉ Giao Hàng</th>
+                            <th>Hình Thức Giao Hàng</th>
+                            <th>Ghi Chú</th>
+                            <th>Tình Trạng</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody style="border-bottom: 0.5px outset;">
-                        <c:forEach var = "nhanvien" items="${listNhanVien}">
-                            <tr>
-                                <td class="idnhanvien" data-manv="">${nhanvien.idNhanVien}</td>
-                                <td class="tennhanvien" data-tennv="">${nhanvien.hoTen}</td>
-                                <td class="email-nv" data-email="">${nhanvien.email}</td>
-                                <td class="username-nv" data-username="">${nhanvien.tenDangNhap}</td>
-                                <td class="chucvu-nv" data-chucvu="${nhanvien.chucVuEntities}">
-                                    <c:if test = "${nhanvien.chucVuEntities eq '[3]'}">
-                                        <p>Manager<p>
-                                    </c:if>
-                                    <c:if test = "${nhanvien.chucVuEntities eq '[2]'}">
-                                        <p>Admin<p>
-                                    </c:if>
-                                    <c:if test = "${nhanvien.chucVuEntities eq '[1]'}">
-                                        <p>User<p>
-                                    </c:if>
-                                </td>
-                                <td class="diachi-nv" data-diachi="">${nhanvien.diaChi}</td>
-                                <td class="capnhat-nhanvien" style="padding-top: 8px !important;"
-                                    data-btn-manv="${nhanvien.idNhanVien}">
-                                    <button type="button" class="btn btn-secondary">Cập Nhật</button>
-                                </td>
-                            </tr>
+                        <c:forEach var = "hoadon" items="${listHoaDon}">
+                            <c:set var = "tinhtrang" value = "${hoadon.isTinhTrang()}"/>
+                            <c:if test = "${tinhtrang == 0}">
+                                <tr id="hoadon">
+                                    <td class="idhoadon">${hoadon.idHoaDon}</td>
+                                    <td class="tenKH">${hoadon.tenKhachHang}</td>
+                                    <td class="SDT">${hoadon.soDienThoai}</td>
+                                    <td class="chitietsanpham">
+                                        <c:forEach var="chitiet" items="${listChiTiet}">
+                                            <c:set var = "idhoadon" value = "${chitiet.chiTietHoaDonIDEntity.idHoaDon}"/>
+                                            <c:if test = "${idhoadon == hoadon.idHoaDon}">
+                                                <p>ID Chi Tiết Sản Phẩm : ${chitiet.chiTietHoaDonIDEntity.idChiTietSanPham}</p>
+                                                <p>Số Lượng : ${chitiet.soLuong}</p>
+                                                <p>Giá Tiền : ${chitiet.giaTien}</p>
+                                            </c:if>
+                                        </c:forEach>
+                                    </td>
+                                    <td class="diachigiao">${hoadon.diaChiGiaoHang}</td>
+                                    <td class="hinhthucgiao">${hoadon.hinhThucGiaoHang}</td>
+                                    <td class="ghichu">${hoadon.ghiChu}</td>
+                                    <td class="tinhtrang" data-tinhtrang="${hoadon.isTinhTrang()}">
+                                        <c:set var = "tinhtrang" value = "${hoadon.isTinhTrang()}"/>
+                                        <c:if test = "${tinhtrang == 1}">
+                                            <p>Đã Duyệt</p>
+                                        </c:if>
+                                        <c:if test = "${tinhtrang == 0}">
+                                            <p>Chưa Duyệt</p>
+                                        </c:if>
+                                    </td>
+                                    <td><button class="btn btn-default btn-duyetdon">Duyệt Đơn</button></td>
+                                </tr>
+                            </c:if>
                         </c:forEach>
                         </tbody>
                     </table>
-                    <ul class="pagination pagination-sm">
-                        <c:forEach var="index" begin="1" end="${tongPage}">
-                            <c:choose>
-                                <c:when test = "${index == 1}">
-                                    <li class="paging-item active"><a href="#">${index}</a></li>
-                                </c:when>
-                                <c:otherwise>
-                                    <li class="paging-item"><a href="#">${index}</a></li>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                    </ul>
-
-                    <form id="form-nhanvien" class="hidden">
-                        <h3>Nhân Viên</h3>
-                        <div class="form-group">
-                            <label for="tennv">Tên Nhân Viên : </label>
-                            <input class="form-control" name="tenNhanVien" id="tennv"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="email-nv">Email : </label>
-                            <input class="form-control" name="email-nv" id="email-nv"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username : </label>
-                            <input class="form-control" name="username" id="username"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="diachi-nv">Địa Chỉ : </label>
-                            <input class="form-control" name="diachi-nv" id="diachi-nv"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Chức Vụ : </label>
-                            <input type="radio" id="checked-manager" name="chucVu" value="3">Manager
-                            <input type="radio" id="checked-admin" name="chucVu" value="2"/>Admin
-                            <input type="radio" id="checked-user" name="chucVu" value="1"/>User
-                        </div>
-                        <button class="btn btn-success" id="btn-capnhat-nv">Updates</button>
-                    </form>
                 </div>
             </div>
         </div>

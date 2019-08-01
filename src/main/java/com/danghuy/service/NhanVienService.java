@@ -19,4 +19,6 @@ public interface NhanVienService {
     public NhanVienEntity getUserByID(int id);
 
     public void updateNhanVien(NhanVienEntity nhanVienEntity);
+
+    public List<NhanVienEntity> getNhanVienLimit(int nvDau, int nvCuoi);
 }

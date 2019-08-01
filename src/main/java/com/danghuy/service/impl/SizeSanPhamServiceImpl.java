@@ -16,4 +16,9 @@ public class SizeSanPhamServiceImpl implements SizeSanPhamService {
     public List<SizeSanPhamEntity> layDanhSachSize() {
         return sizeSanPhamDAO.layDanhSachSize();
     }
+
+    @Override
+    public void saveSizeSanPham(String tenSize) {
+        sizeSanPhamDAO.saveSizeSanPham(tenSize);
+    }
 }

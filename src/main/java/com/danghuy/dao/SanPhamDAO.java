@@ -55,7 +55,7 @@ public class SanPhamDAO {
     public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from SanPhamEntity where idSanPham = " + idSanPham;
-        SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).getSingleResult();
+        SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).uniqueResult();
         return sanPhamEntity;
     }
 

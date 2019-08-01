@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface MauSanPhamService {
     public List<MauSanPhamEntity> layDanhSachMau();
+
+    public void saveMauSanPham(String tenMau);
 }

@@ -14,7 +14,7 @@ public class HoaDonEntity implements Serializable {
     private String tenKhachHang;
     private String soDienThoai;
     private String diaChiGiaoHang;
-    private boolean tinhTrang;
+    private int tinhTrang;
     private String ngayLap;
     private String hinhThucGiaoHang;
     private String ghiChu;
@@ -23,7 +23,10 @@ public class HoaDonEntity implements Serializable {
     @JoinColumn(name = "idHoaDon")
     Set<ChiTietHoaDonEntity> chiTietHoaDonEntities;
 
-    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, boolean tinhTrang,
+    public HoaDonEntity() {
+    }
+
+    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, int tinhTrang,
                         String ngayLap, String hinhThucGiaoHang, String ghiChu) {
         this.tenKhachHang = tenKhachHang;
         this.soDienThoai = soDienThoai;
@@ -83,11 +86,11 @@ public class HoaDonEntity implements Serializable {
         this.diaChiGiaoHang = diaChiGiaoHang;
     }
 
-    public boolean isTinhTrang() {
+    public int isTinhTrang() {
         return tinhTrang;
     }
 
-    public void setTinhTrang(boolean tinhTrang) {
+    public void setTinhTrang(int tinhTrang) {
         this.tinhTrang = tinhTrang;
     }
 

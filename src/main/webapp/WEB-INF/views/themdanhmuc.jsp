@@ -322,86 +322,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //header-ends -->
         <div id="page-wrapper" class="container-fluid">
             <div class="row">
-                <h3>Nhân Viên - User</h3>
-                <div class="col-md-12 col-sm-12">
-                    <table id="table-nhanvien" class="table">
+                <div class="col-md-6 col-sm-12">
+                    <form id="form-danhmuc">
+                        <div class="form-group">
+                            <label for="tendanhmuc">Tên Danh Mục : </label>
+                            <input class="form-control" name="tendanhmuc" id="tendanhmuc" placeholder="Nhập vào tên danh mục sản phẩm!"/>
+                        </div>
+                    </form>
+                    <div style="padding-bottom: 17px;">
+                        <span id="text-result-btn" style="color: blue"></span>
+                        <button id="them-danhmuc" type="button" class="btn btn-success" style="height: 34px;width: 130px;
+                    padding: 7.5px 12px;margin-bottom: 8px; color: #042203;">Thêm Danh Mục</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h3>Danh Mục Sản Phẩm</h3>
+                    <table id="table-danhmuc" class="table">
                         <thead>
                         <tr>
-                            <th>ID Nhân Viên</th>
-                            <th>Tên Nhân Viên</th>
-                            <th>Email</th>
-                            <th>Username</th>
-                            <th>Chức Vụ</th>
-                            <th>Địa Chỉ</th>
-                            <th></th>
+                            <th>Mã Danh Mục</th>
+                            <th>Tên Danh Mục</th>
                         </tr>
                         </thead>
                         <tbody style="border-bottom: 0.5px outset;">
-                        <c:forEach var = "nhanvien" items="${listNhanVien}">
+                        <c:forEach var = "danhmuc" items="${listDanhMuc}">
                             <tr>
-                                <td class="idnhanvien" data-manv="">${nhanvien.idNhanVien}</td>
-                                <td class="tennhanvien" data-tennv="">${nhanvien.hoTen}</td>
-                                <td class="email-nv" data-email="">${nhanvien.email}</td>
-                                <td class="username-nv" data-username="">${nhanvien.tenDangNhap}</td>
-                                <td class="chucvu-nv" data-chucvu="${nhanvien.chucVuEntities}">
-                                    <c:if test = "${nhanvien.chucVuEntities eq '[3]'}">
-                                        <p>Manager<p>
-                                    </c:if>
-                                    <c:if test = "${nhanvien.chucVuEntities eq '[2]'}">
-                                        <p>Admin<p>
-                                    </c:if>
-                                    <c:if test = "${nhanvien.chucVuEntities eq '[1]'}">
-                                        <p>User<p>
-                                    </c:if>
-                                </td>
-                                <td class="diachi-nv" data-diachi="">${nhanvien.diaChi}</td>
-                                <td class="capnhat-nhanvien" style="padding-top: 8px !important;"
-                                    data-btn-manv="${nhanvien.idNhanVien}">
-                                    <button type="button" class="btn btn-secondary">Cập Nhật</button>
-                                </td>
+                                <td class="iddanhmuc">${danhmuc.idDanhMuc}</td>
+                                <td class="tendanhmuc">${danhmuc.tenDanhMuc}</td>
                             </tr>
                         </c:forEach>
                         </tbody>
                     </table>
-                    <ul class="pagination pagination-sm">
-                        <c:forEach var="index" begin="1" end="${tongPage}">
-                            <c:choose>
-                                <c:when test = "${index == 1}">
-                                    <li class="paging-item active"><a href="#">${index}</a></li>
-                                </c:when>
-                                <c:otherwise>
-                                    <li class="paging-item"><a href="#">${index}</a></li>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                    </ul>
-
-                    <form id="form-nhanvien" class="hidden">
-                        <h3>Nhân Viên</h3>
-                        <div class="form-group">
-                            <label for="tennv">Tên Nhân Viên : </label>
-                            <input class="form-control" name="tenNhanVien" id="tennv"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="email-nv">Email : </label>
-                            <input class="form-control" name="email-nv" id="email-nv"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username : </label>
-                            <input class="form-control" name="username" id="username"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="diachi-nv">Địa Chỉ : </label>
-                            <input class="form-control" name="diachi-nv" id="diachi-nv"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Chức Vụ : </label>
-                            <input type="radio" id="checked-manager" name="chucVu" value="3">Manager
-                            <input type="radio" id="checked-admin" name="chucVu" value="2"/>Admin
-                            <input type="radio" id="checked-user" name="chucVu" value="1"/>User
-                        </div>
-                        <button class="btn btn-success" id="btn-capnhat-nv">Updates</button>
-                    </form>
                 </div>
             </div>
         </div>
