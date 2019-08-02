@@ -324,33 +324,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //header-ends -->
         <div id="page-wrapper" class="container-fluid">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <form id="form-size">
-                        <div class="form-group">
-                            <label for="tensize">Tên Size : </label>
-                            <input class="form-control" name="tensize" id="tensize" placeholder="Nhập vào tên size sản phẩm!"/>
-                        </div>
-                    </form>
-                    <div style="padding-bottom: 17px;">
-                        <span id="text-result-btn" style="color: blue"></span>
-                        <button id="them-size" type="button" class="btn btn-success" style="height: 34px;width: 130px;
-                    padding: 7.5px 12px;margin-bottom: 8px; color: #042203;">Thêm Size</button>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <h3>Loại Size</h3>
-                    <table id="table-size" class="table">
+                <div class="col-md-12 col-sm-12">
+                    <h3>Đơn Hàng</h3>
+                    <table id="table-mau" class="table">
                         <thead>
                         <tr>
-                            <th>Mã Size</th>
-                            <th>Tên Size</th>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Thông Tin Sản Phẩm</th>
+                            <th>Địa Chỉ Giao Hàng</th>
+                            <th>Hình Thức Giao Hàng</th>
+                            <th>Ghi Chú</th>
+                            <th>Tình Trạng</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody style="border-bottom: 0.5px outset;">
-                        <c:forEach var = "size" items="${listSize}">
-                            <tr>
-                                <td class="idsize" data-masize="">${size.idSize}</td>
-                                <td class="tensize" data-tensize="">${size.size}</td>
+                        <c:forEach var = "hoadon" items="${listHoaDon}">
+                            <tr id="hoadon">
+                                <td class="idhoadon">${hoadon.idHoaDon}</td>
+                                <td class="tenKH">${hoadon.tenKhachHang}</td>
+                                <td class="SDT">${hoadon.soDienThoai}</td>
+                                <td class="chitietsanpham">
+                                    <c:forEach var="chitiet" items="${listChiTiet}">
+                                        <c:set var = "idhoadon" value = "${chitiet.chiTietHoaDonIDEntity.idHoaDon}"/>
+                                        <c:if test = "${idhoadon == hoadon.idHoaDon}">
+                                            <p>ID Chi Tiết Sản Phẩm : ${chitiet.chiTietHoaDonIDEntity.idChiTietSanPham}</p>
+                                            <p>Số Lượng : ${chitiet.soLuong}</p>
+                                            <p>Giá Tiền : ${chitiet.giaTien}</p>
+                                        </c:if>
+                                    </c:forEach>
+                                </td>
+                                <td class="diachigiao">${hoadon.diaChiGiaoHang}</td>
+                                <td class="hinhthucgiao">${hoadon.hinhThucGiaoHang}</td>
+                                <td class="ghichu">${hoadon.ghiChu}</td>
+                                <td class="tinhtrang" data-tinhtrang="${hoadon.isTinhTrang()}">
+                                    <c:set var = "tinhtrang" value = "${hoadon.isTinhTrang()}"/>
+                                    <c:if test = "${tinhtrang == 1}">
+                                        <p>Đã Duyệt</p>
+                                    </c:if>
+                                    <c:if test = "${tinhtrang == 0}">
+                                        <p>Chưa Duyệt</p>
+                                    </c:if>
+                                </td>
+                                <td><button class="btn btn-default btn-duyetdon">Duyệt Đơn</button></td>
                             </tr>
                         </c:forEach>
                         </tbody>

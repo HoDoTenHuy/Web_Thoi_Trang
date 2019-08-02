@@ -208,9 +208,9 @@
             </div>
             <div class="col-sm-4 col-md-4 wow rotateInUpLeft">
                 <p style="text-align: center;"><span class="title-footer">GÓP Ý</span></p>
-                <input class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
-                <textarea rows="4" cols="50" placeholder="Nội Dung"></textarea>
-                <button class="material-primary-button">Gửi</button>
+                <input id="email-gopy" class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
+                <textarea id="noidung-gopy" rows="4" cols="50" placeholder="Nội Dung"></textarea>
+                <button id="btn-gopy" class="material-primary-button">Gửi</button>
             </div>
         </div>
     </div>

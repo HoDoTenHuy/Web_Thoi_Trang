@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <h1><a href="index.html">Easy <span>Admin</span></a></h1>
+            <h1><a href="../">Easy <span>Admin</span></a></h1>
         </div>
         <div class="logo-icon text-center">
             <a href="../dashboard"><i class="lnr lnr-home"></i> </a>
@@ -68,6 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a><i class="lnr lnr-store"></i>
                         <span>Sản Phẩm</span></a>
                     <ul class="sub-menu-list">
+                        <li><a href="../quanlysanpham">Chi Tiết Sản Phẩm</a> </li>
                         <li><a href="../themsanpham">Thêm - Sửa - Xóa</a> </li>
                         <li><a href="../themsize">Thêm Loại Size</a> </li>
                         <li><a href="../themmau">Thêm Màu</a> </li>
@@ -76,13 +77,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li class="menu-list"><a href="#"><i class="lnr lnr-book"></i> <span>Đơn Hàng</span></a>
                     <ul class="sub-menu-list">
+                        <li><a href="../tatcadonhang">Tất Cả Đơn Hàng</a> </li>
                         <li><a href="../duyetdonhang">Quản Lý Đơn Hàng</a> </li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="inbox.html">Inbox</a> </li>
-                        <li><a href="compose-mail.html">Compose Mail</a></li>
+                        <li><a href="">Inbox</a> </li>
+                        <li><a href="../gopy">Mail Góp ý</a></li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>

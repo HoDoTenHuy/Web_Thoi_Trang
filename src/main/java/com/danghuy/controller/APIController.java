@@ -4,6 +4,7 @@ import com.danghuy.commons.CheckEmail;
 import com.danghuy.entity.*;
 import com.danghuy.pojo.NhanVien;
 import com.danghuy.pojo.SanPham;
+import com.danghuy.service.GopYService;
 import com.danghuy.service.impl.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,6 +64,9 @@ public class APIController {
 
     @Autowired
     DanhMucSanPhamServiceImpl danhMucSanPhamService;
+
+    @Autowired
+    GopYServiceImpl gopYService;
 
     @GetMapping("kiemtradangnhap")
     @ResponseBody
@@ -565,6 +569,16 @@ public class APIController {
         return "true";
     }
 
+    @GetMapping("gopy")
+    @Transactional
+    @ResponseBody
+    public String duyetGopY(@RequestParam String email, @RequestParam String noiDung){
+        GopYEntity gopYEntity = new GopYEntity();
+        gopYEntity.setEmail(email);
+        gopYEntity.setNoiDung(noiDung);
+        gopYService.saveGopY(gopYEntity);
+        return "true";
+    }
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
         List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
         for (int i = 0; i < list.size(); i++) {

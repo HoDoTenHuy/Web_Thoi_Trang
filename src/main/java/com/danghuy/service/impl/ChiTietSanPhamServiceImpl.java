@@ -6,6 +6,8 @@ import com.danghuy.service.ChiTietSanPhamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     @Autowired
@@ -14,5 +16,10 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     @Override
     public ChiTietSanPhamEntity layChiTietSanPhamByID(int idChiTietSanPham) {
         return chiTietSanPhamDAO.layChiTietSanPhamByID(idChiTietSanPham);
+    }
+
+    @Override
+    public List<ChiTietSanPhamEntity> getAllChiTietSanPham() {
+        return chiTietSanPhamDAO.getAllChiTietSanPham();
     }
 }

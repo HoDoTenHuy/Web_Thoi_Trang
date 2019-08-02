@@ -322,35 +322,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--notification menu end -->
         </div>
         <!-- //header-ends -->
-        <div id="page-wrapper" class="container-fluid">
+        <div id="page-wrapper" class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <form id="form-size">
-                        <div class="form-group">
-                            <label for="tensize">Tên Size : </label>
-                            <input class="form-control" name="tensize" id="tensize" placeholder="Nhập vào tên size sản phẩm!"/>
-                        </div>
-                    </form>
-                    <div style="padding-bottom: 17px;">
-                        <span id="text-result-btn" style="color: blue"></span>
-                        <button id="them-size" type="button" class="btn btn-success" style="height: 34px;width: 130px;
-                    padding: 7.5px 12px;margin-bottom: 8px; color: #042203;">Thêm Size</button>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <h3>Loại Size</h3>
-                    <table id="table-size" class="table">
+                <div class="col-md-12 col-sm-12">
+                    <h3>Góp Ý</h3>
+                    <table id="table-gopy" class="table">
                         <thead>
                         <tr>
-                            <th>Mã Size</th>
-                            <th>Tên Size</th>
+                            <th>ID Góp Ý</th>
+                            <th>Email</th>
+                            <th>Nội Dung</th>
                         </tr>
                         </thead>
                         <tbody style="border-bottom: 0.5px outset;">
-                        <c:forEach var = "size" items="${listSize}">
+                        <c:forEach var = "gopy" items="${listgopy}">
                             <tr>
-                                <td class="idsize" data-masize="">${size.idSize}</td>
-                                <td class="tensize" data-tensize="">${size.size}</td>
+                                <td class="idgopy">${gopy.idGopY}</td>
+                                <td class="emailgopy">${gopy.email}</td>
+                                <td class="noidunggopy">${gopy.noiDung}</td>
                             </tr>
                         </c:forEach>
                         </tbody>

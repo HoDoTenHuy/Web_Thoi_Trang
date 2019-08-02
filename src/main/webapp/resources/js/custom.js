@@ -490,7 +490,6 @@ $(document).ready(function () {
     $(".btn-duyetdon").click(function () {
         var tinhTrang = $(this).closest("tr").find(".tinhtrang").attr("data-tinhtrang");
         var idhoadon = $(this).closest("tr").find(".idhoadon").text();
-        alert(idhoadon);
         $.ajax({
             url : "/api/duyetdon",
             type : "GET",
@@ -502,6 +501,22 @@ $(document).ready(function () {
                 if(value === "true"){
                     $("#hoadon").remove();
                 }
+            }
+        })
+    });
+    $("#btn-gopy").click(function () {
+        var email = $("#email-gopy").val();
+        var noidung = $("#noidung-gopy").val();
+        $.ajax({
+            url : "/api/gopy",
+            type : "GET",
+            data :{
+                email : email,
+                noiDung : noidung
+            } ,
+            success : function (value) {
+                $("#email-gopy").val('');
+                $("#noidung-gopy").val('');
             }
         })
     });
