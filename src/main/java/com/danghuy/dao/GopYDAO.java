@@ -15,13 +15,13 @@ public class GopYDAO {
     SessionFactory sessionFactory;
 
     @Transactional
-    public void saveGopY(GopYEntity gopYEntity){
+    public void saveGopY(GopYEntity gopYEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();
         session.save(gopYEntity);
     }
 
     @Transactional
-    public List<GopYEntity> getAllGopY(){
+    public List<GopYEntity> getAllGopY() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<GopYEntity> gopYEntities = session.createQuery("from GopYEntity").list();
         return gopYEntities;

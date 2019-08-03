@@ -26,7 +26,7 @@ public class SizeSanPhamDAO {
     }
 
     @Transactional
-    public void saveSizeSanPham(String tenSize){
+    public void saveSizeSanPham(String tenSize) {
         Session session = sessionFactory.getCurrentSession().getSession();
         SizeSanPhamEntity sizeSanPhamEntity = new SizeSanPhamEntity();
         sizeSanPhamEntity.setSize(tenSize);

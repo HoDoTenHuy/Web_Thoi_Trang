@@ -17,7 +17,7 @@ public class ThemDanhMucController {
     DanhMucSanPhamServiceImpl danhMucSanPhamService;
 
     @GetMapping
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
         return "themdanhmuc";

@@ -17,7 +17,7 @@ public class UpdateNhanVienController {
     NhanVienServiceImpl nhanVienService;
 
     @GetMapping
-    public String defaultPgaeNV(ModelMap modelMap){
+    public String defaultPgaeNV(ModelMap modelMap) {
         List<NhanVienEntity> nhanVienList = nhanVienService.getAllNhanVien();
         List<NhanVienEntity> nhanVienEntities = nhanVienService.getNhanVienLimit(0, 5);
         modelMap.addAttribute("listNhanVien", nhanVienEntities);

@@ -346,7 +346,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <c:if test = "${tinhtrang == 0}">
                                 <tr id="hoadon">
                                     <td class="idhoadon">${hoadon.idHoaDon}</td>
-                                    <td class="tenKH">${hoadon.tenKhachHang}</td>
+                                    <td class="tenKH" data-email="${hoadon.email}">${hoadon.tenKhachHang}</td>
                                     <td class="SDT">${hoadon.soDienThoai}</td>
                                     <td class="chitietsanpham">
                                         <c:forEach var="chitiet" items="${listChiTiet}">

@@ -28,21 +28,21 @@ public class HoaDonDAO {
     }
 
     @Transactional
-    public List<HoaDonEntity> layAllHoaDon(){
+    public List<HoaDonEntity> layAllHoaDon() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<HoaDonEntity> hoaDonEntities = (List<HoaDonEntity>) session.createQuery("from HoaDonEntity").list();
         return hoaDonEntities;
     }
 
     @Transactional
-    public HoaDonEntity layHoaDonTheoID(int id){
+    public HoaDonEntity layHoaDonTheoID(int id) {
         Session session = sessionFactory.getCurrentSession().getSession();
         HoaDonEntity hoaDon = (HoaDonEntity) session.createQuery("from HoaDonEntity where idHoaDon = " + id).uniqueResult();
         return hoaDon;
     }
 
     @Transactional
-    public void duyetDonHang(int idHoaDon){
+    public void duyetDonHang(int idHoaDon) {
         Session session = sessionFactory.getCurrentSession().getSession();
         HoaDonEntity hoaDonEntity = layHoaDonTheoID(idHoaDon);
         hoaDonEntity.setTinhTrang(1);

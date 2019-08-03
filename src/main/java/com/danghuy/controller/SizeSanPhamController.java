@@ -17,7 +17,7 @@ public class SizeSanPhamController {
     SizeSanPhamServiceImpl sizeSanPhamService;
 
     @GetMapping
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<SizeSanPhamEntity> sizeSanPhamEntities = sizeSanPhamService.layDanhSachSize();
         modelMap.addAttribute("listSize", sizeSanPhamEntities);
         return "themsizesanpham";

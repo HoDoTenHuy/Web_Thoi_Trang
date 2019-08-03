@@ -1,4 +1,5 @@
 package com.danghuy.controller;
+
 import com.danghuy.entity.ChiTietHoaDonEntity;
 import com.danghuy.entity.HoaDonEntity;
 import com.danghuy.entity.SanPhamEntity;
@@ -26,7 +27,7 @@ public class QuanLyDonHangController {
     SanPhamServiceImpl sanPhamService;
 
     @GetMapping(produces = "text/html; charset=UTF8")
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<HoaDonEntity> hoaDonEntities = hoaDonService.layAllHoaDon();
         modelMap.addAttribute("listHoaDon", hoaDonEntities);
 

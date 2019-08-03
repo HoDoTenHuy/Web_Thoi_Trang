@@ -37,7 +37,7 @@ public class GoogleUtils {
         return node.textValue();
     }
 
-    public GooglePojo getUserInfo(final String accessToken) throws ClientProtocolException, IOException{
+    public GooglePojo getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
         String link = GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
         ObjectMapper mapper = new ObjectMapper();
@@ -45,7 +45,7 @@ public class GoogleUtils {
         return googlePojo;
     }
 
-    public UserDetails buildUser(GooglePojo googlePojo){
+    public UserDetails buildUser(GooglePojo googlePojo) {
         boolean enabled = true;
         boolean accountNonExpired = true;
         boolean credentialsNonExpired = true;

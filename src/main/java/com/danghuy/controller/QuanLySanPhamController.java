@@ -18,7 +18,7 @@ public class QuanLySanPhamController {
     ChiTietSanPhamService chiTietSanPhamService;
 
     @GetMapping(produces = "text/html; charset=UTF8")
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<ChiTietSanPhamEntity> chiTietSanPhamEntities = chiTietSanPhamService.getAllChiTietSanPham();
         modelMap.addAttribute("listChiTiet", chiTietSanPhamEntities);
         return "quanlysanpham";

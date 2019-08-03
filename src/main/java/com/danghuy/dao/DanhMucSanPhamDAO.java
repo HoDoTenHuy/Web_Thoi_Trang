@@ -23,8 +23,9 @@ public class DanhMucSanPhamDAO {
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = session.createQuery("from DanhMucSanPhamEntity").list();
         return danhMucSanPhamEntities;
     }
+
     @Transactional
-    public void saveDanhMucSanPham(String tenDanhMuc){
+    public void saveDanhMucSanPham(String tenDanhMuc) {
         Session session = sessionFactory.getCurrentSession().getSession();
         DanhMucSanPhamEntity danhMucSanPhamEntity = new DanhMucSanPhamEntity();
         danhMucSanPhamEntity.setTenDanhMuc(tenDanhMuc);

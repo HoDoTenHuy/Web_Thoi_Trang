@@ -48,7 +48,7 @@ public class ChiTietController {
 
     @GetMapping("/{idSanPham}")
     @Transactional
-    public String pageDefault(@PathVariable int idSanPham, ModelMap modelMap, HttpSession httpSession){
+    public String pageDefault(@PathVariable int idSanPham, ModelMap modelMap, HttpSession httpSession) {
         saveSession.loginUser(httpSession, modelMap);
 
         saveSession.shoppingCart(httpSession, modelMap);

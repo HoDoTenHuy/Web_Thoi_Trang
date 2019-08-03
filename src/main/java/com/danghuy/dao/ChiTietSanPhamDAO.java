@@ -15,14 +15,15 @@ public class ChiTietSanPhamDAO {
     SessionFactory sessionFactory;
 
     @Transactional
-    public ChiTietSanPhamEntity layChiTietSanPhamByID(int idChiTietSanPham){
+    public ChiTietSanPhamEntity layChiTietSanPhamByID(int idChiTietSanPham) {
         Session session = sessionFactory.getCurrentSession().getSession();
         ChiTietSanPhamEntity chiTietSanPhamEntity = (ChiTietSanPhamEntity)
                 session.createQuery("from ChiTietSanPhamEntity where idChiTietSanPham = " + idChiTietSanPham);
         return chiTietSanPhamEntity;
     }
+
     @Transactional
-    public List<ChiTietSanPhamEntity> getAllChiTietSanPham(){
+    public List<ChiTietSanPhamEntity> getAllChiTietSanPham() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<ChiTietSanPhamEntity> chiTietSanPhamEntities = session.createQuery("from ChiTietSanPhamEntity").list();
         return chiTietSanPhamEntities;

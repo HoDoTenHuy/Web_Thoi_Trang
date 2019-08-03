@@ -15,8 +15,9 @@ import java.util.List;
 public class MauSanPhamController {
     @Autowired
     MauSanPhamServiceImpl mauSanPhamService;
+
     @GetMapping
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<MauSanPhamEntity> mauSanPhamEntities = mauSanPhamService.layDanhSachMau();
         modelMap.addAttribute("listMau", mauSanPhamEntities);
         return "mausanpham";

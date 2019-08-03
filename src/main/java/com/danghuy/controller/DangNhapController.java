@@ -60,10 +60,10 @@ public class DangNhapController {
     }
 
     @RequestMapping("/login-google")
-    public String loginGoogle(HttpServletRequest request, ModelMap modelMap) throws ClientProtocolException, IOException{
+    public String loginGoogle(HttpServletRequest request, ModelMap modelMap) throws IOException {
         String code = request.getParameter("code");
 
-        if(code == null || code.isEmpty()){
+        if (code == null || code.isEmpty()) {
             return "redirect:/login?message=google_error";
         }
         String accessToken = googleUtils.getToken(code);
@@ -89,8 +89,8 @@ public class DangNhapController {
         }
         com.restfb.types.User user = restFB.getUserInfo(accessToken);
         UserDetails userDetail = restFB.buildUser(user);
-        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail, null,
-                userDetail.getAuthorities());
+        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail,
+                null, userDetail.getAuthorities());
         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         modelMap.addAttribute("facebook", user);

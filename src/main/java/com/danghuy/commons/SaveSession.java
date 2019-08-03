@@ -70,6 +70,7 @@ public class SaveSession {
             modelMap.addAttribute("facebook", googlePojo);
         }
     }
+
     public List<GioHang> gioHangList(HttpSession httpSession) {
         List<GioHang> gioHangs = null;
         if (httpSession.getAttribute("cart") != null) {

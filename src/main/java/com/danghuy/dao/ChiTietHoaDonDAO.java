@@ -26,8 +26,9 @@ public class ChiTietHoaDonDAO {
         }
         return false;
     }
+
     @Transactional
-    public List<ChiTietHoaDonEntity> layAllChiTietHoaDon(){
+    public List<ChiTietHoaDonEntity> layAllChiTietHoaDon() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<ChiTietHoaDonEntity> chiTietHoaDonEntities = session.createQuery("from ChiTietHoaDonEntity").list();
         return chiTietHoaDonEntities;

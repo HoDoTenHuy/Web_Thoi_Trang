@@ -25,7 +25,7 @@ public class MauSanPhamDAO {
     }
 
     @Transactional
-    public void saveMauSanPham(String tenMau){
+    public void saveMauSanPham(String tenMau) {
         Session session = sessionFactory.getCurrentSession().getSession();
         MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
         mauSanPhamEntity.setTenMau(tenMau);

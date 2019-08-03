@@ -164,6 +164,10 @@
                     <input type="text" class="form-control" id="tenKhachHang" name="tenKhachHang">
                 </div>
                 <div class="form-group">
+                    <label for="email-nhanhang">Email : </label>
+                    <input type="text" class="form-control" id="email-nhanhang" name="email-nhanhang">
+                </div>
+                <div class="form-group">
                     <label for="soDienThoai">Số điện thoại : </label>
                     <input type="number" class="form-control" id="soDienThoai" name="soDienThoai">
                 </div>

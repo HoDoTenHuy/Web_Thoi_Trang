@@ -11,6 +11,7 @@ public class GioHang {
     String giaTien;
     String tenMau;
     String tenSize;
+    String email;
 
     public GioHang(int maSP, int maMau, int maSize, int soLuong, String tenSP, String giaTien,
                    String tenMau, String tenSize) {
@@ -39,7 +40,14 @@ public class GioHang {
     }
 
     public GioHang() {
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getKhuyenMai() {

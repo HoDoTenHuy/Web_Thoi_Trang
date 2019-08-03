@@ -24,7 +24,7 @@ public class TatCaDonHangController {
     SanPhamServiceImpl sanPhamService;
 
     @GetMapping(produces = "text/html; charset=UTF8")
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<HoaDonEntity> hoaDonEntities = hoaDonService.layAllHoaDon();
         modelMap.addAttribute("listHoaDon", hoaDonEntities);
 

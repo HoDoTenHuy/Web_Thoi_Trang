@@ -54,19 +54,19 @@ public class NhanVienDAO {
     public NhanVienEntity getUserByID(int id) {
         Session session = sessionFactory.getCurrentSession().getSession();
         NhanVienEntity nhanVienEntity =
-          (NhanVienEntity) session.createQuery("from NhanVienEntity where idNhanVien = " + id).getSingleResult();
+           (NhanVienEntity) session.createQuery("from NhanVienEntity where idNhanVien = " + id).getSingleResult();
         return nhanVienEntity;
     }
 
     @Transactional
-    public List<NhanVienEntity> getAllNhanVien(){
+    public List<NhanVienEntity> getAllNhanVien() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<NhanVienEntity> nhanVienEntityList = session.createQuery("from NhanVienEntity").list();
         return nhanVienEntityList;
     }
 
     @Transactional
-    public void updateNhanVien(NhanVienEntity nhanVienEntity){
+    public void updateNhanVien(NhanVienEntity nhanVienEntity) {
         Session session = sessionFactory.getCurrentSession().getSession();
         session.update(nhanVienEntity);
     }
@@ -83,8 +83,9 @@ public class NhanVienDAO {
         } else
             return false;
     }
+
     @Transactional
-    public List<NhanVienEntity> getNhanVienLimit(int nvDau, int nvCuoi){
+    public List<NhanVienEntity> getNhanVienLimit(int nvDau, int nvCuoi) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from NhanVienEntity";
         Query query = session.createQuery(hql);

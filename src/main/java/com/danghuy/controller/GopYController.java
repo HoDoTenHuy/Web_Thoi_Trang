@@ -17,7 +17,7 @@ public class GopYController {
     GopYServiceImpl gopYService;
 
     @GetMapping(produces = "text/html; charset=UTF8")
-    public String pageDefault(ModelMap modelMap){
+    public String pageDefault(ModelMap modelMap) {
         List<GopYEntity> gopYEntities = gopYService.getAllGopY();
         modelMap.addAttribute("listgopy", gopYEntities);
         return "gopy";

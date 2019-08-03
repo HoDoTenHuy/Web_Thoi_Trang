@@ -1,4 +1,5 @@
 package com.danghuy.utils;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.restfb.DefaultFacebookClient;
@@ -19,12 +20,13 @@ import java.util.List;
 
 @Component
 public class RestFB {
-    public static String FACEBOOK_APP_ID = "2404639003098594";
-    public static String FACEBOOK_APP_SECRET = "268f2f6970180b88f70c6fa4d75217e0";
+    public static String FACEBOOK_APP_ID = "359259704971105";
+    public static String FACEBOOK_APP_SECRET = "09e41f537be7dbed36e60eb44c5ea02e";
     public static String FACEBOOK_REDIRECT_URL = "https://localhost:8080/login-facebook";
-    public static String FACEBOOK_LINK_GET_TOKEN = "https://graph.facebook.com/oauth/access_token?client_id=%s&client_secret=%s&redirect_uri=%s&code=%s";
+    public static String FACEBOOK_LINK_GET_TOKEN =
+            "https://graph.facebook.com/oauth/access_token?client_id=%s&client_secret=%s&redirect_uri=%s&code=%s";
 
-    public String getToken(final String code) throws ClientProtocolException, IOException{
+    public String getToken(final String code) throws ClientProtocolException, IOException {
         String link = String.format(FACEBOOK_LINK_GET_TOKEN, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, FACEBOOK_REDIRECT_URL, code);
         String response = Request.Get(link).execute().returnContent().asString();
         ObjectMapper mapper = new ObjectMapper();
@@ -32,12 +34,12 @@ public class RestFB {
         return node.textValue();
     }
 
-    public com.restfb.types.User getUserInfo(final  String accessToken){
+    public com.restfb.types.User getUserInfo(final String accessToken) {
         FacebookClient facebookClient = new DefaultFacebookClient(accessToken, FACEBOOK_APP_SECRET, Version.LATEST);
         return facebookClient.fetchObject("me", com.restfb.types.User.class);
     }
 
-    public UserDetails buildUser(com.restfb.types.User user){
+    public UserDetails buildUser(com.restfb.types.User user) {
         boolean enabled = true;
         boolean accountNonExpired = true;
         boolean credentialsNonExpired = true;

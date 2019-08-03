@@ -341,7 +341,6 @@ $(document).ready(function () {
         json["maSanPham"] = maSanPham;
         json["chitietsanpham"] = array_chitiet;
         json["hinhSanPham"] = tenhinh;
-        console.log(json);
         $.ajax({
             url : "/api/capnhatsanpham",
             type : "GET",
@@ -465,11 +464,13 @@ $(document).ready(function () {
         var tenKhachHang = $(this).closest(".row").find("#tenKhachHang").val();
         var hinhThucGiaoHang = $(this).closest(".row").find('input[name="hinhThucGiaoHang"]:checked').val();
         var ghiChu = $(this).closest(".row").find("#ghiChu").val();
+        var email_nhanhang = $(this).closest(".row").find("#email-nhanhang").val();
         $.ajax({
             url : "/api/dathang",
             type : "GET",
             data :{
                     tenKhachHang : tenKhachHang,
+                    email : email_nhanhang,
                     soDienThoai : soDienThoai,
                     diaChiGiaoHang : diaChi,
                     hinhThucGiaoHang : hinhThucGiaoHang,
@@ -490,6 +491,8 @@ $(document).ready(function () {
     $(".btn-duyetdon").click(function () {
         var tinhTrang = $(this).closest("tr").find(".tinhtrang").attr("data-tinhtrang");
         var idhoadon = $(this).closest("tr").find(".idhoadon").text();
+        var email = $(this).closest("tr").find(".tenKH").attr("data-email");
+        alert(email);
         $.ajax({
             url : "/api/duyetdon",
             type : "GET",
@@ -500,8 +503,19 @@ $(document).ready(function () {
             success : function (value) {
                 if(value === "true"){
                     $("#hoadon").remove();
+                    window.location.reload();
                 }
             }
+        }).done(function () {
+            $.ajax({
+                url : "/api/sendmessagetoclient",
+                type : "GET",
+                data :{
+                    email : email
+                },
+                success : function (value) {
+                }
+            })
         })
     });
     $("#btn-gopy").click(function () {

@@ -19,12 +19,12 @@ public class CheckGiamGia {
     @Autowired
     KhuyenMaiServiceImpl khuyenMaiService;
 
-    public void giaKhyenMai(SanPhamEntity sanPhamEntity, int idSanPham, ModelMap modelMap){
+    public void giaKhyenMai(SanPhamEntity sanPhamEntity, int idSanPham, ModelMap modelMap) {
         List<KhuyenMaiEntity> khuyenMaiEntities = khuyenMaiService.getAllKhuyenMai();
         KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
-        for(KhuyenMaiEntity value : khuyenMaiEntities){
-            for(SanPhamEntity id : value.getSanPhamEntities()){
-                if(id.getIdSanPham() == idSanPham){
+        for (KhuyenMaiEntity value : khuyenMaiEntities) {
+            for (SanPhamEntity id : value.getSanPhamEntities()) {
+                if (id.getIdSanPham() == idSanPham) {
                     khuyenMaiEntity = value;
                 }
             }
@@ -36,7 +36,7 @@ public class CheckGiamGia {
         CharSequence s2 = "";
         String gia = giaCu.replace(s1, s2);
         int giaTien = Integer.parseInt(gia);
-        int giaKhuyenMai = giaTien - giaTien*giamGia/100;
+        int giaKhuyenMai = giaTien - giaTien * giamGia / 100;
 
         Locale locale = new Locale("vi", "VN");
         Currency currency = Currency.getInstance("VND");
