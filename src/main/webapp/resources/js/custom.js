@@ -36,29 +36,31 @@ $(document).ready(function () {
                 password : matkhau
             },
             success : function (value) {
+            }
+        })
+    });
+    $("#btndangky").click(function () {
+        var email = $("#email").val();
+        var matkhau = $("#matkhau").val();
+        var nhaplaimatkhau = $("#nhaplaimatkhau").val();
+        $.ajax({
+            url : "/api/kiemtradangky",
+            type : "GET",
+            data :{
+                email : email,
+                matKhau : "{noop}"+matkhau,
+                nhapLaiMatKhau : "{noop}"+nhaplaimatkhau
+            },
+            success : function (value) {
                 if(value == "true"){
-                    swal("Login Success!", "You clicked the button!", "success");
-                    /*window.location.href = "/";*/
-                    setTimeout(function(){ window.location = "/"; }, 1350);
-                }else
-                    $("#text-checklogin").text("Đăng Nhập Thất Bại!");
+                    window.location.href = "/login";
+                }else{
+                    $("#text-checklogin").text(value);
+                }
             }
         })
     });
 
-    $("#container-dangky").hide();
-    $("#dangnhap").click(function () {
-        $("#container-dangky").hide();
-        $("#container-dangnhap").show();
-        $("#dangky").removeClass("actived");
-        $("#dangnhap").addClass("actived");
-    });
-    $("#dangky").click(function () {
-        $("#container-dangky").show();
-        $("#container-dangnhap").hide();
-        $("#dangnhap").removeClass("actived");
-        $("#dangky").addClass("actived");
-    });
     $(".btn-giohang").click(function (){
         var machitiet = $(this).attr("data-machitiet");
         var tenMau = $(this).closest("tr").find(".mau").text();
@@ -69,6 +71,7 @@ $(document).ready(function () {
         var masp = $("#tensp").attr("data-masp");
         var giatien = $("#giatien").attr("data-value");
         var soluong = $(this).closest("tr").find(".soluong").attr("data-soluong");
+        var giamGia = $("#giatien").attr("data-khuyenmai");
         $.ajax({
             url : "/api/themgiohang",
             type : "GET",
@@ -81,7 +84,8 @@ $(document).ready(function () {
                 giaTien : giatien,
                 tenMau : tenMau,
                 tenSize : tenSize,
-                maChiTiet : machitiet
+                maChiTiet : machitiet,
+                khuyenMai : giamGia
             },
             success : function (value) {
             }
@@ -103,9 +107,13 @@ $(document).ready(function () {
         $(".giatien").each(function () {
             var giatien =  $(this).text();
             var soluong = $(this).closest("tr").find(".soluong-giohang").val();
+            var giamgia = $(this).attr("data-giamgia");
+            giatien = giatien - parseInt(giatien) * parseInt(giamgia) / 100;
             if(soluong > 1){
                 giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
+                giatien = giatien - parseInt(giatien) * parseInt(giamgia) / 100;
             }
+
             var tongtien = parseInt(giatien) * soluong;
             if(!isEventChange){
                 $(this).html(tongtien + ".000 VNĐ");
@@ -119,6 +127,8 @@ $(document).ready(function () {
     $(".soluong-giohang").change(function () {
         var soluong = $(this).val();
         var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
+        var giamgia = $(this).closest("tr").find(".giatien").attr("data-giamgia");
+        giatien = giatien - parseInt(giatien) * parseInt(giamgia) / 100;
         var tongtien = soluong * parseInt(giatien);
         var maMau = $(this).closest("tr").find(".mau").attr("data-mamau");
         var maSize = $(this).closest("tr").find(".size").attr("data-masize");
@@ -158,6 +168,24 @@ $(document).ready(function () {
             }
         })
     });
+    $("body").on("click", ".paging-item", function () {
+        var sotrang = $(this).text();
+        var nvbatdau = (sotrang - 1)*5; /*limit hiển thi số sp trong 1 trnga là 5*/
+        $(".paging-item").removeClass("active");
+        $(this).addClass("active");
+        $.ajax({
+            url : "/api/laynhanvienlimit",
+            type : "GET",
+            data :{
+                nvBatDau : nvbatdau,
+            },
+            success : function (value) {
+                var tbodynhanvien =  $("#table-nhanvien").find("tbody");
+                tbodynhanvien.empty();
+                tbodynhanvien.append(value);
+            }
+        })
+    });
     $("#check-all-sanpham").change(function () {
         var checkboxes = $(this).closest('table').find('.checkbox-sanpham');
         checkboxes.prop('checked', $(this).is(':checked'));
@@ -181,6 +209,8 @@ $(document).ready(function () {
     var files = [];
     var tenhinh = "";
     var maSanPham;
+    var maNhanVien;
+    var idSanPham;
     $("#hinhanh").change(function (event) {
         files = event.target.files;
         tenhinh = files[0].name;
@@ -203,6 +233,45 @@ $(document).ready(function () {
        var chitiet_clone = $("#chitiet-sanpham").clone();
        chitiet_clone.removeAttr("id");
        $("#container-chitiet-sanpham").append(chitiet_clone);
+    });
+    $("#them-size").click(function(){
+        var tensize = $("#tensize").val();
+        $.ajax({
+            url : "/api/themsizesanpham",
+            type : "GET",
+            data :{
+                tenSize : tensize
+            } ,
+            success : function (value) {
+                window.location.reload();
+            }
+        })
+    });
+    $("#them-mau").click(function(){
+        var tenmau = $("#tenmau").val();
+        $.ajax({
+            url : "/api/themmausanpham",
+            type : "GET",
+            data :{
+                tenMau : tenmau
+            } ,
+            success : function (value) {
+                window.location.reload();
+            }
+        })
+    });
+    $("#them-danhmuc").click(function(){
+        var tendanhmuc = $("#tendanhmuc").val();
+        $.ajax({
+            url : "/api/themdanhmucsanpham",
+            type : "GET",
+            data :{
+                tenDanhMuc : tendanhmuc
+            } ,
+            success : function (value) {
+                window.location.reload();
+            }
+        })
     });
 
     $("#them-sanpham").click(function (event) {
@@ -233,7 +302,7 @@ $(document).ready(function () {
 
         $.ajax({
             url : "/api/themsanpham",
-            type : "POST",
+            type : "GET",
             data :{
                 dataJson : JSON.stringify(json)
             } ,
@@ -255,7 +324,6 @@ $(document).ready(function () {
         $.each(form_data_sanpham, function(i, field){
             json[field.name] = field.value;
         });
-
         /*console.log(array_chitiet);*/
         object_chitiet = {};
         array_chitiet = [];
@@ -273,10 +341,9 @@ $(document).ready(function () {
         json["maSanPham"] = maSanPham;
         json["chitietsanpham"] = array_chitiet;
         json["hinhSanPham"] = tenhinh;
-
         $.ajax({
             url : "/api/capnhatsanpham",
-            type : "POST",
+            type : "GET",
             data :{
                 dataJson : JSON.stringify(json)
             } ,
@@ -328,9 +395,58 @@ $(document).ready(function () {
                     chitiet_clone.find("#masize-sanpham").val(value.chiTietSanPhams[i].sizeSanPhamEntity.idSize);
                     chitiet_clone.find("#soluong-sanpham").val(value.chiTietSanPhams[i].soLuong);
                     if(i < value.chiTietSanPhams.length-1){
-                        chitiet_clone.find(".btn-chitiet").hide();
+                        chitiet_clone.find(".btn-chitiet").remove();
                     }
                     $("#container-chitiet-sanpham").append(chitiet_clone);
+                }
+                if(soLuongChiTiet === 0){
+                    $(".btn-chitiet").show();
+                }
+            }
+        })
+    });
+    $("body").on("click", ".capnhat-nhanvien", function () {
+        $("#form-nhanvien").removeClass("hidden");
+        maNhanVien = $(this).attr("data-btn-manv");
+        $.ajax({
+            url : "/api/laynhanvientheoid",
+            type : "GET",
+            data :{
+                idNhanVien : maNhanVien
+            } ,
+            success : function (value) {
+                $("#tennv").val(value.hoTen);
+                $("#email-nv").val(value.email);
+                $("#username").val(value.tenDangNhap);
+                $("#diachi-nv").val(value.diaChi);
+
+                if(value.chucVuEntities[0].name === "ROLE_MANAGER"){
+                    $("#checked-manager").prop("checked", true);
+                }else if(value.chucVuEntities[0].name === "ROLE_ADMIN"){
+                    $("#checked-admin").prop("checked", true);
+                }else{
+                    $("#checked-user").prop("checked", true);
+                }
+            }
+        })
+    });
+    $("#btn-capnhat-nv").click(function (event) {
+        event.preventDefault(); /*Ngăn chặn reload page*/
+        var form_data_nhanvien = $("#form-nhanvien").serializeArray();
+        json = {};
+        $.each(form_data_nhanvien, function(i, field){
+            json[field.name] = field.value;
+        });
+        json["idNhanVien"] = maNhanVien;
+        $.ajax({
+            url : "/api/capnhatnhanvien",
+            type : "GET",
+            data :{
+                dataJson : JSON.stringify(json)
+            } ,
+            success : function (value) {
+                if(value = "true"){
+                    window.location.reload();
                 }
             }
         })
@@ -339,16 +455,22 @@ $(document).ready(function () {
         e.preventDefault();
         var idSanPham = $(this).closest(".row").find(".tensp").attr("data-masp");
         var tenSanPham = $(this).closest(".row").find("#tenKhachHang").val();
+        var giaTien = $(this).closest(".row").find(".giatien").attr("data-giatien");
+        var giamgia = $(this).closest(".row").find(".giatien").attr("data-giamgia");
+        var tongTien = $(this).closest(".row").find("#tongtien").val();
+        var soLuong = $(this).closest(".row").find('input[class="soluong-giohang"]').val();
         var diaChi = $(this).closest(".row").find("#diaChiGiaoHang").val();
         var soDienThoai = $(this).closest(".row").find("#soDienThoai").val();
         var tenKhachHang = $(this).closest(".row").find("#tenKhachHang").val();
         var hinhThucGiaoHang = $(this).closest(".row").find('input[name="hinhThucGiaoHang"]:checked').val();
         var ghiChu = $(this).closest(".row").find("#ghiChu").val();
+        var email_nhanhang = $(this).closest(".row").find("#email-nhanhang").val();
         $.ajax({
             url : "/api/dathang",
-            type : "POST",
+            type : "GET",
             data :{
                     tenKhachHang : tenKhachHang,
+                    email : email_nhanhang,
                     soDienThoai : soDienThoai,
                     diaChiGiaoHang : diaChi,
                     hinhThucGiaoHang : hinhThucGiaoHang,
@@ -366,5 +488,50 @@ $(document).ready(function () {
             }
         })
     });
-
+    $(".btn-duyetdon").click(function () {
+        var tinhTrang = $(this).closest("tr").find(".tinhtrang").attr("data-tinhtrang");
+        var idhoadon = $(this).closest("tr").find(".idhoadon").text();
+        var email = $(this).closest("tr").find(".tenKH").attr("data-email");
+        alert(email);
+        $.ajax({
+            url : "/api/duyetdon",
+            type : "GET",
+            data :{
+                idHoaDon : idhoadon,
+                tinhTrang : tinhTrang
+            } ,
+            success : function (value) {
+                if(value === "true"){
+                    $("#hoadon").remove();
+                    window.location.reload();
+                }
+            }
+        }).done(function () {
+            $.ajax({
+                url : "/api/sendmessagetoclient",
+                type : "GET",
+                data :{
+                    email : email
+                },
+                success : function (value) {
+                }
+            })
+        })
+    });
+    $("#btn-gopy").click(function () {
+        var email = $("#email-gopy").val();
+        var noidung = $("#noidung-gopy").val();
+        $.ajax({
+            url : "/api/gopy",
+            type : "GET",
+            data :{
+                email : email,
+                noiDung : noidung
+            } ,
+            success : function (value) {
+                $("#email-gopy").val('');
+                $("#noidung-gopy").val('');
+            }
+        })
+    });
 });

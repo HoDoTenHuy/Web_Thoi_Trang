@@ -2,11 +2,12 @@ package com.danghuy.controller;
 
 import com.danghuy.commons.RandomSanPhamShowTrangChu;
 import com.danghuy.commons.SaveSession;
-import com.danghuy.entity.DanhMucSanPhamEntity;
-import com.danghuy.entity.GioHang;
-import com.danghuy.entity.SanPhamEntity;
+import com.danghuy.entity.*;
+import com.danghuy.pojo.GooglePojo;
 import com.danghuy.service.SanPhamService;
 import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
+import com.danghuy.service.impl.KhuyenMaiServiceImpl;
+import com.danghuy.service.impl.NhanVienServiceImpl;
 import com.danghuy.service.impl.SanPhamServiceImpl;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.Vector;
 
 @Controller
@@ -31,10 +33,16 @@ public class TrangChuController {
     DanhMucSanPhamServiceImpl danhMucSanPhamService;
 
     @Autowired
+    KhuyenMaiServiceImpl khuyenMaiService;
+
+    @Autowired
     SaveSession saveSession;
 
     @Autowired
     RandomSanPhamShowTrangChu randomSanPhamShowTrangChu;
+
+    @Autowired
+    NhanVienServiceImpl nhanVienService;
 
     @GetMapping
     @Transactional
@@ -43,9 +51,18 @@ public class TrangChuController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
+        saveSession.chucVu(httpSession, modelMap);
+
+        saveSession.loginGG(httpSession, modelMap);
+
+        saveSession.loginFB(httpSession, modelMap);
+
         List<SanPhamEntity> sanPhamEntities = sanPhamService.getSanPhamShow();
         modelMap.addAttribute("sanPhamList", sanPhamEntities);
 
+        /*Set<KhuyenMaiEntity> khuyenMaiEntities = (Set<KhuyenMaiEntity>) khuyenMaiService.getAllKhuyenMai();
+        modelMap.addAttribute("khuyenmai", khuyenMaiEntities);
+        */
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 

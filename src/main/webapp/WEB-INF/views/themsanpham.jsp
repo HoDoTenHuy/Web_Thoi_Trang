@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <h1><a href="index.html">Easy <span>Admin</span></a></h1>
+            <h1><a href="../">Easy <span>Admin</span></a></h1>
         </div>
         <div class="logo-icon text-center">
             <a href="../dashboard"><i class="lnr lnr-home"></i> </a>
@@ -64,21 +64,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <!--sidebar nav start-->
             <ul class="nav nav-pills nav-stacked custom-nav">
-                <li class="active"><a href="../dashboard"><i class="lnr lnr-power-switch"></i><span>Dashboard</span>
-                </a></li>
                 <li class="menu-list">
-                    <a href="../themsanpham"><i class="lnr lnr-store"></i>
+                    <a><i class="lnr lnr-store"></i>
                         <span>Sản Phẩm</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="../themsanpham">Thêm Sản Phẩm</a> </li>
+                        <li><a href="../quanlysanpham">Chi Tiết Sản Phẩm</a> </li>
+                        <li><a href="../themsanpham">Thêm - Sửa - Xóa</a> </li>
+                        <li><a href="../themsize">Thêm Loại Size</a> </li>
+                        <li><a href="../themmau">Thêm Màu</a> </li>
+                        <li><a href="../themdanhmuc">Thêm Danh Mục</a> </li>
                     </ul>
                 </li>
-                <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
-                <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>
+                <li class="menu-list"><a href="#"><i class="lnr lnr-book"></i> <span>Đơn Hàng</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../tatcadonhang">Tất Cả Đơn Hàng</a> </li>
+                        <li><a href="../duyetdonhang">Quản Lý Đơn Hàng</a> </li>
+                    </ul>
+                </li>
                 <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="inbox.html">Inbox</a> </li>
-                        <li><a href="compose-mail.html">Compose Mail</a></li>
+                        <li><a href="">Inbox</a> </li>
+                        <li><a href="../gopy">Mail Góp ý</a></li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>
@@ -330,6 +336,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <select name="danhMucSanPhamEntity" class="form-control" id="danhmucsanpham">
                                 <c:forEach var = "danhmuc" items="${listDanhMucSanPham}">
                                     <option value="${danhmuc.idDanhMuc}">${danhmuc.tenDanhMuc}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="form-group" id="chitiet-khuyenmai">
+                            <label for="danhmuckhuyenmai">Khuyến Mãi : </label>
+                            <select name="khuyenMaiEntities" class="form-control" id="danhmuckhuyenmai">
+                                <c:forEach var = "khuyenmai" items="${khuyenMaiList}">
+                                    <option value="${khuyenmai.idKhuyenMai}">
+                                            ${khuyenmai.tenKhuyenMai} - giảm giá : ${khuyenmai.giamGia}%</option>
                                 </c:forEach>
                             </select>
                         </div>

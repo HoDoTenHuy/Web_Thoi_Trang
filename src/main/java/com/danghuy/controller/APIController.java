@@ -1,11 +1,12 @@
 package com.danghuy.controller;
 
+import com.danghuy.commons.CheckEmail;
 import com.danghuy.entity.*;
+import com.danghuy.pojo.NhanVien;
 import com.danghuy.pojo.SanPham;
-import com.danghuy.service.impl.ChiTietHoaDonServiceImpl;
-import com.danghuy.service.impl.HoaDonServiceImpl;
-import com.danghuy.service.impl.NhanVienServiceImpl;
-import com.danghuy.service.impl.SanPhamServiceImpl;
+import com.danghuy.service.GopYService;
+import com.danghuy.service.impl.*;
+import com.danghuy.utils.SendMail;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.persistence.Table;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.*;
 
 @Controller
@@ -46,13 +48,63 @@ public class APIController {
     @Autowired
     ChiTietHoaDonServiceImpl chiTietHoaDonService;
 
+    @Autowired
+    CheckEmail checkEmail;
+
+    @Autowired
+    KhuyenMaiServiceImpl khuyenMaiService;
+
+    @Autowired
+    NhanVienServiceImpl nhanVienService;
+
+    @Autowired
+    SizeSanPhamServiceImpl sizeSanPhamService;
+
+    @Autowired
+    MauSanPhamServiceImpl mauSanPhamService;
+
+    @Autowired
+    DanhMucSanPhamServiceImpl danhMucSanPhamService;
+
+    @Autowired
+    GopYServiceImpl gopYService;
+
+    @Autowired
+    SendMail sendMail;
+
     @GetMapping("kiemtradangnhap")
     @ResponseBody
     @Transactional
     public String kiemTraDangNhap(@RequestParam String username, @RequestParam String password, ModelMap modelMap) {
         boolean kiemTra = nhanVienServiceImpl.xuLyDangNhap(username, password);
         modelMap.addAttribute("user", username);
+
         return kiemTra + "";
+    }
+
+    @GetMapping(path = "kiemtradangky", produces = "text/html; charset=UTF-8")
+    @ResponseBody
+    @Transactional
+    public String kiemTraDangKy(@RequestParam String email, @RequestParam String matKhau,
+                                @RequestParam String nhapLaiMatKhau, ModelMap modelMap) {
+        if (nhanVienServiceImpl.checkEmailIsValid(email)) {
+            return "Email Đã Tồn Tại!";
+        } else {
+            if (checkEmail.kiemTraEmail(email) && matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
+
+                NhanVien nhanVien = new NhanVien(email, matKhau);
+                if (nhanVienServiceImpl.dangKy(nhanVien)) {
+                    return "true";
+                } else {
+                    return "Đăng Ký Thất Bại!";
+                }
+            } else if (checkEmail.kiemTraEmail(email) == false) {
+                return "Vui Lòng Nhập Đúng Email!";
+            } else if (matKhau.equalsIgnoreCase(nhapLaiMatKhau)) {
+                return "Mật Khẩu Khác Nhau!";
+            } else
+                return "Đăng Ký Thất Bại!";
+        }
     }
 
     @GetMapping("themgiohang")
@@ -60,10 +112,12 @@ public class APIController {
     public void themGioHang(@RequestParam int maSP, @RequestParam int maMau,
                             @RequestParam int maSize, @RequestParam int soLuong, @RequestParam String tenSP,
                             @RequestParam String giaTien, @RequestParam String tenMau, @RequestParam String tenSize,
-                            @RequestParam int maChiTiet, ModelMap modelMap, HttpSession httpSession) {
+                            @RequestParam int maChiTiet, @RequestParam int khuyenMai
+            , ModelMap modelMap, HttpSession httpSession) {
         if (httpSession.getAttribute("cart") == null) {
             List<GioHang> gioHangs = new ArrayList<GioHang>();
-            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, maChiTiet, tenSP, giaTien, tenMau, tenSize);
+            GioHang gioHang = new GioHang(maSP, maMau, maSize, 1, maChiTiet, tenSP, giaTien, tenMau,
+                    tenSize, khuyenMai);
             gioHangs.add(gioHang);
             httpSession.setAttribute("cart", gioHangs);
         } else {
@@ -72,7 +126,7 @@ public class APIController {
             if (viTri == -1) {
 
                 GioHang gioHang = new GioHang(maSP, maMau, maSize, 1,
-                        maChiTiet, tenSP, giaTien, tenMau, tenSize);
+                        maChiTiet, tenSP, giaTien, tenMau, tenSize, khuyenMai);
                 list.add(gioHang);
             } else {
                 int soLuongMoi = list.get(viTri).getSoLuong() + 1;
@@ -106,7 +160,8 @@ public class APIController {
 
     @GetMapping("capnhatgiohang")
     @ResponseBody
-    public void capNhatGioHang(HttpSession httpSession, @RequestParam int maSP, @RequestParam int maMau,
+    public void capNhatGioHang(HttpSession httpSession, ModelMap modelMap, @RequestParam int maSP,
+                               @RequestParam int maMau,
                                @RequestParam int maSize, @RequestParam int soLuong) {
         if (httpSession.getAttribute("cart") != null) {
             List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
@@ -114,21 +169,22 @@ public class APIController {
             list.get(viTri).setSoLuong(soLuong);
         }
     }
+
     @GetMapping(path = "laysanphamlimit", produces = "text/html; charset=UTF-8")
     @ResponseBody
-    public String laySanPhamLimit(@RequestParam int spBatDau){
+    public String laySanPhamLimit(@RequestParam int spBatDau) {
         String html = "";
         List<SanPhamEntity> sanPhamEntities = sanPhamService.laySanPhamLimit(spBatDau, 5);
-        for(SanPhamEntity sp : sanPhamEntities){
+        for (SanPhamEntity sp : sanPhamEntities) {
             html += "<tr>";
             html += " <td>\n" +
                     "    <div>\n" +
-                    "       <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\""+ sp.getIdSanPham() +"\">\n" +
+                    "       <input class=\"checkbox-sanpham\" type=\"checkbox\" value=\"" + sp.getIdSanPham() + "\">\n"+
                     "    </div>\n" +
                     " </td>";
-            html += " <td class=\"tensp\" data-masp=\" "+ sp.getIdSanPham() +"\">"+ sp.getTenSanPham() +"</td>\n" +
-                    " <td class=\"giatien\" data-giatien=\""+ sp.getGiaTien() +"\">"+ sp.getGiaTien() +"</td>\n" +
-                    " <td class=\"giatie\" data-masize=\""+ sp.getGianhCho() +"\">"+ sp.getGianhCho() +"</td>";
+            html += " <td class=\"tensp\" data-masp=\" " + sp.getIdSanPham() + "\">" + sp.getTenSanPham() + "</td>\n" +
+                    " <td class=\"giatien\" data-giatien=\"" + sp.getGiaTien() + "\">" + sp.getGiaTien() + "</td>\n" +
+                    " <td class=\"giatie\" data-masize=\"" + sp.getGianhCho() + "\">" + sp.getGianhCho() + "</td>";
             html += "<td class=\"capnhat-sanpham\" style=\"padding-top: 8px !important;\"\n" +
                     "                                    data-id=\"" + sp.getIdSanPham() + "\">\n" +
                     "                                    <button type=\"button\"\n" +
@@ -139,15 +195,50 @@ public class APIController {
         return html;
     }
 
+    @GetMapping(path = "laynhanvienlimit", produces = "text/html; charset=UTF8")
+    @ResponseBody
+    public String layNhanVienLimit(@RequestParam int nvBatDau) {
+        String html = "";
+        List<NhanVienEntity> nhanVienEntities = nhanVienService.getNhanVienLimit(nvBatDau, 5);
+        for (NhanVienEntity nhanVien : nhanVienEntities) {
+            html += "<tr>\n" +
+                    "     <td class=\"idnhanvien\" data-manv=\"\">" + nhanVien.getIdNhanVien() + "</td>\n" +
+                    "     <td class=\"tennhanvien\" data-tennv=\"\">" + nhanVien.getHoTen() + "</td>\n" +
+                    "     <td class=\"email-nv\" data-email=\"\">" + nhanVien.getEmail() + "</td>\n" +
+                    "     <td class=\"username-nv\" data-username=\"\">" + nhanVien.getTenDangNhap() + "</td>\n" +
+                    "     <td class=\"chucvu-nv\" data-chucvu=\"" + nhanVien.getChucVuEntities() + "\">\n";
+            String manager = "[3]";
+            String admin = "[2]";
+            String user = "[1]";
+            if (nhanVien.getChucVuEntities().toString().equals(manager)) {
+                html += "<p>Manager<p>";
+            }
+            if (nhanVien.getChucVuEntities().toString().equals(admin)) {
+                html += "<p>Admin<p>";
+            }
+            if (nhanVien.getChucVuEntities().toString().equals(user)) {
+                html += "<p>User<p>";
+            }
+            html += "</td>";
+            html += "<td class=\"diachi-nv\" data-diachi=\"\">" + nhanVien.getDiaChi() + "</td>\n";
+            html += "<td class=\"capnhat-nhanvien\" style=\"padding-top: 8px !important;\"\n" +
+                    "        data-btn-manv=\"${nhanvien.idNhanVien}\">\n" +
+                    "            <button type=\"button\" class=\"btn btn-secondary\">Cập Nhật</button>\n" +
+                    "</td>";
+            html += "</tr>";
+        }
+        return html;
+    }
+
     @GetMapping("xoasanpham")
     @ResponseBody
-    public void xoaSanPhamTheoID(@RequestParam int maSanPham){
+    public void xoaSanPhamTheoID(@RequestParam int maSanPham) {
         sanPhamService.xoaSanPhamTheoID(maSanPham);
     }
 
     @PostMapping("uploadfile")
     @ResponseBody
-    public void uploadFile(MultipartHttpServletRequest request){
+    public void uploadFile(MultipartHttpServletRequest request) {
         String pathSaveFile = context.getRealPath("/resources/images/sanpham/");
         Iterator<String> listNames = request.getFileNames();
         MultipartFile multipartFile = request.getFile(listNames.next());
@@ -157,12 +248,32 @@ public class APIController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(pathSaveFile);
     }
 
-    @PostMapping(path = "themsanpham", produces = "application/json")
+    @GetMapping(path = "themsizesanpham")
     @ResponseBody
-    public String themSanPham(@RequestParam String dataJson){
+    public String themSizeSanPham(@RequestParam String tenSize) {
+        sizeSanPhamService.saveSizeSanPham(tenSize);
+        return "";
+    }
+
+    @GetMapping(path = "themmausanpham")
+    @ResponseBody
+    public String themMauSanPham(@RequestParam String tenMau) {
+        mauSanPhamService.saveMauSanPham(tenMau);
+        return "";
+    }
+
+    @GetMapping(path = "themdanhmucsanpham")
+    @ResponseBody
+    public String themDanhMucSanPham(@RequestParam String tenDanhMuc) {
+        danhMucSanPhamService.saveDanhMucSanPham(tenDanhMuc);
+        return "";
+    }
+
+    @GetMapping(path = "themsanpham", produces = "application/json")
+    @ResponseBody
+    public String themSanPham(@RequestParam String dataJson) {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonObject;
         try {
@@ -172,9 +283,14 @@ public class APIController {
             DanhMucSanPhamEntity danhMucSanPham = new DanhMucSanPhamEntity();
             danhMucSanPham.setIdDanhMuc(jsonObject.get("danhMucSanPhamEntity").asInt());
 
+            Set<KhuyenMaiEntity> khuyenMaiEntities = new HashSet<KhuyenMaiEntity>();
+            KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
+            khuyenMaiEntity.setIdKhuyenMai(5);
+            khuyenMaiEntities.add(khuyenMaiEntity);
+
             Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
             JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
-            for(JsonNode value : jsonChiTiet){
+            for (JsonNode value : jsonChiTiet) {
                 ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
                 MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
@@ -195,6 +311,7 @@ public class APIController {
             String gianhCho = jsonObject.get("gianhCho").asText();
             String giaTien = jsonObject.get("giaTien").asText();
 
+            sanPham.setKhuyenMaiEntities(khuyenMaiEntities);
             sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
             sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
             sanPham.setTenSanPham(tenSanPham);
@@ -212,9 +329,9 @@ public class APIController {
         return "false";
     }
 
-    @PostMapping(path = "capnhatsanpham", produces = "application/json")
+    @GetMapping(path = "capnhatsanpham", produces = "application/json")
     @ResponseBody
-    public String updateSanPham(@RequestParam String dataJson){
+    public String updateSanPham(@RequestParam String dataJson) {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonObject;
         try {
@@ -224,9 +341,14 @@ public class APIController {
             DanhMucSanPhamEntity danhMucSanPham = new DanhMucSanPhamEntity();
             danhMucSanPham.setIdDanhMuc(jsonObject.get("danhMucSanPhamEntity").asInt());
 
+            Set<KhuyenMaiEntity> khuyenMaiEntities = new HashSet<KhuyenMaiEntity>();
+            KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
+            khuyenMaiEntity.setIdKhuyenMai(jsonObject.get("khuyenMaiEntities").asInt());
+            khuyenMaiEntities.add(khuyenMaiEntity);
+
             Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
             JsonNode jsonChiTiet = jsonObject.get("chitietsanpham");
-            for(JsonNode value : jsonChiTiet){
+            for (JsonNode value : jsonChiTiet) {
                 ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
                 MauSanPhamEntity mauSanPhamEntity = new MauSanPhamEntity();
@@ -251,16 +373,23 @@ public class APIController {
 
             sanPham.setChiTietSanPhamEntities(chiTietSanPhamEntities);
             sanPham.setDanhMucSanPhamEntity(danhMucSanPham);
+            sanPham.setKhuyenMaiEntities(khuyenMaiEntities);
             sanPham.setTenSanPham(tenSanPham);
             sanPham.setGiaTien(giaTien);
             sanPham.setMoTa(moTa);
             sanPham.setHinhSanPham(hinhSanPham);
             sanPham.setGianhCho(gianhCho);
             sanPham.setIdSanPham(maSanPham);
-            if(hinhAnh != ""){
+
+            SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(maSanPham);
+            System.out.println(sanPhamEntity.getHinhSanPham());
+            if (hinhAnh.equals("")) {
+                System.out.println(hinhAnh + " ---- ");
+                sanPham.setHinhSanPham(sanPhamEntity.getHinhSanPham());
+            } else if (!hinhAnh.equals(sanPhamEntity.getHinhSanPham())) {
+                System.out.println("asasaasa");
                 sanPham.setHinhSanPham(hinhAnh);
             }
-
             sanPhamService.updateSanPham(sanPham);
 
             return "true";
@@ -270,12 +399,12 @@ public class APIController {
         return "false";
     }
 
-    @RequestMapping(value = "laydanhsachsanphamtheoid",produces = "application/json" ,method = RequestMethod.GET)
+    @RequestMapping(value = "laydanhsachsanphamtheoid", produces = "application/json", method = RequestMethod.GET)
     @ResponseBody
     @Transactional
-    public SanPham layDanhSachSanPhamTheoID(@RequestParam int idSanPham){
+    public SanPham layDanhSachSanPhamTheoID(@RequestParam int idSanPham) {
         SanPham sanPham = new SanPham();
-        SanPhamEntity sanPhamEntity =  sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
+        SanPhamEntity sanPhamEntity = sanPhamService.layDanhSachSanPhamTheoID(idSanPham);
         sanPham.setTenSanPham(sanPhamEntity.getTenSanPham());
         sanPham.setIdSanPham(sanPhamEntity.getIdSanPham());
         sanPham.setMoTa(sanPhamEntity.getMoTa());
@@ -287,8 +416,20 @@ public class APIController {
         danhMucSanPhamEntity.setIdDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getIdDanhMuc());
         danhMucSanPhamEntity.setTenDanhMuc(sanPhamEntity.getDanhMucSanPhamEntity().getTenDanhMuc());
 
+        Set<KhuyenMaiEntity> khuyenMaiEntities = new HashSet<KhuyenMaiEntity>();
+        for (KhuyenMaiEntity value : sanPhamEntity.getKhuyenMaiEntities()) {
+            KhuyenMaiEntity khuyenMaiEntity = new KhuyenMaiEntity();
+            khuyenMaiEntity.setIdKhuyenMai(value.getIdKhuyenMai());
+            khuyenMaiEntity.setGiamGia(value.getGiamGia());
+            khuyenMaiEntity.setTenKhuyenMai(value.getTenKhuyenMai());
+            khuyenMaiEntity.setThoiGianBatDau(value.getThoiGianBatDau());
+            khuyenMaiEntity.setThoiGianKetThuc(value.getThoiGianKetThuc());
+
+            khuyenMaiEntities.add(khuyenMaiEntity);
+        }
+
         Set<ChiTietSanPhamEntity> chiTietSanPhamEntities = new HashSet<ChiTietSanPhamEntity>();
-        for(ChiTietSanPhamEntity value : sanPhamEntity.getChiTietSanPhamEntities()){
+        for (ChiTietSanPhamEntity value : sanPhamEntity.getChiTietSanPhamEntities()) {
             ChiTietSanPhamEntity chiTietSanPhamEntity = new ChiTietSanPhamEntity();
 
             chiTietSanPhamEntity.setIdChiTietSanPham(value.getIdChiTietSanPham());
@@ -309,22 +450,84 @@ public class APIController {
         }
         sanPham.setDanhMucSanPham(danhMucSanPhamEntity);
         sanPham.setChiTietSanPhams(chiTietSanPhamEntities);
-        System.out.println(sanPham.getTenSanPham());
+        sanPham.setKhuyenMaiEntities(khuyenMaiEntities);
         return sanPham;
     }
 
-    @PostMapping("dathang")
+    @GetMapping(path = "laynhanvientheoid", produces = "application/json")
+    @ResponseBody
+    @Transactional
+    public NhanVien layNhanVienTheoID(@RequestParam int idNhanVien) {
+        NhanVienEntity nhanVienEntity = nhanVienServiceImpl.getUserByID(idNhanVien);
+        NhanVien nhanVien = new NhanVien();
+        nhanVien.setIdNhanVien(nhanVienEntity.getIdNhanVien());
+        nhanVien.setHoTen(nhanVienEntity.getHoTen());
+        nhanVien.setEmail(nhanVienEntity.getEmail());
+        nhanVien.setEnabled(nhanVienEntity.getEnabled());
+        nhanVien.setMatKhau(nhanVienEntity.getMatKhau());
+        nhanVien.setTenDangNhap(nhanVienEntity.getTenDangNhap());
+        nhanVien.setGioiTinh(nhanVienEntity.getGioiTinh());
+        nhanVien.setDiaChi(nhanVienEntity.getDiaChi());
+        nhanVien.setCMND(nhanVienEntity.getCMND());
+        nhanVien.setChucVuEntities(nhanVienEntity.getChucVuEntities());
+        return nhanVien;
+    }
+
+    @GetMapping(path = "capnhatnhanvien", produces = "application/json")
+    @ResponseBody
+    public String updateNhanVien(@RequestParam String dataJson) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        NhanVienEntity nhanVienEntity = new NhanVienEntity();
+        JsonNode jsonObject;
+        try {
+            nhanVienEntity = new NhanVienEntity();
+            jsonObject = objectMapper.readTree(dataJson);
+
+            List<ChucVuEntity> chucVuEntityList = new ArrayList<ChucVuEntity>();
+            ChucVuEntity chucVuEntity = new ChucVuEntity();
+            chucVuEntity.setIdChucVu(jsonObject.get("chucVu").asInt());
+            chucVuEntityList.add(chucVuEntity);
+
+            String hoTen = jsonObject.get("tenNhanVien").asText();
+            String username = jsonObject.get("username").asText();
+            String email = jsonObject.get("email-nv").asText();
+            String diaChi = jsonObject.get("diachi-nv").asText();
+            int idNhanVien = jsonObject.get("idNhanVien").asInt();
+
+            nhanVienEntity.setIdNhanVien(idNhanVien);
+            nhanVienEntity.setEmail(email);
+            nhanVienEntity.setChucVuEntities(chucVuEntityList);
+            nhanVienEntity.setHoTen(hoTen);
+            nhanVienEntity.setTenDangNhap(username);
+            nhanVienEntity.setDiaChi(diaChi);
+            nhanVienEntity.setEnabled(1);
+
+            NhanVienEntity nhanVien = nhanVienServiceImpl.getUserByEmailLogin(email);
+            nhanVienEntity.setMatKhau(nhanVien.getMatKhau());
+
+            nhanVienServiceImpl.updateNhanVien(nhanVienEntity);
+
+            return "true";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "false";
+    }
+
+
+    @GetMapping("dathang")
     @Transactional
     @ResponseBody
     public String datHang(@RequestParam String tenKhachHang, @RequestParam String soDienThoai,
-                           @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
-                           @RequestParam String ghiChu, HttpSession httpSession){
-        String kiemTra="";
+                          @RequestParam String diaChiGiaoHang, @RequestParam String hinhThucGiaoHang,
+                          @RequestParam String ghiChu, @RequestParam String email,
+                          HttpSession httpSession) {
+        String kiemTra = "";
         if (httpSession.getAttribute("cart") != null) {
 
             List<GioHang> gioHangs = (List<GioHang>) httpSession.getAttribute("cart");
 
-            HoaDonEntity hoaDonEntity = new HoaDonEntity(tenKhachHang, soDienThoai, diaChiGiaoHang,
+            HoaDonEntity hoaDonEntity = new HoaDonEntity(tenKhachHang, email, soDienThoai, diaChiGiaoHang,
                     hinhThucGiaoHang, ghiChu);
             int idHoaDon = hoaDonService.themHoaDon(hoaDonEntity);
             if (idHoaDon > 0 && tenKhachHang != "" && diaChiGiaoHang != "" && soDienThoai != "") {
@@ -336,27 +539,67 @@ public class APIController {
 
                     ChiTietHoaDonEntity chiTietHoaDonEntity = new ChiTietHoaDonEntity();
                     chiTietHoaDonEntity.setChiTietHoaDonIDEntity(chiTietHoaDonIDEntity);
-                    chiTietHoaDonEntity.setGiaTien(gioHang.getGiaTien().toString());
                     chiTietHoaDonEntity.setSoLuong(gioHang.getSoLuong());
-
+                    String giaCu = gioHang.getGiaTien();
+                    int giamGia = gioHang.getKhuyenMai();
+                    CharSequence s1 = ".";
+                    CharSequence s2 = "";
+                    String gia = giaCu.replace(s1, s2);
+                    int giaTien = Integer.parseInt(gia);
+                    int giaKhuyenMai = giaTien - giaTien * giamGia / 100;
+                    Locale locale = new Locale("vi", "VN");
+                    Currency currency = Currency.getInstance("VND");
+                    DecimalFormatSymbols df = DecimalFormatSymbols.getInstance(locale);
+                    df.setCurrency(currency);
+                    NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
+                    numberFormat.setCurrency(currency);
+                    String formatKhuyenMai = numberFormat.format(giaKhuyenMai);
+                    chiTietHoaDonEntity.setGiaTien(formatKhuyenMai);
                     chiTietHoaDonService.themChiTietHoaDon(chiTietHoaDonEntity);
                 }
                 gioHangs.clear();
-                kiemTra = true+"";
+                kiemTra = true + "";
                 return kiemTra;
             } else {
-                kiemTra = false+"";
+                kiemTra = false + "";
                 return kiemTra;
             }
         }
-        kiemTra = false+"";
+        kiemTra = false + "";
         return kiemTra;
+    }
+
+    @GetMapping("duyetdon")
+    @Transactional
+    @ResponseBody
+    public String duyetDonHang(@RequestParam int idHoaDon, @RequestParam int tinhTrang) {
+        hoaDonService.duyetDonHang(idHoaDon);
+        return "true";
+    }
+
+    @GetMapping(path = "sendmessagetoclient", produces = "text/html; charset=UTF8")
+    @Transactional
+    @ResponseBody
+    public String sendMailToClient(@RequestParam String email) {
+        sendMail.sendMailToClient(email);
+        return "";
+    }
+
+    @GetMapping("gopy")
+    @Transactional
+    @ResponseBody
+    public String duyetGopY(@RequestParam String email, @RequestParam String noiDung) {
+        GopYEntity gopYEntity = new GopYEntity();
+        gopYEntity.setEmail(email);
+        gopYEntity.setNoiDung(noiDung);
+        gopYService.saveGopY(gopYEntity);
+        return "true";
     }
 
     private int kiemTraSanPhamGioHang(int maSP, int maSize, int maMau, HttpSession httpSession) {
         List<GioHang> list = (List<GioHang>) httpSession.getAttribute("cart");
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getMaSP() == maSP && list.get(i).getMaMau() == maMau && list.get(i).getMaSize() == maSize) {
+            if (list.get(i).getMaSP() == maSP && list.get(i).getMaMau() == maMau && list.get(i).getMaSize() == maSize){
                 return i;
             }
         }

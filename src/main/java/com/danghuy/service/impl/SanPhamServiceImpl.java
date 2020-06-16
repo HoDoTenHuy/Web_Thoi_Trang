@@ -24,11 +24,6 @@ public class SanPhamServiceImpl implements SanPhamService {
         return sanPhamDAO.layDanhSachSanPhamTheoID(idSanPham);
     }
 
-    /*public SanPham layDanhSachSanPhamTheoIDConvertPojo(int idSanPham) {
-        SanPhamEntity sanPhamEntity = sanPhamDAO.layDanhSachSanPhamTheoID(idSanPham);
-        SanPham sanPham = entityToPojo.convertSanPham(sanPhamEntity);
-        return sanPham;
-    }*/
 
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc) {
         return sanPhamDAO.laySanPhamTheoMaDanhMuc(maDanhMuc);
@@ -54,4 +49,5 @@ public class SanPhamServiceImpl implements SanPhamService {
     public List<SanPhamEntity> getSanPhamShow() {
         return sanPhamDAO.getSanPhamShow();
     }
+
 }

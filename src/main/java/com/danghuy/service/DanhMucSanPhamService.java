@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface DanhMucSanPhamService {
     public List<DanhMucSanPhamEntity> layDanhMucSanPham();
+
+    public void saveDanhMucSanPham(String tenDanhMuc);
 }

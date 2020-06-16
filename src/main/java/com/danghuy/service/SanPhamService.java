@@ -10,8 +10,6 @@ public interface SanPhamService {
 
     public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham);
 
-    /*public SanPham layDanhSachSanPhamTheoIDConvertPojo(int idSanPham);*/
-
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc);
 
     public List<SanPhamEntity> layALLSanPham();
@@ -23,4 +21,5 @@ public interface SanPhamService {
     public void updateSanPham(SanPhamEntity sanPhamEntity);
 
     public List<SanPhamEntity> getSanPhamShow();
+
 }

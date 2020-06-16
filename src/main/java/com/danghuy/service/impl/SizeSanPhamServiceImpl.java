@@ -7,11 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class SizeSanPhamServiceImpl implements SizeSanPhamService {
     @Autowired
     SizeSanPhamDAO sizeSanPhamDAO;
+
     public List<SizeSanPhamEntity> layDanhSachSize() {
-         return sizeSanPhamDAO.layDanhSachSize();
+        return sizeSanPhamDAO.layDanhSachSize();
+    }
+
+    @Override
+    public void saveSizeSanPham(String tenSize) {
+        sizeSanPhamDAO.saveSizeSanPham(tenSize);
     }
 }

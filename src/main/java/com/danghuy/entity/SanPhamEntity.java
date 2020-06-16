@@ -1,5 +1,7 @@
 package com.danghuy.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -24,11 +26,12 @@ public class SanPhamEntity {
     @JoinColumn(name = "idSanPham")
     Set<ChiTietSanPhamEntity> chiTietSanPhamEntities;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "chitietkhuyenmai",
             joinColumns = {@JoinColumn(name = "idSanPham", referencedColumnName = "idSanPham")},
             inverseJoinColumns = {@JoinColumn(name = "idKhuyenMai", referencedColumnName = "idKhuyenMai")}
     )
+    @JsonIgnore
     Set<KhuyenMaiEntity> khuyenMaiEntities;
 
     public DanhMucSanPhamEntity getDanhMucSanPhamEntity() {

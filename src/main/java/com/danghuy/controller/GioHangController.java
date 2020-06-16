@@ -2,23 +2,16 @@ package com.danghuy.controller;
 
 import com.danghuy.commons.SaveSession;
 import com.danghuy.entity.*;
-import com.danghuy.service.impl.ChiTietHoaDonServiceImpl;
-import com.danghuy.service.impl.DanhMucSanPhamServiceImpl;
-import com.danghuy.service.impl.HoaDonServiceImpl;
+import com.danghuy.service.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @RequestMapping("giohang/")
@@ -38,12 +31,24 @@ public class GioHangController {
     @Autowired
     APIController apiController;
 
+    @Autowired
+    SanPhamServiceImpl sanPhamService;
+
+    @Autowired
+    KhuyenMaiServiceImpl khuyenMaiService;
+
     @GetMapping
     @Transactional
     public String pageDefault(HttpSession httpSession, ModelMap modelMap) {
         saveSession.loginUser(httpSession, modelMap);
 
         saveSession.shoppingCart(httpSession, modelMap);
+
+        saveSession.chucVu(httpSession, modelMap);
+
+        saveSession.loginGG(httpSession, modelMap);
+
+        saveSession.loginFB(httpSession, modelMap);
 
         List<GioHang> gioHangs = saveSession.gioHangList(httpSession);
         modelMap.addAttribute("listGioHang", gioHangs);

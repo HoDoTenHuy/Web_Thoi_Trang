@@ -14,16 +14,20 @@ public class HoaDonEntity implements Serializable {
     private String tenKhachHang;
     private String soDienThoai;
     private String diaChiGiaoHang;
-    private boolean tinhTrang;
+    private int tinhTrang;
     private String ngayLap;
     private String hinhThucGiaoHang;
     private String ghiChu;
+    private String email;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "idHoaDon")
     Set<ChiTietHoaDonEntity> chiTietHoaDonEntities;
 
-    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, boolean tinhTrang,
+    public HoaDonEntity() {
+    }
+
+    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang, int tinhTrang,
                         String ngayLap, String hinhThucGiaoHang, String ghiChu) {
         this.tenKhachHang = tenKhachHang;
         this.soDienThoai = soDienThoai;
@@ -34,9 +38,10 @@ public class HoaDonEntity implements Serializable {
         this.ghiChu = ghiChu;
     }
 
-    public HoaDonEntity(String tenKhachHang, String soDienThoai, String diaChiGiaoHang,
+    public HoaDonEntity(String tenKhachHang, String email , String soDienThoai, String diaChiGiaoHang,
                         String hinhThucGiaoHang, String ghiChu) {
         this.tenKhachHang = tenKhachHang;
+        this.email = email;
         this.soDienThoai = soDienThoai;
         this.diaChiGiaoHang = diaChiGiaoHang;
         this.hinhThucGiaoHang = hinhThucGiaoHang;
@@ -49,6 +54,18 @@ public class HoaDonEntity implements Serializable {
 
     public void setChiTietHoaDonEntities(Set<ChiTietHoaDonEntity> chiTietHoaDonEntities) {
         this.chiTietHoaDonEntities = chiTietHoaDonEntities;
+    }
+
+    public int getTinhTrang() {
+        return tinhTrang;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getIdHoaDon() {
@@ -83,11 +100,11 @@ public class HoaDonEntity implements Serializable {
         this.diaChiGiaoHang = diaChiGiaoHang;
     }
 
-    public boolean isTinhTrang() {
+    public int isTinhTrang() {
         return tinhTrang;
     }
 
-    public void setTinhTrang(boolean tinhTrang) {
+    public void setTinhTrang(int tinhTrang) {
         this.tinhTrang = tinhTrang;
     }
 

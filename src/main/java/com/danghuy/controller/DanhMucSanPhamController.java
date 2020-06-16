@@ -36,6 +36,12 @@ public class DanhMucSanPhamController {
 
         saveSession.shoppingCart(httpSession, modelMap);
 
+        saveSession.chucVu(httpSession, modelMap);
+
+        saveSession.loginGG(httpSession, modelMap);
+
+        saveSession.loginFB(httpSession, modelMap);
+
         List<DanhMucSanPhamEntity> danhMucSanPhamEntities = danhMucSanPhamService.layDanhMucSanPham();
         modelMap.addAttribute("listDanhMuc", danhMucSanPhamEntities);
 

@@ -17,4 +17,9 @@ public class DanhMucSanPhamServiceImpl implements DanhMucSanPhamService {
     public List<DanhMucSanPhamEntity> layDanhMucSanPham() {
         return danhMucSanPhamDAO.layDanhMucSanPham();
     }
+
+    @Override
+    public void saveDanhMucSanPham(String tenDanhMuc) {
+        danhMucSanPhamDAO.saveDanhMucSanPham(tenDanhMuc);
+    }
 }

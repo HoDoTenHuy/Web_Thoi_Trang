@@ -40,11 +40,69 @@
             <ul class="nav navbar-nav navbar-right">
                 <c:choose>
                     <c:when test="${chuCaiDau != null}">
-                        <span id="logo-email">${chuCaiDau}</span>
+                        <div class="btn-group dropleft">
+                                <span id="logo-email" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">${chuCaiDau}</span>
+                            <div class="dropdown-menu" style="margin-left: auto;background: #14556a99 !important;
+                                                                                width: max-content;">
+                                <a class="dropdown-item">${email}</a>
+                                <c:choose>
+                                    <c:when test = "${chucvu eq '[2]'}">
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/themsanpham">Thêm Sản Phẩm</a>
+                                    </c:when>
+                                    <c:when test = "${chucvu eq '[3]'}">
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/dashboard">Quản Lý</a>
+                                    </c:when>
+                                </c:choose>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
+                                <div class="dropdown-divider"></div>
+                                <form action="/j_spring_security_logout" style="margin-left: 23px;" method="POST">
+                                    <input type="submit" value="Logout"/>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
+                            </div>
+                        </div>
+                    </c:when>
+                    <c:when test="${chu != null}">
+                        <div class="btn-group dropleft">
+                            <img id="logo-email" data-toggle="dropdown" aria-haspopup="true"
+                                 aria-expanded="false" src='<c:url value="${google.picture}"/>'/>
+                            <div class="dropdown-menu" style="margin-left: auto;background: white !important;
+                                                                                width: max-content;">
+                                <a class="dropdown-item">${google.email}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
+                                <div class="dropdown-divider"></div>
+                                <form action="/j_spring_security_logout" style="margin-left: 23px;" method="POST">
+                                    <input type="submit" value="Logout"/>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
+                            </div>
+                        </div>
+                    </c:when>
+                    <c:when test="${chuDau != null}">
+                        <div class="btn-group dropleft">
+                            <img id="logo-email" data-toggle="dropdown" aria-haspopup="true"
+                                 aria-expanded="false" src='<c:url value="${facebook.picture}"/>'/>
+                            <div class="dropdown-menu" style="margin-left: auto;background: white !important;
+                                                                                width: max-content;">
+                                <a class="dropdown-item">${facebook.email}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/giohang/">Giỏ Hàng</a>
+                                <div class="dropdown-divider"></div>
+                                <form action="/j_spring_security_logout" style="margin-left: 23px;" method="POST">
+                                    <input type="submit" value="Logout"/>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
+                            </div>
+                        </div>
                     </c:when>
                     <c:otherwise>
                         <li class="nav-item">
-                            <a class="nav-link" href="../dangnhap/">ĐĂNG NHẬP</a>
+                            <a class="nav-link" href="../login">ĐĂNG NHẬP</a>
                         </li>
                     </c:otherwise>
                 </c:choose>
@@ -88,7 +146,8 @@
                         <td class="size" data-masize="${sanpham.maSize}">${sanpham.tenSize}</td>
                         <td><input class="soluong-giohang" type="number"  min="1"
                                    value="${sanpham.soLuong}"/></td>
-                        <td class="giatien" data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
+                        <td class="giatien" data-giamgia = "${sanpham.khuyenMai}"
+                            data-giatien="${sanpham.giaTien}">${sanpham.giaTien}</td>
                         <td class="xoa-giohang btn btn-default btn-sm btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Remove
                         </td>
@@ -103,6 +162,10 @@
                 <div class="form-group">
                     <label for="tenKhachHang">Tên người mua / nhận hàng : </label>
                     <input type="text" class="form-control" id="tenKhachHang" name="tenKhachHang">
+                </div>
+                <div class="form-group">
+                    <label for="email-nhanhang">Email : </label>
+                    <input type="text" class="form-control" id="email-nhanhang" name="email-nhanhang">
                 </div>
                 <div class="form-group">
                     <label for="soDienThoai">Số điện thoại : </label>
@@ -148,9 +211,9 @@
         </div>
         <div class="col-sm-4 col-md-4 wow rotateInUpLeft">
             <p style="text-align: center;"><span class="title-footer">GÓP Ý</span></p>
-            <input class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
-            <textarea rows="4" cols="50" placeholder="Nội Dung"></textarea>
-            <button class="material-primary-button">Gửi</button>
+            <input id="email-gopy" class="material-text-input" style="margin-bottom: 8px" type="text" placeholder="Email"/>
+            <textarea id="noidung-gopy" rows="4" cols="50" placeholder="Nội Dung"></textarea>
+            <button id="btn-gopy" class="material-primary-button">Gửi</button>
         </div>
     </div>
 </div>

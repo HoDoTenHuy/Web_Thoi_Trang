@@ -43,7 +43,6 @@ public class SanPhamDAO {
         int maxSanPham = layALLSanPham().size();
         List<SanPhamEntity> sanPhamEntities = new ArrayList<SanPhamEntity>();
         Vector vector = randomSanPhamShowTrangChu.vectorSanPham(maxSanPham);
-        System.out.println(vector);
         for (int i = 0; i < 20; i++) {
             String hql = "from SanPhamEntity where idSanPham = " + vector.get(i);
             SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).uniqueResult();
@@ -52,13 +51,15 @@ public class SanPhamDAO {
         return sanPhamEntities;
     }
 
+    @Transactional
     public SanPhamEntity layDanhSachSanPhamTheoID(int idSanPham) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from SanPhamEntity where idSanPham = " + idSanPham;
-        SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).getSingleResult();
+        SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery(hql).uniqueResult();
         return sanPhamEntity;
     }
 
+    @Transactional
     public List<SanPhamEntity> laySanPhamTheoMaDanhMuc(int maDanhMuc) {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from SanPhamEntity where idDanhMuc = '" + maDanhMuc + "'";
@@ -66,6 +67,7 @@ public class SanPhamDAO {
         return sanPhamEntities;
     }
 
+    @Transactional
     public List<SanPhamEntity> layALLSanPham() {
         Session session = sessionFactory.getCurrentSession().getSession();
         String hql = "from SanPhamEntity";
@@ -96,4 +98,5 @@ public class SanPhamDAO {
         Session session = sessionFactory.getCurrentSession().getSession();
         session.update(sanPhamEntity);
     }
+
 }
